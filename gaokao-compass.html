@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>志愿罗盘 · 高考志愿智能测评</title>
+<style>
+/* ===== BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;font-family:-apple-system,'PingFang SC','Noto Sans SC',sans-serif;background:#0d0d1a}
+button{border:none;cursor:pointer;font-family:inherit}
+input[type=range]{-webkit-appearance:none;appearance:none}
+
+/* ===== SCREEN MANAGER ===== */
+.screen{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  transform:translateX(100%);
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto;overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+}
+.screen.active{transform:translateX(0)}
+.screen.exit-left{transform:translateX(-100%)}
+
+/* ===== COVER SCREEN ===== */
+#s-cover{
+  background:linear-gradient(160deg,#0d0d2b 0%,#1a1050 35%,#2d1b69 65%,#1a0533 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:#fff;text-align:center;padding:40px 24px;overflow:hidden;
+}
+.cover-stars{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+.star{position:absolute;border-radius:50%;background:#fff;animation:twinkle var(--d,3s) ease-in-out infinite var(--delay,0s)}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+
+.cover-icon{
+  width:96px;height:96px;margin-bottom:28px;
+  background:linear-gradient(135deg,#7c3aed,#2563eb);
+  border-radius:28px;display:flex;align-items:center;justify-content:center;
+  font-size:48px;box-shadow:0 20px 60px rgba(124,58,237,.5);
+  animation:float 3s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+.cover-title{font-size:32px;font-weight:800;letter-spacing:2px;margin-bottom:10px;
+  background:linear-gradient(135deg,#e0c3fc,#8ec5fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cover-sub{font-size:14px;color:rgba(255,255,255,.6);margin-bottom:6px;letter-spacing:1px}
+.cover-desc{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:40px;line-height:1.8}
+
+.cover-stats{
+  display:flex;gap:24px;margin-bottom:44px;
+}
+.stat-item{text-align:center}
+.stat-num{font-size:22px;font-weight:700;color:#c4b5fd}
+.stat-label{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px}
+
+.btn-start{
+  width:240px;height:56px;border-radius:28px;
+  background:linear-gradient(135deg,#7c3aed,#2563eb);
+  color:#fff;font-size:18px;font-weight:700;letter-spacing:2px;
+  box-shadow:0 8px 32px rgba(124,58,237,.5);
+  transition:transform .2s,box-shadow .2s;
+  position:relative;overflow:hidden;
+}
+.btn-start::after{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);
+  animation:shine 2.5s infinite;
+}
+@keyframes shine{0%{left:-100%}100%{left:200%}}
+.btn-start:active{transform:scale(.97)}
+
+.cover-tip{font-size:11px;color:rgba(255,255,255,.3);margin-top:16px}
+.cover-warn{
+  position:absolute;bottom:20px;left:24px;right:24px;
+  font-size:10px;color:rgba(255,255,255,.25);text-align:center;line-height:1.6;
+}
+
+/* ===== QUESTION SCREEN ===== */
+.q-screen{
+  background:linear-gradient(160deg,#0d0d2b 0%,#1a1050 50%,#0d0d2b 100%);
+  min-height:100%;padding:0 0 40px;
+}
+.q-header{
+  padding:52px 24px 20px;
+  background:rgba(255,255,255,.03);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.q-step-label{font-size:11px;color:#7c3aed;letter-spacing:2px;font-weight:600;margin-bottom:8px;text-transform:uppercase}
+.q-progress-wrap{display:flex;align-items:center;gap:12px}
+.q-progress-bar{flex:1;height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+.q-progress-fill{height:100%;background:linear-gradient(90deg,#7c3aed,#2563eb);border-radius:2px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.q-progress-text{font-size:12px;color:rgba(255,255,255,.4);white-space:nowrap}
+
+.q-body{padding:28px 24px}
+.q-num{font-size:12px;color:#7c3aed;font-weight:600;margin-bottom:8px;letter-spacing:1px}
+.q-title{font-size:20px;color:#fff;font-weight:700;line-height:1.5;margin-bottom:6px}
+.q-subtitle{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:28px;line-height:1.6}
+
+/* Choice cards */
+.choices{display:flex;flex-direction:column;gap:12px}
+.choice-card{
+  padding:16px 20px;border-radius:16px;
+  background:rgba(255,255,255,.05);
+  border:1.5px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.8);font-size:15px;font-weight:500;
+  text-align:left;line-height:1.5;
+  transition:all .25s ease;
+  cursor:pointer;
+}
+.choice-card:active{transform:scale(.98)}
+.choice-card.selected{
+  background:rgba(124,58,237,.2);
+  border-color:#7c3aed;
+  color:#c4b5fd;
+}
+.choice-card .choice-icon{font-size:20px;margin-bottom:6px;display:block}
+.choice-card .choice-title{font-weight:600;margin-bottom:2px}
+.choice-card .choice-desc{font-size:12px;color:rgba(255,255,255,.4)}
+.choice-card.selected .choice-desc{color:rgba(196,181,253,.6)}
+
+/* Grid choices (for province, major types) */
+.choices-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choices-grid .choice-card{padding:14px 12px;text-align:center;font-size:13px}
+
+/* Score slider */
+.slider-wrap{margin-top:8px}
+.slider-display{
+  text-align:center;margin-bottom:20px;
+  font-size:56px;font-weight:800;
+  background:linear-gradient(135deg,#c4b5fd,#93c5fd);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.slider-display span{font-size:18px;font-weight:400;color:rgba(255,255,255,.4);-webkit-text-fill-color:rgba(255,255,255,.4)}
+.score-slider{width:100%;height:6px;border-radius:3px;outline:none;border:none;
+  background:linear-gradient(90deg,#7c3aed var(--val,50%),rgba(255,255,255,.15) var(--val,50%));
+  margin-bottom:8px;
+}
+.score-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,#7c3aed,#2563eb);
+  box-shadow:0 4px 16px rgba(124,58,237,.6);
+  cursor:pointer;
+}
+.slider-labels{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.3)}
+.score-tier{
+  margin-top:16px;padding:12px 16px;border-radius:12px;
+  background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);
+  font-size:13px;color:#c4b5fd;text-align:center;
+}
+
+/* Province select */
+.province-select{
+  width:100%;padding:14px 16px;border-radius:14px;
+  background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.1);
+  color:#fff;font-size:16px;outline:none;
+  appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='rgba(255,255,255,0.4)' stroke-width='2' d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:44px;
+}
+.province-select option{background:#1a1050;color:#fff}
+
+/* Nav buttons */
+.q-nav{display:flex;gap:12px;padding:24px 24px 0;margin-top:8px}
+.btn-back{
+  flex:0 0 52px;height:52px;border-radius:16px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.5);font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+}
+.btn-next{
+  flex:1;height:52px;border-radius:16px;
+  background:linear-gradient(135deg,#7c3aed,#2563eb);
+  color:#fff;font-size:16px;font-weight:700;letter-spacing:1px;
+  box-shadow:0 8px 24px rgba(124,58,237,.4);
+  transition:transform .2s,opacity .2s;
+}
+.btn-next:disabled{opacity:.4;box-shadow:none}
+.btn-next:not(:disabled):active{transform:scale(.97)}
+
+/* Step mini-feedback */
+.step-feedback{
+  margin:16px 24px 0;padding:14px 16px;border-radius:14px;
+  background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);
+  font-size:13px;color:#a5b4fc;line-height:1.6;
+  display:none;
+}
+.step-feedback.show{display:block;animation:fadeSlideUp .4s ease}
+@keyframes fadeSlideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== LOADING SCREEN ===== */
+#s-loading{
+  background:linear-gradient(160deg,#0d0d2b 0%,#1a1050 50%,#0d0d2b 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:40px 32px;color:#fff;text-align:center;
+}
+.loading-compass{
+  width:120px;height:120px;margin-bottom:36px;position:relative;
+}
+.compass-ring{
+  position:absolute;inset:0;border-radius:50%;
+  border:3px solid transparent;
+  border-top-color:#7c3aed;border-right-color:#2563eb;
+  animation:spin 1.2s linear infinite;
+}
+.compass-ring2{
+  position:absolute;inset:12px;border-radius:50%;
+  border:2px solid transparent;
+  border-bottom-color:#c4b5fd;border-left-color:#93c5fd;
+  animation:spin 1.8s linear infinite reverse;
+}
+.compass-center{
+  position:absolute;inset:28px;
+  background:linear-gradient(135deg,#7c3aed,#2563eb);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:28px;
+}
+@keyframes spin{100%{transform:rotate(360deg)}}
+
+.loading-title{font-size:20px;font-weight:700;margin-bottom:8px;color:#fff}
+.loading-sub{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:40px}
+
+.loading-steps{width:100%;max-width:320px}
+.loading-step{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);
+  font-size:14px;color:rgba(255,255,255,.35);
+  transition:color .4s;
+}
+.loading-step:last-child{border:none}
+.loading-step.done{color:rgba(255,255,255,.8)}
+.loading-step.active{color:#c4b5fd}
+.step-dot{
+  width:24px;height:24px;border-radius:50%;flex-shrink:0;
+  background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;transition:all .4s;
+}
+.loading-step.done .step-dot{background:#7c3aed;color:#fff}
+.loading-step.active .step-dot{background:rgba(124,58,237,.3);color:#c4b5fd;border:1px solid #7c3aed}
+.loading-bar-wrap{
+  margin-top:32px;width:100%;max-width:320px;
+  height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;
+}
+.loading-bar-fill{
+  height:100%;width:0;border-radius:2px;
+  background:linear-gradient(90deg,#7c3aed,#2563eb);
+  transition:width .6s ease;
+}
+
+/* ===== RESULT SCREEN ===== */
+#s-result{
+  background:linear-gradient(160deg,#0d0d2b 0%,#1a1050 35%,#0d0d2b 100%);
+  padding-bottom:60px;
+}
+.result-header{
+  background:linear-gradient(135deg,rgba(124,58,237,.3),rgba(37,99,235,.2));
+  padding:52px 24px 32px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.result-greeting{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:6px;letter-spacing:1px}
+.result-title{font-size:24px;font-weight:800;color:#fff;margin-bottom:20px}
+
+.profile-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px}
+.profile-card{
+  padding:14px;border-radius:14px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+}
+.profile-card-label{font-size:10px;color:rgba(255,255,255,.4);margin-bottom:6px;letter-spacing:1px;text-transform:uppercase}
+.profile-card-val{font-size:13px;color:#c4b5fd;font-weight:600;line-height:1.5}
+.profile-card-val .tag{
+  display:inline-block;padding:2px 8px;border-radius:20px;
+  background:rgba(124,58,237,.25);color:#c4b5fd;
+  font-size:11px;margin:2px 2px 0 0;
+}
+
+.result-score-info{
+  margin-top:12px;padding:14px 16px;border-radius:14px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;gap:16px;
+}
+.rsi-score{font-size:36px;font-weight:800;background:linear-gradient(135deg,#c4b5fd,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.rsi-detail{font-size:12px;color:rgba(255,255,255,.4);line-height:1.8}
+
+/* Section headers */
+.section{padding:24px 24px 0}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.section-icon{font-size:20px}
+.section-title{font-size:17px;font-weight:700;color:#fff}
+.section-tag{
+  margin-left:auto;font-size:11px;padding:3px 10px;border-radius:20px;
+  background:rgba(124,58,237,.2);color:#c4b5fd;font-weight:600;
+}
+
+/* Uni cards */
+.uni-card{
+  margin-bottom:12px;border-radius:18px;overflow:hidden;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  transition:transform .2s;
+}
+.uni-card:active{transform:scale(.99)}
+.uni-card-header{
+  padding:16px 18px 12px;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.uni-rank-badge{
+  width:36px;height:36px;border-radius:10px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;
+}
+.rush .uni-rank-badge{background:rgba(239,68,68,.15);color:#fca5a5}
+.steady .uni-rank-badge{background:rgba(34,197,94,.12);color:#86efac}
+.safe .uni-rank-badge{background:rgba(59,130,246,.12);color:#93c5fd}
+
+.uni-info{flex:1;min-width:0}
+.uni-name{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
+.uni-major{font-size:14px;color:#c4b5fd;font-weight:600;margin-bottom:6px;line-height:1.5}
+.uni-major-icon{display:inline-block;width:18px;height:18px;background:linear-gradient(135deg,#7c3aed,#2563eb);border-radius:6px;text-align:center;line-height:18px;font-size:11px;color:#fff;margin-right:6px;vertical-align:-2px}
+.uni-major-tag{display:inline-block;font-size:10px;padding:2px 6px;border-radius:8px;background:rgba(124,58,237,.18);color:#c4b5fd;margin-left:6px;font-weight:500}
+.uni-fee{font-size:12px;color:rgba(255,255,255,.55);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.uni-fee-badge{display:inline-block;font-size:10px;padding:2px 8px;border-radius:8px;font-weight:600}
+.fee-pub{background:rgba(34,197,94,.12);color:#86efac}
+.fee-zwhb{background:rgba(245,158,11,.15);color:#fde68a}
+.fee-minban{background:rgba(239,68,68,.12);color:#fca5a5}
+.fee-art{background:rgba(168,85,247,.15);color:#d8b4fe}
+.fee-zhuanke{background:rgba(96,165,250,.12);color:#93c5fd}
+.uni-tags{display:flex;flex-wrap:wrap;gap:6px}
+.uni-tag{
+  font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;
+}
+.tag-985{background:rgba(234,179,8,.15);color:#fde68a}
+.tag-211{background:rgba(99,102,241,.15);color:#a5b4fc}
+.tag-dyl{background:rgba(16,185,129,.12);color:#6ee7b7}
+.tag-1b{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5)}
+
+.uni-card-body{
+  padding:0 18px 16px;
+  border-top:1px solid rgba(255,255,255,.05);
+  margin-top:4px;padding-top:12px;
+}
+.uni-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.uni-stat{text-align:center}
+.uni-stat-val{font-size:15px;font-weight:700;color:#c4b5fd}
+.uni-stat-label{font-size:10px;color:rgba(255,255,255,.35);margin-top:2px}
+
+.match-bar-wrap{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.match-label{font-size:11px;color:rgba(255,255,255,.4);white-space:nowrap}
+.match-bar{flex:1;height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.match-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#7c3aed,#2563eb)}
+.match-score{font-size:12px;color:#c4b5fd;font-weight:600;white-space:nowrap}
+
+.risk-flags{display:flex;flex-wrap:wrap;gap:6px}
+.risk-flag{
+  font-size:10px;padding:3px 10px;border-radius:10px;font-weight:600;
+}
+.risk-red{background:rgba(239,68,68,.15);color:#fca5a5}
+.risk-orange{background:rgba(245,158,11,.12);color:#fde68a}
+.risk-green{background:rgba(34,197,94,.12);color:#86efac}
+
+/* Probability bar */
+.prob-row{display:flex;align-items:center;gap:8px;margin-top:8px}
+.prob-label{font-size:11px;color:rgba(255,255,255,.35);width:56px;flex-shrink:0}
+.prob-bar-wrap{flex:1;height:6px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden}
+.prob-bar-fill{height:100%;border-radius:3px;transition:width 1s ease}
+.rush .prob-bar-fill{background:linear-gradient(90deg,#ef4444,#f97316)}
+.steady .prob-bar-fill{background:linear-gradient(90deg,#22c55e,#16a34a)}
+.safe .prob-bar-fill{background:linear-gradient(90deg,#3b82f6,#1d4ed8)}
+.prob-pct{font-size:11px;font-weight:700;width:32px;text-align:right}
+.rush .prob-pct{color:#fca5a5}
+.steady .prob-pct{color:#86efac}
+.safe .prob-pct{color:#93c5fd}
+
+/* Section divider */
+.bucket-divider{
+  margin:28px 24px 0;padding:14px 18px;border-radius:14px;
+  display:flex;align-items:center;gap:12px;
+}
+.rush-div{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.15)}
+.steady-div{background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.12)}
+.safe-div{background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.12)}
+.div-icon{font-size:24px}
+.div-info{}
+.div-name{font-size:15px;font-weight:700;color:#fff}
+.div-desc{font-size:12px;margin-top:2px}
+.rush-div .div-desc{color:rgba(252,165,165,.7)}
+.steady-div .div-desc{color:rgba(134,239,172,.7)}
+.safe-div .div-desc{color:rgba(147,197,253,.7)}
+
+/* Truth block */
+.truth-block{
+  margin:24px;padding:20px;border-radius:16px;
+  background:rgba(245,158,11,.07);
+  border:1px solid rgba(245,158,11,.15);
+}
+.truth-title{font-size:14px;font-weight:700;color:#fde68a;margin-bottom:12px;
+  display:flex;align-items:center;gap:8px}
+.truth-item{
+  font-size:13px;color:rgba(255,255,255,.65);line-height:1.8;
+  padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);
+}
+.truth-item:last-child{border:none;padding-bottom:0}
+.truth-item::before{content:'· ';color:#fde68a}
+
+/* Bottom actions */
+.result-actions{
+  margin:28px 24px 0;
+  display:flex;flex-direction:column;gap:12px;
+}
+.btn-share{
+  width:100%;height:52px;border-radius:16px;
+  background:linear-gradient(135deg,#7c3aed,#2563eb);
+  color:#fff;font-size:16px;font-weight:700;letter-spacing:1px;
+  box-shadow:0 8px 24px rgba(124,58,237,.4);
+}
+.btn-restart{
+  width:100%;height:46px;border-radius:14px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.6);font-size:14px;
+}
+
+/* Disclaimer */
+.disclaimer{
+  margin:20px 24px 0;padding:14px 16px;border-radius:12px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);
+  font-size:11px;color:rgba(255,255,255,.3);line-height:1.8;
+}
+
+/* Toast */
+.toast{
+  position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);
+  background:rgba(0,0,0,.85);color:#fff;padding:12px 24px;
+  border-radius:12px;font-size:14px;z-index:9999;
+  opacity:0;pointer-events:none;transition:all .3s;
+  backdrop-filter:blur(10px);
+}
+.toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+/* ===== UTILS ===== */
+.text-center{text-align:center}
+.mt-16{margin-top:16px}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div id="s-cover" class="screen active">
+  <div class="cover-stars" id="starsContainer"></div>
+  <div class="cover-icon">🧭</div>
+  <div class="cover-title">志愿罗盘</div>
+  <div class="cover-sub">2026 高考志愿智能测评</div>
+  <div class="cover-desc">5分钟问答 · 五维精准匹配<br>320+ 院校 · 含公办/民办/中外合办学费</div>
+  <div class="cover-stats">
+    <div class="stat-item"><div class="stat-num">18</div><div class="stat-label">道精选题</div></div>
+    <div class="stat-item"><div class="stat-num">320+</div><div class="stat-label">所高校</div></div>
+    <div class="stat-item"><div class="stat-num">5维</div><div class="stat-label">匹配算法</div></div>
+  </div>
+  <button class="btn-start" onclick="startQuiz()">开始智能测评 →</button>
+  <div class="cover-tip">平均完成时间 4 分 30 秒</div>
+  <div class="cover-warn">⚠️ 本测评基于历史数据与算法预测，结果仅供志愿填报参考，不构成录取保证</div>
+</div>
+
+<!-- ===== QUESTION SCREENS ===== -->
+<div id="s-questions" class="screen">
+  <div class="q-screen">
+    <div class="q-header">
+      <div class="q-step-label" id="stepLabel">Step 1 · 基础信息</div>
+      <div class="q-progress-wrap">
+        <div class="q-progress-bar"><div class="q-progress-fill" id="progressFill" style="width:5%"></div></div>
+        <div class="q-progress-text" id="progressText">1 / 18</div>
+      </div>
+    </div>
+    <div class="q-body">
+      <div class="q-num" id="qNum">Q1</div>
+      <div class="q-title" id="qTitle">你是哪个省市的考生？</div>
+      <div class="q-subtitle" id="qSubtitle">选择你参加高考的省份或直辖市</div>
+      <div id="qContent"></div>
+    </div>
+    <div id="stepFeedback" class="step-feedback"></div>
+    <div class="q-nav">
+      <button class="btn-back" id="btnBack" onclick="goBack()">←</button>
+      <button class="btn-next" id="btnNext" onclick="goNext()" disabled>下一题 →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LOADING ===== -->
+<div id="s-loading" class="screen">
+  <div class="loading-compass">
+    <div class="compass-ring"></div>
+    <div class="compass-ring2"></div>
+    <div class="compass-center">🧭</div>
+  </div>
+  <div class="loading-title">正在智能匹配中…</div>
+  <div class="loading-sub">五维算法分析，请稍候</div>
+  <div class="loading-steps" id="loadingSteps">
+    <div class="loading-step" id="ls0"><div class="step-dot">1</div>扫描 320+ 院校、近三年录取数据</div>
+    <div class="loading-step" id="ls1"><div class="step-dot">2</div>计算你的分数与院校匹配区间</div>
+    <div class="loading-step" id="ls2"><div class="step-dot">3</div>分析兴趣与性格匹配度</div>
+    <div class="loading-step" id="ls3"><div class="step-dot">4</div>计算城市与就业适配度</div>
+    <div class="loading-step" id="ls4"><div class="step-dot">5</div>按冲稳保生成推荐方案 + 学费提示</div>
+  </div>
+  <div class="loading-bar-wrap"><div class="loading-bar-fill" id="loadingBar"></div></div>
+</div>
+
+<!-- ===== RESULT ===== -->
+<div id="s-result" class="screen">
+  <div class="result-header">
+    <div class="result-greeting">你的志愿画像已生成 ✦</div>
+    <div class="result-title" id="resultTitle">智能推荐报告</div>
+    <div class="profile-cards" id="profileCards"></div>
+    <div class="result-score-info" id="scoreInfo"></div>
+  </div>
+
+  <div class="bucket-divider rush-div">
+    <div class="div-icon">🚀</div>
+    <div class="div-info">
+      <div class="div-name">冲一冲（5 所）</div>
+      <div class="div-desc">录取概率 &lt; 40% · 有挑战，值得一搏</div>
+    </div>
+  </div>
+  <div class="section" id="rushList"></div>
+
+  <div class="bucket-divider steady-div">
+    <div class="div-icon">✅</div>
+    <div class="div-info">
+      <div class="div-name">稳一稳（8 所）</div>
+      <div class="div-desc">录取概率 40–80% · 最核心的选择区间</div>
+    </div>
+  </div>
+  <div class="section" id="steadyList"></div>
+
+  <div class="bucket-divider safe-div">
+    <div class="div-icon">🛡</div>
+    <div class="div-info">
+      <div class="div-name">保一保（5 所）</div>
+      <div class="div-desc">录取概率 &gt; 80% · 稳妥的底线保障</div>
+    </div>
+  </div>
+  <div class="section" id="safeList"></div>
+
+  <div class="section">
+    <div class="truth-block" id="truthBlock"></div>
+  </div>
+
+  <div class="result-actions">
+    <button class="btn-share" onclick="shareResult()">📤 转发给家人 / 同学</button>
+    <button class="btn-restart" onclick="restartQuiz()">重新测评</button>
+  </div>
+  <div class="disclaimer">
+    ⚠️ 重要声明：本报告基于历史数据与多维度算法预测，仅供志愿填报方向性参考，不构成任何录取保证。录取分数受年度整体成绩分布、招生计划变动等因素影响，最终请以各省考试院及高校正式公布信息为准。个人独立开发 · 数据来源：教育部阳光高考平台及各省考试院公开信息。
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ========================================================
+   DATA LAYER
+   ======================================================== */
+
+// 专业分类（霍兰德代码 + MBTI 倾向 + 行业 + 就业方向 + 风险）
+const MAJORS = [
+  {id:'cs',name:'计算机科学',cat:'工学',holland:['I','R'],mbti:['T','N'],industry:'互联网/科技',career:'软件工程师·算法工程师·产品经理',salary:'18k-40k',risk:[]},
+  {id:'se',name:'软件工程',cat:'工学',holland:['I','R'],mbti:['T','N'],industry:'互联网/科技',career:'后端开发·前端开发·测试工程师',salary:'15k-35k',risk:[]},
+  {id:'ai',name:'人工智能',cat:'工学',holland:['I','R'],mbti:['T','N'],industry:'互联网/AI',career:'AI工程师·数据科学家',salary:'20k-50k',risk:['新兴专业']},
+  {id:'ee',name:'电子信息',cat:'工学',holland:['I','R'],mbti:['T'],industry:'半导体/通信',career:'硬件工程师·通信工程师·射频工程师',salary:'12k-30k',risk:[]},
+  {id:'me',name:'机械工程',cat:'工学',holland:['R','I'],mbti:['T','S'],industry:'制造/汽车',career:'机械工程师·汽车设计·工业设计',salary:'8k-20k',risk:[]},
+  {id:'ce',name:'土木工程',cat:'工学',holland:['R','I'],mbti:['T','S'],industry:'建筑/地产',career:'结构工程师·项目经理',salary:'8k-18k',risk:['就业偏冷']},
+  {id:'chem',name:'化学化工',cat:'理学',holland:['I','R'],mbti:['T','N'],industry:'化工/医药',career:'研发工程师·化验员',salary:'8k-16k',risk:[]},
+  {id:'math',name:'数学统计',cat:'理学',holland:['I'],mbti:['T','N'],industry:'金融/数据/学术',career:'精算师·数据分析师·量化研究员',salary:'12k-35k',risk:[]},
+  {id:'phys',name:'物理学',cat:'理学',holland:['I'],mbti:['T','N'],industry:'科研/教育/半导体',career:'科研人员·教师·工程师',salary:'8k-20k',risk:[]},
+  {id:'bio',name:'生物医学',cat:'理学',holland:['I','S'],mbti:['N','F'],industry:'医药/生命科学',career:'研究员·医疗器械',salary:'8k-18k',risk:['就业偏冷']},
+  {id:'med',name:'临床医学',cat:'医学',holland:['I','S'],mbti:['S','F'],industry:'医疗',career:'医生·外科·内科·全科',salary:'10k-40k',risk:['周期超长']},
+  {id:'nurse',name:'护理学',cat:'医学',holland:['S','R'],mbti:['S','F'],industry:'医疗',career:'护士·护理管理',salary:'7k-14k',risk:[]},
+  {id:'econ',name:'经济学',cat:'经济学',holland:['I','E'],mbti:['T','N'],industry:'金融/咨询/政府',career:'经济分析师·政策研究员',salary:'10k-25k',risk:[]},
+  {id:'fin',name:'金融学',cat:'经济学',holland:['E','I'],mbti:['T','J'],industry:'银行/证券/基金',career:'投行·分析师·基金经理',salary:'15k-60k',risk:['扩招泡沫']},
+  {id:'acc',name:'会计学',cat:'管理学',holland:['C','E'],mbti:['S','J'],industry:'会计/审计',career:'会计师·审计师·财务总监',salary:'8k-18k',risk:['扩招泡沫']},
+  {id:'mgmt',name:'工商管理',cat:'管理学',holland:['E','S'],mbti:['E','J'],industry:'企业管理',career:'管理培训生·创业·运营',salary:'8k-20k',risk:['扩招泡沫']},
+  {id:'law',name:'法学',cat:'法学',holland:['S','E'],mbti:['T','J'],industry:'律师/司法/政府',career:'律师·法官·检察官·法务',salary:'8k-25k',risk:['就业偏冷']},
+  {id:'edu',name:'教育学',cat:'教育学',holland:['S','A'],mbti:['F','J'],industry:'教育/政府',career:'教师·教研员·教育行政',salary:'7k-15k',risk:[]},
+  {id:'chin',name:'汉语言文学',cat:'文学',holland:['A','S'],mbti:['N','F'],industry:'教育/媒体/文化',career:'教师·编辑·新媒体运营',salary:'7k-15k',risk:['就业偏冷']},
+  {id:'eng',name:'英语/外语',cat:'文学',holland:['S','A'],mbti:['E','N'],industry:'教育/外贸/翻译',career:'翻译·教师·外贸专员',salary:'7k-16k',risk:['扩招泡沫']},
+  {id:'hist',name:'历史学',cat:'历史学',holland:['I','A'],mbti:['N'],industry:'教育/文博/学术',career:'教师·文博馆员·研究员',salary:'7k-14k',risk:['就业偏冷']},
+  {id:'jrn',name:'新闻传播',cat:'文学',holland:['A','S','E'],mbti:['E','N'],industry:'媒体/公关/新媒体',career:'记者·编辑·PR·新媒体',salary:'7k-18k',risk:['扩招泡沫']},
+  {id:'design',name:'视觉艺术/设计',cat:'艺术学',holland:['A','I'],mbti:['N','P'],industry:'设计/广告/互联网',career:'UI/UX设计师·品牌设计·插画',salary:'10k-28k',risk:[]},
+  {id:'arch',name:'建筑学',cat:'工学',holland:['A','R'],mbti:['N','J'],industry:'建筑/设计',career:'建筑师·室内设计师',salary:'8k-22k',risk:[]},
+  {id:'psych',name:'心理学',cat:'理学',holland:['I','S'],mbti:['N','F'],industry:'咨询/医疗/教育',career:'心理咨询师·HR·教师',salary:'7k-18k',risk:[]},
+  {id:'pub',name:'公共管理',cat:'管理学',holland:['S','E'],mbti:['J'],industry:'政府/非营利',career:'公务员·社会工作者',salary:'7k-16k',risk:[]},
+  {id:'agri',name:'农林/园艺',cat:'农学',holland:['R','I'],mbti:['S'],industry:'农业/食品/环境',career:'农业技术员·食品检验',salary:'6k-14k',risk:[]},
+  {id:'env',name:'环境科学',cat:'工学',holland:['I','R'],mbti:['T'],industry:'环保/政府',career:'环保工程师·环评咨询',salary:'7k-16k',risk:[]},
+  {id:'inter',name:'国际政治/外交',cat:'法学',holland:['S','E'],mbti:['E','N'],industry:'外交/国际组织/学术',career:'外交官·国际组织·研究员',salary:'8k-20k',risk:[]},
+  {id:'tourism',name:'旅游/酒店管理',cat:'管理学',holland:['S','E','C'],mbti:['E','S'],industry:'旅游/酒店',career:'酒店经理·导游·会展策划·OTA',salary:'5k-12k',risk:[]},
+  {id:'food',name:'食品/营养',cat:'工学',holland:['I','R','C'],mbti:['S','J'],industry:'食品/快消/检验',career:'食品研发·质检·营养师',salary:'6k-13k',risk:[]},
+  {id:'music',name:'音乐/表演',cat:'艺术学',holland:['A','S'],mbti:['F','P'],industry:'文化/教育/演艺',career:'演员·音乐人·教师',salary:'6k-20k',risk:[]},
+  {id:'lit',name:'文学/比较文学',cat:'文学',holland:['A','I'],mbti:['N','F'],industry:'教育/出版/学术',career:'编辑·教师·研究员',salary:'7k-13k',risk:['就业偏冷']},
+  {id:'astro',name:'天文学',cat:'理学',holland:['I'],mbti:['N','T'],industry:'科研/航天',career:'研究员·航天工程师',salary:'8k-22k',risk:['就业偏冷']},
+];
+
+// 院校数据库 (319 所，覆盖 370-682 全分段；参考分为全国均值估算线，实际以各省投档线为准）
+const UNIS = [
+  {id:'u000',name:'北京大学',city:'北京',tier:1,level:'985',type:'综合',ref:680,fee:'pub_high',majors:['cs','math','phys','econ','law','med','hist','chin','psych','inter']},
+  {id:'u001',name:'清华大学',city:'北京',tier:1,level:'985',type:'理工',ref:682,fee:'pub_high',majors:['cs','ai','ee','me','arch','math','phys','econ','mgmt']},
+  {id:'u002',name:'复旦大学',city:'上海',tier:1,level:'985',type:'综合',ref:668,fee:'pub_high',majors:['econ','fin','med','jrn','hist','law','cs','math','phys']},
+  {id:'u003',name:'上海交通大学',city:'上海',tier:1,level:'985',type:'理工',ref:670,fee:'pub_high',majors:['cs','ai','ee','me','med','econ','fin','math','arch']},
+  {id:'u004',name:'浙江大学',city:'杭州',tier:2,level:'985',type:'综合',ref:665,fee:'pub_high',majors:['cs','ai','ee','me','med','econ','fin','arch','bio','chem']},
+  {id:'u005',name:'南京大学',city:'南京',tier:2,level:'985',type:'综合',ref:658,fee:'pub_high',majors:['cs','math','phys','chem','hist','chin','law','econ']},
+  {id:'u006',name:'中国科学技术大学',city:'合肥',tier:2,level:'985',type:'理工',ref:660,fee:'pub_high',majors:['cs','math','phys','chem','bio','ai']},
+  {id:'u007',name:'中国人民大学',city:'北京',tier:1,level:'985',type:'文科强',ref:655,fee:'pub_high',majors:['law','econ','fin','hist','jrn','pub','mgmt','chin']},
+  {id:'u008',name:'武汉大学',city:'武汉',tier:2,level:'985',type:'综合',ref:648,fee:'pub_high',majors:['cs','law','jrn','econ','hist','math','env','mgmt']},
+  {id:'u009',name:'华中科技大学',city:'武汉',tier:2,level:'985',type:'理工',ref:640,fee:'pub_high',majors:['cs','ee','me','med','econ','arch','env','ai']},
+  {id:'u010',name:'中山大学',city:'广州',tier:1,level:'985',type:'综合',ref:650,fee:'pub_high',majors:['med','cs','econ','law','hist','bio','chem','mgmt']},
+  {id:'u011',name:'同济大学',city:'上海',tier:1,level:'985',type:'理工',ref:641,fee:'pub_high',majors:['arch','ce','cs','me','env','econ','design']},
+  {id:'u012',name:'北京师范大学',city:'北京',tier:1,level:'985',type:'师范',ref:640,fee:'pub_high',majors:['edu','psych','hist','chin','math','env','jrn']},
+  {id:'u013',name:'北京航空航天大学',city:'北京',tier:1,level:'985',type:'理工',ref:643,fee:'pub_high',majors:['cs','ee','me','ai','math','phys']},
+  {id:'u014',name:'哈尔滨工业大学',city:'哈尔滨',tier:4,level:'985',type:'理工',ref:638,fee:'pub_high',majors:['cs','ee','me','math','phys','env','arch']},
+  {id:'u015',name:'北京理工大学',city:'北京',tier:1,level:'985',type:'理工',ref:638,fee:'pub_high',majors:['cs','ee','me','ai','math']},
+  {id:'u016',name:'天津大学',city:'天津',tier:2,level:'985',type:'理工',ref:625,fee:'pub_high',majors:['cs','ce','me','arch','env','chem']},
+  {id:'u017',name:'南开大学',city:'天津',tier:2,level:'985',type:'综合',ref:638,fee:'pub_high',majors:['chem','econ','hist','math','fin','law','cs','mgmt']},
+  {id:'u018',name:'东南大学',city:'南京',tier:2,level:'985',type:'理工',ref:628,fee:'pub_high',majors:['cs','ce','arch','ee','me','design']},
+  {id:'u019',name:'华南理工大学',city:'广州',tier:1,level:'985',type:'理工',ref:622,fee:'pub_high',majors:['cs','ee','me','arch','design','chem']},
+  {id:'u020',name:'厦门大学',city:'厦门',tier:2,level:'985',type:'综合',ref:632,fee:'pub_high',majors:['econ','fin','chem','cs','law','mgmt','jrn']},
+  {id:'u021',name:'四川大学',city:'成都',tier:2,level:'985',type:'综合',ref:630,fee:'pub_high',majors:['med','cs','law','hist','chem','econ','mgmt']},
+  {id:'u022',name:'西安交通大学',city:'西安',tier:2,level:'985',type:'理工',ref:632,fee:'pub_high',majors:['cs','ee','me','econ','med','math','fin']},
+  {id:'u023',name:'中南大学',city:'长沙',tier:2,level:'985',type:'理工',ref:624,fee:'pub_high',majors:['med','cs','me','ee','econ','arch']},
+  {id:'u024',name:'山东大学',city:'济南',tier:2,level:'985',type:'综合',ref:618,fee:'pub_high',majors:['med','cs','law','econ','hist','math','chem']},
+  {id:'u025',name:'吉林大学',city:'长春',tier:3,level:'985',type:'综合',ref:608,fee:'pub_high',majors:['cs','me','law','chem','med','econ','hist']},
+  {id:'u026',name:'湖南大学',city:'长沙',tier:2,level:'985',type:'理工',ref:612,fee:'pub_high',majors:['cs','ee','fin','econ','arch','me','design']},
+  {id:'u027',name:'大连理工大学',city:'大连',tier:2,level:'985',type:'理工',ref:620,fee:'pub_high',majors:['cs','me','ce','chem','env','ee','arch']},
+  {id:'u028',name:'重庆大学',city:'重庆',tier:2,level:'985',type:'综合',ref:598,fee:'pub_high',majors:['cs','arch','me','econ','env','ce']},
+  {id:'u029',name:'华东师范大学',city:'上海',tier:1,level:'985',type:'师范',ref:622,fee:'pub_high',majors:['edu','psych','cs','math','hist','chin']},
+  {id:'u030',name:'中国农业大学',city:'北京',tier:1,level:'985',type:'农业',ref:608,fee:'pub_high',majors:['agri','bio','env','food']},
+  {id:'u031',name:'兰州大学',city:'兰州',tier:3,level:'985',type:'综合',ref:590,fee:'pub_high',majors:['math','phys','chem','hist','env','bio']},
+  {id:'u032',name:'东北大学',city:'沈阳',tier:3,level:'985',type:'理工',ref:596,fee:'pub_high',majors:['cs','me','ee','env','math']},
+  {id:'u033',name:'华中农业大学',city:'武汉',tier:2,level:'211',type:'农业',ref:576,fee:'pub_low',majors:['agri','bio','env','food']},
+  {id:'u034',name:'电子科技大学',city:'成都',tier:2,level:'985',type:'理工',ref:634,fee:'pub_high',majors:['cs','ee','ai','se','math','phys']},
+  {id:'u035',name:'北京邮电大学',city:'北京',tier:1,level:'211',type:'理工',ref:628,fee:'pub_high',majors:['cs','se','ee','ai','econ','mgmt']},
+  {id:'u036',name:'上海财经大学',city:'上海',tier:1,level:'211',type:'财经',ref:638,fee:'pub_high',majors:['fin','acc','econ','mgmt','law']},
+  {id:'u037',name:'中央财经大学',city:'北京',tier:1,level:'211',type:'财经',ref:635,fee:'pub_high',majors:['fin','acc','econ','law','mgmt']},
+  {id:'u038',name:'对外经济贸易大学',city:'北京',tier:1,level:'211',type:'财经',ref:628,fee:'pub_high',majors:['fin','econ','law','eng','mgmt']},
+  {id:'u039',name:'北京外国语大学',city:'北京',tier:1,level:'211',type:'外语',ref:620,fee:'pub_high',majors:['eng','inter','law','jrn']},
+  {id:'u040',name:'上海外国语大学',city:'上海',tier:1,level:'211',type:'外语',ref:616,fee:'pub_high',majors:['eng','inter','jrn','law']},
+  {id:'u041',name:'中国政法大学',city:'北京',tier:1,level:'211',type:'政法',ref:624,fee:'pub_high',majors:['law','pub','jrn','inter']},
+  {id:'u042',name:'华东政法大学',city:'上海',tier:1,level:'双一流',type:'政法',ref:604,fee:'pub_low',majors:['law','jrn','pub']},
+  {id:'u043',name:'西南政法大学',city:'重庆',tier:2,level:'双一流',type:'政法',ref:588,fee:'pub_low',majors:['law','pub','jrn']},
+  {id:'u044',name:'北京交通大学',city:'北京',tier:1,level:'211',type:'理工',ref:608,fee:'pub_high',majors:['cs','ee','me','econ','mgmt','se']},
+  {id:'u045',name:'北京科技大学',city:'北京',tier:1,level:'211',type:'理工',ref:608,fee:'pub_high',majors:['cs','me','ee','env','arch']},
+  {id:'u046',name:'中国传媒大学',city:'北京',tier:1,level:'211',type:'传媒',ref:610,fee:'pub_high',majors:['jrn','design','chin','eng']},
+  {id:'u047',name:'暨南大学',city:'广州',tier:1,level:'211',type:'综合',ref:600,fee:'pub_high',majors:['jrn','econ','med','law','fin']},
+  {id:'u048',name:'北京化工大学',city:'北京',tier:1,level:'211',type:'理工',ref:600,fee:'pub_high',majors:['chem','env','cs','me']},
+  {id:'u049',name:'华东理工大学',city:'上海',tier:1,level:'211',type:'理工',ref:608,fee:'pub_high',majors:['chem','env','cs','me']},
+  {id:'u050',name:'河海大学',city:'南京',tier:2,level:'211',type:'理工',ref:596,fee:'pub_low',majors:['ce','env','cs','me','econ']},
+  {id:'u051',name:'江南大学',city:'无锡',tier:2,level:'211',type:'综合',ref:588,fee:'pub_low',majors:['food','design','cs','env']},
+  {id:'u052',name:'苏州大学',city:'苏州',tier:2,level:'211',type:'综合',ref:592,fee:'pub_low',majors:['med','cs','law','econ','design','chin']},
+  {id:'u053',name:'南京航空航天大学',city:'南京',tier:2,level:'211',type:'理工',ref:608,fee:'pub_high',majors:['cs','ee','me','ai','arch']},
+  {id:'u054',name:'南京理工大学',city:'南京',tier:2,level:'211',type:'理工',ref:605,fee:'pub_high',majors:['cs','ee','me','ai']},
+  {id:'u055',name:'郑州大学',city:'郑州',tier:3,level:'211',type:'综合',ref:570,fee:'pub_low',majors:['cs','med','law','econ','chin','hist']},
+  {id:'u056',name:'合肥工业大学',city:'合肥',tier:2,level:'211',type:'理工',ref:574,fee:'pub_low',majors:['cs','me','ee','arch','econ']},
+  {id:'u057',name:'中国海洋大学',city:'青岛',tier:3,level:'985',type:'综合',ref:590,fee:'pub_low',majors:['env','bio','cs','econ','hist']},
+  {id:'u058',name:'武汉理工大学',city:'武汉',tier:2,level:'211',type:'理工',ref:592,fee:'pub_low',majors:['ce','me','cs','arch','design']},
+  {id:'u059',name:'中国地质大学(武汉)',city:'武汉',tier:2,level:'211',type:'理工',ref:576,fee:'pub_low',majors:['env','ce','cs','me']},
+  {id:'u060',name:'华中师范大学',city:'武汉',tier:2,level:'211',type:'师范',ref:590,fee:'pub_low',majors:['edu','psych','hist','chin','math','cs']},
+  {id:'u061',name:'陕西师范大学',city:'西安',tier:3,level:'211',type:'师范',ref:566,fee:'pub_low',majors:['edu','hist','chin','math','cs']},
+  {id:'u062',name:'湖南师范大学',city:'长沙',tier:3,level:'双一流',type:'师范',ref:555,fee:'pub_low',majors:['edu','psych','chin','law','math']},
+  {id:'u063',name:'华南师范大学',city:'广州',tier:1,level:'211',type:'师范',ref:590,fee:'pub_low',majors:['edu','psych','math','cs','chin']},
+  {id:'u064',name:'东北师范大学',city:'长春',tier:3,level:'211',type:'师范',ref:570,fee:'pub_low',majors:['edu','hist','psych','chin','math']},
+  {id:'u065',name:'西南交通大学',city:'成都',tier:2,level:'211',type:'理工',ref:598,fee:'pub_low',majors:['cs','ee','me','ce','arch','econ']},
+  {id:'u066',name:'西北农林科技大学',city:'杨凌',tier:4,level:'985',type:'农业',ref:558,fee:'pub_low',majors:['agri','bio','env','food']},
+  {id:'u067',name:'辽宁大学',city:'沈阳',tier:3,level:'211',type:'综合',ref:558,fee:'pub_low',majors:['econ','law','chin','cs']},
+  {id:'u068',name:'延边大学',city:'延吉',tier:4,level:'211',type:'综合',ref:520,fee:'pub_low',majors:['eng','med','chin','agri']},
+  {id:'u069',name:'海南大学',city:'海口',tier:3,level:'211',type:'综合',ref:560,fee:'pub_low',majors:['agri','env','tourism','cs','law']},
+  {id:'u070',name:'西藏大学',city:'拉萨',tier:4,level:'211',type:'综合',ref:490,fee:'pub_low',majors:['edu','chin','hist']},
+  {id:'u071',name:'青海大学',city:'西宁',tier:4,level:'211',type:'综合',ref:520,fee:'pub_low',majors:['agri','med','ce','cs']},
+  {id:'u072',name:'宁夏大学',city:'银川',tier:4,level:'211',type:'综合',ref:520,fee:'pub_low',majors:['agri','chin','econ','cs']},
+  {id:'u073',name:'新疆大学',city:'乌鲁木齐',tier:4,level:'211',type:'综合',ref:525,fee:'pub_low',majors:['eng','law','math','cs']},
+  {id:'u074',name:'石河子大学',city:'石河子',tier:4,level:'211',type:'综合',ref:510,fee:'pub_low',majors:['agri','med','cs']},
+  {id:'u075',name:'南京农业大学',city:'南京',tier:2,level:'211',type:'农业',ref:572,fee:'pub_low',majors:['agri','bio','env','food']},
+  {id:'u076',name:'中国药科大学',city:'南京',tier:2,level:'211',type:'医药',ref:580,fee:'pub_low',majors:['med','bio','chem','nurse']},
+  {id:'u077',name:'中央民族大学',city:'北京',tier:1,level:'985',type:'综合',ref:610,fee:'pub_high',majors:['hist','chin','law','jrn']},
+  {id:'u078',name:'中国矿业大学',city:'徐州',tier:3,level:'211',type:'理工',ref:570,fee:'pub_low',majors:['env','me','ee','cs']},
+  {id:'u079',name:'中国石油大学(北京)',city:'北京',tier:1,level:'211',type:'理工',ref:598,fee:'pub_low',majors:['env','me','cs','chem']},
+  {id:'u080',name:'中国石油大学(华东)',city:'青岛',tier:3,level:'211',type:'理工',ref:572,fee:'pub_low',majors:['env','me','cs','chem']},
+  {id:'u081',name:'上海大学',city:'上海',tier:1,level:'双一流',type:'综合',ref:570,fee:'pub_low',majors:['cs','econ','design','me','jrn']},
+  {id:'u082',name:'北京工业大学',city:'北京',tier:1,level:'211',type:'理工',ref:580,fee:'pub_low',majors:['cs','me','ee','env','arch']},
+  {id:'u083',name:'福州大学',city:'福州',tier:3,level:'211',type:'综合',ref:556,fee:'pub_low',majors:['cs','me','chem','econ','arch']},
+  {id:'u084',name:'太原理工大学',city:'太原',tier:3,level:'211',type:'理工',ref:548,fee:'pub_low',majors:['cs','me','ee','env','ce']},
+  {id:'u085',name:'内蒙古大学',city:'呼和浩特',tier:4,level:'211',type:'综合',ref:500,fee:'pub_low',majors:['cs','law','hist','econ','chin']},
+  {id:'u086',name:'安徽大学',city:'合肥',tier:2,level:'211',type:'综合',ref:548,fee:'pub_low',majors:['cs','law','econ','chin','math']},
+  {id:'u087',name:'云南大学',city:'昆明',tier:3,level:'211',type:'综合',ref:518,fee:'pub_low',majors:['bio','econ','law','hist','cs']},
+  {id:'u088',name:'贵州大学',city:'贵阳',tier:3,level:'211',type:'综合',ref:508,fee:'pub_low',majors:['cs','law','econ','agri','me']},
+  {id:'u089',name:'广西大学',city:'南宁',tier:3,level:'211',type:'综合',ref:538,fee:'pub_low',majors:['cs','agri','law','econ']},
+  {id:'u090',name:'西北大学',city:'西安',tier:3,level:'211',type:'综合',ref:580,fee:'pub_low',majors:['hist','econ','law','chem','cs']},
+  {id:'u091',name:'深圳大学',city:'深圳',tier:1,level:'双一流',type:'综合',ref:590,fee:'pub_low',majors:['cs','design','econ','jrn','arch']},
+  {id:'u092',name:'南方科技大学',city:'深圳',tier:1,level:'双一流',type:'理工',ref:628,fee:'pub_high',majors:['cs','phys','math','chem','bio']},
+  {id:'u093',name:'上海科技大学',city:'上海',tier:1,level:'双一流',type:'理工',ref:625,fee:'pub_high',majors:['cs','phys','math','bio']},
+  {id:'u094',name:'西湖大学',city:'杭州',tier:2,level:'双一流',type:'理工',ref:640,fee:'pub_high',majors:['phys','math','bio','cs']},
+  {id:'u095',name:'宁波大学',city:'宁波',tier:2,level:'双一流',type:'综合',ref:540,fee:'pub_low',majors:['cs','econ','law','fin','me']},
+  {id:'u096',name:'扬州大学',city:'扬州',tier:3,level:'双一流',type:'综合',ref:530,fee:'pub_low',majors:['agri','edu','cs','me','chin']},
+  {id:'u097',name:'河北大学',city:'保定',tier:3,level:'双一流',type:'综合',ref:520,fee:'pub_low',majors:['cs','law','econ','chin','edu']},
+  {id:'u098',name:'河南大学',city:'开封',tier:3,level:'双一流',type:'综合',ref:548,fee:'pub_low',majors:['edu','chin','cs','econ','hist']},
+  {id:'u099',name:'湘潭大学',city:'湘潭',tier:3,level:'双一流',type:'综合',ref:548,fee:'pub_low',majors:['cs','math','law','chem']},
+  {id:'u100',name:'燕山大学',city:'秦皇岛',tier:3,level:'一本',type:'理工',ref:556,fee:'pub_low',majors:['cs','me','ee','env']},
+  {id:'u101',name:'江苏大学',city:'镇江',tier:3,level:'一本',type:'理工',ref:548,fee:'pub_low',majors:['me','cs','agri','env']},
+  {id:'u102',name:'浙江工业大学',city:'杭州',tier:2,level:'一本',type:'理工',ref:570,fee:'pub_low',majors:['cs','chem','me','env']},
+  {id:'u103',name:'浙江师范大学',city:'金华',tier:3,level:'一本',type:'师范',ref:548,fee:'pub_low',majors:['edu','math','chin','cs']},
+  {id:'u104',name:'华侨大学',city:'泉州',tier:3,level:'一本',type:'综合',ref:538,fee:'pub_low',majors:['cs','econ','law','arch','jrn']},
+  {id:'u105',name:'深圳技术大学',city:'深圳',tier:1,level:'一本',type:'理工',ref:548,fee:'pub_low',majors:['cs','me','design','ee']},
+  {id:'u106',name:'北京语言大学',city:'北京',tier:1,level:'双一流',type:'外语',ref:598,fee:'pub_low',majors:['eng','chin','jrn']},
+  {id:'u107',name:'外交学院',city:'北京',tier:1,level:'双一流',type:'外语',ref:608,fee:'pub_low',majors:['inter','law','eng']},
+  {id:'u108',name:'国际关系学院',city:'北京',tier:1,level:'一本',type:'外语',ref:590,fee:'pub_low',majors:['inter','law','eng']},
+  {id:'u109',name:'北京电影学院',city:'北京',tier:1,level:'双一流',type:'艺术',ref:570,fee:'art',majors:['design','jrn','chin']},
+  {id:'u110',name:'中央戏剧学院',city:'北京',tier:1,level:'双一流',type:'艺术',ref:570,fee:'art',majors:['design','jrn','chin']},
+  {id:'u111',name:'河北工业大学',city:'天津',tier:2,level:'211',type:'理工',ref:568,fee:'pub_low',majors:['cs','me','ee','env','arch']},
+  {id:'u112',name:'天津师范大学',city:'天津',tier:2,level:'一本',type:'师范',ref:548,fee:'pub_low',majors:['edu','psych','chin','cs']},
+  {id:'u113',name:'天津工业大学',city:'天津',tier:2,level:'一本',type:'理工',ref:548,fee:'pub_low',majors:['cs','me','design','env']},
+  {id:'u114',name:'天津财经大学',city:'天津',tier:2,level:'一本',type:'财经',ref:570,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u115',name:'河北师范大学',city:'石家庄',tier:3,level:'一本',type:'师范',ref:538,fee:'pub_low',majors:['edu','chin','math','cs']},
+  {id:'u116',name:'河北农业大学',city:'保定',tier:3,level:'一本',type:'农业',ref:520,fee:'pub_low',majors:['agri','bio','env']},
+  {id:'u117',name:'华北电力大学',city:'北京',tier:1,level:'211',type:'理工',ref:598,fee:'pub_low',majors:['ee','env','cs','me']},
+  {id:'u118',name:'山西大学',city:'太原',tier:3,level:'双一流',type:'综合',ref:548,fee:'pub_low',majors:['hist','chin','math','cs']},
+  {id:'u119',name:'内蒙古工业大学',city:'呼和浩特',tier:4,level:'一本',type:'理工',ref:498,fee:'pub_low',majors:['cs','me','ee']},
+  {id:'u120',name:'沈阳工业大学',city:'沈阳',tier:3,level:'一本',type:'理工',ref:525,fee:'pub_low',majors:['ee','me','cs']},
+  {id:'u121',name:'辽宁工程技术大学',city:'阜新',tier:4,level:'一本',type:'理工',ref:488,fee:'pub_low',majors:['cs','me','env']},
+  {id:'u122',name:'大连海事大学',city:'大连',tier:2,level:'211',type:'理工',ref:588,fee:'pub_low',majors:['env','cs','law','econ']},
+  {id:'u123',name:'东北财经大学',city:'大连',tier:2,level:'一本',type:'财经',ref:598,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u124',name:'东北林业大学',city:'哈尔滨',tier:3,level:'211',type:'农业',ref:548,fee:'pub_low',majors:['agri','bio','env','design']},
+  {id:'u125',name:'黑龙江大学',city:'哈尔滨',tier:3,level:'一本',type:'综合',ref:525,fee:'pub_low',majors:['eng','law','chin','cs']},
+  {id:'u126',name:'哈尔滨工程大学',city:'哈尔滨',tier:3,level:'211',type:'理工',ref:598,fee:'pub_low',majors:['cs','me','ee']},
+  {id:'u127',name:'哈尔滨师范大学',city:'哈尔滨',tier:3,level:'一本',type:'师范',ref:498,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u128',name:'上海理工大学',city:'上海',tier:1,level:'一本',type:'理工',ref:570,fee:'pub_low',majors:['cs','me','ee']},
+  {id:'u129',name:'上海海事大学',city:'上海',tier:1,level:'一本',type:'理工',ref:558,fee:'pub_low',majors:['env','cs','econ']},
+  {id:'u130',name:'上海工程技术大学',city:'上海',tier:1,level:'一本',type:'理工',ref:548,fee:'pub_low',majors:['cs','me','design']},
+  {id:'u131',name:'南京财经大学',city:'南京',tier:2,level:'一本',type:'财经',ref:570,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u132',name:'南京邮电大学',city:'南京',tier:2,level:'一本',type:'理工',ref:588,fee:'pub_low',majors:['cs','ee','se']},
+  {id:'u133',name:'南京工业大学',city:'南京',tier:2,level:'一本',type:'理工',ref:558,fee:'pub_low',majors:['chem','cs','env','me']},
+  {id:'u134',name:'南京医科大学',city:'南京',tier:2,level:'一本',type:'医药',ref:588,fee:'pub_low',majors:['med','nurse']},
+  {id:'u135',name:'南京中医药大学',city:'南京',tier:2,level:'一本',type:'医药',ref:548,fee:'pub_low',majors:['med','nurse']},
+  {id:'u136',name:'南京师范大学',city:'南京',tier:2,level:'211',type:'师范',ref:588,fee:'pub_low',majors:['edu','hist','chin','psych']},
+  {id:'u137',name:'南京信息工程大学',city:'南京',tier:2,level:'双一流',type:'理工',ref:568,fee:'pub_low',majors:['env','cs','math']},
+  {id:'u138',name:'南通大学',city:'南通',tier:3,level:'一本',type:'综合',ref:528,fee:'pub_low',majors:['edu','med','cs','chin']},
+  {id:'u139',name:'江苏科技大学',city:'镇江',tier:3,level:'一本',type:'理工',ref:520,fee:'pub_low',majors:['cs','me','env']},
+  {id:'u140',name:'浙江工商大学',city:'杭州',tier:2,level:'一本',type:'财经',ref:568,fee:'pub_low',majors:['fin','acc','econ','jrn']},
+  {id:'u141',name:'浙江财经大学',city:'杭州',tier:2,level:'一本',type:'财经',ref:558,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u142',name:'杭州电子科技大学',city:'杭州',tier:2,level:'一本',type:'理工',ref:588,fee:'pub_low',majors:['cs','ee','se']},
+  {id:'u143',name:'安徽师范大学',city:'芜湖',tier:3,level:'一本',type:'师范',ref:530,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u144',name:'安徽工业大学',city:'马鞍山',tier:3,level:'一本',type:'理工',ref:510,fee:'pub_low',majors:['cs','me','ee']},
+  {id:'u145',name:'福建师范大学',city:'福州',tier:3,level:'一本',type:'师范',ref:548,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u146',name:'福建农林大学',city:'福州',tier:3,level:'一本',type:'农业',ref:508,fee:'pub_low',majors:['agri','env']},
+  {id:'u147',name:'江西师范大学',city:'南昌',tier:3,level:'一本',type:'师范',ref:528,fee:'pub_low',majors:['edu','chin','psych']},
+  {id:'u148',name:'江西财经大学',city:'南昌',tier:3,level:'一本',type:'财经',ref:576,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u149',name:'南昌大学',city:'南昌',tier:3,level:'211',type:'综合',ref:570,fee:'pub_low',majors:['cs','med','econ','agri']},
+  {id:'u150',name:'山东师范大学',city:'济南',tier:3,level:'一本',type:'师范',ref:548,fee:'pub_low',majors:['edu','chin','psych']},
+  {id:'u151',name:'山东财经大学',city:'济南',tier:3,level:'一本',type:'财经',ref:548,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u152',name:'青岛大学',city:'青岛',tier:3,level:'一本',type:'综合',ref:548,fee:'pub_low',majors:['med','cs','design']},
+  {id:'u153',name:'青岛科技大学',city:'青岛',tier:3,level:'一本',type:'理工',ref:538,fee:'pub_low',majors:['chem','cs','me']},
+  {id:'u154',name:'河南师范大学',city:'新乡',tier:3,level:'一本',type:'师范',ref:525,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u155',name:'河南科技大学',city:'洛阳',tier:3,level:'一本',type:'理工',ref:525,fee:'pub_low',majors:['cs','me','agri']},
+  {id:'u156',name:'河南财经政法大学',city:'郑州',tier:3,level:'一本',type:'财经',ref:520,fee:'pub_low',majors:['fin','law','acc']},
+  {id:'u157',name:'武汉科技大学',city:'武汉',tier:2,level:'一本',type:'理工',ref:558,fee:'pub_low',majors:['cs','me','env']},
+  {id:'u158',name:'湖北大学',city:'武汉',tier:2,level:'一本',type:'综合',ref:548,fee:'pub_low',majors:['edu','chin','cs']},
+  {id:'u159',name:'中南民族大学',city:'武汉',tier:2,level:'一本',type:'综合',ref:538,fee:'pub_low',majors:['hist','law','jrn']},
+  {id:'u160',name:'武汉工程大学',city:'武汉',tier:2,level:'一本',type:'理工',ref:538,fee:'pub_low',majors:['chem','cs','env']},
+  {id:'u161',name:'湖南科技大学',city:'湘潭',tier:3,level:'一本',type:'综合',ref:538,fee:'pub_low',majors:['cs','me','env']},
+  {id:'u162',name:'长沙理工大学',city:'长沙',tier:3,level:'一本',type:'理工',ref:558,fee:'pub_low',majors:['ce','cs','me']},
+  {id:'u163',name:'湖南农业大学',city:'长沙',tier:3,level:'一本',type:'农业',ref:520,fee:'pub_low',majors:['agri','bio','env']},
+  {id:'u164',name:'广东工业大学',city:'广州',tier:1,level:'一本',type:'理工',ref:570,fee:'pub_low',majors:['cs','me','design']},
+  {id:'u165',name:'广州大学',city:'广州',tier:1,level:'一本',type:'综合',ref:558,fee:'pub_low',majors:['cs','jrn','arch']},
+  {id:'u166',name:'华南农业大学',city:'广州',tier:1,level:'一本',type:'农业',ref:548,fee:'pub_low',majors:['agri','bio','env']},
+  {id:'u167',name:'广东外语外贸大学',city:'广州',tier:1,level:'一本',type:'外语',ref:588,fee:'pub_low',majors:['eng','inter','law','jrn']},
+  {id:'u168',name:'广州中医药大学',city:'广州',tier:1,level:'一本',type:'医药',ref:558,fee:'pub_low',majors:['med','nurse']},
+  {id:'u169',name:'汕头大学',city:'汕头',tier:3,level:'一本',type:'综合',ref:528,fee:'pub_low',majors:['med','jrn','cs']},
+  {id:'u170',name:'广西师范大学',city:'桂林',tier:3,level:'一本',type:'师范',ref:520,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u171',name:'广西医科大学',city:'南宁',tier:3,level:'一本',type:'医药',ref:538,fee:'pub_low',majors:['med','nurse']},
+  {id:'u172',name:'海南师范大学',city:'海口',tier:3,level:'一本',type:'师范',ref:510,fee:'pub_low',majors:['edu','chin','tourism']},
+  {id:'u173',name:'重庆邮电大学',city:'重庆',tier:2,level:'一本',type:'理工',ref:558,fee:'pub_low',majors:['cs','ee','se']},
+  {id:'u174',name:'重庆交通大学',city:'重庆',tier:2,level:'一本',type:'理工',ref:538,fee:'pub_low',majors:['ce','cs','me']},
+  {id:'u175',name:'西南大学',city:'重庆',tier:2,level:'211',type:'综合',ref:588,fee:'pub_low',majors:['edu','agri','psych','chin']},
+  {id:'u176',name:'西南财经大学',city:'成都',tier:2,level:'211',type:'财经',ref:610,fee:'pub_high',majors:['fin','acc','econ','mgmt']},
+  {id:'u177',name:'西南民族大学',city:'成都',tier:2,level:'一本',type:'综合',ref:525,fee:'pub_low',majors:['law','hist','chin']},
+  {id:'u178',name:'成都中医药大学',city:'成都',tier:2,level:'一本',type:'医药',ref:538,fee:'pub_low',majors:['med','nurse']},
+  {id:'u179',name:'四川师范大学',city:'成都',tier:2,level:'一本',type:'师范',ref:548,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u180',name:'云南师范大学',city:'昆明',tier:3,level:'一本',type:'师范',ref:520,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u181',name:'昆明理工大学',city:'昆明',tier:3,level:'一本',type:'理工',ref:525,fee:'pub_low',majors:['cs','me','env']},
+  {id:'u182',name:'贵州师范大学',city:'贵阳',tier:3,level:'一本',type:'师范',ref:505,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u183',name:'西安建筑科技大学',city:'西安',tier:3,level:'一本',type:'理工',ref:558,fee:'pub_low',majors:['arch','ce','env']},
+  {id:'u184',name:'西安电子科技大学',city:'西安',tier:3,level:'211',type:'理工',ref:598,fee:'pub_low',majors:['cs','ee','ai','se']},
+  {id:'u185',name:'西北工业大学',city:'西安',tier:3,level:'985',type:'理工',ref:628,fee:'pub_high',majors:['cs','me','ee','ai']},
+  {id:'u186',name:'陕西科技大学',city:'西安',tier:3,level:'一本',type:'理工',ref:520,fee:'pub_low',majors:['chem','design','cs']},
+  {id:'u187',name:'兰州交通大学',city:'兰州',tier:3,level:'一本',type:'理工',ref:510,fee:'pub_low',majors:['cs','me','ce']},
+  {id:'u188',name:'北京联合大学',city:'北京',tier:1,level:'二本',type:'综合',ref:498,fee:'pub_low',majors:['cs','tourism','jrn']},
+  {id:'u189',name:'天津商业大学',city:'天津',tier:2,level:'二本',type:'财经',ref:498,fee:'pub_low',majors:['fin','acc','tourism']},
+  {id:'u190',name:'河北经贸大学',city:'石家庄',tier:3,level:'二本',type:'财经',ref:488,fee:'pub_low',majors:['fin','acc','law']},
+  {id:'u191',name:'石家庄铁道大学',city:'石家庄',tier:3,level:'二本',type:'理工',ref:488,fee:'pub_low',majors:['ce','me','cs']},
+  {id:'u192',name:'唐山师范学院',city:'唐山',tier:4,level:'二本',type:'师范',ref:438,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u193',name:'燕京理工学院',city:'廊坊',tier:3,level:'民办',type:'理工',ref:420,fee:'minban',majors:['cs','me','design']},
+  {id:'u194',name:'河北科技学院',city:'保定',tier:3,level:'民办',type:'综合',ref:410,fee:'minban',majors:['cs','design','econ']},
+  {id:'u195',name:'山西财经大学',city:'太原',tier:3,level:'二本',type:'财经',ref:498,fee:'pub_low',majors:['fin','acc','law']},
+  {id:'u196',name:'山西师范大学',city:'临汾',tier:4,level:'二本',type:'师范',ref:468,fee:'pub_low',majors:['edu','chin','hist']},
+  {id:'u197',name:'沈阳建筑大学',city:'沈阳',tier:3,level:'二本',type:'理工',ref:478,fee:'pub_low',majors:['arch','ce','design']},
+  {id:'u198',name:'沈阳师范大学',city:'沈阳',tier:3,level:'二本',type:'师范',ref:478,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u199',name:'辽宁财贸学院',city:'兴城',tier:4,level:'民办',type:'财经',ref:400,fee:'minban',majors:['fin','acc','econ']},
+  {id:'u200',name:'大连东软信息学院',city:'大连',tier:2,level:'民办',type:'理工',ref:440,fee:'minban',majors:['cs','design','ee']},
+  {id:'u201',name:'长春工业大学',city:'长春',tier:3,level:'二本',type:'理工',ref:488,fee:'pub_low',majors:['cs','me','design']},
+  {id:'u202',name:'长春理工大学',city:'长春',tier:3,level:'二本',type:'理工',ref:498,fee:'pub_low',majors:['cs','ee','me']},
+  {id:'u203',name:'吉林农业大学',city:'长春',tier:3,level:'二本',type:'农业',ref:478,fee:'pub_low',majors:['agri','bio','env']},
+  {id:'u204',name:'哈尔滨学院',city:'哈尔滨',tier:3,level:'二本',type:'综合',ref:438,fee:'pub_low',majors:['edu','chin','design']},
+  {id:'u205',name:'齐齐哈尔大学',city:'齐齐哈尔',tier:4,level:'二本',type:'综合',ref:458,fee:'pub_low',majors:['edu','agri','chem']},
+  {id:'u206',name:'上海立信会计金融学院',city:'上海',tier:1,level:'二本',type:'财经',ref:528,fee:'pub_low',majors:['fin','acc']},
+  {id:'u207',name:'上海应用技术大学',city:'上海',tier:1,level:'二本',type:'理工',ref:498,fee:'pub_low',majors:['cs','me','design']},
+  {id:'u208',name:'上海第二工业大学',city:'上海',tier:1,level:'二本',type:'理工',ref:490,fee:'pub_low',majors:['cs','me','design']},
+  {id:'u209',name:'上海建桥学院',city:'上海',tier:1,level:'民办',type:'综合',ref:458,fee:'minban',majors:['cs','design','jrn']},
+  {id:'u210',name:'江苏理工学院',city:'常州',tier:3,level:'二本',type:'理工',ref:478,fee:'pub_low',majors:['cs','me','edu']},
+  {id:'u211',name:'盐城工学院',city:'盐城',tier:3,level:'二本',type:'理工',ref:478,fee:'pub_low',majors:['cs','me','env']},
+  {id:'u212',name:'淮阴工学院',city:'淮安',tier:3,level:'二本',type:'理工',ref:478,fee:'pub_low',majors:['cs','me','agri']},
+  {id:'u213',name:'南京财经大学红山学院',city:'南京',tier:2,level:'民办',type:'财经',ref:458,fee:'minban',majors:['fin','acc','econ']},
+  {id:'u214',name:'江苏师范大学科文学院',city:'徐州',tier:3,level:'民办',type:'师范',ref:440,fee:'minban',majors:['edu','chin','math']},
+  {id:'u215',name:'浙江外国语学院',city:'杭州',tier:2,level:'二本',type:'外语',ref:498,fee:'pub_low',majors:['eng','tourism','jrn']},
+  {id:'u216',name:'浙江传媒学院',city:'杭州',tier:2,level:'二本',type:'传媒',ref:528,fee:'pub_low',majors:['jrn','design','chin']},
+  {id:'u217',name:'宁波工程学院',city:'宁波',tier:2,level:'二本',type:'理工',ref:498,fee:'pub_low',majors:['cs','me','env']},
+  {id:'u218',name:'温州大学',city:'温州',tier:3,level:'二本',type:'综合',ref:498,fee:'pub_low',majors:['edu','cs','design']},
+  {id:'u219',name:'丽水学院',city:'丽水',tier:4,level:'二本',type:'综合',ref:468,fee:'pub_low',majors:['edu','agri','tourism']},
+  {id:'u220',name:'安徽财经大学',city:'蚌埠',tier:4,level:'二本',type:'财经',ref:498,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u221',name:'合肥学院',city:'合肥',tier:2,level:'二本',type:'综合',ref:478,fee:'pub_low',majors:['cs','me','design']},
+  {id:'u222',name:'安徽建筑大学',city:'合肥',tier:2,level:'二本',type:'理工',ref:498,fee:'pub_low',majors:['arch','ce','env']},
+  {id:'u223',name:'福建工程学院',city:'福州',tier:3,level:'二本',type:'理工',ref:478,fee:'pub_low',majors:['cs','me','arch']},
+  {id:'u224',name:'厦门理工学院',city:'厦门',tier:3,level:'二本',type:'理工',ref:498,fee:'pub_low',majors:['cs','me','design']},
+  {id:'u225',name:'福州外语外贸学院',city:'福州',tier:3,level:'民办',type:'外语',ref:420,fee:'minban',majors:['eng','jrn','econ']},
+  {id:'u226',name:'江西理工大学',city:'赣州',tier:3,level:'二本',type:'理工',ref:488,fee:'pub_low',majors:['env','cs','me']},
+  {id:'u227',name:'华东交通大学',city:'南昌',tier:3,level:'二本',type:'理工',ref:498,fee:'pub_low',majors:['ce','cs','me']},
+  {id:'u228',name:'井冈山大学',city:'吉安',tier:4,level:'二本',type:'综合',ref:458,fee:'pub_low',majors:['edu','chin','agri']},
+  {id:'u229',name:'齐鲁工业大学',city:'济南',tier:3,level:'二本',type:'理工',ref:498,fee:'pub_low',majors:['cs','chem','me']},
+  {id:'u230',name:'烟台大学',city:'烟台',tier:3,level:'二本',type:'综合',ref:498,fee:'pub_low',majors:['cs','law','econ']},
+  {id:'u231',name:'青岛理工大学',city:'青岛',tier:3,level:'二本',type:'理工',ref:498,fee:'pub_low',majors:['arch','ce','cs']},
+  {id:'u232',name:'山东工商学院',city:'烟台',tier:3,level:'二本',type:'财经',ref:478,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u233',name:'河南工业大学',city:'郑州',tier:3,level:'二本',type:'理工',ref:498,fee:'pub_low',majors:['food','cs','me']},
+  {id:'u234',name:'郑州轻工业大学',city:'郑州',tier:3,level:'二本',type:'理工',ref:488,fee:'pub_low',majors:['cs','me','design']},
+  {id:'u235',name:'河南农业大学',city:'郑州',tier:3,level:'二本',type:'农业',ref:478,fee:'pub_low',majors:['agri','bio','env']},
+  {id:'u236',name:'黄淮学院',city:'驻马店',tier:4,level:'二本',type:'综合',ref:438,fee:'pub_low',majors:['edu','agri','design']},
+  {id:'u237',name:'湖北工业大学',city:'武汉',tier:2,level:'二本',type:'理工',ref:508,fee:'pub_low',majors:['cs','me','design']},
+  {id:'u238',name:'江汉大学',city:'武汉',tier:2,level:'二本',type:'综合',ref:498,fee:'pub_low',majors:['cs','design','jrn']},
+  {id:'u239',name:'武昌工学院',city:'武汉',tier:2,level:'民办',type:'综合',ref:430,fee:'minban',majors:['cs','design','econ']},
+  {id:'u240',name:'湖南工业大学',city:'株洲',tier:3,level:'二本',type:'理工',ref:498,fee:'pub_low',majors:['cs','design','me']},
+  {id:'u241',name:'衡阳师范学院',city:'衡阳',tier:4,level:'二本',type:'师范',ref:458,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u242',name:'湖南文理学院',city:'常德',tier:4,level:'二本',type:'综合',ref:458,fee:'pub_low',majors:['edu','chin','agri']},
+  {id:'u243',name:'广东财经大学',city:'广州',tier:1,level:'二本',type:'财经',ref:520,fee:'pub_low',majors:['fin','law','acc']},
+  {id:'u244',name:'广东金融学院',city:'广州',tier:1,level:'二本',type:'财经',ref:510,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u245',name:'广东海洋大学',city:'湛江',tier:3,level:'二本',type:'综合',ref:498,fee:'pub_low',majors:['env','agri','cs']},
+  {id:'u246',name:'五邑大学',city:'江门',tier:3,level:'二本',type:'综合',ref:490,fee:'pub_low',majors:['cs','me','design']},
+  {id:'u247',name:'珠海科技学院',city:'珠海',tier:3,level:'民办',type:'综合',ref:458,fee:'minban',majors:['cs','design','tourism']},
+  {id:'u248',name:'北京师范大学珠海分校',city:'珠海',tier:3,level:'民办',type:'综合',ref:498,fee:'minban',majors:['edu','chin','design']},
+  {id:'u249',name:'广西财经学院',city:'南宁',tier:3,level:'二本',type:'财经',ref:478,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u250',name:'桂林理工大学',city:'桂林',tier:3,level:'二本',type:'理工',ref:478,fee:'pub_low',majors:['env','cs','me']},
+  {id:'u251',name:'北部湾大学',city:'钦州',tier:4,level:'二本',type:'综合',ref:458,fee:'pub_low',majors:['env','cs','me']},
+  {id:'u252',name:'海南医学院',city:'海口',tier:3,level:'二本',type:'医药',ref:498,fee:'pub_low',majors:['med','nurse']},
+  {id:'u253',name:'三亚学院',city:'三亚',tier:3,level:'民办',type:'综合',ref:420,fee:'minban',majors:['tourism','cs','jrn']},
+  {id:'u254',name:'重庆师范大学',city:'重庆',tier:2,level:'二本',type:'师范',ref:498,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u255',name:'重庆工商大学',city:'重庆',tier:2,level:'二本',type:'财经',ref:498,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u256',name:'四川轻化工大学',city:'自贡',tier:4,level:'二本',type:'理工',ref:478,fee:'pub_low',majors:['chem','cs','me']},
+  {id:'u257',name:'成都信息工程大学',city:'成都',tier:2,level:'二本',type:'理工',ref:488,fee:'pub_low',majors:['cs','env','math']},
+  {id:'u258',name:'西华师范大学',city:'南充',tier:4,level:'二本',type:'师范',ref:478,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u259',name:'贵州财经大学',city:'贵阳',tier:3,level:'二本',type:'财经',ref:478,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u260',name:'云南财经大学',city:'昆明',tier:3,level:'二本',type:'财经',ref:498,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u261',name:'云南民族大学',city:'昆明',tier:3,level:'二本',type:'综合',ref:478,fee:'pub_low',majors:['eng','law','hist']},
+  {id:'u262',name:'西藏民族大学',city:'咸阳',tier:4,level:'二本',type:'综合',ref:440,fee:'pub_low',majors:['hist','chin','law']},
+  {id:'u263',name:'陕西师范大学(陕南分校)',city:'汉中',tier:4,level:'二本',type:'师范',ref:478,fee:'pub_low',majors:['edu','chin','math']},
+  {id:'u264',name:'西安外国语大学',city:'西安',tier:3,level:'二本',type:'外语',ref:548,fee:'pub_low',majors:['eng','jrn','inter']},
+  {id:'u265',name:'西安财经大学',city:'西安',tier:3,level:'二本',type:'财经',ref:498,fee:'pub_low',majors:['fin','acc','law']},
+  {id:'u266',name:'兰州财经大学',city:'兰州',tier:3,level:'二本',type:'财经',ref:478,fee:'pub_low',majors:['fin','acc','econ']},
+  {id:'u267',name:'青海民族大学',city:'西宁',tier:4,level:'二本',type:'综合',ref:470,fee:'pub_low',majors:['law','chin','edu','econ']},
+  {id:'u268',name:'北方民族大学',city:'银川',tier:4,level:'二本',type:'综合',ref:460,fee:'pub_low',majors:['hist','law','chin']},
+  {id:'u269',name:'喀什大学',city:'喀什',tier:4,level:'二本',type:'综合',ref:445,fee:'pub_low',majors:['edu','eng','agri']},
+  {id:'u270',name:'上海纽约大学',city:'上海',tier:1,level:'双一流',type:'中外合办',ref:640,fee:'zwhb',majors:['econ','cs','design','math']},
+  {id:'u271',name:'昆山杜克大学',city:'昆山',tier:2,level:'双一流',type:'中外合办',ref:625,fee:'zwhb',majors:['econ','cs','design','math']},
+  {id:'u272',name:'西交利物浦大学',city:'苏州',tier:2,level:'一本',type:'中外合办',ref:590,fee:'zwhb',majors:['cs','econ','design','arch']},
+  {id:'u273',name:'宁波诺丁汉大学',city:'宁波',tier:2,level:'一本',type:'中外合办',ref:570,fee:'zwhb',majors:['econ','cs','design']},
+  {id:'u274',name:'北师大-香港浸会大学联合国际学院',city:'珠海',tier:1,level:'一本',type:'中外合办',ref:590,fee:'zwhb',majors:['econ','jrn','cs']},
+  {id:'u275',name:'深圳北理莫斯科大学',city:'深圳',tier:1,level:'一本',type:'中外合办',ref:590,fee:'zwhb',majors:['math','phys','cs']},
+  {id:'u276',name:'温州肯恩大学',city:'温州',tier:3,level:'一本',type:'中外合办',ref:548,fee:'zwhb',majors:['econ','cs','design']},
+  {id:'u277',name:'广东以色列理工学院',city:'汕头',tier:3,level:'一本',type:'中外合办',ref:550,fee:'zwhb',majors:['cs','env','chem']},
+  {id:'u278',name:'中央美术学院',city:'北京',tier:1,level:'双一流',type:'艺术',ref:570,fee:'art',majors:['design','arch']},
+  {id:'u279',name:'中国美术学院',city:'杭州',tier:2,level:'双一流',type:'艺术',ref:558,fee:'art',majors:['design','arch']},
+  {id:'u280',name:'清华大学美术学院',city:'北京',tier:1,level:'985',type:'艺术',ref:590,fee:'art',majors:['design','arch']},
+  {id:'u281',name:'鲁迅美术学院',city:'沈阳',tier:3,level:'一本',type:'艺术',ref:498,fee:'art',majors:['design']},
+  {id:'u282',name:'中央音乐学院',city:'北京',tier:1,level:'双一流',type:'艺术',ref:548,fee:'art',majors:['music']},
+  {id:'u283',name:'上海音乐学院',city:'上海',tier:1,level:'双一流',type:'艺术',ref:538,fee:'art',majors:['music']},
+  {id:'u284',name:'北京舞蹈学院',city:'北京',tier:1,level:'一本',type:'艺术',ref:498,fee:'art',majors:['music','design']},
+  {id:'u285',name:'上海戏剧学院',city:'上海',tier:1,level:'一本',type:'艺术',ref:538,fee:'art',majors:['design','jrn']},
+  {id:'u286',name:'深圳职业技术大学',city:'深圳',tier:1,level:'专科',type:'理工',ref:440,fee:'zhuanke',majors:['cs','me','design','tourism']},
+  {id:'u287',name:'金华职业技术大学',city:'金华',tier:3,level:'专科',type:'理工',ref:420,fee:'zhuanke',majors:['cs','me','agri']},
+  {id:'u288',name:'天津职业大学',city:'天津',tier:2,level:'专科',type:'理工',ref:410,fee:'zhuanke',majors:['cs','me','tourism']},
+  {id:'u289',name:'北京电子科技职业学院',city:'北京',tier:1,level:'专科',type:'理工',ref:430,fee:'zhuanke',majors:['cs','ee','me']},
+  {id:'u290',name:'上海工艺美术职业学院',city:'上海',tier:1,level:'专科',type:'艺术',ref:420,fee:'zhuanke',majors:['design']},
+  {id:'u291',name:'南京铁道职业技术学院',city:'南京',tier:2,level:'专科',type:'理工',ref:410,fee:'zhuanke',majors:['ce','me']},
+  {id:'u292',name:'广州番禺职业技术学院',city:'广州',tier:1,level:'专科',type:'理工',ref:420,fee:'zhuanke',majors:['cs','me','tourism']},
+  {id:'u293',name:'武汉职业技术学院',city:'武汉',tier:2,level:'专科',type:'理工',ref:390,fee:'zhuanke',majors:['cs','me','design']},
+  {id:'u294',name:'长沙民政职业技术学院',city:'长沙',tier:3,level:'专科',type:'综合',ref:380,fee:'zhuanke',majors:['nurse','tourism','jrn']},
+  {id:'u295',name:'重庆工业职业技术学院',city:'重庆',tier:2,level:'专科',type:'理工',ref:380,fee:'zhuanke',majors:['cs','me','design']},
+  {id:'u296',name:'成都纺织高等专科学校',city:'成都',tier:2,level:'专科',type:'理工',ref:370,fee:'zhuanke',majors:['design','cs']},
+  {id:'u297',name:'陕西工业职业技术学院',city:'咸阳',tier:3,level:'专科',type:'理工',ref:380,fee:'zhuanke',majors:['cs','me']},
+  {id:'u298',name:'厦门大学嘉庚学院',city:'漳州',tier:3,level:'民办',type:'综合',ref:498,fee:'minban',majors:['cs','econ','design']},
+  {id:'u299',name:'北京理工大学珠海学院',city:'珠海',tier:3,level:'民办',type:'理工',ref:478,fee:'minban',majors:['cs','me','design']},
+  {id:'u300',name:'吉林大学珠海学院',city:'珠海',tier:3,level:'民办',type:'综合',ref:478,fee:'minban',majors:['cs','jrn','design']},
+  {id:'u301',name:'武汉学院',city:'武汉',tier:2,level:'民办',type:'综合',ref:455,fee:'minban',majors:['cs','jrn','design']},
+  {id:'u302',name:'武昌首义学院',city:'武汉',tier:2,level:'民办',type:'综合',ref:458,fee:'minban',majors:['cs','design','econ']},
+  {id:'u303',name:'文华学院',city:'武汉',tier:2,level:'民办',type:'综合',ref:445,fee:'minban',majors:['cs','design','econ']},
+  {id:'u304',name:'郑州工商学院',city:'郑州',tier:3,level:'民办',type:'综合',ref:430,fee:'minban',majors:['cs','design','econ']},
+  {id:'u305',name:'黄河科技学院',city:'郑州',tier:3,level:'民办',type:'综合',ref:420,fee:'minban',majors:['cs','design','jrn']},
+  {id:'u306',name:'齐鲁医药学院',city:'淄博',tier:4,level:'民办',type:'医药',ref:440,fee:'minban',majors:['med','nurse']},
+  {id:'u307',name:'北京城市学院',city:'北京',tier:1,level:'民办',type:'综合',ref:480,fee:'minban',majors:['cs','design','jrn']},
+  {id:'u308',name:'首都师范大学科德学院',city:'北京',tier:1,level:'民办',type:'综合',ref:420,fee:'minban',majors:['design','jrn','chin']},
+  {id:'u309',name:'天津天狮学院',city:'天津',tier:2,level:'民办',type:'综合',ref:400,fee:'minban',majors:['cs','design','tourism']},
+  {id:'u310',name:'山东英才学院',city:'济南',tier:3,level:'民办',type:'综合',ref:410,fee:'minban',majors:['cs','design','jrn']},
+  {id:'u311',name:'青岛恒星科技学院',city:'青岛',tier:3,level:'民办',type:'综合',ref:408,fee:'minban',majors:['cs','design','jrn']},
+  {id:'u312',name:'黑龙江外国语学院',city:'哈尔滨',tier:3,level:'民办',type:'外语',ref:410,fee:'minban',majors:['eng','jrn']},
+  {id:'u313',name:'吉林动画学院',city:'长春',tier:3,level:'民办',type:'艺术',ref:420,fee:'minban',majors:['design','jrn']},
+  {id:'u314',name:'海南科技职业大学',city:'海口',tier:3,level:'民办',type:'理工',ref:408,fee:'minban',majors:['cs','me','tourism']},
+  {id:'u315',name:'厦门工学院',city:'厦门',tier:3,level:'民办',type:'理工',ref:445,fee:'minban',majors:['cs','me','design']},
+  {id:'u316',name:'广州工商学院',city:'广州',tier:1,level:'民办',type:'综合',ref:438,fee:'minban',majors:['cs','jrn','econ']},
+  {id:'u317',name:'广东白云学院',city:'广州',tier:1,level:'民办',type:'综合',ref:438,fee:'minban',majors:['cs','design','tourism']},
+  {id:'u318',name:'云南工商学院',city:'昆明',tier:3,level:'民办',type:'综合',ref:408,fee:'minban',majors:['cs','design','tourism']}
+];
+
+
+/* ========================================================
+   QUESTION DEFINITIONS
+   ======================================================== */
+
+const PROVINCES = ['北京','天津','上海','重庆','河北','山西','辽宁','吉林','黑龙江','江苏','浙江','安徽','福建','江西','山东','河南','湖北','湖南','广东','海南','四川','贵州','云南','陕西','甘肸','内蒙古','广西','西藏','新疆','宁夏','青海'];
+
+// Q1-Q18 定义
+const QUESTIONS = [
+  // Step 1: 基础信息
+  {
+    id:'province', step:1, stepName:'Step 1 · 基础信息',
+    title:'你是哪个省市的考生？',
+    subtitle:'选择你参加高考的省份',
+    type:'select', options: PROVINCES,
+  },
+  {
+    id:'examType', step:1, stepName:'Step 1 · 基础信息',
+    title:'你的高考模式是？',
+    subtitle:'选择你所在省份的高考模式',
+    type:'choice', options:[
+      {icon:'📖',title:'传统文科',desc:'语数外 + 文综（历史、政治、地理）'},
+      {icon:'🔬',title:'传统理科',desc:'语数外 + 理综（物理、化学、生物）'},
+      {icon:'⚡',title:'新高考（含物理组）',desc:'3+1+2，首选物理，再选 2 科'},
+      {icon:'📚',title:'新高考（含历史组）',desc:'3+1+2，首选历史，再选 2 科'},
+    ]
+  },
+  {
+    id:'score', step:1, stepName:'Step 1 · 基础信息',
+    title:'你的预估总分是多少？',
+    subtitle:'拖动滑块选择分数，高考前可填模拟分',
+    type:'slider', min:300, max:750, defaultVal:550,
+  },
+  // Step 2: 霍兰德兴趣（6题）
+  {
+    id:'h1', step:2, stepName:'Step 2 · 兴趣发现',
+    title:'周末你更愿意做哪件事？',
+    subtitle:'直觉回答，没有对错',
+    type:'choice2', options:[
+      {icon:'🔧',title:'拆开一台旧电脑研究结构', val:'R'},
+      {icon:'✍️',title:'写一篇电影或小说评论', val:'A'},
+    ]
+  },
+  {
+    id:'h2', step:2, stepName:'Step 2 · 兴趣发现',
+    title:'小组作业时你通常倾向？',
+    subtitle:'',
+    type:'choice2', options:[
+      {icon:'🔍',title:'钻研核心技术或数据分析', val:'I'},
+      {icon:'🤝',title:'协调成员、统筹分工', val:'E'},
+    ]
+  },
+  {
+    id:'h3', step:2, stepName:'Step 2 · 兴趣发现',
+    title:'遇到一道很难的题，你会？',
+    subtitle:'',
+    type:'choice2', options:[
+      {icon:'🧩',title:'一个人反复推演，找到规律', val:'I'},
+      {icon:'💬',title:'找老师或同学一起讨论', val:'S'},
+    ]
+  },
+  {
+    id:'h4', step:2, stepName:'Step 2 · 兴趣发现',
+    title:'你最欣赏的成功方式是？',
+    subtitle:'',
+    type:'choice2', options:[
+      {icon:'🚀',title:'创立一家有影响力的公司', val:'E'},
+      {icon:'🏆',title:'成为某个领域公认的顶尖专家', val:'I'},
+    ]
+  },
+  {
+    id:'h5', step:2, stepName:'Step 2 · 兴趣发现',
+    title:'整理一大堆杂乱资料时，你会？',
+    subtitle:'',
+    type:'choice2', options:[
+      {icon:'🗂️',title:'享受分类归档的过程，很有成就感', val:'C'},
+      {icon:'😮‍💨',title:'觉得烦躁，宁愿去做更有创意的事', val:'A'},
+    ]
+  },
+  {
+    id:'h6', step:2, stepName:'Step 2 · 兴趣发现',
+    title:'看到陌生人情绪低落，你会？',
+    subtitle:'',
+    type:'choice2', options:[
+      {icon:'🫂',title:'主动上前关心，帮他疏导', val:'S'},
+      {icon:'🚶',title:'默默离开，不打扰对方', val:'R'},
+    ]
+  },
+  // Step 3: MBTI（4题）
+  {
+    id:'m1', step:3, stepName:'Step 3 · 性格倾向',
+    title:'参加一个热闹的聚会后，你通常？',
+    subtitle:'',
+    type:'choice2', options:[
+      {icon:'🎉',title:'感觉精力充沛、更有活力', val:'E'},
+      {icon:'😴',title:'感到疲惫，需要独处充电', val:'I'},
+    ]
+  },
+  {
+    id:'m2', step:3, stepName:'Step 3 · 性格倾向',
+    title:'学习一门新技能，你倾向？',
+    subtitle:'',
+    type:'choice2', options:[
+      {icon:'📋',title:'看具体步骤和例子，一步步来', val:'S'},
+      {icon:'🌐',title:'先理解整体框架和原理再展开', val:'N'},
+    ]
+  },
+  {
+    id:'m3', step:3, stepName:'Step 3 · 性格倾向',
+    title:'做重要决定时，你更看重？',
+    subtitle:'',
+    type:'choice2', options:[
+      {icon:'⚖️',title:'逻辑分析、利弊权衡', val:'T'},
+      {icon:'❤️',title:'对自己和他人情感的影响', val:'F'},
+    ]
+  },
+  {
+    id:'m4', step:3, stepName:'Step 3 · 性格倾向',
+    title:'你的日常生活方式更接近？',
+    subtitle:'',
+    type:'choice2', options:[
+      {icon:'📅',title:'计划清晰，喜欢有条理地推进', val:'J'},
+      {icon:'🎲',title:'灵活随性，根据状态临时调整', val:'P'},
+    ]
+  },
+  // Step 4: 城市与家庭（3题）
+  {
+    id:'cityTier', step:4, stepName:'Step 4 · 城市偏好',
+    title:'你对院校所在城市的偏好？',
+    subtitle:'城市选择影响你未来的资源和机会',
+    type:'choice', options:[
+      {icon:'🏙️',title:'北上广深',desc:'一线城市，资源最多，但生活成本高'},
+      {icon:'⭐',title:'新一线城市',desc:'杭州·成都·武汉·南京·西安·重庆等'},
+      {icon:'🏛️',title:'强省会/区域中心',desc:'省内中心城市，兼顾资源与生活质量'},
+      {icon:'🗺️',title:'不限，专业优先',desc:'以专业匹配度为核心考量'},
+    ]
+  },
+  {
+    id:'leaveProvince', step:4, stepName:'Step 4 · 城市偏好',
+    title:'你对出省读书的意愿？',
+    subtitle:'',
+    type:'choice', options:[
+      {icon:'✈️',title:'强烈想出省',desc:'希望开阔眼界，探索新环境'},
+      {icon:'📍',title:'倾向留省',desc:'方便家人照顾，本省高校也不错'},
+      {icon:'🤷',title:'无所谓',desc:'都可以接受'},
+    ]
+  },
+  {
+    id:'familyExpect', step:4, stepName:'Step 4 · 家庭期望',
+    title:'家庭对你未来最主要的期望？',
+    subtitle:'这会影响专业推荐的就业方向权重',
+    type:'choice', options:[
+      {icon:'🏢',title:'体制内稳定',desc:'公务员·事业单位·国企'},
+      {icon:'💰',title:'高薪行业',desc:'互联网·金融·科技创业'},
+      {icon:'🎓',title:'深造读研',desc:'硕博深造，走学术/科研路'},
+      {icon:'🦋',title:'自由发展',desc:'尊重个人兴趣与选择'},
+    ]
+  },
+  // Step 5: 风险偏好（2题）
+  {
+    id:'riskStyle', step:5, stepName:'Step 5 · 填报策略',
+    title:'你的志愿策略偏向？',
+    subtitle:'影响冲稳保的比例分配',
+    type:'choice', options:[
+      {icon:'🔥',title:'激进冲名校',desc:'宁可冒险，不留遗憾'},
+      {icon:'⚖️',title:'均衡配置',desc:'冲稳保均衡，降低风险'},
+      {icon:'🛡️',title:'稳妥保专业',desc:'专业比学校更重要，先保稳'},
+    ]
+  },
+  {
+    id:'obeyAdjust', step:5, stepName:'Step 5 · 填报策略',
+    title:'是否愿意服从专业调剂？',
+    subtitle:'',
+    type:'choice', options:[
+      {icon:'✅',title:'服从调剂',desc:'可以接受同院校其他专业，优先录取'},
+      {icon:'❌',title:'不服从，宁可滑档',desc:'对专业有明确要求，不接受调剂'},
+    ]
+  },
+];
+
+/* ========================================================
+   APP STATE
+   ======================================================== */
+let answers = {};
+let currentQ = 0;
+let profile = {};
+
+/* ========================================================
+   STAR GENERATION
+   ======================================================== */
+function generateStars() {
+  const container = document.getElementById('starsContainer');
+  for (let i = 0; i < 60; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    const size = Math.random() * 2.5 + 0.5;
+    star.style.cssText = `
+      width:${size}px;height:${size}px;
+      left:${Math.random()*100}%;top:${Math.random()*100}%;
+      --d:${(Math.random()*3+2).toFixed(1)}s;
+      --delay:-${(Math.random()*5).toFixed(1)}s;
+    `;
+    container.appendChild(star);
+  }
+}
+generateStars();
+
+/* ========================================================
+   SCREEN TRANSITIONS
+   ======================================================== */
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => {
+    if (s.id !== id) { s.classList.remove('active'); if (s.classList.contains('active')) s.classList.add('exit-left'); }
+  });
+  const target = document.getElementById(id);
+  target.classList.remove('exit-left');
+  setTimeout(() => target.classList.add('active'), 10);
+}
+
+/* ========================================================
+   QUIZ LOGIC
+   ======================================================== */
+function startQuiz() {
+  currentQ = 0;
+  answers = {};
+  showScreen('s-questions');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = QUESTIONS[currentQ];
+  const total = QUESTIONS.length;
+  const pct = Math.round(((currentQ) / total) * 100);
+
+  document.getElementById('stepLabel').textContent = q.stepName;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = (currentQ + 1) + ' / ' + total;
+  document.getElementById('qNum').textContent = 'Q' + (currentQ + 1);
+  document.getElementById('qTitle').textContent = q.title;
+  document.getElementById('qSubtitle').textContent = q.subtitle || '';
+  document.getElementById('stepFeedback').classList.remove('show');
+  document.getElementById('btnBack').style.display = currentQ === 0 ? 'none' : 'flex';
+
+  const content = document.getElementById('qContent');
+  content.innerHTML = '';
+
+  const saved = answers[q.id];
+
+  if (q.type === 'select') {
+    const sel = document.createElement('select');
+    sel.className = 'province-select';
+    sel.innerHTML = '<option value="">-- 请选择省份 --</option>' +
+      q.options.map(p => `<option value="${p}" ${saved===p?'selected':''}>${p}</option>`).join('');
+    sel.addEventListener('change', () => { answers[q.id] = sel.value; checkNext(); });
+    content.appendChild(sel);
+
+  } else if (q.type === 'slider') {
+    const val = saved || q.defaultVal;
+    const wrap = document.createElement('div');
+    wrap.className = 'slider-wrap';
+    wrap.innerHTML = `
+      <div class="slider-display"><span id="scoreVal">${val}</span> <span>分</span></div>
+      <input type="range" class="score-slider" id="scoreSlider"
+        min="${q.min}" max="${q.max}" value="${val}"
+        style="--val:${((val-q.min)/(q.max-q.min)*100).toFixed(1)}%">
+      <div class="slider-labels"><span>${q.min}</span><span>${q.max}</span></div>
+      <div class="score-tier" id="scoreTier">${getScoreTier(val)}</div>
+    `;
+    content.appendChild(wrap);
+    const slider = document.getElementById('scoreSlider');
+    slider.addEventListener('input', () => {
+      const v = +slider.value;
+      document.getElementById('scoreVal').textContent = v;
+      slider.style.setProperty('--val', ((v-q.min)/(q.max-q.min)*100).toFixed(1)+'%');
+      document.getElementById('scoreTier').textContent = getScoreTier(v);
+      answers[q.id] = v;
+      checkNext();
+    });
+    answers[q.id] = val;
+    checkNext();
+
+  } else if (q.type === 'choice') {
+    const div = document.createElement('div');
+    div.className = 'choices';
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'choice-card' + (saved === i ? ' selected' : '');
+      btn.innerHTML = `<span class="choice-icon">${opt.icon}</span><div class="choice-title">${opt.title}</div><div class="choice-desc">${opt.desc}</div>`;
+      btn.addEventListener('click', () => {
+        div.querySelectorAll('.choice-card').forEach(c => c.classList.remove('selected'));
+        btn.classList.add('selected');
+        answers[q.id] = i;
+        checkNext();
+        showStepFeedback(q.id, i, q.options[i].title);
+      });
+      div.appendChild(btn);
+    });
+    content.appendChild(div);
+
+  } else if (q.type === 'choice2') {
+    const div = document.createElement('div');
+    div.className = 'choices';
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'choice-card' + (saved === opt.val ? ' selected' : '');
+      btn.innerHTML = `<span class="choice-icon">${opt.icon}</span><div class="choice-title">${opt.title}</div>`;
+      btn.addEventListener('click', () => {
+        div.querySelectorAll('.choice-card').forEach(c => c.classList.remove('selected'));
+        btn.classList.add('selected');
+        answers[q.id] = opt.val;
+        checkNext();
+      });
+      div.appendChild(btn);
+    });
+    content.appendChild(div);
+  }
+
+  // 滚到顶部
+  document.getElementById('s-questions').scrollTop = 0;
+}
+
+function getScoreTier(score) {
+  if (score >= 660) return '🏆 顶尖层次 · 可冲 985 顶尖（清北复交浙）';
+  if (score >= 630) return '⭐ 优秀层次 · 985/强211 主战场';
+  if (score >= 600) return '✅ 良好层次 · 211/强双一流 核心区间';
+  if (score >= 560) return '📌 中上层次 · 双一流/优质一本 主力区间';
+  if (score >= 520) return '📋 中等层次 · 优质一本/二本 选择较多';
+  if (score >= 470) return '📚 中等层次 · 普通一本 / 优质二本 主力区间';
+  if (score >= 420) return '🎯 中下层次 · 普通二本 / 优质民办 选择空间';
+  if (score >= 380) return '🛤 起步层次 · 民办本科 / 高水平专科 (可专升本)';
+  return '🌱 重在精选 · 高水平专科起步，技能型专业更易就业';
+}
+
+// 学费档位说明
+function getFeeInfo(fee) {
+  const map = {
+    'pub_low':   {badge:'公办',         price:'约 4500-6500/年',  cls:'fee-pub'},
+    'pub_high':  {badge:'公办重点',     price:'约 5000-7000/年',  cls:'fee-pub'},
+    'zwhb':      {badge:'中外合办',     price:'约 4-10万/年',     cls:'fee-zwhb'},
+    'minban':    {badge:'民办/独立学院',price:'约 1.5-3万/年',    cls:'fee-minban'},
+    'art':       {badge:'艺术类',       price:'约 1-2万/年',      cls:'fee-art'},
+    'zhuanke':   {badge:'专科',         price:'约 5000-1.2万/年', cls:'fee-zhuanke'},
+  };
+  return map[fee] || map['pub_low'];
+}
+
+function showStepFeedback(qId, idx, val) {
+  const fb = document.getElementById('stepFeedback');
+  const msgs = {
+    examType:['文科生的你，在人文、法学、经济方向有更多选择空间','理科生的你，理工、计算机、医学方向全面开放','物理组的你，工科/理科方向完全解锁','历史组的你，人文社科、经济、法学是核心选择'],
+    cityTier:['北上广深资源最多，机会最多，也最卷','新一线城市性价比突出，发展势头强劲','省内城市熟悉感强，家庭支持便利','以专业匹配为优先，很理性的选择'],
+    leaveProvince:['出省开拓眼界，好！很多优质高校需要你主动走出去','留省是很务实的选择，许多省份都有不错的高校','只要有好专业，去哪都值得'],
+    familyExpect:['体制内路线：法学、行政管理、会计、汉语言都是不错的选择','高薪路线：计算机、金融、数学统计是核心方向','读研路线：基础学科（数学/物理/化学/生物）更有优势','自由发展：那就完全按你的兴趣和性格来走'],
+    riskStyle:['激进策略：冲名校！报告里冲的比例会更高','均衡策略：稳稳当当，减少遗憾','稳妥策略：专业优先，报告会给你更保险的推荐'],
+    obeyAdjust:['服从调剂可以降低滑档风险，是不错的选择','明确专业意向，坚持自我，也是很好的态度'],
+  };
+  const msg = msgs[qId]?.[idx];
+  if (msg) { fb.textContent = msg; fb.classList.add('show'); }
+}
+
+function checkNext() {
+  const q = QUESTIONS[currentQ];
+  const val = answers[q.id];
+  const hasAnswer = val !== undefined && val !== null && val !== '';
+  document.getElementById('btnNext').disabled = !hasAnswer;
+}
+
+function goNext() {
+  if (currentQ < QUESTIONS.length - 1) {
+    currentQ++;
+    renderQuestion();
+  } else {
+    startLoading();
+  }
+}
+
+function goBack() {
+  if (currentQ > 0) { currentQ--; renderQuestion(); }
+  else { showScreen('s-cover'); }
+}
+
+/* ========================================================
+   LOADING ANIMATION
+   ======================================================== */
+function startLoading() {
+  showScreen('s-loading');
+  const steps = [0,1,2,3,4];
+  const bar = document.getElementById('loadingBar');
+  let i = 0;
+  function nextStep() {
+    if (i > 0) {
+      document.getElementById('ls'+(i-1)).classList.remove('active');
+      document.getElementById('ls'+(i-1)).classList.add('done');
+      document.getElementById('ls'+(i-1)).querySelector('.step-dot').textContent = '✓';
+    }
+    if (i < steps.length) {
+      document.getElementById('ls'+i).classList.add('active');
+      bar.style.width = ((i+1)/steps.length*85)+'%';
+      i++;
+      setTimeout(nextStep, 900 + Math.random()*400);
+    } else {
+      bar.style.width = '100%';
+      setTimeout(() => { buildProfile(); renderResult(); showScreen('s-result'); }, 600);
+    }
+  }
+  // reset
+  for(let j=0;j<5;j++){
+    const el = document.getElementById('ls'+j);
+    el.classList.remove('active','done');
+    el.querySelector('.step-dot').textContent = j+1;
+  }
+  bar.style.width = '0%';
+  setTimeout(nextStep, 400);
+}
+
+/* ========================================================
+   PROFILE BUILDER
+   ======================================================== */
+function buildProfile() {
+  // 分数
+  profile.score = answers.score || 580;
+  profile.province = answers.province || '全国';
+  profile.examType = answers.examType; // 0文1理2物理组3历史组
+
+  // 霍兰德得分
+  const h = {R:0,I:0,A:0,S:0,E:0,C:0};
+  ['h1','h2','h3','h4','h5','h6'].forEach(k => { if(answers[k]) h[answers[k]] = (h[answers[k]]||0)+1; });
+  profile.holland = Object.entries(h).sort((a,b)=>b[1]-a[1]).slice(0,2).map(x=>x[0]);
+
+  // MBTI
+  profile.mbti = (answers.m1||'E')+(answers.m2||'S')+(answers.m3||'T')+(answers.m4||'J');
+
+  // 城市偏好
+  profile.cityTier = answers.cityTier; // 0=一线 1=新一线 2=强省会 3=不限
+  profile.leaveProvince = answers.leaveProvince; // 0=出省 1=留省 2=无所谓
+
+  // 家庭期望
+  profile.familyExpect = answers.familyExpect; // 0体制 1高薪 2深造 3自由
+
+  // 风险
+  profile.riskStyle = answers.riskStyle; // 0激进 1均衡 2稳妥
+  profile.obeyAdjust = answers.obeyAdjust; // 0服从 1不服从
+}
+
+/* ========================================================
+   RECOMMENDATION ENGINE
+   ======================================================== */
+function calcProbability(userScore, refScore) {
+  const diff = userScore - refScore;
+  // sigmoid - 低分段差距更敏感
+  const z = diff / 16;
+  return Math.min(0.97, Math.max(0.03, 1 / (1 + Math.exp(-z * 0.9))));
+}
+
+function calcScoreMatch(userScore, refScore) {
+  const diff = Math.abs(userScore - refScore);
+  if (diff > 50) return 0;
+  return Math.max(0, 1 - diff/50);
+}
+
+function calcHollandMatch(major) {
+  if (!major.holland || !profile.holland) return 0.5;
+  const intersect = major.holland.filter(h => profile.holland.includes(h)).length;
+  return intersect / 2;
+}
+
+function calcMBTIMatch(major) {
+  if (!major.mbti) return 0.5;
+  const userLetters = profile.mbti.split('');
+  const intersect = major.mbti.filter(m => userLetters.includes(m)).length;
+  return intersect / major.mbti.length;
+}
+
+function calcCityMatch(uni) {
+  const pref = profile.cityTier;
+  if (pref === 3) return 1; // 不限
+  const tierMap = {1:0, 2:1, 3:2, 4:3}; // cityTier pref: 0=一线(tier1), 1=新一线(tier2), 2=强省会(tier3)
+  const prefTier = [1,2,3,4][pref];
+  const diff = Math.abs(uni.tier - prefTier);
+  return [1, 0.6, 0.2, 0][Math.min(diff, 3)];
+}
+
+function calcFamilyMatch(major) {
+  const fe = profile.familyExpect;
+  if (fe === undefined) return 0.5;
+  const maps = [
+    // 体制内
+    ['law','pub','edu','acc','chin','hist','inter','nurse'],
+    // 高薪
+    ['cs','se','ai','fin','math','econ','ee','design'],
+    // 深造
+    ['math','phys','chem','bio','cs','psych','hist','env'],
+    // 自由发展
+    ['design','jrn','psych','arch','se','cs','edu'],
+  ];
+  return maps[fe]?.includes(major.id) ? 1 : 0.3;
+}
+
+function calcRisk(major) {
+  const flags = major.risk || [];
+  let penalty = 0;
+  if (flags.includes('扩招泡沫')) penalty += 0.15;
+  if (flags.includes('就业偏冷')) penalty += 0.12;
+  if (flags.includes('周期超长')) penalty += 0.08;
+  return penalty;
+}
+
+function isExamTypeCompatible(major) {
+  const et = profile.examType;
+  if (et === 0) { // 文科
+    const scienceOnly = ['cs','se','ai','ee','me','ce','chem','phys','bio','env','arch','agri','med','nurse','ee'];
+    return !scienceOnly.includes(major.id);
+  }
+  return true; // 理科/新高考全兼容
+}
+
+function recommend() {
+  const candidates = [];
+  const userScore = profile.score;
+  // 低分段适当放宽搜索范围，高分段保持紧凑
+  const delta = userScore < 480 ? 80 : 70;
+
+  UNIS.forEach(uni => {
+    uni.majors.forEach(majorId => {
+      const major = MAJORS.find(m => m.id === majorId);
+      if (!major) return;
+      if (!isExamTypeCompatible(major)) return;
+      const refScore = uni.ref;
+      if (Math.abs(userScore - refScore) > delta + 10) return;
+
+      const prob = calcProbability(userScore, refScore);
+      const scoreMatch = calcScoreMatch(userScore, refScore);
+      const hollandMatch = calcHollandMatch(major);
+      const mbtiMatch = calcMBTIMatch(major);
+      const cityMatch = calcCityMatch(uni);
+      const familyMatch = calcFamilyMatch(major);
+      const risk = calcRisk(major);
+
+      const total =
+        0.35 * scoreMatch +
+        0.20 * hollandMatch +
+        0.15 * mbtiMatch +
+        0.15 * cityMatch +
+        0.10 * familyMatch -
+        0.20 * risk;
+
+      candidates.push({ uni, major, prob, total, scoreMatch, hollandMatch, mbtiMatch, cityMatch, familyMatch, risk, refScore });
+    });
+  });
+
+  candidates.sort((a,b) => b.total - a.total);
+
+  // 去重：同一院校只保留最高分专业
+  const seen = new Set();
+  const deduped = candidates.filter(c => {
+    if (seen.has(c.uni.id)) return false;
+    seen.add(c.uni.id);
+    return true;
+  });
+
+  const riskPref = profile.riskStyle;
+  let rushList, steadyList, safeList;
+
+  if (riskPref === 0) { // 激进
+    rushList = deduped.filter(c=>c.prob<0.45).slice(0,5);
+    steadyList = deduped.filter(c=>c.prob>=0.35&&c.prob<0.85).slice(0,8);
+    safeList = deduped.filter(c=>c.prob>=0.7).slice(0,5);
+  } else if (riskPref === 2) { // 稳妥
+    rushList = deduped.filter(c=>c.prob<0.35).slice(0,3);
+    steadyList = deduped.filter(c=>c.prob>=0.4&&c.prob<0.8).slice(0,8);
+    safeList = deduped.filter(c=>c.prob>=0.75).slice(0,7);
+  } else { // 均衡
+    rushList = deduped.filter(c=>c.prob<0.4).slice(0,5);
+    steadyList = deduped.filter(c=>c.prob>=0.4&&c.prob<0.8).slice(0,8);
+    safeList = deduped.filter(c=>c.prob>=0.8).slice(0,5);
+  }
+
+  // 补充兜底
+  if (rushList.length < 3) rushList = deduped.slice(0,3);
+  if (steadyList.length < 5) steadyList = deduped.slice(3,11);
+  if (safeList.length < 3) safeList = deduped.slice(11,16);
+
+  return { rush: rushList, steady: steadyList, safe: safeList };
+}
+
+/* ========================================================
+   RESULT RENDERER
+   ======================================================== */
+function renderResult() {
+  const rec = recommend();
+  const score = profile.score;
+
+  // 结果标题
+  const hollandNames = {R:'现实型',I:'研究型',A:'艺术型',S:'社会型',E:'企业型',C:'常规型'};
+  document.getElementById('resultTitle').textContent = '你的专属志愿推荐报告';
+
+  // 画像卡片
+  const topMajors = getTopMajorNames();
+  document.getElementById('profileCards').innerHTML = `
+    <div class="profile-card">
+      <div class="profile-card-label">兴趣类型</div>
+      <div class="profile-card-val">
+        ${profile.holland.map(h=>`<span class="tag">${hollandNames[h]||h}</span>`).join('')}
+      </div>
+    </div>
+    <div class="profile-card">
+      <div class="profile-card-label">性格画像</div>
+      <div class="profile-card-val"><span class="tag">${profile.mbti}</span> ${getMBTIDesc(profile.mbti)}</div>
+    </div>
+    <div class="profile-card">
+      <div class="profile-card-label">推荐方向</div>
+      <div class="profile-card-val">${topMajors.join(' · ')}</div>
+    </div>
+    <div class="profile-card">
+      <div class="profile-card-label">填报策略</div>
+      <div class="profile-card-val">${['激进冲名校','均衡配置','稳妥保专业'][profile.riskStyle||1]}</div>
+    </div>
+  `;
+
+  document.getElementById('scoreInfo').innerHTML = `
+    <div class="rsi-score">${score}</div>
+    <div class="rsi-detail">
+      ${profile.province} · ${['文科','理科','新高考物理组','新高考历史组'][profile.examType||1]}<br>
+      ${getScoreTier(score)}<br>
+      服从调剂：${profile.obeyAdjust===0?'是':'否'}
+    </div>
+  `;
+
+  // 渲染三个桶
+  renderBucket('rushList', rec.rush, 'rush');
+  renderBucket('steadyList', rec.steady, 'steady');
+  renderBucket('safeList', rec.safe, 'safe');
+
+  // 真话预警
+  renderTruth(rec);
+
+  // 动画触发
+  setTimeout(() => {
+    document.querySelectorAll('.prob-bar-fill').forEach(el => {
+      el.style.width = el.dataset.width || '0%';
+    });
+    document.querySelectorAll('.match-fill').forEach(el => {
+      el.style.width = el.dataset.width || '0%';
+    });
+  }, 300);
+}
+
+function getTopMajorNames() {
+  const h = profile.holland;
+  const matching = MAJORS.filter(m => m.holland.some(hh => h.includes(hh)));
+  return matching.slice(0,3).map(m=>m.name);
+}
+
+function getMBTIDesc(mbti) {
+  const map = {
+    'INTJ':'战略家','INTP':'逻辑学家','ENTJ':'指挥官','ENTP':'辩论家',
+    'INFJ':'提倡者','INFP':'调停者','ENFJ':'主人公','ENFP':'竞选者',
+    'ISTJ':'检查员','ISFJ':'守卫者','ESTJ':'总经理','ESFJ':'执政官',
+    'ISTP':'鉴赏家','ISFP':'探险家','ESTP':'企业家','ESFP':'表演者',
+  };
+  return map[mbti]||'';
+}
+
+function getLevelTag(level) {
+  if (level==='985') return '<span class="uni-tag tag-985">985</span>';
+  if (level==='211') return '<span class="uni-tag tag-211">211</span>';
+  if (level==='双一流') return '<span class="uni-tag tag-dyl">双一流</span>';
+  return '<span class="uni-tag tag-1b">一本</span>';
+}
+
+function renderBucket(containerId, list, type) {
+  const container = document.getElementById(containerId);
+  if (!list.length) { container.innerHTML = '<div style="padding:16px;color:rgba(255,255,255,.3);font-size:13px;text-align:center">暂无符合条件的院校，请尝试调整分数范围</div>'; return; }
+
+  container.innerHTML = list.map((c, i) => {
+    const probPct = Math.round(c.prob * 100);
+    const matchPct = Math.round(Math.max(0, Math.min(1, c.total + 0.5)) * 100);
+    const diff = c.uni.ref - profile.score;
+    const diffStr = diff > 0 ? `低 ${diff} 分` : diff < 0 ? `超 ${Math.abs(diff)} 分` : '恰好持平';
+    const riskHtml = c.major.risk.length
+      ? c.major.risk.map(r=>`<span class="risk-flag risk-${r==='扩招泡沫'||r==='就业偏冷'?'orange':'red'}">${r}</span>`).join('')
+      : '<span class="risk-flag risk-green">✓ 无明显风险</span>';
+    const fee = getFeeInfo(c.uni.fee || 'pub_low');
+
+    // 重点专业建议（把推荐专业放到最显眼位置 + 同院校其他匹配专业）
+    const altMajors = c.uni.majors
+      .filter(mid => mid !== c.major.id)
+      .slice(0, 2)
+      .map(mid => MAJORS.find(m => m.id === mid))
+      .filter(Boolean)
+      .map(m => `<span class="uni-major-tag">${m.name}</span>`).join('');
+
+    return `
+    <div class="uni-card ${type}">
+      <div class="uni-card-header">
+        <div class="uni-rank-badge">${i+1}</div>
+        <div class="uni-info">
+          <div class="uni-name">${c.uni.name}</div>
+          <div class="uni-major">
+            <span class="uni-major-icon">荐</span>${c.major.name}${altMajors}
+          </div>
+          <div class="uni-fee">
+            <span class="uni-fee-badge ${fee.cls}">${fee.badge}</span>
+            <span>学费 · ${fee.price}</span>
+          </div>
+          <div class="uni-tags">${getLevelTag(c.uni.level)}<span class="uni-tag tag-1b">${c.uni.city}</span>${c.uni.type?`<span class="uni-tag tag-1b">${c.uni.type}</span>`:''}</div>
+        </div>
+      </div>
+      <div class="uni-card-body">
+        <div class="uni-stats">
+          <div class="uni-stat"><div class="uni-stat-val">${c.uni.ref}</div><div class="uni-stat-label">参考分</div></div>
+          <div class="uni-stat"><div class="uni-stat-val" style="color:${diff>0?'#fca5a5':'#86efac'}">${diffStr}</div><div class="uni-stat-label">与你的差</div></div>
+          <div class="uni-stat"><div class="uni-stat-val">${c.major.salary}</div><div class="uni-stat-label">参考月薪</div></div>
+        </div>
+        <div class="match-bar-wrap">
+          <span class="match-label">综合匹配</span>
+          <div class="match-bar"><div class="match-fill" data-width="${matchPct}%" style="width:0%"></div></div>
+          <span class="match-score">${matchPct}%</span>
+        </div>
+        <div class="prob-row">
+          <span class="prob-label">录取概率</span>
+          <div class="prob-bar-wrap"><div class="prob-bar-fill" data-width="${probPct}%" style="width:0%"></div></div>
+          <span class="prob-pct">${probPct}%</span>
+        </div>
+        <div class="risk-flags" style="margin-top:10px">${riskHtml}</div>
+        <div style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.45);line-height:1.8">
+          <div style="color:rgba(255,255,255,.7);margin-bottom:4px">🎯 <b style="color:#c4b5fd">就业方向</b>：${c.major.industry}</div>
+          <div>📋 主要岗位：${c.major.career}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderTruth(rec) {
+  const all = [...rec.rush, ...rec.steady, ...rec.safe];
+  const warnings = [];
+
+  // 检测风险专业
+  const riskyMajors = all.filter(c => c.major.risk.length > 0);
+  const uniqueRisks = [...new Set(riskyMajors.map(c => c.major.name + '（' + c.major.risk.join('、') + '）'))];
+  if (uniqueRisks.length) {
+    warnings.push('推荐列表中有部分专业需要关注：' + uniqueRisks.slice(0,3).join('，') + '。请仔细了解就业情况后再做决定。');
+  }
+
+  // 城市提示
+  if (profile.cityTier === 0) {
+    warnings.push('你偏好一线城市，竞争激烈。北京名额分配对外省考生不利，上海交大/复旦在外省投档分数很高，建议多了解各省排名情况。');
+  }
+  if (profile.leaveProvince === 0) {
+    warnings.push('出省意愿强，这是明智之举。很多 211/985 在外省招生较少，建议提前关注各校的本省外省分数差异。');
+  }
+
+  // 考研提示
+  if (profile.familyExpect === 2) {
+    warnings.push('深造路线：数学/物理/计算机/生物等基础学科考研/出国通道比较完善。但要注意院校的保研率和国际合作情况，尽量选保研比例高的学校。');
+  }
+
+  // 服从调剂
+  if (profile.obeyAdjust === 1) {
+    warnings.push('你选择了不服从调剂——这意味着该专业志愿一旦全满，你将退档进入下一所学校，滑档风险更高。建议保档院校一定要稳！');
+  }
+
+  // 录取分参考说明
+  warnings.push('本报告的"参考录取线"为全国均值估算，不同省份实际投档线存在 ±20–50 分的较大差异。务必结合你所在省份的历史一分一段表和院校分省招生计划做最终判断。');
+
+  document.getElementById('truthBlock').innerHTML = `
+    <div class="truth-title">⚠️ 给你的真话提示</div>
+    ${warnings.map(w=>`<div class="truth-item">${w}</div>`).join('')}
+  `;
+}
+
+/* ========================================================
+   SHARE & RESTART
+   ======================================================== */
+function shareResult() {
+  if (navigator.share) {
+    navigator.share({
+      title: '志愿罗盘 · 高考志愿智能测评',
+      text: `我的高考志愿已测评完成！分数 ${profile.score} 分，快来试试你的最优志愿方向 →`,
+      url: window.location.href,
+    }).catch(() => {});
+  } else {
+    showToast('请截图分享给家人和同学 📸');
+  }
+}
+
+function restartQuiz() {
+  currentQ = 0;
+  answers = {};
+  profile = {};
+  showScreen('s-cover');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+/* ========================================================
+   INIT
+   ======================================================== */
+// 初始化第一屏显示封面
+document.getElementById('s-cover').classList.add('active');
+</script>
+</body>
+</html>
