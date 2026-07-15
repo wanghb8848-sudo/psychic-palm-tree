@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>北京天利抖音平台从零到一运营手册 | 总裁办制定下发</title>
+<style>
+:root{
+  --bg:#0A0E15;
+  --panel:#121826;
+  --panel2:#0E141F;
+  --line:rgba(160,180,210,.14);
+  --txt:#EAF0F8;
+  --sub:#93A1B7;
+  --cy:#2AF0E6;      /* 青 = 增长与行动 */
+  --cyd:rgba(42,240,230,.12);
+  --rd:#FE3D5F;      /* 红 = 红线与风险 */
+  --rdd:rgba(254,61,95,.12);
+  --gd:#FFC94D;      /* 金 = 钱与决定 */
+  --num:"DIN Alternate","Bahnschrift","Roboto Condensed","sans-serif-condensed",-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--txt);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","HarmonyOS Sans SC","MiSans","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-size:16px;line-height:1.75;
+  background-image:radial-gradient(60% 38% at 50% -6%,rgba(42,240,230,.10),transparent 70%);
+  background-repeat:no-repeat;
+}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--cy),#7CF5EE);z-index:99;transition:width .1s linear}
+.wrap{max-width:540px;margin:0 auto;padding:0 20px 40px}
+
+/* ---------- 封面 ---------- */
+.cover{min-height:96svh;display:flex;flex-direction:column;justify-content:center;padding:64px 0 40px;position:relative}
+.brand{display:flex;align-items:center;gap:10px;color:var(--sub);font-size:13px;letter-spacing:.14em;margin-bottom:34px}
+.brand b{color:var(--txt);letter-spacing:.06em}
+.brand .dot{width:6px;height:6px;border-radius:50%;background:var(--cy)}
+.kicker{font-size:13px;color:var(--cy);letter-spacing:.32em;margin-bottom:14px;font-weight:600}
+h1{font-size:44px;line-height:1.16;font-weight:900;letter-spacing:.01em}
+h1 .glitch{display:inline-block;text-shadow:2.5px 0 0 rgba(254,61,95,.6),-2.5px 0 0 rgba(42,240,230,.6)}
+.h1sub{font-size:20px;font-weight:700;color:var(--txt);margin-top:14px}
+.h1sub em{font-style:normal;color:var(--cy)}
+.coverdesc{color:var(--sub);font-size:14.5px;margin-top:16px;max-width:32em}
+.coverdesc b{color:var(--txt);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{font-size:12.5px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--sub);background:rgba(255,255,255,.02)}
+.chip.on{border-color:rgba(42,240,230,.45);color:var(--cy);background:var(--cyd)}
+.covermeta{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12.5px;color:var(--sub)}
+.scrollhint{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:var(--sub);font-size:12px;letter-spacing:.2em;animation:float 2.6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}
+
+/* ---------- 发文说明 ---------- */
+.issue{border:1px solid rgba(255,201,77,.45);background:linear-gradient(180deg,rgba(255,201,77,.06),var(--panel));border-radius:18px;padding:20px 18px;margin-top:26px}
+.issue h3{font-size:14px;color:var(--gd);letter-spacing:.2em;font-weight:700;margin-bottom:12px}
+.issue .row{display:flex;gap:14px;font-size:14px;color:var(--sub);padding:9px 0;border-top:1px dashed var(--line)}
+.issue .row:first-of-type{border-top:none}
+.issue .k{flex:none;width:78px;font-weight:700;color:var(--txt)}
+.issue .row b{color:var(--txt);font-weight:600}
+
+/* ---------- 目录 ---------- */
+.toc{padding:30px 0 4px}
+.toc h3{font-size:13px;color:var(--sub);letter-spacing:.3em;font-weight:600;margin-bottom:14px}
+.toc .pt{font-size:12px;color:var(--gd);letter-spacing:.16em;font-weight:700;margin:16px 2px 8px}
+.toclist{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.toclist a{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--txt);font-size:13.5px;padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:var(--panel2)}
+.toclist a i{font-style:normal;font-family:var(--num);color:var(--cy);font-size:12px;font-weight:700}
+.toclist a.gold i{color:var(--gd)}
+
+/* ---------- 篇章分隔 ---------- */
+.part{padding:84px 0 0;text-align:left}
+.part .pk{display:inline-block;font-family:var(--num);font-size:12px;font-weight:800;color:#06231F;background:var(--cy);border-radius:8px;padding:2px 10px;letter-spacing:.18em}
+.part h3{font-size:24px;font-weight:900;margin-top:12px}
+.part h3 em{font-style:normal;color:var(--cy)}
+.part p{font-size:13.5px;color:var(--sub);margin-top:8px}
+.part p b{color:var(--txt);font-weight:600}
+.part .rule{height:1px;background:linear-gradient(90deg,rgba(42,240,230,.5),transparent);margin-top:18px}
+
+/* ---------- 章节通用 ---------- */
+.sec{padding:56px 0 6px;scroll-margin-top:20px}
+.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.eyebrow i{font-style:normal;font-family:var(--num);font-size:13px;font-weight:700;color:var(--cy);border:1px solid rgba(42,240,230,.4);border-radius:8px;padding:2px 8px;background:var(--cyd)}
+.eyebrow span{font-size:12.5px;color:var(--sub);letter-spacing:.22em}
+h2{font-size:28px;font-weight:800;line-height:1.3;letter-spacing:.01em}
+h2 em{font-style:normal;color:var(--cy)}
+.lead{color:var(--sub);font-size:14.5px;margin-top:10px}
+.lead b{color:var(--txt);font-weight:600}
+
+/* ---------- 卡片与统计 ---------- */
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}
+.card h4{font-size:16.5px;font-weight:700;display:flex;align-items:center;gap:8px}
+.card p{font-size:14px;color:var(--sub);margin-top:6px}
+.card p b,.card li b{color:var(--txt);font-weight:600}
+.ok{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--cyd);color:var(--cy);font-size:12px;font-weight:800;flex:none}
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 12px;text-align:center}
+.stat .n{font-family:var(--num);font-size:30px;font-weight:800;color:var(--cy);line-height:1.1;letter-spacing:.01em}
+.stat .n small{font-size:15px;font-weight:700}
+.stat .t{font-size:12px;color:var(--sub);margin-top:6px;line-height:1.5}
+.note{font-size:12.5px;color:var(--sub);margin-top:12px;padding-left:10px;border-left:2px solid var(--line)}
+.note.red{border-left-color:rgba(254,61,95,.5)}
+.note.red b{color:var(--rd)}
+.note b{color:var(--txt)}
+ul.pl{list-style:none;margin-top:10px}
+ul.pl li{position:relative;padding-left:18px;font-size:14px;color:var(--sub);margin-top:8px}
+ul.pl li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:2px;background:var(--cy)}
+ul.pl li b{color:var(--txt);font-weight:600}
+
+/* ---------- 摘要专用 ---------- */
+.sum{display:flex;gap:14px;margin-top:14px}
+.sum .k{flex:none;width:64px;font-size:13px;font-weight:700;color:var(--cy);padding-top:2px;letter-spacing:.06em}
+.sum .v{font-size:14.5px;color:var(--sub)}
+.sum .v b{color:var(--txt);font-weight:600}
+.sumbox{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px 18px;margin-top:16px}
+.sumbox .sum+.sum{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+
+/* ---------- 对比 ---------- */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.vs .col{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 14px}
+.vs .col.hot{border-color:rgba(42,240,230,.4);background:linear-gradient(180deg,rgba(42,240,230,.06),var(--panel))}
+.vs h5{font-size:14px;font-weight:700;margin-bottom:8px}
+.vs .col.hot h5{color:var(--cy)}
+.vs p{font-size:12.5px;color:var(--sub);line-height:1.7}
+
+/* ---------- 表格 ---------- */
+.tbl{width:100%;border-collapse:collapse;margin-top:14px;font-size:13px}
+.tbl th{color:var(--sub);font-weight:600;text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.04em}
+.tbl td{padding:10px 8px;border-bottom:1px solid rgba(160,180,210,.08);color:var(--sub);vertical-align:top}
+.tbl td:first-child{color:var(--txt);font-weight:600}
+.tbl td.r{text-align:right;font-family:var(--num);color:var(--txt);white-space:nowrap}
+.tbl tr.sumr td{border-top:1px solid var(--line);color:var(--cy);font-weight:700}
+.tbl tr.sumr td.r{color:var(--cy)}
+.tbl td b{color:var(--txt);font-weight:600}
+
+/* ---------- 布局图 ---------- */
+.figbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 12px 8px;margin-top:14px}
+.figbox svg{width:100%;height:auto;display:block}
+.figcap{text-align:center;font-size:12px;color:var(--sub);padding:8px 4px 8px}
+
+/* ---------- 步骤 ---------- */
+.step{display:flex;gap:13px;margin-top:14px}
+.step .sn{flex:none;width:30px;height:30px;border-radius:10px;border:1px solid rgba(42,240,230,.4);background:var(--cyd);color:var(--cy);font-family:var(--num);font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.step .bd h4{font-size:15px;font-weight:700}
+.step .bd p{font-size:13.5px;color:var(--sub);margin-top:3px}
+.step .bd p b{color:var(--txt);font-weight:600}
+.sline{margin-left:14px;width:2px;height:12px;background:var(--line)}
+
+/* ---------- 周计划 ---------- */
+.week{display:flex;gap:14px;margin-top:16px}
+.week .wk{flex:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(42,240,230,.4);background:var(--cyd);color:var(--cy);font-family:var(--num);font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+.week .bd h4{font-size:15.5px;font-weight:700}
+.week .bd p{font-size:13.5px;color:var(--sub);margin-top:4px}
+.week .bd p b{color:var(--txt);font-weight:600}
+.wline{margin-left:21px;width:2px;height:14px;background:var(--line)}
+
+/* ---------- 检查清单 ---------- */
+.chk{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:6px 16px 12px;margin-top:14px}
+.chk .it{display:flex;gap:10px;padding:10px 0;border-bottom:1px dashed rgba(160,180,210,.1);font-size:13.5px;color:var(--sub);align-items:flex-start}
+.chk .it:last-child{border-bottom:none}
+.chk .bx{flex:none;width:17px;height:17px;border:1.5px solid rgba(42,240,230,.5);border-radius:5px;margin-top:4px}
+.chk .it b{color:var(--txt);font-weight:600}
+
+/* ---------- 分镜表 ---------- */
+.shot{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:12px}
+.shot .row{display:flex;gap:12px;padding:12px 14px;border-bottom:1px solid rgba(160,180,210,.08);background:var(--panel2)}
+.shot .row:last-child{border-bottom:none}
+.shot .tc{flex:none;width:52px;font-family:var(--num);font-size:12px;font-weight:700;color:var(--cy);padding-top:2px}
+.shot .bd{font-size:13px;color:var(--sub)}
+.shot .bd b{color:var(--txt);font-weight:600}
+.shot .bd .say{display:block;margin-top:4px;color:var(--txt);font-size:13px;background:rgba(42,240,230,.07);border-left:2px solid var(--cy);border-radius:0 8px 8px 0;padding:6px 10px}
+.shot .bd .emo{display:inline-block;margin-top:5px;font-size:11.5px;color:var(--gd);border:1px solid rgba(255,201,77,.35);background:rgba(255,201,77,.08);border-radius:999px;padding:1px 9px}
+
+/* ---------- 视频模板卡 ---------- */
+.vt{border:1px solid var(--line);border-radius:18px;background:var(--panel);margin-top:18px;overflow:hidden}
+.vt .hd{padding:15px 16px 12px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.vt .hd .tg{flex:none;font-size:11px;font-weight:800;color:#06231F;background:var(--cy);border-radius:8px;padding:2px 9px;letter-spacing:.05em}
+.vt .hd h4{font-size:16px;font-weight:800}
+.vt .bd{padding:4px 16px 16px}
+.vt .qa{margin-top:12px}
+.vt .qa h5{font-size:13px;font-weight:700;color:var(--cy);letter-spacing:.05em}
+.vt .qa p{font-size:13.5px;color:var(--sub);margin-top:3px}
+.vt .qa p b{color:var(--txt);font-weight:600}
+
+/* ---------- 话术气泡 ---------- */
+.talk{margin-top:12px}
+.talk .bub{background:rgba(42,240,230,.07);border:1px solid rgba(42,240,230,.22);border-radius:14px 14px 14px 4px;padding:11px 14px;font-size:13.5px;color:var(--txt);margin-top:10px;line-height:1.7}
+.talk .who{font-size:11.5px;color:var(--cy);font-weight:700;letter-spacing:.06em;margin-top:12px}
+.talk .why{font-size:12.5px;color:var(--sub);margin-top:5px;padding-left:10px;border-left:2px solid var(--line)}
+.talk .why b{color:var(--txt)}
+
+/* ---------- 阶段目标 ---------- */
+.stage{border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:14px}
+.stage .hd{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;background:var(--panel)}
+.stage .hd b{font-size:15px}
+.stage .hd span{font-family:var(--num);font-size:12px;color:var(--cy);border:1px solid rgba(42,240,230,.35);border-radius:999px;padding:2px 10px;background:var(--cyd)}
+.stage .bd{padding:12px 16px 14px;background:var(--panel2);font-size:13.5px;color:var(--sub)}
+.stage .bd b{color:var(--txt);font-weight:600}
+
+/* ---------- 预算档位 ---------- */
+.tier{border:1px solid var(--line);border-radius:18px;background:var(--panel);margin-top:16px;overflow:hidden}
+.tier.rec{border-color:rgba(255,201,77,.55);box-shadow:0 0 0 1px rgba(255,201,77,.2),0 14px 40px rgba(0,0,0,.35)}
+.tier .top{padding:16px 18px 12px;display:flex;justify-content:space-between;align-items:flex-start}
+.tier .top h4{font-size:17px;font-weight:800}
+.tier .top .p{font-family:var(--num);font-size:26px;font-weight:800;color:var(--txt);line-height:1}
+.tier .top .p small{font-size:12px;color:var(--sub);font-weight:600;font-family:inherit}
+.tier .badge{font-size:11px;letter-spacing:.1em;color:#1A1406;background:var(--gd);border-radius:999px;padding:3px 10px;font-weight:800}
+.tier .rows{padding:0 18px 14px}
+.tier .rw{display:flex;justify-content:space-between;font-size:13.5px;padding:8px 0;border-top:1px dashed var(--line);color:var(--sub)}
+.tier .rw b{color:var(--txt);font-weight:600;font-family:var(--num)}
+.tier .fit{padding:11px 18px;background:var(--panel2);font-size:12.5px;color:var(--sub);border-top:1px solid var(--line)}
+.tier .fit em{font-style:normal;color:var(--cy)}
+
+/* ---------- 风险 ---------- */
+.risk{display:flex;gap:12px;margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+.risk .tagr{flex:none;font-size:11px;font-weight:800;color:var(--rd);background:var(--rdd);border:1px solid rgba(254,61,95,.35);border-radius:8px;padding:2px 8px;height:fit-content;letter-spacing:.05em}
+.risk .bd h5{font-size:14.5px;font-weight:700}
+.risk .bd p{font-size:13px;color:var(--sub);margin-top:4px}
+.risk .bd p b{color:var(--cy);font-weight:600}
+
+/* ---------- 折叠 ---------- */
+details{background:var(--panel2);border:1px solid var(--line);border-radius:14px;margin-top:12px;overflow:hidden}
+details summary{list-style:none;cursor:pointer;padding:14px 16px;font-size:14.5px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-family:var(--num);color:var(--cy);font-size:18px;font-weight:700}
+details[open] summary::after{content:"−"}
+details .dbd{padding:0 16px 14px;font-size:13.5px;color:var(--sub)}
+details .dbd b{color:var(--txt);font-weight:600}
+
+/* ---------- 决定事项 ---------- */
+.ask{border:1px solid rgba(255,201,77,.45);background:linear-gradient(180deg,rgba(255,201,77,.07),var(--panel));border-radius:18px;padding:18px;margin-top:16px;display:flex;gap:14px}
+.ask .n{flex:none;font-family:var(--num);font-size:22px;font-weight:800;color:var(--gd);width:30px}
+.ask h4{font-size:16px;font-weight:700}
+.ask p{font-size:13.5px;color:var(--sub);margin-top:4px}
+.ask p b{color:var(--txt)}
+
+/* ---------- 尾部 ---------- */
+.foot{margin-top:70px;padding:22px 0 30px;border-top:1px solid var(--line);color:var(--sub);font-size:12px;line-height:1.9}
+.foot b{color:var(--txt)}
+.endline{margin-top:56px;text-align:center}
+.endline .q{font-size:20px;font-weight:800;line-height:1.6}
+.endline .q em{font-style:normal;color:var(--cy)}
+
+/* ---------- 动效 ---------- */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .scrollhint{animation:none}
+}
+@media (max-width:360px){
+  h1{font-size:38px}
+  .statrow{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div class="wrap">
+
+<!-- ================= 封面 ================= -->
+<header class="cover">
+  <div class="brand"><span class="dot"></span><b>北京天利</b><span>总裁办 · 文件</span></div>
+  <div class="kicker">总裁办制定下发 · 新媒体运营中心执行</div>
+  <h1>抖音平台<br><span class="glitch">从零到一</span><br>运营手册</h1>
+  <div class="h1sub">罗技专卖店 · <em>立项依据 + 实操标准 + 执行进度</em> 合订本</div>
+  <p class="coverdesc">本手册回答两层问题:<b>为什么做</b>——市场、资质、打法与投入产出,全部摆在桌面上;<b>怎么做</b>——直播间的灯摆在哪、视频第一句话说什么、主播憋单的台词怎么讲,全部写成照着就能干的操作步骤。手册即任务书:新媒体运营中心按第三篇拆分进度执行,<b>执行进度直接向总裁汇报</b>。</p>
+  <div class="chips">
+    <span class="chip on">总裁办下发</span>
+    <span class="chip on">照着能干</span>
+    <span class="chip on">进度直报总裁</span>
+    <span class="chip">附台词脚本</span>
+    <span class="chip">6 个月路线图</span>
+    <span class="chip">B 档预算执行</span>
+  </div>
+  <div class="covermeta"><span>密级:内部资料 · 请勿外传</span><span>2026 年 7 月</span></div>
+  <div class="scrollhint">下 滑 阅 读</div>
+</header>
+
+<!-- ================= 发文说明 ================= -->
+<div class="issue rv">
+  <h3>发 文 说 明</h3>
+  <div class="row"><div class="k">制发单位</div><div>北京天利<b>总裁办</b>(制定并下发)</div></div>
+  <div class="row"><div class="k">执行单位</div><div>北京天利<b>新媒体运营中心</b>——按本手册第三篇拆分进度,逐周逐日落实到人</div></div>
+  <div class="row"><div class="k">汇报机制</div><div>执行进度<b>直接向总裁汇报</b>:每周一书面数据周报,每月末当面复盘,重大事项即时上报</div></div>
+  <div class="row"><div class="k">生效时间</div><div>自下发之日起生效,<b>下发日即为筹备期(M0)第 1 天</b></div></div>
+</div>
+
+<!-- ================= 目录 ================= -->
+<nav class="toc rv">
+  <h3>本手册结构 · 四篇十八章</h3>
+  <div class="pt">第一篇 · 立项依据(为什么做)</div>
+  <div class="toclist">
+    <a href="#s1"><i>01</i>一页看懂</a>
+    <a href="#s2"><i>02</i>为什么是抖音</a>
+    <a href="#s3"><i>03</i>我们凭什么</a>
+    <a href="#s4"><i>04</i>差异化定位</a>
+    <a href="#s5"><i>05</i>货盘策略</a>
+    <a href="#s6"><i>06</i>增长飞轮</a>
+  </div>
+  <div class="pt">第二篇 · 实操标准(照着能干)</div>
+  <div class="toclist">
+    <a href="#s7"><i>07</i>直播间怎么搭</a>
+    <a href="#s8"><i>08</i>开播前怎么调试</a>
+    <a href="#s9"><i>09</i>抖音凭什么给流量</a>
+    <a href="#s10"><i>10</i>四个视频模板</a>
+    <a href="#s11"><i>11</i>直播怎么播·带台词</a>
+  </div>
+  <div class="pt">第三篇 · 执行进度(运营中心照此拆分)</div>
+  <div class="toclist">
+    <a href="#s12"><i>12</i>M0 筹备作战表</a>
+    <a href="#s13"><i>13</i>M1–3 冷启动</a>
+    <a href="#s14"><i>14</i>M4–6 放量期</a>
+    <a href="#s15" class="gold"><i>15</i>投入产出测算</a>
+  </div>
+  <div class="pt">第四篇 · 保障与汇报</div>
+  <div class="toclist">
+    <a href="#s16"><i>16</i>风险与应对</a>
+    <a href="#s17"><i>17</i>汇报机制与总裁参与</a>
+    <a href="#s18" class="gold"><i>18</i>总裁办下发决定</a>
+  </div>
+</nav>
+
+<!-- ==================================================== -->
+<!-- ================= 第一篇 立项依据 ================== -->
+<!-- ==================================================== -->
+<div class="part rv">
+  <span class="pk">第 一 篇</span>
+  <h3>立项依据:<em>为什么做</em></h3>
+  <p>值不值得做、我们能不能做、怎么花最少的学费把它做成——本篇六章给出完整论证,是全公司统一认识的基础。</p>
+  <div class="rule"></div>
+</div>
+
+<!-- ================= 01 一页看懂 ================= -->
+<section class="sec rv" id="s1">
+  <div class="eyebrow"><i>01</i><span>执行摘要</span></div>
+  <h2>一页看懂本手册</h2>
+  <p class="lead">时间紧可以只读这一页,每一条在后文都有对应章节展开。</p>
+  <div class="sumbox">
+    <div class="sum"><div class="k">做什么</div><div class="v">以<b>「罗技专卖店」</b>入驻抖音,<b>品牌自播(店播)为主阵地</b>,短视频引流种草,千川付费精准放大。</div></div>
+    <div class="sum"><div class="k">凭什么</div><div class="v"><b>罗技书面授权已到手</b>,京津冀+合肥三仓现货,三大平台成熟电商班底与直播实战经验直接复用。</div></div>
+    <div class="sum"><div class="k">怎么赢</div><div class="v">不碰价格红线,与官旗持平;用<b>专属套装 + 赠品组合 + 北方仓速达</b>做"同价不同值"的差异。</div></div>
+    <div class="sum"><div class="k">花多少</div><div class="v">一次性投入约 <b>3.8 万</b>(其中 2 万保证金可退);月度投入<b>按 B 档(6 万/月)执行</b>(总裁办已定,见第 18 章)。</div></div>
+    <div class="sum"><div class="k">何时回</div><div class="v">节奏:<b>8 月筹备 → 9 月开播破冰 → 11 月借双 11 冲单月打平 → 年货节放量</b>,6 个月看到稳定盈利模型。</div></div>
+    <div class="sum"><div class="k">谁来干</div><div class="v"><b>新媒体运营中心</b>按第三篇进度拆分执行;每周数据周报、每月复盘<b>直接向总裁汇报</b>。</div></div>
+    <div class="sum"><div class="k">兜底线</div><div class="v">B 档最坏情况净敞口约 <b>14 万</b>,第 3 个月末设硬性数据决策点,不达标即止损,<b>学费封顶、风险可控</b>。</div></div>
+  </div>
+</section>
+
+<!-- ================= 02 为什么是抖音 ================= -->
+<section class="sec rv" id="s2">
+  <div class="eyebrow"><i>02</i><span>市场判断</span></div>
+  <h2>为什么是抖音,<br>为什么是<em>现在</em></h2>
+  <p class="lead">三组公开数据,回答"这个渠道值不值得公司下场"。</p>
+
+  <div class="statrow">
+    <div class="stat"><div class="n">4.4<small>万亿</small></div><div class="t">2025 年抖音电商 GMV<br>同比 +30%,已超京东</div></div>
+    <div class="stat"><div class="n">8<small>亿+</small></div><div class="t">抖音日活跃用户<br>全网最大流量池</div></div>
+    <div class="stat"><div class="n">70<small>%+</small></div><div class="t">店播+货架占大盘 GMV<br>不靠头部达人也能做</div></div>
+  </div>
+
+  <div class="vs">
+    <div class="col">
+      <h5>淘宝 / 京东 / 拼多多</h5>
+      <p>货架电商,<b style="color:#EAF0F8">"人找货"</b>——用户带着需求来搜索,流量见顶,平台间是存量互抢。公司在这三端已有专业团队,格局稳定。</p>
+    </div>
+    <div class="col hot">
+      <h5>抖 音</h5>
+      <p>兴趣电商,<b style="color:#EAF0F8">"货找人"</b>——内容把需求"演"出来,凭好内容白拿自然流量,是当前唯一还在高速扩张的增量场,也是公司唯一的空白。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4><span class="ok">✓</span>品类正站在平台的风口上</h4>
+    <p>字节高层已把<b>消费电子等耐用品的市场份额突破</b>列为抖音电商现阶段核心战略,平台正向 3C 类目倾斜流量与营销资源——标志性事件:2025 年 10 月苹果入驻抖音,库克本人开播带货。</p>
+  </div>
+  <div class="card">
+    <h4><span class="ok">✓</span>罗技在抖音已被验证,且在加码中国</h4>
+    <p>罗技 G 官方旗舰店(由罗技授权服务商代运营)粉丝超百万、常态化日播——<b>品类需求已被跑通,授权经销商运营抖音本就是罗技认可的渠道模式</b>。罗技全球 CEO 亦公开表态要"赢回中国市场",品牌投入在加大。</p>
+  </div>
+  <p class="note">结论:平台有红利、品类有扶持、品牌在加码,三者同时成立的窗口期不会太长。<b style="color:#EAF0F8">早入场半年,就是早半年积累账号权重与人群资产。</b></p>
+</section>
+
+<!-- ================= 03 我们凭什么 ================= -->
+<section class="sec rv" id="s3">
+  <div class="eyebrow"><i>03</i><span>可行性论证</span></div>
+  <h2>我们手里的<em>五张牌</em></h2>
+  <p class="lead">从 0 到 1 不等于从零开始——天利的家底,决定了我们的起点比绝大多数入场者高。</p>
+
+  <div class="card"><h4><span class="ok">1</span>资质就绪:书面授权已到手</h4>
+    <p>罗技渠道授权书已拿到,<b>专卖店入驻链路即刻可启动</b>。这是行业里最难、最慢的一步,我们已经完成——多数商家卡在这里就进不来。</p></div>
+  <div class="card"><h4><span class="ok">2</span>履约硬底盘:三仓现货</h4>
+    <p>北京、天津、合肥三仓常备现货,抖音 48 小时揽收考核毫无压力,<b>北方件次日可达</b>——发货体验分是抖音流量分配的硬指标,我们天生占优。</p></div>
+  <div class="card"><h4><span class="ok">3</span>运营班底:不是新兵</h4>
+    <p>淘宝、京东、拼多多成熟运营团队 + 直播带货与 618 大促实战经验;客服、售后、财务对账等电商中后台<b>直接复用,零重建成本</b>。</p></div>
+  <div class="card"><h4><span class="ok">4</span>场地设备有基础</h4>
+    <p>直播空间现成,摄影、推流设备已有一部分,<b>一次性投入只需"补齐"而非"置办"</b>,预算直接砍半。</p></div>
+  <div class="card"><h4><span class="ok">5</span>价格合规,不树敌</h4>
+    <p>与官旗价格持平、严守品牌管控——<b>罗技放心、兄弟渠道无冲突</b>,是能被品牌长期支持的健康打法,而非赚一波快钱。</p></div>
+
+  <p class="note red"><b>顺势的机会:</b>2026 年 3 月官旗账号发生内容违规事件后,罗技对抖音渠道的内容合规空前重视。"守规矩、能打仗"的授权店,正是品牌方此刻最需要的合作对象——这恰好是天利 20 余年积累的口碑定位。</p>
+</section>
+
+<!-- ================= 04 差异化定位 ================= -->
+<section class="sec rv" id="s4">
+  <div class="eyebrow"><i>04</i><span>竞争策略</span></div>
+  <h2>和官旗:<br><em>不抢什么</em>,抢什么</h2>
+  <p class="lead">同一品牌两家店,想清楚边界才能共存共赢——这一页也是给罗技看的诚意。</p>
+
+  <div class="vs">
+    <div class="col">
+      <h5 style="color:#FE3D5F">我们不碰</h5>
+      <p>× 价格战(严守品牌管控价)<br>× 官旗的品牌搜索流量<br>× 夸大宣传与擦边内容<br>× 与官旗撞车的大促机制</p>
+    </div>
+    <div class="col hot">
+      <h5>我们主攻</h5>
+      <p>✓ 直播间<b style="color:#EAF0F8">专属套装</b>:同价不同值<br>✓ 兴趣内容流量,与官旗人群错位<br>✓ 北方仓时效与售后响应体验<br>✓ 场景化内容:装备党/开黑/办公升级</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>一句话定位</h4>
+    <p>官旗负责<b>"立品牌"</b>,我们做那家<b>"会来事儿的罗技装备店"</b>——懂游戏、懂办公、送得快、赠品实在,把罗技的货用内容的方式卖给刷视频的年轻人。</p>
+  </div>
+  <ul class="pl">
+    <li><b>套装示例:</b>G304 + 电竞鼠标垫 + 脚贴贴纸 / K380 + 硅胶键盘膜 + 收纳包 / 开黑套装(鼠标+耳机+垫)——赠品成本 3~15 元,用户感知价值 30~100 元。</li>
+    <li><b>人群错位:</b>官旗吃"搜索罗技"的品牌流量,我们用千川吃"刷到心动"的兴趣流量,互不蚕食、共同做大品牌在抖音的盘子。</li>
+  </ul>
+</section>
+
+<!-- ================= 05 货盘策略 ================= -->
+<section class="sec rv" id="s5">
+  <div class="eyebrow"><i>05</i><span>卖什么</span></div>
+  <h2>货盘金字塔:<br>每一层<em>各司其职</em></h2>
+  <p class="lead">主攻 G 系列游戏线(抖音人群年轻、游戏外设是强势类目),办公走量款承接泛人群。</p>
+
+  <table class="tbl">
+    <tr><th>层级</th><th>代表 SKU</th><th>任务 / GMV 占比</th></tr>
+    <tr><td>引流款</td><td>G102 · G304 · K380 · MK275</td><td>百元级、决策快、抖音已验证的爆款,冲量拉新 <b style="color:#2AF0E6">≈50%</b></td></tr>
+    <tr><td>利润款</td><td>G502 X · G335/G435 · MX Keys</td><td>直播间讲解主角,赚钱主力 <b style="color:#2AF0E6">≈40%</b></td></tr>
+    <tr><td>形象款</td><td>GPX 二代 · MX Master 4</td><td>拔调性、留粉丝、大促冲高客单 <b style="color:#2AF0E6">≈10%</b></td></tr>
+  </table>
+
+  <div class="card">
+    <h4>赠品弹药库(差异化的弹药)</h4>
+    <p>电竞鼠标垫 / 键帽套 / 鼠标脚贴 / 收纳包 / 清洁套装——低成本、高感知,按直播节奏灵活加码,<b>不动价格也能"憋单"</b>。</p>
+  </div>
+  <p class="note">公司 925 个 SKU 的产品数据库已建好,首批上架 30~50 个 SKU 按三仓现货深度与官旗活动错位筛选,后续按数据每周汰换。</p>
+</section>
+
+<!-- ================= 06 增长飞轮 ================= -->
+<section class="sec rv" id="s6">
+  <div class="eyebrow"><i>06</i><span>总体打法</span></div>
+  <h2>增长飞轮:<br>一张图讲清<em>怎么转</em></h2>
+  <p class="lead">四个环节首尾相接,每转一圈,账号权重和人群资产都在变厚。</p>
+
+  <div class="card"><h4><span class="ok">①</span>短视频种草 · 每日 1~2 条</h4>
+    <p>开箱测评 / 参数硬核对比 / 游戏与办公场景剧 / <b>三仓实拍"现货信任"</b>类内容,给直播间蓄水、养账号标签。四大模板详见第 10 章。</p></div>
+  <div class="wline"></div>
+  <div class="card"><h4><span class="ok">②</span>直播间承接 · 黄金档店播</h4>
+    <p>固定时段真人开播(抖音对数字人/录播管控严格,前期坚持真人),话术 SOP:憋单款开场 → 引流款过款 → 利润款深讲。完整剧本详见第 11 章。</p></div>
+  <div class="wline"></div>
+  <div class="card"><h4><span class="ok">③</span>千川放大 · 花钱买精准</h4>
+    <p>小额多计划测素材,跑通后加投;<b>保本 ROI 红线 + 日预算上限</b>双保险,付费占比从约 60% 逐月压到 40% 以下的健康态。</p></div>
+  <div class="wline"></div>
+  <div class="card"><h4><span class="ok">④</span>成交沉淀 · 反哺内容</h4>
+    <p>成交人群进粉丝团,连带套装提客单;成交数据回流指导选品与素材方向,<b>越卖越准,越准越省投流费</b>。</p></div>
+
+  <div class="statrow">
+    <div class="stat"><div class="n">GPM</div><div class="t">千次观看成交额<br>直播间效率之锚</div></div>
+    <div class="stat"><div class="n">ROI</div><div class="t">综合投产比<br>花钱的红线</div></div>
+    <div class="stat"><div class="n">UV<small>值</small></div><div class="t">单访客产出<br>货盘健康度</div></div>
+  </div>
+  <p class="note">全程只盯这三个北极星指标,新媒体运营中心每周一将罗盘数据周报<b style="color:#EAF0F8">直报总裁,好坏都摆在桌面上</b>。</p>
+</section>
+
+<!-- ==================================================== -->
+<!-- ================= 第二篇 实操标准 ================== -->
+<!-- ==================================================== -->
+<div class="part rv">
+  <span class="pk">第 二 篇</span>
+  <h3>实操标准:<em>照着能干</em></h3>
+  <p>先说清一件事:抖音电商的本质,是把我们干了二十年的老本行换了个"会自己拉客的柜台"。货、仓库、客服、售后全是现成的,新增的只有两件事——<b>把货讲得让人想买(直播),把人勾进直播间(短视频)</b>。这两件事不需要天才,需要照着练:固定的布光、固定的话术结构、固定的视频套路。本篇五章,就是这套标准动作的说明书,新媒体运营中心全员人手一份、逐条执行。</p>
+  <div class="rule"></div>
+</div>
+
+<!-- ================= 07 直播间怎么搭 ================= -->
+<section class="sec rv" id="s7">
+  <div class="eyebrow"><i>07</i><span>硬件落地 · 第一周就能干完</span></div>
+  <h2>直播间怎么搭:<br>一个房间,<em>五步搭完</em></h2>
+  <p class="lead">用公司现有的一间办公室就行,不用装修队,两个人两天搭完。要求只有三条:<b>15㎡ 左右、够安静、灯光可控</b>(能拉遮光帘,不让太阳光捣乱)。</p>
+
+  <!-- 布局俯视图 -->
+  <div class="figbox">
+    <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,PingFang SC,Microsoft YaHei,sans-serif">
+      <!-- 房间边框 -->
+      <rect x="20" y="20" width="460" height="360" rx="10" fill="none" stroke="rgba(160,180,210,.35)" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="34" y="44" font-size="13" fill="#93A1B7">房间俯视图(约 15㎡)</text>
+      <!-- 背景货架墙 -->
+      <rect x="90" y="30" width="320" height="26" rx="6" fill="rgba(42,240,230,.14)" stroke="#2AF0E6" stroke-width="1.5"/>
+      <text x="250" y="48" font-size="13" fill="#2AF0E6" text-anchor="middle" font-weight="700">① 背景墙:罗技货架陈列 + 发光标志</text>
+      <!-- 主播桌 -->
+      <rect x="160" y="120" width="180" height="46" rx="8" fill="rgba(255,255,255,.06)" stroke="rgba(160,180,210,.5)" stroke-width="1.5"/>
+      <text x="250" y="148" font-size="13" fill="#EAF0F8" text-anchor="middle" font-weight="700">② 主播桌(离背景 1.5 米)</text>
+      <!-- 主播 -->
+      <circle cx="250" cy="100" r="13" fill="rgba(255,201,77,.2)" stroke="#FFC94D" stroke-width="1.5"/>
+      <text x="250" y="105" font-size="11" fill="#FFC94D" text-anchor="middle" font-weight="700">主播</text>
+      <!-- 主灯 -->
+      <circle cx="120" cy="230" r="17" fill="rgba(42,240,230,.14)" stroke="#2AF0E6" stroke-width="1.5"/>
+      <text x="120" y="235" font-size="11" fill="#2AF0E6" text-anchor="middle" font-weight="700">主灯</text>
+      <line x1="132" y1="218" x2="230" y2="132" stroke="rgba(42,240,230,.45)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="66" y="262" font-size="12" fill="#93A1B7">③ 45° 打向人脸</text>
+      <!-- 辅灯 -->
+      <circle cx="380" cy="230" r="17" fill="rgba(42,240,230,.08)" stroke="rgba(42,240,230,.5)" stroke-width="1.5"/>
+      <text x="380" y="235" font-size="11" fill="#2AF0E6" text-anchor="middle" font-weight="700">辅灯</text>
+      <line x1="368" y1="218" x2="272" y2="132" stroke="rgba(42,240,230,.3)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="352" y="262" font-size="12" fill="#93A1B7">④ 另一侧补光,调暗一半</text>
+      <!-- 主机位 -->
+      <rect x="215" y="300" width="70" height="34" rx="8" fill="rgba(254,61,95,.12)" stroke="#FE3D5F" stroke-width="1.5"/>
+      <text x="250" y="322" font-size="12" fill="#FE3D5F" text-anchor="middle" font-weight="700">主机位</text>
+      <line x1="250" y1="300" x2="250" y2="172" stroke="rgba(254,61,95,.4)" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <text x="250" y="356" font-size="12" fill="#93A1B7" text-anchor="middle">⑤ 手机/相机,正对主播,距离约 2 米,略高于视线</text>
+      <!-- 特写机位 -->
+      <rect x="60" y="118" width="60" height="30" rx="8" fill="rgba(255,255,255,.04)" stroke="rgba(160,180,210,.4)" stroke-width="1.2"/>
+      <text x="90" y="138" font-size="11" fill="#93A1B7" text-anchor="middle">特写机位</text>
+      <text x="90" y="168" font-size="10.5" fill="#93A1B7" text-anchor="middle">(拍桌面产品)</text>
+    </svg>
+    <div class="figcap">直播间标准布局:照这张图摆,第一天就能出能看的画面</div>
+  </div>
+
+  <div class="step"><div class="sn">1</div><div class="bd"><h4>背景墙:让人一眼看出"这是罗技专卖店"</h4><p>货架上密集陈列鼠标键盘耳机(<b>陈列密度就是实力感</b>),加一块罗技授权物料的发光标志。墙上挂两三把键盘、几只鼠标做点缀。成本主要是货架和灯箱,约 2,000 元。<b>为什么重要:</b>观众划进直播间的前 1 秒先看背景,背景越像"官方店",停留越久。</p></div></div>
+  <div class="sline"></div>
+  <div class="step"><div class="sn">2</div><div class="bd"><h4>主播桌:离背景墙 1.5 米</h4><p>贴墙坐人会在背景上投影子,画面显脏。桌面铺<b>深色电竞桌垫</b>(顺便就是我们卖的赠品),摆当日主推的 5–6 个产品。</p></div></div>
+  <div class="sline"></div>
+  <div class="step"><div class="sn">3</div><div class="bd"><h4>主灯:一盏 300W 球形柔光灯,45° 角打脸</h4><p>放在主播<b>斜前方 45°、离人约 1.5 米、略高于头顶</b>。这一盏灯决定画面 80% 的质感——脸打亮了,手机画质也显高级;脸黑着,再贵的相机也白搭。约 1,500–2,500 元。</p></div></div>
+  <div class="sline"></div>
+  <div class="step"><div class="sn">4</div><div class="bd"><h4>辅灯:另一侧一块平板补光灯,亮度调到主灯一半</h4><p>作用是把主灯照出来的<b>阴阳脸补匀</b>,但别调太亮——两边一样亮脸会显平、显胖。再关掉房间顶灯,避免头顶出阴影。约 500–800 元。</p></div></div>
+  <div class="sline"></div>
+  <div class="step"><div class="sn">5</div><div class="bd"><h4>机位与声音:前期一部手机就够开播</h4><p><b>主机位:</b>手机横装支架,正对主播、距离约 2 米、镜头略高于眼睛(略俯拍显瘦显精神)。<b>特写机位:</b>侧面再架一部手机拍桌面,讲产品细节时切过去。<b>声音:</b>声卡 + 电容麦,主播离麦<b>一拳距离</b>;空调风扇声在麦里会被放大,开播时关掉。</p></div></div>
+
+  <table class="tbl">
+    <tr><th>要买的东西</th><th>说明</th><th style="text-align:right">预估</th></tr>
+    <tr><td>主灯</td><td>300W 球形柔光灯(南光/金贝这类国产品牌即可)</td><td class="r">≈¥2,000</td></tr>
+    <tr><td>辅灯</td><td>平板补光灯一块</td><td class="r">≈¥600</td></tr>
+    <tr><td>声卡+麦克风</td><td>直播声卡 + 电容麦,人声清楚不炸</td><td class="r">≈¥1,500</td></tr>
+    <tr><td>支架/提词器</td><td>手机支架 ×2、提词器 ×1(新主播的定心丸)</td><td class="r">≈¥1,200</td></tr>
+    <tr><td>背景改造</td><td>货架、发光标志、陈列小道具</td><td class="r">≈¥2,700</td></tr>
+    <tr><td>备用机</td><td>开播专用手机(若现有设备可用则省掉)</td><td class="r">≈¥4,000</td></tr>
+    <tr class="sumr"><td>合计</td><td>已有设备盘点后核减,上限</td><td class="r">≈¥12,000</td></tr>
+  </table>
+  <p class="note">网络单独说一句:直播卡顿 = 观众秒走。给直播间拉一条<b>独立宽带</b>,要求上行速度(往外传的速度)<b>30Mbps 以上</b>,开播时这条网不许别的设备蹭。</p>
+</section>
+
+<!-- ================= 08 调试 ================= -->
+<section class="sec rv" id="s8">
+  <div class="eyebrow"><i>08</i><span>开播前的功课</span></div>
+  <h2>怎么调试:<br>七步调完,<em>照单检查</em></h2>
+  <p class="lead">搭好只是外壳,调试才出专业感。这七步第一次做约半天,之后每天开播前照检查单过一遍,15 分钟搞定。</p>
+
+  <div class="step"><div class="sn">1</div><div class="bd"><h4>调构图</h4><p>主播头顶留一点空,<b>人的眼睛在画面上 1/3 处</b>;产品拿到胸前正好在画面中心。桌面别超过画面下 1/3——观众是来看人和货的,不是看桌子的。</p></div></div>
+  <div class="sline"></div>
+  <div class="step"><div class="sn">2</div><div class="bd"><h4>调灯光</h4><p>看回放里主播的脸:<b>有没有一边亮一边黑?</b>动辅灯。<b>鼠标键盘有没有反光成一片白?</b>把主灯角度抬高一点。黑色外设最容易拍成一坨黑,可在桌面前方加一盏小台灯专打产品。</p></div></div>
+  <div class="sline"></div>
+  <div class="step"><div class="sn">3</div><div class="bd"><h4>调白平衡(就是调"颜色正不正")</h4><p>对着一张白纸让手机校准。标准:<b>白纸拍出来是白的,主播肤色不发黄不发青</b>。罗技产品蓝绿配色多,颜色不正,货看着就廉价。</p></div></div>
+  <div class="sline"></div>
+  <div class="step"><div class="sn">4</div><div class="bd"><h4>调声音</h4><p>戴耳机听自己直播间的回放:人声要<b>清楚、贴耳、无回音</b>。有回音就在房间加吸音棉或挂厚窗帘;有电流声查声卡连线。记住口诀:<b>画面可以将就一天,声音刺耳观众三秒就划走。</b></p></div></div>
+  <div class="sline"></div>
+  <div class="step"><div class="sn">5</div><div class="bd"><h4>测网络</h4><p>手机测速软件测<b>上行 ≥30Mbps</b>,连续测三次都达标才算过。同时把路由器放直播间内,别隔墙。</p></div></div>
+  <div class="sline"></div>
+  <div class="step"><div class="sn">6</div><div class="bd"><h4>理链接(小黄车)</h4><p>购物车里商品的<b>排列顺序 = 今天讲解的顺序</b>,价格、库存、赠品说明提前核对。主播喊"3 号链接"结果 3 号挂错货,是直播间最低级也最常见的事故。</p></div></div>
+  <div class="sline"></div>
+  <div class="step"><div class="sn">7</div><div class="bd"><h4>观众视角自检</h4><p>开播后,用<b>另一部手机以观众身份进自己直播间</b>看 5 分钟:画面清不清、声音同步不同步、链接点得开吗。每天开播头 5 分钟固定有人干这件事。</p></div></div>
+
+  <div class="chk">
+    <div class="it"><span class="bx"></span><div><b>开播前 15 分钟检查单</b>(打印贴在直播间门上)</div></div>
+    <div class="it"><span class="bx"></span><div>灯全开,回放里看脸:无阴阳脸、产品无反光</div></div>
+    <div class="it"><span class="bx"></span><div>戴耳机听人声:清楚、无回音、无电流声</div></div>
+    <div class="it"><span class="bx"></span><div>测速上行 ≥30M;空调、风扇、门窗关好</div></div>
+    <div class="it"><span class="bx"></span><div>小黄车链接顺序、价格、库存、赠品逐条核对</div></div>
+    <div class="it"><span class="bx"></span><div>桌面摆好今日主推 5–6 款 + 赠品堆头(赠品要堆出量感)</div></div>
+    <div class="it"><span class="bx"></span><div>提词器装好本场话术卡;场控手机进直播间盯观众视角</div></div>
+  </div>
+</section>
+
+<!-- ================= 09 抖音凭什么给流量 ================= -->
+<section class="sec rv" id="s9">
+  <div class="eyebrow"><i>09</i><span>拍视频前必须懂的一个道理</span></div>
+  <h2>抖音凭什么给你流量:<br><em>大白话</em>讲透推荐机制</h2>
+  <p class="lead">不懂这个道理,拍一百条视频都是白拍。懂了,就知道后面每个模板为什么那样设计。</p>
+
+  <div class="card">
+    <h4><span class="ok">✓</span>抖音是个"试货员":先小范围试,行就加码</h4>
+    <p>每条视频发出去,抖音先推给<b>三五百人</b>试试水。这批人如果看得久、点赞评论多,就再推给五千人;还行,就推五万人……一轮一轮加码。<b>反过来,头一批人划走了,这条视频就死了。</b>所以我们不是拍给自己看,是拍给"头 500 个陌生人"看——他们只给你 3 秒钟。</p>
+  </div>
+
+  <ul class="pl">
+    <li><b>前 3 秒定生死:</b>第一句话、第一个画面必须有钩子——一个反常识的说法、一个冲突动作、一个悬念。开头如果是"大家好,今天给大家介绍一款鼠标",这条视频已经死了。</li>
+    <li><b>看完比好看重要:</b>抖音最看重"完播率"(多少人看到最后)。所以视频要短(15–30 秒),结尾留个扣子,让人忍不住看完、甚至看第二遍。</li>
+    <li><b>评论是免费流量:</b>有争议、有话题的内容,观众会吵起来,一吵,抖音就判定"这条内容火了",继续加推。所以好视频会<b>故意留一个让人想反驳的点</b>。</li>
+    <li><b>卖的是情绪,不是参数:</b>观众刷抖音是来放松的,不是来上课的。参数(DPI、回报率)要翻译成感受:"开枪不飘""办公室安静到同事以为你没干活"。<b>主播的表情要比平时夸张 20%</b>,镜头会吃掉一半表情。</li>
+  </ul>
+
+  <p class="note">一句话总结:<b>前 3 秒勾住人 → 30 秒内讲完 → 留个扣子引评论 → 情绪到位</b>。下一章四个模板,全是按这个公式设计的。</p>
+</section>
+
+<!-- ================= 10 四个视频模板 ================= -->
+<section class="sec rv" id="s10">
+  <div class="eyebrow"><i>10</i><span>引流视频 · 照着就能开拍</span></div>
+  <h2>四个视频模板:<br>思路、拍法、<em>为什么</em></h2>
+  <p class="lead">全部一部手机可拍,单条拍摄 1–2 小时。每天从四类里挑 1–2 条发,爆了的马上换个产品再拍一遍(叫"翻拍"),不用天天想新创意。</p>
+
+  <!-- 模板 A -->
+  <div class="vt">
+    <div class="hd"><span class="tg">模板 A</span><h4>暴力测试型:「G304 从二楼摔下去还能用吗?」</h4></div>
+    <div class="bd">
+      <div class="shot">
+        <div class="row"><div class="tc">0–3s</div><div class="bd"><b>画面:</b>手拿 G304 伸出窗外/举过头顶,手一松<span class="say">"罗技的鼠标,官方说耐用。今天我替你们摔一个。"</span><span class="emo">情绪:一本正经地搞事,语气平静动作狠</span></div></div>
+        <div class="row"><div class="tc">3–15s</div><div class="bd"><b>画面:</b>慢动作落地 → 捡起来 → 插上电脑,当场打开游戏试点射<span class="say">"外壳一道印。灯,亮。点射……一枪没丢。"</span><span class="emo">情绪:紧张 → 得意,节奏越来越快</span></div></div>
+        <div class="row"><div class="tc">15–25s</div><div class="bd"><b>画面:</b>镜头怼近摔花的鼠标,主播探头<span class="say">"摔花的这只不卖,今晚直播间我们摔给你们看。想看摔键盘的,评论区扣'键盘'。"</span><span class="emo">情绪:留扣子,坏笑收尾</span></div></div>
+      </div>
+      <div class="qa"><h5>为什么这么拍</h5><p>"摔"是冲突,前 3 秒就把人钉住;"官方说耐用,我替你们验证"站在观众一边,天然可信;结尾"扣键盘"直接制造评论——<b>钩子、完播、评论三样全占</b>,是冷启动期涨流量最快的一类。</p></div>
+      <div class="qa"><h5>呈现的效果</h5><p>高完播、高评论,把"耐造、正品、敢玩"的店铺人设立住;直播间同步演摔机,视频观众顺着"想看现场"进直播间。<b>注:摔的是自家样品,数量可控,摔坏算内容成本(百元级)。</b></p></div>
+    </div>
+  </div>
+
+  <!-- 模板 B -->
+  <div class="vt">
+    <div class="hd"><span class="tg">模板 B</span><h4>真实对比型:「29 块的鼠标和 299 的,差在哪?」</h4></div>
+    <div class="bd">
+      <div class="shot">
+        <div class="row"><div class="tc">0–3s</div><div class="bd"><b>画面:</b>两只鼠标拍在桌上,一左一右<span class="say">"这只 29,这只 299。我知道你想说:智商税。别急。"</span><span class="emo">情绪:先替观众把杠抬了,观众反而想看下去</span></div></div>
+        <div class="row"><div class="tc">3–20s</div><div class="bd"><b>画面:</b>特写轮流测三件事:快速甩动看指针飘不飘、连点听声音、掂重量看做工缝隙<span class="say">"甩枪,29 的指针飞了,299 的稳的。声音你自己听。缝隙,一个能塞名片,一个塞不进。"</span><span class="emo">情绪:不吹不黑,像老师傅验货,让画面自己说话</span></div></div>
+        <div class="row"><div class="tc">20–30s</div><div class="bd"><b>画面:</b>把 29 的也摆回去,面对镜头<span class="say">"只聊天办公,29 的真够用,别乱花钱。玩游戏,这 270 块差价买的是你的枪法。你是哪种,评论区说,我推给你合适的。"</span><span class="emo">情绪:实在人,先劝省钱再谈升级</span></div></div>
+      </div>
+      <div class="qa"><h5>为什么这么拍</h5><p>"劝你别乱花钱"的店最让人信,信任才有转化;"你是哪种"逼出评论;看这类视频的人<b>本来就在纠结买鼠标</b>,是离下单最近的精准人群。</p></div>
+      <div class="qa"><h5>呈现的效果</h5><p>播放量不一定最高,但<b>收藏率高、进直播间的人准</b>,挂车直接出单;同款套路可无限翻拍:键盘对比、耳机对比、有线无线对比……一个模板吃半年。</p></div>
+    </div>
+  </div>
+
+  <!-- 模板 C -->
+  <div class="vt">
+    <div class="hd"><span class="tg">模板 C</span><h4>场景共鸣型:「同事的键盘声,让我想辞职」</h4></div>
+    <div class="bd">
+      <div class="shot">
+        <div class="row"><div class="tc">0–3s</div><div class="bd"><b>画面:</b>办公室实景,同事(同事客串)敲机械键盘啪啪震天响,主角戴上耳机也挡不住,表情逐渐狰狞<span class="say">(前 3 秒没有台词,只有键盘声——声音本身就是钩子)</span><span class="emo">情绪:烦躁拉满,表情夸张到位</span></div></div>
+        <div class="row"><div class="tc">3–18s</div><div class="bd"><b>画面:</b>主角默默把一只静音键盘放到同事桌上 → 同事换上,办公室瞬间安静,所有人回头 → 两人对视点头<span class="say">"兄弟,不是你的错,是键盘的错。"</span><span class="emo">情绪:憋笑的正经,反差出喜感</span></div></div>
+        <div class="row"><div class="tc">18–28s</div><div class="bd"><b>画面:</b>特写键盘打字,几乎无声,字幕打出"静音轴"<span class="say">"救一个办公室,只要一把键盘。@你办公室最吵的那位。"</span><span class="emo">情绪:温和收尾,引导@好友转发</span></div></div>
+      </div>
+      <div class="qa"><h5>为什么这么拍</h5><p>键盘吵是全国办公室的共同痛点,<b>共鸣内容会被转发、会@同事</b>,能吃到游戏人群之外的泛流量;剧情不需要演技,靠表情和声音反差就成立,我们自己办公室就是现成片场。</p></div>
+      <div class="qa"><h5>呈现的效果</h5><p>涨粉、打人群标签(办公人群),给账号扩流量池;转化弱于 B 类,但它负责"让更多人认识这家店"。办公线产品(K380、MX 系列)全靠这类内容带。</p></div>
+    </div>
+  </div>
+
+  <!-- 模板 D -->
+  <div class="vt">
+    <div class="hd"><span class="tg">模板 D</span><h4>信任实拍型:「你买的罗技,就是从这儿发的」</h4></div>
+    <div class="bd">
+      <div class="shot">
+        <div class="row"><div class="tc">0–3s</div><div class="bd"><b>画面:</b>仓库大门推开,镜头一路走进去,货架顶天立地全是罗技原箱<span class="say">"网上 99 的罗技你不敢买?进来,我带你看点实的。"</span><span class="emo">情绪:底气,带一点"你随便查"的坦荡</span></div></div>
+        <div class="row"><div class="tc">3–20s</div><div class="bd"><b>画面:</b>随手拆一箱,扫防伪码给镜头看结果;打包台上正在打包的真实订单快进画面<span class="say">"授权书,墙上挂着。防伪码,当着你面扫。北京仓发货,河北的兄弟明天就能到。"</span><span class="emo">情绪:平铺直叙反而最有力,不喊不叫</span></div></div>
+        <div class="row"><div class="tc">20–28s</div><div class="bd"><b>画面:</b>镜头定格在成堆待发的包裹上<span class="say">"每天这个点直播间见,你的订单,当天从这儿出去。"</span><span class="emo">情绪:踏实收尾</span></div></div>
+      </div>
+      <div class="qa"><h5>为什么这么拍</h5><p>买外设的人最大的顾虑就一个字:<b>假</b>。别的店只能嘴上说正品,我们有仓库、有授权书、有防伪码,这是<b>竞争对手抄不走的素材</b>。这类视频不追爆款,追的是"看完敢下单"。</p></div>
+      <div class="qa"><h5>呈现的效果</h5><p>播放平平但<b>转化率最高</b>,挂车出单、沉淀进直播间的都是准客户;同时它是给平台和品牌方看的"资质展示",一举两得。每两周拍一条即可。</p></div>
+    </div>
+  </div>
+
+  <p class="note"><b>发布节奏:</b>每天 1–2 条,黄金发布时间 11:30–12:30 和 18:00–19:00(开播前 1 小时发,直接给直播间引流)。<b>哪条数据好,立刻换产品翻拍哪条</b>——爆款不是想出来的,是试出来再复制出来的。</p>
+</section>
+
+<!-- ================= 11 直播怎么播 ================= -->
+<section class="sec rv" id="s11">
+  <div class="eyebrow"><i>11</i><span>直播执行 · 含真实台词</span></div>
+  <h2>直播怎么播:<br>一场四小时的<em>剧本</em></h2>
+  <p class="lead">直播不是聊四个小时天,是把一个 30 分钟的标准循环转八遍。主播照剧本转,越转越熟,和门店老销售带客一个道理。</p>
+
+  <table class="tbl">
+    <tr><th>每 30 分钟循环</th><th>干什么</th></tr>
+    <tr><td>0–5 分钟</td><td><b>憋单拉人气:</b>拿出福利套装讲卖点、讲赠品,就是不上架,让人等</td></tr>
+    <tr><td>5–10 分钟</td><td><b>放单:</b>限量上架,倒数开抢,营造"抢到就是赚到"</td></tr>
+    <tr><td>10–20 分钟</td><td><b>过款:</b>快节奏过 2–3 个引流款,每款 3 分钟讲完</td></tr>
+    <tr><td>20–28 分钟</td><td><b>深讲利润款:</b>重点讲 G502 X / MX Keys 这类赚钱的货,上手演示</td></tr>
+    <tr><td>28–30 分钟</td><td><b>留人:</b>预告整点抽奖 + 下一轮福利,把人留进下一个循环</td></tr>
+  </table>
+
+  <div class="talk">
+    <div class="who">憋单话术(开场 5 分钟,照这个感觉讲)</div>
+    <div class="bub">"今天这套,G304 无线鼠标,官方旗舰店单鼠标卖 149。我这儿,149 —— 加电竞桌垫,加防滑脚贴,还是 149。为什么能这么干?我们是罗技授权店,货从自己仓库走,省下的中间环节全给你们变成赠品。但是!今天就备了 80 套,想要的先扣个'要',我看看人数够不够,够了马上上。"</div>
+    <div class="why"><b>为什么这么讲:</b>先立价格锚点(官旗 149)→ 再堆价值(同价多两件)→ 给理由(授权+自有仓,合理不虚)→ 限量+扣字互动。全程<b>没有降价一分钱</b>,守住了品牌价格红线,靠赠品做出便宜感。</div>
+
+    <div class="who">逼单话术(放单时)</div>
+    <div class="bub">"上了上了,3 号链接!80 套,拍完这波真没有,下一场什么时候有我说不准。北京天津的兄弟,今天拍,明天就到,后天你就用它上分了。犹豫一秒,库存少十套——现在还剩 47!"</div>
+    <div class="why"><b>为什么这么讲:</b>限量制造紧迫感;"明天就到"打的是我们北方仓的独有优势;"后天上分"把发货速度翻译成了用户能感受到的爽点。</div>
+
+    <div class="who">冷场救场话术(没人说话时,新主播必备)</div>
+    <div class="bub">"刚进来的宝子别划走,你肯定是刷到我们摔鼠标那条视频进来的对不对?想看现场摔的扣 1,扣到 20 个我当场摔给你们看。摔完这只照样能玩,不能玩的算我的。"</div>
+    <div class="why"><b>为什么这么讲:</b>把短视频的梗接进直播间,视频和直播互相成就;给新进来的人一个立刻参与的动作(扣 1),互动率上去,抖音就会往直播间送更多人。</div>
+  </div>
+
+  <div class="card">
+    <h4>节奏安排</h4>
+    <p><b>第 1–2 周:</b>每天 1 场 × 3 小时,试出我们的观众几点最多。<b>第 3 周起:</b>固定 19:00–23:00 每天 4 小时(游戏人群的黄金时段),周末下午加场。固定时段的意义:让观众养成"每晚这个点来看看"的习惯,也让平台把我们记成一个守时的直播间。</p>
+  </div>
+  <p class="note">每场直播全程录屏,下播后主播 + 运营花 30 分钟回看:哪句话讲完观众数涨了、哪个产品讲着讲着人走了——<b>台词按数据改,一周一版,越改越准。</b></p>
+</section>
+
+<!-- ==================================================== -->
+<!-- ================= 第三篇 执行进度 ================== -->
+<!-- ==================================================== -->
+<div class="part rv">
+  <span class="pk">第 三 篇</span>
+  <h3>执行进度:<em>运营中心照此拆分</em></h3>
+  <p>本篇是任务书的主体。<b>新媒体运营中心须将以下作战表逐周、逐日拆分到责任人</b>,并以此为口径编制每周进度周报,直接向总裁汇报。下发之日即为 M0 第 1 天。</p>
+  <div class="rule"></div>
+</div>
+
+<!-- ================= 12 M0 筹备 ================= -->
+<section class="sec rv" id="s12">
+  <div class="eyebrow"><i>12</i><span>前期筹备 · M0(约 4 周 · 对应 2026 年 8 月)</span></div>
+  <h2>筹备期作战表:<br><em>四周</em>从纸面到能开播</h2>
+  <p class="lead">所有事项并行推进,每周五对表;其中 W1–W2 已细化到逐日,见下方 14 天日程表。</p>
+
+  <div class="week"><div class="wk">W1</div><div class="bd"><h4>开店与资质</h4><p>抖店入驻提交(执照 / 法人 / <b>罗技授权书</b>)→ 缴保证金约 2 万(可退)→ 企业蓝 V 认证(600 元/年)→ 确认类目费率与结算规则。</p></div></div>
+  <div class="wline"></div>
+  <div class="week"><div class="wk">W2</div><div class="bd"><h4>直播间与货盘</h4><p>按第 7 章布局图完成直播间改造、设备补齐;<b>货盘定价表与赠品成本核算交财务过审</b>;首批 30~50 个 SKU 上架(主图视频 + 详情)。</p></div></div>
+  <div class="wline"></div>
+  <div class="week"><div class="wk">W3</div><div class="bd"><h4>团队与内容蓄水</h4><p>主播、运营到岗培训,话术脚本 SOP 成稿(以第 11 章为底稿);账号装修完成;短视频按第 10 章模板日更,<b>开播前储备 20 条以上</b>。</p></div></div>
+  <div class="wline"></div>
+  <div class="week"><div class="wk">W4</div><div class="bd"><h4>彩排与冷启动</h4><p>内部试播 3 场逐场复盘;千川开户充值,随心推小额测素材;<b>月底正式首播,首播配 500 元投流</b>。</p></div></div>
+
+  <table class="tbl">
+    <tr><th>天</th><th>前 14 天逐日拆解(W1–W2 细化)</th></tr>
+    <tr><td>第 1–2 天</td><td>选定房间;下单设备;发布主播招聘;提交抖店入驻资料</td></tr>
+    <tr><td>第 3–4 天</td><td>按第 7 章布局图搭直播间:货架上墙、灯位摆好、拉宽带</td></tr>
+    <tr><td>第 5 天</td><td>按第 8 章七步做首次全面调试,录一段 10 分钟内部试播回看</td></tr>
+    <tr><td>第 6–7 天</td><td>拍模板 D(仓库实拍)+ 模板 B(对比)各 1 条,账号开始发布养号</td></tr>
+    <tr><td>第 8–9 天</td><td>主播面试(现场给一只 G304 试讲 3 分钟);首批 30 个链接上架</td></tr>
+    <tr><td>第 10–11 天</td><td>主播到岗,背话术剧本;每天再发 1–2 条视频,评论区人工回复</td></tr>
+    <tr><td>第 12–13 天</td><td>内部试播 2 场(不投流),全流程走通:讲品→上链接→下单→仓库发货</td></tr>
+    <tr><td>第 14 天</td><td>复盘试播录像,修话术修灯光;<b>定正式首播日,向总裁办报备</b></td></tr>
+  </table>
+
+  <div class="card">
+    <h4>团队架构 · 内部 + 新招混合</h4>
+    <p><b>外招 2 人:</b>带货主播 ×1(核心岗)、运营/千川投手 ×1。<br><b>内部转岗:</b>场控 ×1(公司已有直播场控实战经验,直接上岗)、剪辑/中控 ×1 兼岗;客服售后并入现有客服体系,<b>不新增编制</b>。</p>
+  </div>
+
+  <details>
+    <summary>主播招聘画像(照此发 JD)</summary>
+    <div class="dbd">
+      <p><b>硬性要求:</b>1 年以上电商直播带货经验(3C / 数码 / 家电优先);普通话标准、镜头表现力强;可连续开播 4 小时,接受 19:00–23:00 晚班排期。</p>
+      <p style="margin-top:8px"><b>加分项:</b>玩 FPS / MOBA 游戏、懂外设参数、自有账号或粉丝基础。</p>
+      <p style="margin-top:8px"><b>薪酬结构:</b>底薪 8–12K + GMV 提成 0.5%–1.5% + 时长/全勤补贴,综合 12–20K,提成绑定留人。</p>
+      <p style="margin-top:8px"><b>面试实测:</b>现场给一只 G304,3 分钟即兴开播试讲——看卖点提炼、互动感与抗压,比简历更真实。</p>
+    </div>
+  </details>
+</section>
+
+<!-- ================= 13 M1-M3 ================= -->
+<section class="sec rv" id="s13">
+  <div class="eyebrow"><i>13</i><span>前期运营 · M1–M3(9–11 月)</span></div>
+  <h2>冷启动打法:<br>三个月打到<em>盈亏线</em></h2>
+  <p class="lead">前期运营只有一个主题——用最小的钱,把"内容 → 直播 → 成交"的链路跑通、跑顺、跑到打平。</p>
+
+  <ul class="pl">
+    <li><b>开播节奏:</b>第 1–2 周每日 1 场 ×3 小时,测时段、测人货场;第 3 周起锁定黄金档 <b>19:00–23:00 日播 4 小时</b>,周末下午加场。</li>
+    <li><b>投流策略:</b>随心推每场 300–500 元测素材 → 千川专业版搭计划(兴趣词 + 达人相似人群包)→ 单计划直投 ROI 低于红线即关停,绝不硬扛。</li>
+    <li><b>直播间机制:</b>整点赠品加码憋单 → 引流款快过款拉人气 → 利润款场景化深讲 → 合规抽奖留人,全程按第 11 章剧本执行、录屏复盘。</li>
+    <li><b>短视频:</b>日更 1–2 条,爆款素材立即翻拍变体 + 加热,<b>三个月沉淀出 3 套可复制的爆款模型</b>。</li>
+  </ul>
+
+  <div class="stage"><div class="hd"><b>M1 · 9 月 · 破冰</b><span>跑通链路</span></div>
+    <div class="bd">开播-投流-成交-发货-售后全链路无卡点;累计 GMV <b>3–8 万</b>;粉丝 3,000+;场观稳定 500+。<b>本月不考核盈亏,只考核链路与数据质量。</b></div></div>
+  <div class="stage"><div class="hd"><b>M2 · 10 月 · 爬坡</b><span>效率优化</span></div>
+    <div class="bd">单场 GMV 稳定 <b>5,000–15,000</b>;GPM ≥ 800;直投 ROI 回到红线之上;粉丝破 1 万;确定 2–3 个稳定出单的货品组合。</div></div>
+  <div class="stage"><div class="hd"><b>M3 · 11 月 · 打平</b><span>借势双 11</span></div>
+    <div class="bd">正逢<b>双 11 大促流量红利</b>,报名平台活动冲月 GMV <b>30–50 万</b>(B 档口径),实现<b>单月经营性打平</b>;月末向总裁提交数据复盘,进入升档/维持/止损三选一决策点,<b>由总裁裁定</b>。</div></div>
+
+  <p class="note">每周一固定数据复盘会,罗盘周报(GMV / ROI / GPM / 退货率)<b style="color:#EAF0F8">直报总裁——用数据说话,不讲感觉。</b></p>
+</section>
+
+<!-- ================= 14 M4-M6 ================= -->
+<section class="sec rv" id="s14">
+  <div class="eyebrow"><i>14</i><span>中期运营 · M4–M6(12–2 月)</span></div>
+  <h2>放量期:<br>从"能赚"到<em>"多赚"</em></h2>
+  <p class="lead">打平模型验证后,叠加三台新引擎,把单点直播间做成增长系统。</p>
+
+  <div class="card"><h4><span class="ok">➊</span>达人分销 · 借别人的流量卖货</h4>
+    <p>精选联盟设佣 5%–10%,向中腰部 3C / 数码 / 学生党达人寄样合作,目标分销贡献 GMV 的 <b>20%–30%</b>——我们出货出佣金,达人出流量。</p></div>
+  <div class="card"><h4><span class="ok">➋</span>内容矩阵 · 一鱼多吃</h4>
+    <p>主账号 + 直播切片分发 + 员工号孵化(主播/场控个人号导流),同一场直播产出 N 条素材,<b>内容成本摊到最薄</b>。</p></div>
+  <div class="card"><h4><span class="ok">➌</span>大促收获 · 年货节冲量</h4>
+    <p>双 11 练完兵,<b>1 月年货节是外设送礼旺季</b>,提前 3 周备货报活动,套装礼盒化(开黑套装/办公升级套装),冲首个月 GMV 高点。</p></div>
+
+  <div class="stage"><div class="hd"><b>M4–M6 阶段目标</b><span>盈利验证</span></div>
+    <div class="bd">月 GMV 爬至 <b>60–100 万</b>(B 档口径);付费流量占比压到 <b>40% 以下</b>;粉丝 3–5 万并沉淀粉丝团;<b>单月净利转正</b>,形成可复制的盈利模型——届时由总裁裁定是否升 C 档扩编、开第二直播间。</div></div>
+
+  <p class="note">M6 末由新媒体运营中心产出《抖音渠道半年经营报告》呈报总裁:若模型成立,抖音正式并入公司常规渠道序列;经验与 SOP 可平移复用到视频号等下一个内容渠道。</p>
+</section>
+
+<!-- ================= 15 投入产出测算 ================= -->
+<section class="sec rv" id="s15">
+  <div class="eyebrow"><i>15</i><span>投入产出 · 预算口径</span></div>
+  <h2>三档预算模型:<br><em>B 档执行</em>,风险明码</h2>
+  <p class="lead">关键假设:综合毛利率按 12% 估算(扣平台费用后口径,<b>由财务校准</b>);打平线 = 月投入 ÷ 毛利率。三档模型全部列出,便于 M3 末决策点对照升降档。</p>
+
+  <table class="tbl">
+    <tr><th>一次性投入</th><th></th><th style="text-align:right">预估</th></tr>
+    <tr><td>类目保证金</td><td>可退,闭店可申请退回</td><td class="r">¥20,000</td></tr>
+    <tr><td>设备补齐</td><td>明细见第 7 章清单,按上限计</td><td class="r">≈¥12,000</td></tr>
+    <tr><td>蓝 V 认证</td><td>企业号年费</td><td class="r">¥600</td></tr>
+    <tr><td>装修与物料</td><td>店铺视觉 / 直播间 KT 与灯箱 / 首批赠品备货</td><td class="r">≈¥5,000</td></tr>
+    <tr class="sumr"><td>合计</td><td>其中 2 万可退,净沉没约 1.8 万</td><td class="r">≈¥37,600</td></tr>
+  </table>
+  <p class="note">保证金与类目费率以抖店后台实时显示为准;设备清单按现有器材盘点后核减。</p>
+
+  <div class="tier">
+    <div class="top"><div><h4>A · 轻量试跑</h4></div><div style="text-align:right"><div class="p">2.6<small> 万/月</small></div></div></div>
+    <div class="rows">
+      <div class="rw"><span>人力(主播外招 1 + 内部兼岗)</span><b>1.4 万</b></div>
+      <div class="rw"><span>千川投流</span><b>1.0 万</b></div>
+      <div class="rw"><span>杂费(样品/道具/水电)</span><b>0.2 万</b></div>
+      <div class="rw"><span>月打平 GMV 线</span><b>≈22 万</b></div>
+      <div class="rw"><span>M3 目标月 GMV</span><b>15–25 万</b></div>
+    </div>
+    <div class="fit">定位:<em>止损后的收缩档</em>——能证明"这事能成",但爬坡慢,大概率错过双 11 窗口。</div>
+  </div>
+
+  <div class="tier rec">
+    <div class="top"><div><h4>B · 标准配置</h4></div><div style="text-align:right"><div class="badge">执 行 档</div><div class="p" style="margin-top:6px">6.0<small> 万/月</small></div></div></div>
+    <div class="rows">
+      <div class="rw"><span>人力(主播 1 + 运营投手 1 + 内部兼岗)</span><b>2.7 万</b></div>
+      <div class="rw"><span>千川投流</span><b>3.0 万</b></div>
+      <div class="rw"><span>杂费</span><b>0.3 万</b></div>
+      <div class="rw"><span>月打平 GMV 线</span><b>≈50 万(日均 1.7 万)</b></div>
+      <div class="rw"><span>M3 / M6 目标月 GMV</span><b>30–50 / 60–100 万</b></div>
+    </div>
+    <div class="fit">定位:<em>总裁办核定的执行档</em>——节奏刚好赶上双 11 练兵、年货节收获,投入产出结构最健康。</div>
+  </div>
+
+  <div class="tier">
+    <div class="top"><div><h4>C · 加速冲量</h4></div><div style="text-align:right"><div class="p">12<small> 万/月</small></div></div></div>
+    <div class="rows">
+      <div class="rw"><span>人力(双主播轮播 + 运营 + 剪辑)</span><b>5.0 万</b></div>
+      <div class="rw"><span>千川投流</span><b>6.5 万</b></div>
+      <div class="rw"><span>杂费</span><b>0.5 万</b></div>
+      <div class="rw"><span>月打平 GMV 线</span><b>≈100 万</b></div>
+      <div class="rw"><span>M6 目标月 GMV</span><b>150 万+</b></div>
+    </div>
+    <div class="fit">定位:<em>B 档验证后的升级档</em>——大促前拉长播时、双开直播间,须经总裁批准后启用。</div>
+  </div>
+
+  <div class="card">
+    <h4>最坏情况(B 档)</h4>
+    <p>一次性 3.8 万 + 前 3 个月运营 18 万 = 投入 21.8 万;扣可退保证金 2 万、扣保守毛利回收约 6 万,<b>净敞口约 14 万封顶</b>。M3 末设硬性决策点:数据不达标即止损收缩,不追加、不恋战。</p>
+  </div>
+  <p class="note">对照:约 14 万的试错上限,买的是公司在 4.4 万亿增量市场的一张入场券和一支练成的直播队伍——<b style="color:#EAF0F8">这笔学费封顶,而窗口不等人。</b></p>
+</section>
+
+<!-- ==================================================== -->
+<!-- ================= 第四篇 保障与汇报 ================ -->
+<!-- ==================================================== -->
+<div class="part rv">
+  <span class="pk">第 四 篇</span>
+  <h3>保障与汇报:<em>丑话说在前面</em></h3>
+  <p>风险逐条列明、对策逐条落实;汇报机制写死在制度里——<b>执行进度直接向总裁汇报</b>,好坏都摆在桌面上。</p>
+  <div class="rule"></div>
+</div>
+
+<!-- ================= 16 风险与应对 ================= -->
+<section class="sec rv" id="s16">
+  <div class="eyebrow"><i>16</i><span>风险管理</span></div>
+  <h2>把丑话说在前面:<br><em>六个风险</em>与对策</h2>
+  <p class="lead">敢把最坏情况摆上桌,才谈得上风险可控。以下六条,新媒体运营中心逐条落实责任人。</p>
+
+  <div class="risk"><span class="tagr">流量</span><div class="bd"><h5>冷启动不起量</h5><p>素材小额多计划快测快汰,模板快拍快换、数据说话;必要时引入代播机构短期陪跑带教;<b>3 个月硬性止损决策点兜底。</b></p></div></div>
+  <div class="risk"><span class="tagr">人</span><div class="bd"><h5>主播招不到 / 干两月就走</h5><p>提成绑定 + 话术全部沉淀成剧本(第 11 章),<b>人可以换,剧本留下</b>;稳定后培养场控做 B 角替补,放量期启用 AB 角双主播,一人离场不停播。</p></div></div>
+  <div class="risk"><span class="tagr">钱</span><div class="bd"><h5>投流亏损失控</h5><p><b>保本 ROI 红线 + 日预算上限</b>双保险,单计划亏损当天关停;付费占比逐月压降,周报全透明、直报总裁。</p></div></div>
+  <div class="risk"><span class="tagr">品牌</span><div class="bd"><h5>触碰罗技价格 / 内容红线</h5><p>严守管控价(所以我们只玩赠品不降价);所有视频与营销物料<b>先过内部审核再发布</b>——官旗 3 月内容事故是前车之鉴,合规是我们的立身之本。</p></div></div>
+  <div class="risk"><span class="tagr">售后</span><div class="bd"><h5>抖音退货率偏高</h5><p>主推标品外设(退货率远低于服饰);直播话术与详情<b>如实描述不过度承诺</b>;三仓时效保住体验分。</p></div></div>
+  <div class="risk"><span class="tagr">规则</span><div class="bd"><h5>平台规则变动</h5><p>抖音对数字人/录播管控严格,<b>前期坚持真人开播</b>;运营专人跟进规则更新,月度合规自查。</p></div></div>
+</section>
+
+<!-- ================= 17 汇报机制与总裁参与 ================= -->
+<section class="sec rv" id="s17">
+  <div class="eyebrow"><i>17</i><span>汇报机制 · 总裁参与</span></div>
+  <h2>进度怎么报,<br>总裁<em>怎么看、怎么管</em></h2>
+  <p class="lead">新媒体运营中心的执行进度,不经中间层转达,<b>直接向总裁汇报</b>。汇报要短、要数、要真。</p>
+
+  <div class="card"><h4><span class="ok">1</span>每周一:三个数的书面周报</h4>
+    <p>周报只放三个核心数:<b>卖了多少(GMV)、花了多少(投流费)、退了多少(退货率)</b>,附 GPM / ROI / UV 值三个北极星指标与下周计划,一页纸,周一上午呈报总裁。三个数连看四周,这盘生意健康不健康,一眼就有数,不需要懂任何抖音黑话。</p></div>
+  <div class="card"><h4><span class="ok">2</span>每月末:当面复盘会</h4>
+    <p>新媒体运营中心负责人向总裁当面汇报当月阶段目标达成情况(对照第 13、14 章口径),<b>M3 末为硬性决策点</b>:升档 / 维持 / 止损,三选一,由总裁裁定。重大异常(投流失控、平台处罚、断播风险)不等周报,<b>即时上报</b>。</p></div>
+  <div class="card"><h4><span class="ok">3</span>套装和赠品:总裁圈阅</h4>
+    <p>每周运营报一张"下周套装表"(搭什么赠品、成本几块、感知价值多少),<b>呈总裁圈阅点头即行</b>——这正是二十年货龄的算账功夫,五分钟的事。</p></div>
+  <div class="card"><h4><span class="ok">4</span>首播出镜:总裁的 5 分钟,顶一万块投流</h4>
+    <p>首播时总裁进直播间坐 5 分钟,只讲一句实话:"我做罗技二十年,今天团队非拉着我开直播,货就是我仓库里的货,大家放心。"<b>老板亲自出镜 = 最贵也最真的信任状</b>。此后每月露脸一次,"仓库老板"可以成为账号的招牌角色。具体时间由总裁办协调。</p></div>
+  <div class="card"><h4><span class="ok">5</span>随时"暗访"</h4>
+    <p>总裁可随时用自己的手机以普通观众身份进直播间看十分钟——主播状态、画面质感、评论区氛围,好坏骗不了人。<b>总裁看着别扭的地方,大概率就是真该改的地方</b>,可直接责成运营中心整改。</p></div>
+</section>
+
+<!-- ================= 18 总裁办下发决定 ================= -->
+<section class="sec rv" id="s18">
+  <div class="eyebrow"><i>18</i><span>下发决定 · 即日生效</span></div>
+  <h2>总裁办下发决定:<br><em>四项</em>,即日执行</h2>
+  <p class="lead">以下事项经总裁办核定,随本手册一并下发。下发之日,即为第 12 章作战表的"第 1 天"。</p>
+
+  <div class="ask"><div class="n">1</div><div><h4>立项与打法</h4><p>以<b>「罗技专卖店」</b>入驻抖音,品牌自播为主、短视频引流、千川放大;<b>严守不破价红线</b>,按第一篇口径执行。</p></div></div>
+  <div class="ask"><div class="n">2</div><div><h4>预算与止损</h4><p>月度预算<b>按 B 档(6 万/月)执行</b>;一次性启动资金约 <b>3.8 万</b>(含可退保证金 2 万),财务立项建账;<b>M3 末硬性决策点</b>,由总裁裁定升档 / 维持 / 止损。</p></div></div>
+  <div class="ask"><div class="n">3</div><div><h4>编制与场地</h4><p>新增<b>带货主播 ×1、运营投手 ×1</b>,由新媒体运营中心牵头招聘(画像见第 12 章),即日发 JD;划定一间 <b>15㎡ 直播间用房</b>;总裁首播出镜 5 分钟,时间由总裁办协调。</p></div></div>
+  <div class="ask"><div class="n">4</div><div><h4>执行与汇报</h4><p><b>新媒体运营中心</b>按第三篇作战表拆分进度、落实到人;<b>每周一数据周报、每月末复盘会,执行进度直接向总裁汇报</b>;重大异常即时上报。</p></div></div>
+
+  <table class="tbl">
+    <tr><th>时间</th><th>启动动作</th></tr>
+    <tr><td>本周</td><td>提交抖店入驻资料、缴保证金;发布招聘 JD;选定直播间用房</td></tr>
+    <tr><td>下周</td><td>设备采购到位,直播间按第 7 章开始改造</td></tr>
+    <tr><td>第 4 周</td><td>试播 3 场,内部彩排复盘,定正式首播日报总裁办</td></tr>
+    <tr><td>9 月</td><td>正式开播,第 13 章冷启动打法启动,周报机制同步启动</td></tr>
+  </table>
+
+  <div class="endline">
+    <p class="q">灯怎么摆、话怎么讲、进度怎么报,<br>这本手册都写好了——<em>手册即命令,下发即开干。</em></p>
+  </div>
+</section>
+
+<footer class="foot rv">
+  <b>数据与口径说明</b><br>
+  本手册由原《抖音电商从0到1可行性方案》与《抖音电商从0到1实操手册》合并修订而成。市场数据来自雷峰网、晚点 LatePost、高盛等 2025–2026 年公开报道;抖音入驻保证金、类目费率以抖店后台实时显示为准;毛利率、人力成本为测算假设,由财务校准;设备价格为市场常见价,采购前比价;话术示例需按罗技品牌规范内审后使用。本手册为公司内部资料,请勿外传。<br><br>
+  北京天利 · 总裁办制定下发 · 新媒体运营中心执行 · 2026 年 7 月
+</footer>
+
+</div>
+<script>
+(function(){
+  var bar=document.getElementById('bar');
+  function upd(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(h.scrollTop||document.body.scrollTop)/max*100:0)+'%';
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  upd();
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:0.08});
+    els.forEach(function(el){ io.observe(el); });
+  }else{
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
