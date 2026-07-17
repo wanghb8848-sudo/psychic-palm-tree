@@ -124,6 +124,20 @@ def wait_if_captcha(page) -> bool:
     return False
 
 
+def kicked_to_login(page) -> bool:
+    """被风控踢回登录页时，暂停等待人工重新扫码。返回是否发生过。"""
+    if "login.tmall.com" in page.url or "login.taobao.com" in page.url:
+        print("\n" + "!" * 60)
+        print("!! 天猫要求重新登录（风控信号）。请在浏览器窗口重新扫码登录。")
+        print("!! 如果今天已经被踢下线 3 次以上，强烈建议直接关闭程序，")
+        print("!! 明天再继续（进度不会丢）。反复硬登会让风控越来越严。")
+        print("!" * 60)
+        input(">> 重新登录完成后按回车继续，或按 Ctrl+C 退出 ")
+        time.sleep(2)
+        return True
+    return False
+
+
 def ensure_logged_in(page, shop_url: str):
     page.goto(shop_url, wait_until="domcontentloaded", timeout=60000)
     wait_if_captcha(page)
@@ -326,11 +340,14 @@ def stage2_scrape_details(page, urls, dmin, dmax):
                 print("    !! 页面加载超时，跳过（下次运行会重试）")
                 fails += 1
                 continue
-            if wait_if_captcha(page):
+            if wait_if_captcha(page) or kicked_to_login(page):
                 try:
                     page.goto(url, wait_until="domcontentloaded", timeout=60000)
                 except PWTimeout:
                     continue
+            # 每采十几个商品休息一会儿，模拟真人放下手机的间歇
+            if i % random.randint(12, 18) == 0:
+                human_pause(30, 90, "阶段性休息，降低风控")
             scroll_page(page, rounds=3)
             row = extract_from_detail(page, captured)
             row.update({"item_id": iid, "url": url, "scraped_at": time.strftime("%Y-%m-%d %H:%M:%S")})
@@ -411,8 +428,8 @@ def main():
     ap = argparse.ArgumentParser(description="天猫店铺商品采集（防封号低速版）")
     ap.add_argument("--shop", default="https://logitech.tmall.com", help="店铺首页地址")
     ap.add_argument("--max-pages", type=int, default=60, help="列表页最大翻页数")
-    ap.add_argument("--min-delay", type=float, default=4.0, help="动作间最小等待秒数")
-    ap.add_argument("--max-delay", type=float, default=9.0, help="动作间最大等待秒数")
+    ap.add_argument("--min-delay", type=float, default=6.0, help="动作间最小等待秒数")
+    ap.add_argument("--max-delay", type=float, default=12.0, help="动作间最大等待秒数")
     ap.add_argument("--exclude", default=",".join(DEFAULT_EXCLUDE_KEYWORDS),
                     help="套包过滤关键词，逗号分隔")
     ap.add_argument("--no-details", action="store_true", help="只收集商品链接，不进详情页")
@@ -432,14 +449,30 @@ def main():
     print("=" * 60)
 
     with sync_playwright() as p:
-        ctx = p.chromium.launch_persistent_context(
-            str(PROFILE_DIR),
+        common = dict(
             headless=False,
             viewport={"width": 1440, "height": 900},
             locale="zh-CN",
             timezone_id="Asia/Shanghai",
             args=["--disable-blink-features=AutomationControlled"],
         )
+        # 优先使用电脑上真实安装的 Edge/Chrome（比自带浏览器更不易被风控识别）。
+        # 不同浏览器使用各自的配置目录，切换后需要重新扫码登录一次。
+        ctx = None
+        for channel in ("msedge", "chrome", None):
+            profile = PROFILE_DIR if channel is None else Path(f"{PROFILE_DIR}-{channel}")
+            try:
+                if channel:
+                    ctx = p.chromium.launch_persistent_context(str(profile), channel=channel, **common)
+                else:
+                    ctx = p.chromium.launch_persistent_context(str(profile), **common)
+                print(f">> 使用浏览器：{channel or '自带 Chromium'}")
+                break
+            except Exception:
+                continue
+        if ctx is None:
+            print("!! 无法启动任何浏览器，请把本窗口截图发给助手。")
+            return
         page = ctx.pages[0] if ctx.pages else ctx.new_page()
         page.add_init_script("Object.defineProperty(navigator,'webdriver',{get:()=>undefined})")
 
