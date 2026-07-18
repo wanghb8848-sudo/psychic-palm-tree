@@ -7,7 +7,6 @@ echo   天猫罗技旗舰店数据采集 - 一键运行
 echo ============================================
 echo.
 
-rem 优先用 py 启动器（python.org 安装包自带，即使没勾选 PATH 也能用）
 set "PY="
 py -3 --version >nul 2>nul && set "PY=py -3"
 if not defined PY (
@@ -31,7 +30,7 @@ if not defined PY (
 
 echo [OK] 已找到 Python：%PY%
 echo.
-echo [第1步/共3步] 正在安装依赖（第一次要几分钟，别关本窗口）...
+echo [第1步/共4步] 正在安装依赖（第一次要几分钟，别关本窗口）...
 %PY% -m pip install -r requirements.txt -q
 if errorlevel 1 (
     echo [提示] 安装失败，改用国内镜像重试...
@@ -43,7 +42,10 @@ if errorlevel 1 (
     )
 )
 
-echo [第2步/共3步] 正在下载浏览器组件（约150MB，请耐心等待）...
+echo [第2步/共4步] 正在安装价格识别组件（可选，失败也不影响其它字段）...
+%PY% -m pip install ddddocr -q >nul 2>nul || %PY% -m pip install ddddocr -q -i https://pypi.tuna.tsinghua.edu.cn/simple >nul 2>nul
+
+echo [第3步/共4步] 正在下载浏览器组件（约150MB，请耐心等待）...
 %PY% -m playwright install chromium
 if errorlevel 1 (
     echo [失败] 浏览器组件下载失败，请把本窗口截图发给助手。
@@ -51,7 +53,7 @@ if errorlevel 1 (
     exit /b
 )
 
-echo [第3步/共3步] 开始采集！稍后会弹出浏览器窗口，
+echo [第4步/共4步] 开始采集！稍后会弹出浏览器窗口，
 echo   请用手机淘宝扫码登录，然后回到本窗口按回车。
 echo.
 %PY% scrape_tmall_store.py

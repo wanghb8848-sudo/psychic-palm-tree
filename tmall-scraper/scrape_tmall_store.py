@@ -257,6 +257,58 @@ def parse_card_text(text: str):
 ITEM_LINK_SEL = ("a[href*='detail.tmall.com/item'], a[href*='item.taobao.com/item'], "
                  "a[href*='chaoshi.detail.tmall.com/item']")
 
+# 找到某商品卡片里“最主要”的价格元素（字号最大的那个），用于截图 OCR
+PRICE_EL_JS = """
+a => {
+    let node = a;
+    for (let i = 0; i < 6; i++) {
+        const p = node.parentElement;
+        if (!p) break;
+        const links = p.querySelectorAll("a[href*='item.htm']");
+        const ids = new Set();
+        links.forEach(l => { const m = l.href.match(/[?&]id=(\\d+)/); if (m) ids.add(m[1]); });
+        if (ids.size > 1) break;
+        node = p;
+    }
+    const cands = [...node.querySelectorAll("[class*='price' i]")]
+        .filter(c => { const r = c.getBoundingClientRect(); return r.width > 1 && r.height > 1; });
+    if (!cands.length) return null;
+    let best = cands[0], bestFs = -1;
+    cands.forEach(c => {
+        const fs = parseFloat(getComputedStyle(c).fontSize) || 0;
+        if (fs > bestFs) { bestFs = fs; best = c; }
+    });
+    return best;
+}
+"""
+
+
+def ocr_prices_on_page(page, ocr):
+    """对每个商品卡片的价格元素截图并 OCR，破解字体加密。返回 {item_id: price}。"""
+    out = {}
+    if ocr is None:
+        return out
+    try:
+        handles = page.query_selector_all(ITEM_LINK_SEL)
+    except Exception:
+        return out
+    for a in handles:
+        try:
+            iid = item_id_from_url(a.get_attribute("href") or "")
+            if not iid or iid in out:
+                continue
+            el = a.evaluate_handle(PRICE_EL_JS).as_element()
+            if not el:
+                continue
+            png = el.screenshot()
+            txt = (ocr.classification(png) or "").replace(" ", "").replace(",", "")
+            m = re.search(r"\d+(?:\.\d{1,2})?", txt)
+            if m:
+                out[iid] = m.group(0)
+        except Exception:
+            continue
+    return out
+
 
 def collect_cards_on_page(page):
     """返回 {item_id: row} —— 结构化子元素（学后羿）优先，整卡文字正则兜底。"""
@@ -395,7 +447,7 @@ def click_next_page(page) -> bool:
     return False
 
 
-def stage1_collect(page, shop_url, max_pages, dmin, dmax):
+def stage1_collect(page, shop_url, max_pages, dmin, dmax, ocr=None):
     """翻列表页，三路数据源合并后写入 ITEMS_FILE。"""
     done = load_done_rows()
     print(f">> 已有 {len(done)} 条商品记录（断点续采）。")
@@ -448,7 +500,12 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax):
         kicked_to_login(page)
         scroll_page(page)
         cards = merge_sources(collect_cards_on_page(page), api_items)
-        print(f">> 入口 {entry} ：本页发现 {len(cards)} 个商品（含接口捕获 {len(api_items)} 条）")
+        prices = ocr_prices_on_page(page, ocr)
+        for iid, pr in prices.items():
+            if iid in cards and pr:
+                cards[iid]["price"] = pr
+        print(f">> 入口 {entry} ：本页发现 {len(cards)} 个商品"
+              f"（接口 {len(api_items)} 条，OCR 识别价格 {len(prices)} 个）")
         if cards:
             entry_ok = entry
             n = save_cards(cards)
@@ -483,6 +540,10 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax):
             safe_goto(page, f"{entry_ok}?pageNo={page_no}" if "search.htm" in entry_ok else entry_ok)
         scroll_page(page)
         cards = merge_sources(collect_cards_on_page(page), api_items)
+        prices = ocr_prices_on_page(page, ocr)
+        for iid, pr in prices.items():
+            if iid in cards and pr:
+                cards[iid]["price"] = pr
         before = len(done)
         save_cards(cards)
         new = len(done) - before
@@ -660,6 +721,16 @@ def main():
     print("天猫店铺采集启动（列表页模式）。将打开真实浏览器窗口，请勿关闭。")
     print("=" * 60)
 
+    # 价格 OCR：破解天猫价格字体加密（把价格截图识别成数字）
+    ocr = None
+    try:
+        import ddddocr
+        ocr = ddddocr.DdddOcr(show_ad=False)
+        print(">> 价格识别（OCR）已就绪。")
+    except Exception:
+        print("!! 未能加载价格 OCR 组件，本次价格列可能为空（其他字段不受影响）。")
+        print("   如需价格，请确保安装成功：pip install ddddocr")
+
     with sync_playwright() as p:
         common = dict(
             headless=False,
@@ -688,7 +759,7 @@ def main():
 
         try:
             ensure_logged_in(page, args.shop)
-            done = stage1_collect(page, args.shop, args.max_pages, args.min_delay, args.max_delay)
+            done = stage1_collect(page, args.shop, args.max_pages, args.min_delay, args.max_delay, ocr)
             if args.with_details and done:
                 stage2_fill_details(page, done, args.min_delay, args.max_delay)
         except KeyboardInterrupt:

@@ -18,7 +18,10 @@ echo "[1/3] 正在安装依赖（第一次运行需要几分钟）..."
 python3 -m pip install -r requirements.txt -q || \
 python3 -m pip install -r requirements.txt -q -i https://pypi.tuna.tsinghua.edu.cn/simple
 
-echo "[2/3] 正在准备浏览器（第一次运行需要下载，请耐心等待）..."
+echo "[2/3] 正在安装价格识别组件（可选，失败不影响其它字段）..."
+python3 -m pip install ddddocr -q >/dev/null 2>&1 || python3 -m pip install ddddocr -q -i https://pypi.tuna.tsinghua.edu.cn/simple >/dev/null 2>&1
+
+echo "[2.5/3] 正在准备浏览器（第一次运行需要下载，请耐心等待）..."
 python3 -m playwright install chromium
 
 echo "[3/3] 开始采集！稍后会弹出浏览器窗口，"
