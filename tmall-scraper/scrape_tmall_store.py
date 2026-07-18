@@ -304,7 +304,12 @@ def ocr_prices_on_page(page, ocr):
             txt = (ocr.classification(png) or "").replace(" ", "").replace(",", "")
             m = re.search(r"\d+(?:\.\d{1,2})?", txt)
             if m:
-                out[iid] = m.group(0)
+                val = m.group(0)
+                # 天猫价格恒为两位小数，OCR 常漏掉小数点（129.00 被读成 12900）。
+                # 若识别结果没有小数点，则末两位视为角分，除以 100 还原。
+                if "." not in val and len(val) >= 3:
+                    val = f"{int(val) / 100:.2f}"
+                out[iid] = val
         except Exception:
             continue
     return out
