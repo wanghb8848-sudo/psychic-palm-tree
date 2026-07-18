@@ -5,18 +5,21 @@
 采集字段：品名、售价、产品链接、销量、评论数
 默认目标：天猫罗技官方旗舰店 https://logitech.tmall.com
 
+v2 变更：默认只采集【列表页】——商品卡片上已经有价格/销量/评价数，
+不再逐个进详情页，页面访问量从两百多次降到十几次，风控压力大幅降低。
+（如列表页没有评价数，可加 --with-details 只对缺失的商品补采详情页。）
+
 防封号策略：
-  1. 使用真实浏览器（Playwright 持久化用户目录），你扫码登录一次即可复用；
-  2. 单线程 + 每次翻页/进详情页之间随机等待（默认 4~9 秒），模拟真人节奏；
-  3. 页面内模拟滚动浏览，不直接刷接口、不带并发；
-  4. 检测到滑块/验证码时立刻暂停，等你手动完成后回车继续；
-  5. 断点续采：已采集的商品自动跳过，可以分多次、隔天慢慢采完。
+  1. 真实浏览器（持久化登录，扫码一次即可复用）；
+  2. 单线程 + 随机等待，模拟真人翻页节奏；
+  3. 检测到滑块/被踢下线时暂停，等人工处理后继续；
+  4. 断点续采：进度实时保存，可分多次采完。
 
 用法（本地电脑，需要图形界面）：
   pip install -r requirements.txt
   playwright install chromium
-  python scrape_tmall_store.py                # 完整采集并导出 Excel
-  python scrape_tmall_store.py --export-only  # 只用已有数据重新导出 Excel
+  python scrape_tmall_store.py                # 采集并导出 Excel
+  python scrape_tmall_store.py --export-only  # 只用已有数据重新导出
 """
 
 import argparse
@@ -40,8 +43,6 @@ ITEMS_FILE = DATA_DIR / "items.jsonl"
 # 标题中出现这些词的商品视为“套包/套装”，会被移到 Excel 的第二个工作表，不计入单品
 DEFAULT_EXCLUDE_KEYWORDS = ["套装", "套餐", "组合", "礼盒", "礼包", "套包", "两件装", "二件装", "件套"]
 
-UA_HINT = None  # 使用 Playwright 自带 Chrome UA，避免 UA 与浏览器指纹不一致
-
 
 # ---------------------------------------------------------------- 工具函数
 
@@ -52,8 +53,8 @@ def human_pause(min_s: float, max_s: float, why: str = ""):
     time.sleep(t)
 
 
-def parse_cn_number(text: str):
-    """把 '2.5万+'、'1000+'、'3万' 之类的销量文本转成数字（取下限）。"""
+def parse_cn_number(text):
+    """把 '2.5万+'、'1000+'、'3万' 之类的文本转成数字（取下限）。"""
     if text is None:
         return None
     if isinstance(text, (int, float)):
@@ -67,7 +68,7 @@ def parse_cn_number(text: str):
 
 
 def find_first_key(obj, keys):
-    """在嵌套 dict/list 中递归查找第一个命中的 key（广度优先，尽量取顶层的值）。"""
+    """在嵌套 dict/list 中递归查找第一个命中的 key（广度优先）。"""
     queue = [obj]
     while queue:
         cur = queue.pop(0)
@@ -82,7 +83,6 @@ def find_first_key(obj, keys):
 
 
 def extract_jsonp(body: str):
-    """mtop 接口常用 jsonp 包裹：mtopjsonpxx({...})，剥出 JSON。"""
     body = body.strip()
     if body.startswith("{"):
         return json.loads(body)
@@ -98,6 +98,37 @@ def item_id_from_url(url: str):
         return q["id"][0]
     m = re.search(r"[?&]id=(\d+)", url)
     return m.group(1) if m else None
+
+
+def safe_goto(page, url: str) -> bool:
+    """页面跳转，兜住一切异常（超时/被重定向打断等），失败返回 False。"""
+    try:
+        page.goto(url, wait_until="domcontentloaded", timeout=60000)
+        return True
+    except Exception as e:
+        print(f"    !! 跳转失败：{str(e).splitlines()[0][:100]}")
+        return False
+
+
+def load_done_rows():
+    """读取已采集的行，按 item_id 合并（后写入的非空字段覆盖先前的）。"""
+    merged = {}
+    if ITEMS_FILE.exists():
+        for line in ITEMS_FILE.read_text("utf-8").splitlines():
+            try:
+                r = json.loads(line)
+            except Exception:
+                continue
+            iid = r.get("item_id")
+            if not iid:
+                continue
+            if iid in merged:
+                for k, v in r.items():
+                    if v not in (None, ""):
+                        merged[iid][k] = v
+            else:
+                merged[iid] = r
+    return merged
 
 
 # ---------------------------------------------------------------- 反爬检测
@@ -116,7 +147,7 @@ def wait_if_captcha(page) -> bool:
     if hit:
         print("\n" + "!" * 60)
         print("!! 检测到滑块/安全验证。请在浏览器窗口中手动完成验证，")
-        print("!! 完成后回到这里按回车继续。建议之后适当加大 --min-delay。")
+        print("!! 完成后回到这里按回车继续。今天第 3 次出现的话建议收工。")
         print("!" * 60)
         input(">> 验证完成后按回车继续 ")
         time.sleep(2)
@@ -126,11 +157,11 @@ def wait_if_captcha(page) -> bool:
 
 def kicked_to_login(page) -> bool:
     """被风控踢回登录页时，暂停等待人工重新扫码。返回是否发生过。"""
-    if "login.tmall.com" in page.url or "login.taobao.com" in page.url:
+    if "login.tmall.com" in page.url or "login.taobao.com" in page.url or "login_jump" in page.url:
         print("\n" + "!" * 60)
         print("!! 天猫要求重新登录（风控信号）。请在浏览器窗口重新扫码登录。")
-        print("!! 如果今天已经被踢下线 3 次以上，强烈建议直接关闭程序，")
-        print("!! 明天再继续（进度不会丢）。反复硬登会让风控越来越严。")
+        print("!! 当天第 2 次被踢下线的话，建议直接关闭程序明天再继续，")
+        print("!! 进度不会丢。反复硬登会让风控越来越严。")
         print("!" * 60)
         input(">> 重新登录完成后按回车继续，或按 Ctrl+C 退出 ")
         time.sleep(2)
@@ -139,21 +170,21 @@ def kicked_to_login(page) -> bool:
 
 
 def ensure_logged_in(page, shop_url: str):
-    page.goto(shop_url, wait_until="domcontentloaded", timeout=60000)
+    safe_goto(page, shop_url)
     wait_if_captcha(page)
     for _ in range(2):
         if "login.tmall.com" in page.url or "login.taobao.com" in page.url:
             print("\n>> 需要登录：请在打开的浏览器窗口里用手机淘宝/天猫 App 扫码登录。")
-            print(">> 登录状态会保存在 browser-profile/ 目录，下次运行无需再登录。")
+            print(">> 登录状态会保存，下次运行无需再登录。")
             input(">> 登录完成、看到店铺页面后按回车继续 ")
-            page.goto(shop_url, wait_until="domcontentloaded", timeout=60000)
+            safe_goto(page, shop_url)
             wait_if_captcha(page)
         else:
             break
     print(f">> 当前页面：{page.url}")
 
 
-# ---------------------------------------------------------------- 第一阶段：收集商品链接
+# ---------------------------------------------------------------- 列表页采集（核心）
 
 def scroll_page(page, rounds=6):
     for _ in range(rounds):
@@ -161,23 +192,74 @@ def scroll_page(page, rounds=6):
         time.sleep(random.uniform(0.5, 1.2))
 
 
-def collect_item_urls_on_page(page) -> set:
-    urls = set()
-    anchors = page.eval_on_selector_all(
-        "a[href*='detail.tmall.com/item'], a[href*='item.taobao.com/item'], a[href*='chaoshi.detail.tmall.com/item']",
-        "els => els.map(e => e.href)",
-    )
-    for u in anchors:
-        iid = item_id_from_url(u)
-        if iid:
-            urls.add(f"https://detail.tmall.com/item.htm?id={iid}")
-    return urls
+CARD_JS = """
+els => els.map(a => {
+    let node = a;
+    for (let i = 0; i < 6; i++) {
+        const p = node.parentElement;
+        if (!p) break;
+        const links = p.querySelectorAll("a[href*='item.htm']");
+        const ids = new Set();
+        links.forEach(l => { const m = l.href.match(/[?&]id=(\\d+)/); if (m) ids.add(m[1]); });
+        if (ids.size > 1) break;
+        node = p;
+    }
+    return {href: a.href, text: node.innerText || ""};
+})
+"""
+
+
+def parse_card_text(text: str):
+    """从商品卡片的整体文本里解析 标题/价格/销量/评价数。"""
+    lines = [l.strip() for l in text.splitlines() if l.strip()]
+    full = "\n".join(lines)
+    row = {"title": None, "price": None, "sales": None, "comments": None}
+
+    m = re.search(r"[¥￥]\s*([\d,]+(?:\.\d{1,2})?)", full)
+    if m:
+        row["price"] = m.group(1).replace(",", "")
+    m = re.search(r"(?:已售|月销|总销量)[:：]?\s*([\d.,万+]+)", full)
+    if m:
+        row["sales"] = m.group(1)
+    m = (re.search(r"([\d.,万+]+)\s*(?:条?评价|人?好评|人评价)", full)
+         or re.search(r"(?:评价|评论)\s*[:：(]?\s*([\d.,万+]+)", full))
+    if m:
+        row["comments"] = m.group(1)
+
+    cands = [l for l in lines
+             if len(l) >= 6 and not re.search(r"[¥￥]|已售|月销|评价|评论|优惠|领券|券|包邮|旗舰店|保障|分期|^\d+[.\d]*$", l)]
+    if cands:
+        row["title"] = max(cands, key=len)
+    return row
+
+
+def collect_cards_on_page(page):
+    """返回 {item_id: row} —— 从当前列表页的商品卡片直接解析数据。"""
+    result = {}
+    try:
+        cards = page.eval_on_selector_all(
+            "a[href*='detail.tmall.com/item'], a[href*='item.taobao.com/item'], a[href*='chaoshi.detail.tmall.com/item']",
+            CARD_JS,
+        )
+    except Exception:
+        return result
+    for c in cards:
+        iid = item_id_from_url(c["href"])
+        if not iid:
+            continue
+        row = parse_card_text(c.get("text") or "")
+        row["item_id"] = iid
+        row["url"] = f"https://detail.tmall.com/item.htm?id={iid}"
+        old = result.get(iid)
+        # 同一商品可能有多个链接（图片/标题各一个），保留信息最全的解析结果
+        if not old or sum(v is not None for v in row.values()) > sum(v is not None for v in old.values()):
+            result[iid] = row
+    return result
 
 
 def click_next_page(page) -> bool:
-    """尝试点击“下一页”按钮，成功返回 True。兼容新旧店铺装修的多种写法。"""
     candidates = [
-        "a.J_SearchAsync.next",           # 旧版店铺 search.htm
+        "a.J_SearchAsync.next",
         "a[class*='next']:not([class*='disable'])",
         "button[class*='next']:not([disabled])",
         "li[title='下一页'] a",
@@ -198,72 +280,87 @@ def click_next_page(page) -> bool:
     return False
 
 
-def stage1_collect_urls(page, shop_url, max_pages, dmin, dmax) -> list:
-    known = set()
-    if URLS_FILE.exists():
-        known = set(json.loads(URLS_FILE.read_text("utf-8")))
-        print(f">> 已有 {len(known)} 条商品链接（断点续采），本次将增量补充。")
+def stage1_collect(page, shop_url, max_pages, dmin, dmax):
+    """翻列表页，直接把卡片数据写入 ITEMS_FILE。"""
+    done = load_done_rows()
+    all_ids = set(done.keys())
+    print(f">> 已有 {len(all_ids)} 条商品记录（断点续采）。")
 
-    # 优先走传统的 search.htm 全部宝贝分页；走不通时退回当前页面点“下一页”
     origin = f"https://{urlparse(shop_url).netloc}"
     list_entries = [f"{origin}/search.htm", f"{origin}/category.htm", shop_url]
 
+    fout = ITEMS_FILE.open("a", encoding="utf-8")
+
+    def save_cards(cards):
+        new_cnt = 0
+        for iid, row in cards.items():
+            old = done.get(iid)
+            # 新商品，或本次解析出了旧记录缺失的字段，都写一条（导出时合并）
+            if not old or any(row.get(k) and not old.get(k) for k in ("title", "price", "sales", "comments")):
+                row["scraped_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
+                fout.write(json.dumps(row, ensure_ascii=False) + "\n")
+                fout.flush()
+                if not old:
+                    new_cnt += 1
+                merged = dict(old or {})
+                merged.update({k: v for k, v in row.items() if v not in (None, "")})
+                done[iid] = merged
+        return new_cnt
+
     entry_ok = None
     for entry in list_entries:
-        try:
-            page.goto(entry, wait_until="domcontentloaded", timeout=60000)
-            wait_if_captcha(page)
-            scroll_page(page)
-            found = collect_item_urls_on_page(page)
-            print(f">> 入口 {entry} ：本页发现 {len(found)} 个商品链接")
-            if found:
-                entry_ok = entry
-                known |= found
-                break
-        except PWTimeout:
+        if not safe_goto(page, entry):
             continue
+        wait_if_captcha(page)
+        kicked_to_login(page)
+        scroll_page(page)
+        cards = collect_cards_on_page(page)
+        print(f">> 入口 {entry} ：本页发现 {len(cards)} 个商品")
+        if cards:
+            entry_ok = entry
+            n = save_cards(cards)
+            print(f">> 第 1 页入库，新增 {n} 个商品")
+            break
     if not entry_ok:
-        print("!! 没能在店铺页面上找到商品链接，请把浏览器窗口里的实际情况反馈给我。")
-        return sorted(known)
+        print("!! 没能在店铺页面上找到商品，请截图反馈。")
+        fout.close()
+        return done
 
     stale_rounds = 0
     for page_no in range(2, max_pages + 1):
         human_pause(dmin, dmax, f"准备第 {page_no} 页")
         moved = False
         if "search.htm" in entry_ok:
-            try:
-                page.goto(f"{entry_ok}?pageNo={page_no}", wait_until="domcontentloaded", timeout=60000)
-                moved = True
-            except PWTimeout:
-                moved = False
+            moved = safe_goto(page, f"{entry_ok}?pageNo={page_no}")
         if not moved:
             moved = click_next_page(page)
         if not moved:
-            print(">> 没有下一页了，链接收集结束。")
+            print(">> 没有下一页了，采集结束。")
             break
-        wait_if_captcha(page)
+        if wait_if_captcha(page) or kicked_to_login(page):
+            safe_goto(page, f"{entry_ok}?pageNo={page_no}" if "search.htm" in entry_ok else entry_ok)
         scroll_page(page)
-        found = collect_item_urls_on_page(page)
-        new = found - known
-        known |= found
-        print(f">> 第 {page_no} 页：{len(found)} 个链接，其中新增 {len(new)} 个（累计 {len(known)}）")
-        stale_rounds = stale_rounds + 1 if not new else 0
+        cards = collect_cards_on_page(page)
+        before = len(done)
+        save_cards(cards)
+        new = len(done) - before
+        print(f">> 第 {page_no} 页：{len(cards)} 个商品，新增 {new} 个（累计 {len(done)}）")
+        stale_rounds = stale_rounds + 1 if new == 0 else 0
         if stale_rounds >= 2:
             print(">> 连续两页没有新商品，认为已到最后一页。")
             break
-        URLS_FILE.write_text(json.dumps(sorted(known), ensure_ascii=False, indent=1), "utf-8")
 
-    URLS_FILE.write_text(json.dumps(sorted(known), ensure_ascii=False, indent=1), "utf-8")
-    print(f">> 商品链接收集完成：共 {len(known)} 个，已保存到 {URLS_FILE}")
-    return sorted(known)
+    fout.close()
+    URLS_FILE.write_text(json.dumps([r["url"] for r in done.values()], ensure_ascii=False, indent=1), "utf-8")
+    got_comments = sum(1 for r in done.values() if r.get("comments"))
+    print(f">> 列表采集完成：共 {len(done)} 个商品，其中 {got_comments} 个带评价数。")
+    return done
 
 
-# ---------------------------------------------------------------- 第二阶段：逐个采集详情
+# ---------------------------------------------------------------- 详情页补采（可选）
 
 def extract_from_detail(page, captured: dict) -> dict:
-    """优先从 mtop 详情接口 JSON 提取，DOM 文本兜底。"""
     row = {"title": None, "price": None, "sales": None, "comments": None}
-
     data = captured.get("detail_json")
     if data:
         row["title"] = find_first_key(data, ["title", "itemTitle"])
@@ -285,38 +382,16 @@ def extract_from_detail(page, captured: dict) -> dict:
                 return m.group(1)
         return None
 
-    if not row["title"]:
-        for sel in ["h1", "[class*='ItemTitle']", "[class*='itemTitle']", ".tb-detail-hd h1"]:
-            try:
-                loc = page.locator(sel).first
-                if loc.count() > 0:
-                    t = loc.inner_text(timeout=5000).strip()
-                    if t:
-                        row["title"] = t
-                        break
-            except Exception:
-                continue
-    if not row["price"]:
-        row["price"] = dom_text([r"[¥￥]\s*([\d,]+(?:\.\d{1,2})?)"])
     if not row["sales"]:
-        row["sales"] = dom_text([r"已售\s*([\d.,万+]+)", r"月销\s*([\d.,万+]+)", r"总销量[:：]?\s*([\d.,万+]+)"])
+        row["sales"] = dom_text([r"已售\s*([\d.,万+]+)", r"月销\s*([\d.,万+]+)"])
     if not row["comments"]:
-        row["comments"] = dom_text([r"评价\s*\(?([\d.,万+]+)\)?", r"累计评价\s*([\d.,万+]+)"])
-
+        row["comments"] = dom_text([r"(?:累计)?评价\s*\(?([\d.,万+]+)\)?"])
     return row
 
 
-def stage2_scrape_details(page, urls, dmin, dmax):
-    done_ids = set()
-    if ITEMS_FILE.exists():
-        for line in ITEMS_FILE.read_text("utf-8").splitlines():
-            try:
-                done_ids.add(json.loads(line)["item_id"])
-            except Exception:
-                pass
-    todo = [u for u in urls if item_id_from_url(u) not in done_ids]
-    print(f">> 详情采集：共 {len(urls)} 个商品，已完成 {len(done_ids)}，本次待采 {len(todo)}")
-
+def stage2_fill_details(page, done, dmin, dmax):
+    todo = [r for r in done.values() if not r.get("comments")]
+    print(f">> 详情页补采评价数：待补 {len(todo)} 个商品")
     captured = {}
 
     def on_response(resp):
@@ -327,42 +402,40 @@ def stage2_scrape_details(page, urls, dmin, dmax):
                 pass
 
     page.on("response", on_response)
-
     fails = 0
     with ITEMS_FILE.open("a", encoding="utf-8") as fout:
-        for i, url in enumerate(todo, 1):
-            iid = item_id_from_url(url)
+        for i, base in enumerate(todo, 1):
+            url, iid = base["url"], base["item_id"]
             captured.clear()
             print(f"[{i}/{len(todo)}] {url}")
-            try:
-                page.goto(url, wait_until="domcontentloaded", timeout=60000)
-            except PWTimeout:
-                print("    !! 页面加载超时，跳过（下次运行会重试）")
-                fails += 1
-                continue
-            if wait_if_captcha(page) or kicked_to_login(page):
-                try:
-                    page.goto(url, wait_until="domcontentloaded", timeout=60000)
-                except PWTimeout:
-                    continue
-            # 每采十几个商品休息一会儿，模拟真人放下手机的间歇
-            if i % random.randint(12, 18) == 0:
-                human_pause(30, 90, "阶段性休息，降低风控")
-            scroll_page(page, rounds=3)
-            row = extract_from_detail(page, captured)
-            row.update({"item_id": iid, "url": url, "scraped_at": time.strftime("%Y-%m-%d %H:%M:%S")})
-            if not row["title"]:
-                print("    !! 未提取到标题，可能被拦截或页面结构变化，跳过（下次重试）")
+            if not safe_goto(page, url):
                 fails += 1
                 if fails >= 5:
-                    print("!! 连续失败过多，为安全起见先停止。请稍后（建议数小时后）再运行继续。")
+                    print("!! 连续失败过多，停止详情补采（列表数据不受影响）。")
                     break
                 continue
-            fails = 0
-            fout.write(json.dumps(row, ensure_ascii=False) + "\n")
-            fout.flush()
-            print(f"    ✓ {row['title'][:40]} | 价:{row['price']} | 销:{row['sales']} | 评:{row['comments']}")
-            human_pause(dmin, dmax, "模拟浏览间隔")
+            if wait_if_captcha(page) or kicked_to_login(page):
+                if not safe_goto(page, url):
+                    continue
+            scroll_page(page, rounds=3)
+            row = extract_from_detail(page, captured)
+            patch = {k: v for k, v in row.items() if v not in (None, "")}
+            if patch:
+                fails = 0
+                patch.update({"item_id": iid, "url": url,
+                              "scraped_at": time.strftime("%Y-%m-%d %H:%M:%S")})
+                fout.write(json.dumps(patch, ensure_ascii=False) + "\n")
+                fout.flush()
+                print(f"    ✓ 补到：{ {k: v for k, v in patch.items() if k in ('sales', 'comments')} }")
+            else:
+                fails += 1
+                if fails >= 5:
+                    print("!! 连续失败过多，停止详情补采（列表数据不受影响）。")
+                    break
+            if i % random.randint(12, 18) == 0:
+                human_pause(30, 90, "阶段性休息，降低风控")
+            else:
+                human_pause(dmin, dmax, "模拟浏览间隔")
     page.remove_listener("response", on_response)
 
 
@@ -371,19 +444,11 @@ def stage2_scrape_details(page, urls, dmin, dmax):
 def export_excel(exclude_keywords):
     from openpyxl import Workbook
 
-    rows, seen = [], set()
-    if not ITEMS_FILE.exists():
-        print("!! 还没有采集数据，无法导出。")
+    done = load_done_rows()
+    rows = [r for r in done.values() if r.get("title")]
+    if not rows:
+        print("!! 还没有采集到带标题的数据，无法导出。")
         return None
-    for line in ITEMS_FILE.read_text("utf-8").splitlines():
-        try:
-            r = json.loads(line)
-        except Exception:
-            continue
-        if r.get("item_id") in seen:
-            continue
-        seen.add(r.get("item_id"))
-        rows.append(r)
 
     def is_bundle(title):
         return any(k in (title or "") for k in exclude_keywords)
@@ -397,12 +462,16 @@ def export_excel(exclude_keywords):
     def fill(ws, data):
         ws.append(header)
         for r in sorted(data, key=lambda x: (x.get("title") or "")):
-            price = parse_cn_number(re.sub(r"[¥￥,]", "", str(r.get("price") or ""))) if r.get("price") else None
+            price = r.get("price")
+            try:
+                price = float(re.sub(r"[¥￥,]", "", str(price))) if price else None
+            except ValueError:
+                pass
             ws.append([
                 r.get("title"),
-                price if price is not None else r.get("price"),
-                parse_cn_number(r.get("sales")) if r.get("sales") is not None else None,
-                parse_cn_number(r.get("comments")) if r.get("comments") is not None else None,
+                price,
+                parse_cn_number(r.get("sales")),
+                parse_cn_number(r.get("comments")),
                 r.get("url"),
                 r.get("item_id"),
             ])
@@ -418,7 +487,7 @@ def export_excel(exclude_keywords):
     out = DATA_DIR / f"罗技官方旗舰店_商品数据_{date.today():%Y%m%d}.xlsx"
     wb.save(out)
     print(f">> 导出完成：{out}")
-    print(f"   单品 {len(singles)} 条；按关键词过滤出的套包 {len(bundles)} 条（在第二个工作表，可自行核对）")
+    print(f"   单品 {len(singles)} 条；按关键词过滤出的套包 {len(bundles)} 条（第二个工作表可核对）")
     return out
 
 
@@ -432,7 +501,8 @@ def main():
     ap.add_argument("--max-delay", type=float, default=12.0, help="动作间最大等待秒数")
     ap.add_argument("--exclude", default=",".join(DEFAULT_EXCLUDE_KEYWORDS),
                     help="套包过滤关键词，逗号分隔")
-    ap.add_argument("--no-details", action="store_true", help="只收集商品链接，不进详情页")
+    ap.add_argument("--with-details", action="store_true",
+                    help="对缺少评价数的商品进详情页补采（页面访问量大，谨慎使用）")
     ap.add_argument("--export-only", action="store_true", help="不采集，仅用已有数据导出 Excel")
     args = ap.parse_args()
 
@@ -444,8 +514,7 @@ def main():
         return
 
     print("=" * 60)
-    print("天猫店铺采集启动。将打开一个真实浏览器窗口，请勿关闭。")
-    print("采集期间可以最小化窗口，但不要在该窗口里另外操作。")
+    print("天猫店铺采集启动（列表页模式）。将打开真实浏览器窗口，请勿关闭。")
     print("=" * 60)
 
     with sync_playwright() as p:
@@ -456,8 +525,6 @@ def main():
             timezone_id="Asia/Shanghai",
             args=["--disable-blink-features=AutomationControlled"],
         )
-        # 优先使用电脑上真实安装的 Edge/Chrome（比自带浏览器更不易被风控识别）。
-        # 不同浏览器使用各自的配置目录，切换后需要重新扫码登录一次。
         ctx = None
         for channel in ("msedge", "chrome", None):
             profile = PROFILE_DIR if channel is None else Path(f"{PROFILE_DIR}-{channel}")
@@ -471,20 +538,26 @@ def main():
             except Exception:
                 continue
         if ctx is None:
-            print("!! 无法启动任何浏览器，请把本窗口截图发给助手。")
+            print("!! 无法启动任何浏览器，请截图反馈。")
             return
         page = ctx.pages[0] if ctx.pages else ctx.new_page()
         page.add_init_script("Object.defineProperty(navigator,'webdriver',{get:()=>undefined})")
 
         try:
             ensure_logged_in(page, args.shop)
-            urls = stage1_collect_urls(page, args.shop, args.max_pages, args.min_delay, args.max_delay)
-            if not args.no_details and urls:
-                stage2_scrape_details(page, urls, args.min_delay, args.max_delay)
+            done = stage1_collect(page, args.shop, args.max_pages, args.min_delay, args.max_delay)
+            if args.with_details and done:
+                stage2_fill_details(page, done, args.min_delay, args.max_delay)
         except KeyboardInterrupt:
             print("\n>> 已手动中断。进度已保存，下次运行会从断点继续。")
+        except Exception as e:
+            print(f"\n!! 出现未预期的错误：{e}")
+            print(">> 进度已保存。请把本窗口截图发给助手。")
         finally:
-            ctx.close()
+            try:
+                ctx.close()
+            except Exception:
+                pass
 
     export_excel(exclude_keywords)
 
