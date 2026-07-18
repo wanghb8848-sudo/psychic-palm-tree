@@ -39,6 +39,7 @@ DATA_DIR = BASE_DIR / "data"
 PROFILE_DIR = BASE_DIR / "browser-profile"
 URLS_FILE = DATA_DIR / "item_urls.json"
 ITEMS_FILE = DATA_DIR / "items.jsonl"
+VARIANTS_FILE = DATA_DIR / "variants.jsonl"  # 每个颜色/款式一行：{item_id, name, url, img}
 
 # 标题中出现这些词的商品视为“套包/套装”，会被移到 Excel 的第二个工作表，不计入单品
 DEFAULT_EXCLUDE_KEYWORDS = ["套装", "套餐", "组合", "礼盒", "礼包", "套包", "两件装", "二件装", "件套"]
@@ -349,6 +350,109 @@ def collect_cards_on_page(page):
     return result
 
 
+# ---------------- 颜色/款式变体：从列表页卡片那排小图直接抓“变体网址”（不进详情页）
+# 逻辑同后羿/八爪鱼：在每个商品卡片内部，收集那排缩略图对应的全部 item.htm 链接，
+# 每个颜色/款式往往带独立的 &skuId=/&sku_properties=，即“一个小分类一个网址”。
+VARIANT_JS = r"""
+els => {
+    const out = {};
+    els.forEach(a => {
+        let node = a;
+        for (let i = 0; i < 6; i++) {
+            const p = node.parentElement;
+            if (!p) break;
+            const ids = new Set();
+            p.querySelectorAll("a[href*='item.htm']").forEach(l => {
+                const m = l.href.match(/[?&]id=(\d+)/); if (m) ids.add(m[1]);
+            });
+            if (ids.size > 1) break;   // 再往上就并进别的商品了，停
+            node = p;
+        }
+        const base = (a.href.match(/[?&]id=(\d+)/) || [])[1] || "";
+        if (!base || out[base]) return;
+        // 收集卡片内所有指向商品页的链接（含缩略图外链），按 href 去重
+        const seen = new Set();
+        const list = [];
+        node.querySelectorAll("a[href*='item.htm']").forEach(l => {
+            const href = l.href;
+            if (seen.has(href)) return; seen.add(href);
+            const img = l.querySelector("img");
+            list.push({
+                href: href,
+                name: ((img && (img.alt || img.title)) || l.getAttribute("title") || "").trim(),
+                img: img ? (img.src || img.getAttribute("data-src") || "") : "",
+                sku: /[?&](skuId|sku_properties|skuid)=/.test(href),
+            });
+        });
+        // 缩略图本身可能不是外链，而是纯 <img>（点击才切图）——把它们也抓出来当诊断
+        const thumbs = [];
+        node.querySelectorAll("img").forEach(im => {
+            const nm = (im.alt || im.title || "").trim();
+            const src = im.src || im.getAttribute("data-src") || "";
+            if (src) thumbs.push({ name: nm, img: src });
+        });
+        out[base] = { links: list, thumbs: thumbs };
+    });
+    return out;
+}
+"""
+
+
+def harvest_variants_on_page(page):
+    """返回 {item_id: [{name,url,img}]} —— 每个颜色/款式的独立网址。
+    优先取“带 skuId 的独立链接”；若卡片里所有链接都指向同一个商品页（无独立
+    变体网址），则该商品不产出变体行（说明这排小图是纯 JS 切图，列表页无独立网址）。"""
+    out = {}
+    try:
+        raw = page.eval_on_selector_all(ITEM_LINK_SEL, VARIANT_JS)
+    except Exception:
+        return out
+    for iid, info in (raw or {}).items():
+        links = info.get("links") or []
+        base_url = f"https://detail.tmall.com/item.htm?id={iid}"
+        variants = []
+        seen = set()
+        # 带 skuId 的链接才是真正的“颜色/款式独立网址”
+        sku_links = [l for l in links if l.get("sku")]
+        for l in sku_links:
+            u = l.get("href")
+            if u and u not in seen:
+                seen.add(u)
+                variants.append({"name": l.get("name") or "", "url": u, "img": l.get("img") or ""})
+        # 没有带 skuId 的独立链接时，退而记录缩略图（有几个颜色 + 图URL），网址用商品页兜底
+        if not variants:
+            thumbs = info.get("thumbs") or []
+            # 去掉重复图；只有 >=2 张才算“有多个变体”
+            uniq = []
+            tseen = set()
+            for t in thumbs:
+                if t["img"] and t["img"] not in tseen:
+                    tseen.add(t["img"])
+                    uniq.append(t)
+            if len(uniq) >= 2:
+                for t in uniq:
+                    variants.append({"name": t.get("name") or "", "url": base_url, "img": t["img"]})
+        if variants:
+            out[iid] = variants
+    return out
+
+
+def load_variants():
+    """读取已采集的变体行，按 item_id 归组。"""
+    grouped = {}
+    if VARIANTS_FILE.exists():
+        for line in VARIANTS_FILE.read_text("utf-8").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except Exception:
+                continue
+            grouped.setdefault(r.get("item_id"), {})[r.get("url")] = r
+    return grouped
+
+
 # ---------------- 来源三：偷听页面自己加载的接口 JSON（数据最干净）
 
 def _price_val(v, depth=0):
@@ -481,6 +585,26 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax, ocr=None):
 
     fout = ITEMS_FILE.open("a", encoding="utf-8")
 
+    # 变体（颜色/款式）网址：一个颜色一行，按 item_id + url 去重续采
+    seen_variants = load_variants()
+    fvar = VARIANTS_FILE.open("a", encoding="utf-8")
+
+    def save_variants(page):
+        vmap = harvest_variants_on_page(page)
+        added = 0
+        for iid, vlist in vmap.items():
+            bucket = seen_variants.setdefault(iid, {})
+            for v in vlist:
+                url = v.get("url")
+                if url and url not in bucket:
+                    rec = {"item_id": iid, "name": v.get("name") or "",
+                           "url": url, "img": v.get("img") or ""}
+                    bucket[url] = rec
+                    fvar.write(json.dumps(rec, ensure_ascii=False) + "\n")
+                    fvar.flush()
+                    added += 1
+        return added
+
     def save_cards(cards):
         new_cnt = 0
         for iid, row in cards.items():
@@ -514,12 +638,16 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax, ocr=None):
         if cards:
             entry_ok = entry
             n = save_cards(cards)
-            print(f">> 第 1 页入库，新增 {n} 个商品")
+            nv = save_variants(page)
+            print(f">> 第 1 页入库，新增 {n} 个商品，{nv} 个颜色/款式变体网址")
             # 诊断文件：字段缺失时把它发给助手，即可精准修复解析规则
             try:
                 raw = page.eval_on_selector_all(ITEM_LINK_SEL, CARD_JS)[:6]
+                var_raw = page.eval_on_selector_all(ITEM_LINK_SEL, VARIANT_JS)
+                var_sample = dict(list(var_raw.items())[:6]) if isinstance(var_raw, dict) else var_raw
                 (DATA_DIR / "debug_first_page.json").write_text(
-                    json.dumps({"cards": raw, "api_sample": list(api_items.values())[:3]},
+                    json.dumps({"cards": raw, "api_sample": list(api_items.values())[:3],
+                                "variants": var_sample},
                                ensure_ascii=False, indent=1), "utf-8")
             except Exception:
                 pass
@@ -528,6 +656,7 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax, ocr=None):
         print("!! 没能在店铺页面上找到商品，请截图反馈。")
         page.remove_listener("response", on_response)
         fout.close()
+        fvar.close()
         return done
 
     stale_rounds = 0
@@ -551,8 +680,10 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax, ocr=None):
                 cards[iid]["price"] = pr
         before = len(done)
         save_cards(cards)
+        nv = save_variants(page)
         new = len(done) - before
-        print(f">> 第 {page_no} 页：{len(cards)} 个商品，新增 {new} 个（累计 {len(done)}）")
+        print(f">> 第 {page_no} 页：{len(cards)} 个商品，新增 {new} 个（累计 {len(done)}），"
+              f"变体网址 +{nv}")
         stale_rounds = stale_rounds + 1 if new == 0 else 0
         if stale_rounds >= 2:
             print(">> 连续两页没有新商品，认为已到最后一页。")
@@ -560,9 +691,12 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax, ocr=None):
 
     page.remove_listener("response", on_response)
     fout.close()
+    fvar.close()
     URLS_FILE.write_text(json.dumps([r["url"] for r in done.values()], ensure_ascii=False, indent=1), "utf-8")
     got_comments = sum(1 for r in done.values() if r.get("comments"))
-    print(f">> 列表采集完成：共 {len(done)} 个商品，其中 {got_comments} 个带评价数。")
+    total_var = sum(len(v) for v in seen_variants.values())
+    print(f">> 列表采集完成：共 {len(done)} 个商品，其中 {got_comments} 个带评价数；"
+          f"颜色/款式变体网址共 {total_var} 条（{len(seen_variants)} 个商品有变体）。")
     return done
 
 
@@ -692,6 +826,26 @@ def export_excel(exclude_keywords):
     fill(ws1, singles)
     ws2 = wb.create_sheet("已过滤-套包")
     fill(ws2, bundles)
+
+    # 变体明细：每个颜色/款式一行，带它自己的网址（不进详情页，取自列表页小图链接）
+    variants = load_variants()
+    if variants:
+        title_by_id = {r.get("item_id"): r.get("title") for r in rows}
+        ws3 = wb.create_sheet("颜色款式变体")
+        vheader = ["品名", "颜色/款式", "变体网址", "缩略图", "商品ID"]
+        ws3.append(vheader)
+        for iid in sorted(variants, key=lambda i: (title_by_id.get(i) or "")):
+            for v in variants[iid].values():
+                ws3.append([
+                    title_by_id.get(iid) or "",
+                    v.get("name") or "",
+                    v.get("url") or "",
+                    v.get("img") or "",
+                    iid,
+                ])
+        for col, w in zip("ABCDE", [50, 20, 55, 55, 16]):
+            ws3.column_dimensions[col].width = w
+        print(f">> 变体明细：{sum(len(v) for v in variants.values())} 条（{len(variants)} 个商品有颜色/款式）")
 
     out = DATA_DIR / f"罗技官方旗舰店_商品数据_{date.today():%Y%m%d}.xlsx"
     wb.save(out)
