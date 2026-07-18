@@ -54,6 +54,26 @@ def human_pause(min_s: float, max_s: float, why: str = ""):
     time.sleep(t)
 
 
+def normalize_price(raw):
+    """把任意来源的价格统一成“元”的浮点数。
+    天猫价格恒为两位小数，OCR/接口常把 129.00 读成/存成 12900（丢了小数点），
+    导致“几百变几万”。规则：带小数点的当元直接用；纯整数（>=3位）视为“分”，除以 100。
+    这是所有价格的总兜底，不管价格来自 OCR、卡片文字还是接口 JSON 都在这里归一。"""
+    if raw is None or raw == "":
+        return None
+    s = re.sub(r"[¥￥,\s]", "", str(raw))
+    if not s:
+        return None
+    if "." in s:
+        m = re.match(r"^\d+\.\d{1,2}", s)
+        return float(m.group(0)) if m else None
+    m = re.match(r"^\d+", s)
+    if not m:
+        return None
+    digits = m.group(0)
+    return round(int(digits) / 100, 2) if len(digits) >= 3 else float(digits)
+
+
 def parse_cn_number(text):
     """把 '2.5万+'、'1000+'、'3万' 之类的文本转成数字（取下限）。"""
     if text is None:
@@ -305,12 +325,9 @@ def ocr_prices_on_page(page, ocr):
             txt = (ocr.classification(png) or "").replace(" ", "").replace(",", "")
             m = re.search(r"\d+(?:\.\d{1,2})?", txt)
             if m:
-                val = m.group(0)
-                # 天猫价格恒为两位小数，OCR 常漏掉小数点（129.00 被读成 12900）。
-                # 若识别结果没有小数点，则末两位视为角分，除以 100 还原。
-                if "." not in val and len(val) >= 3:
-                    val = f"{int(val) / 100:.2f}"
-                out[iid] = val
+                # 原样存 OCR 识别到的数字串（可能没小数点，如 12900）；
+                # 统一由导出时的 normalize_price 归一成“元”，避免多处各除一次。
+                out[iid] = m.group(0)
         except Exception:
             continue
     return out
@@ -805,11 +822,7 @@ def export_excel(exclude_keywords):
     def fill(ws, data):
         ws.append(header)
         for r in sorted(data, key=lambda x: (x.get("title") or "")):
-            price = r.get("price")
-            try:
-                price = float(re.sub(r"[¥￥,]", "", str(price))) if price else None
-            except ValueError:
-                pass
+            price = normalize_price(r.get("price"))
             ws.append([
                 r.get("title"),
                 price,
