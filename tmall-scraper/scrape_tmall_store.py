@@ -232,6 +232,13 @@ def parse_card_text(text: str):
     m = re.search(r"[¥￥]\s*([\d,]+(?:\.\d{1,2})?)", full)
     if m:
         row["price"] = m.group(1).replace(",", "")
+    else:
+        # 卡片上 ¥ 符号可能是图标而非文字：找带两位小数或带“元”的独立数字行
+        for l in lines:
+            m = re.match(r"^(\d{1,6}\.\d{1,2})\s*(?:元|起)?$", l.replace(",", ""))
+            if m:
+                row["price"] = m.group(1)
+                break
     m = re.search(r"(?:已售|月销|总销量)[:：]?\s*([\d.,万+]+)", full)
     if m:
         row["sales"] = m.group(1)
@@ -247,14 +254,15 @@ def parse_card_text(text: str):
     return row
 
 
+ITEM_LINK_SEL = ("a[href*='detail.tmall.com/item'], a[href*='item.taobao.com/item'], "
+                 "a[href*='chaoshi.detail.tmall.com/item']")
+
+
 def collect_cards_on_page(page):
     """返回 {item_id: row} —— 结构化子元素（学后羿）优先，整卡文字正则兜底。"""
     result = {}
     try:
-        cards = page.eval_on_selector_all(
-            "a[href*='detail.tmall.com/item'], a[href*='item.taobao.com/item'], a[href*='chaoshi.detail.tmall.com/item']",
-            CARD_JS,
-        )
+        cards = page.eval_on_selector_all(ITEM_LINK_SEL, CARD_JS)
     except Exception:
         return result
     for c in cards:
@@ -286,6 +294,43 @@ def collect_cards_on_page(page):
 
 # ---------------- 来源三：偷听页面自己加载的接口 JSON（数据最干净）
 
+def _price_val(v, depth=0):
+    """判断一个值是不是像“价格”，是就规整成字符串返回。"""
+    if isinstance(v, (int, float)) and 0 < v < 10 ** 6:
+        return str(v)
+    if isinstance(v, str):
+        s = v.strip().lstrip("¥￥").replace(",", "")
+        m = re.match(r"^(\d{1,6}(?:\.\d{1,2})?)", s)
+        if m:
+            return m.group(1)
+    if isinstance(v, (dict, list)) and depth < 4:
+        return _hunt_price(v, depth + 1)
+    return None
+
+
+def _hunt_price(obj, depth=0):
+    """在商品对象子树里找任何字段名含 price/money/yuan 的价格值。"""
+    if depth > 4:
+        return None
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            if any(w in k.lower() for w in ("price", "money", "yuan")):
+                got = _price_val(v, depth)
+                if got:
+                    return got
+        for v in obj.values():
+            if isinstance(v, (dict, list)):
+                got = _hunt_price(v, depth + 1)
+                if got:
+                    return got
+    elif isinstance(obj, list):
+        for v in obj:
+            got = _hunt_price(v, depth + 1)
+            if got:
+                return got
+    return None
+
+
 def harvest_api_items(data):
     """在任意接口返回的嵌套 JSON 里挖商品对象（有 itemId+title 的 dict）。"""
     found = {}
@@ -296,9 +341,7 @@ def harvest_api_items(data):
             iid = cur.get("itemId") or cur.get("item_id") or cur.get("nid")
             title = cur.get("title") or cur.get("itemTitle") or cur.get("itemName")
             if iid and title and str(iid).isdigit() and isinstance(title, str) and len(title) >= 6:
-                price = cur.get("price") or cur.get("priceText") or cur.get("salePrice") or cur.get("promotionPrice")
-                if isinstance(price, dict):
-                    price = find_first_key(price, ["priceText", "price", "text"])
+                price = _hunt_price(cur)
                 sales = (cur.get("vagueSellCount") or cur.get("soldQuantity") or cur.get("sellCount")
                          or cur.get("sold") or cur.get("annualVol") or cur.get("monthSellCount"))
                 comments = cur.get("commentCount") or cur.get("rateCount") or cur.get("commentNum")
@@ -410,6 +453,14 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax):
             entry_ok = entry
             n = save_cards(cards)
             print(f">> 第 1 页入库，新增 {n} 个商品")
+            # 诊断文件：字段缺失时把它发给助手，即可精准修复解析规则
+            try:
+                raw = page.eval_on_selector_all(ITEM_LINK_SEL, CARD_JS)[:6]
+                (DATA_DIR / "debug_first_page.json").write_text(
+                    json.dumps({"cards": raw, "api_sample": list(api_items.values())[:3]},
+                               ensure_ascii=False, indent=1), "utf-8")
+            except Exception:
+                pass
             break
     if not entry_ok:
         print("!! 没能在店铺页面上找到商品，请截图反馈。")
