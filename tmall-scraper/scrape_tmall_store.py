@@ -204,7 +204,21 @@ els => els.map(a => {
         if (ids.size > 1) break;
         node = p;
     }
-    return {href: a.href, text: node.innerText || ""};
+    const pick = (root, sels) => {
+        for (const s of sels) {
+            const el = root.querySelector(s);
+            if (el && el.innerText && el.innerText.trim()) return el.innerText.trim();
+        }
+        return "";
+    };
+    return {
+        href: a.href,
+        text: node.innerText || "",
+        t_title: pick(node, ["[class*='title' i]", "[class*='name' i]"]),
+        t_price: pick(node, ["[class*='price' i]"]),
+        t_sold: pick(node, ["[class*='sold' i]", "[class*='sale' i]", "[class*='deal' i]"]),
+        t_comment: pick(node, ["[class*='comment' i]", "[class*='rate' i]", "[class*='eval' i]"]),
+    };
 })
 """
 
@@ -234,7 +248,7 @@ def parse_card_text(text: str):
 
 
 def collect_cards_on_page(page):
-    """返回 {item_id: row} —— 从当前列表页的商品卡片直接解析数据。"""
+    """返回 {item_id: row} —— 结构化子元素（学后羿）优先，整卡文字正则兜底。"""
     result = {}
     try:
         cards = page.eval_on_selector_all(
@@ -248,6 +262,19 @@ def collect_cards_on_page(page):
         if not iid:
             continue
         row = parse_card_text(c.get("text") or "")
+        # 结构化子元素的结果优先覆盖正则结果
+        t = (c.get("t_title") or "").strip()
+        if len(t) >= 6 and not re.search(r"[¥￥]|已售|评价", t):
+            row["title"] = t
+        m = re.search(r"([\d,]+(?:\.\d{1,2})?)", (c.get("t_price") or "").replace("¥", "").replace("￥", ""))
+        if m:
+            row["price"] = m.group(1).replace(",", "")
+        m = re.search(r"([\d.,万+]+)", c.get("t_sold") or "")
+        if m:
+            row["sales"] = m.group(1)
+        m = re.search(r"([\d.,万+]+)", c.get("t_comment") or "")
+        if m:
+            row["comments"] = m.group(1)
         row["item_id"] = iid
         row["url"] = f"https://detail.tmall.com/item.htm?id={iid}"
         old = result.get(iid)
@@ -255,6 +282,51 @@ def collect_cards_on_page(page):
         if not old or sum(v is not None for v in row.values()) > sum(v is not None for v in old.values()):
             result[iid] = row
     return result
+
+
+# ---------------- 来源三：偷听页面自己加载的接口 JSON（数据最干净）
+
+def harvest_api_items(data):
+    """在任意接口返回的嵌套 JSON 里挖商品对象（有 itemId+title 的 dict）。"""
+    found = {}
+    queue = [data]
+    while queue:
+        cur = queue.pop()
+        if isinstance(cur, dict):
+            iid = cur.get("itemId") or cur.get("item_id") or cur.get("nid")
+            title = cur.get("title") or cur.get("itemTitle") or cur.get("itemName")
+            if iid and title and str(iid).isdigit() and isinstance(title, str) and len(title) >= 6:
+                price = cur.get("price") or cur.get("priceText") or cur.get("salePrice") or cur.get("promotionPrice")
+                if isinstance(price, dict):
+                    price = find_first_key(price, ["priceText", "price", "text"])
+                sales = (cur.get("vagueSellCount") or cur.get("soldQuantity") or cur.get("sellCount")
+                         or cur.get("sold") or cur.get("annualVol") or cur.get("monthSellCount"))
+                comments = cur.get("commentCount") or cur.get("rateCount") or cur.get("commentNum")
+                found[str(iid)] = {
+                    "item_id": str(iid),
+                    "title": title.strip(),
+                    "price": str(price) if price not in (None, "") else None,
+                    "sales": str(sales) if sales not in (None, "") else None,
+                    "comments": str(comments) if comments not in (None, "") else None,
+                    "url": f"https://detail.tmall.com/item.htm?id={iid}",
+                }
+            queue.extend(cur.values())
+        elif isinstance(cur, list):
+            queue.extend(cur)
+    return found
+
+
+def merge_sources(cards, api_items):
+    """卡片解析结果与接口结果按商品 ID 合并；接口值补齐缺失字段。"""
+    out = {k: dict(v) for k, v in cards.items()}
+    for iid, row in api_items.items():
+        if iid in out:
+            for k, v in row.items():
+                if v not in (None, "") and not out[iid].get(k):
+                    out[iid][k] = v
+        else:
+            out[iid] = dict(row)
+    return out
 
 
 def click_next_page(page) -> bool:
@@ -281,10 +353,28 @@ def click_next_page(page) -> bool:
 
 
 def stage1_collect(page, shop_url, max_pages, dmin, dmax):
-    """翻列表页，直接把卡片数据写入 ITEMS_FILE。"""
+    """翻列表页，三路数据源合并后写入 ITEMS_FILE。"""
     done = load_done_rows()
-    all_ids = set(done.keys())
-    print(f">> 已有 {len(all_ids)} 条商品记录（断点续采）。")
+    print(f">> 已有 {len(done)} 条商品记录（断点续采）。")
+
+    # 来源三：监听页面自己发出的接口请求，捡里面的商品 JSON
+    api_items = {}
+
+    def on_response(resp):
+        url = resp.url
+        if not any(k in url for k in ("mtop.", "asyncSearch", "asynSearch", "shopitem", "search")):
+            return
+        try:
+            body = resp.text()
+            if "itemId" not in body and "item_id" not in body and "nid" not in body:
+                return
+            got = harvest_api_items(extract_jsonp(body))
+            if got:
+                api_items.update(got)
+        except Exception:
+            pass
+
+    page.on("response", on_response)
 
     origin = f"https://{urlparse(shop_url).netloc}"
     list_entries = [f"{origin}/search.htm", f"{origin}/category.htm", shop_url]
@@ -314,8 +404,8 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax):
         wait_if_captcha(page)
         kicked_to_login(page)
         scroll_page(page)
-        cards = collect_cards_on_page(page)
-        print(f">> 入口 {entry} ：本页发现 {len(cards)} 个商品")
+        cards = merge_sources(collect_cards_on_page(page), api_items)
+        print(f">> 入口 {entry} ：本页发现 {len(cards)} 个商品（含接口捕获 {len(api_items)} 条）")
         if cards:
             entry_ok = entry
             n = save_cards(cards)
@@ -323,6 +413,7 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax):
             break
     if not entry_ok:
         print("!! 没能在店铺页面上找到商品，请截图反馈。")
+        page.remove_listener("response", on_response)
         fout.close()
         return done
 
@@ -340,7 +431,7 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax):
         if wait_if_captcha(page) or kicked_to_login(page):
             safe_goto(page, f"{entry_ok}?pageNo={page_no}" if "search.htm" in entry_ok else entry_ok)
         scroll_page(page)
-        cards = collect_cards_on_page(page)
+        cards = merge_sources(collect_cards_on_page(page), api_items)
         before = len(done)
         save_cards(cards)
         new = len(done) - before
@@ -350,6 +441,7 @@ def stage1_collect(page, shop_url, max_pages, dmin, dmax):
             print(">> 连续两页没有新商品，认为已到最后一页。")
             break
 
+    page.remove_listener("response", on_response)
     fout.close()
     URLS_FILE.write_text(json.dumps([r["url"] for r in done.values()], ensure_ascii=False, indent=1), "utf-8")
     got_comments = sum(1 for r in done.values() if r.get("comments"))
