@@ -24,9 +24,12 @@ v2 变更：默认只采集【列表页】——商品卡片上已经有价格/�
 
 import argparse
 import json
+import os
 import random
 import re
+import subprocess
 import sys
+import tempfile
 import time
 from datetime import date
 from pathlib import Path
@@ -860,16 +863,62 @@ def export_excel(exclude_keywords):
             ws3.column_dimensions[col].width = w
         print(f">> 变体明细：{sum(len(v) for v in variants.values())} 条（{len(variants)} 个商品有颜色/款式）")
 
-    out = DATA_DIR / f"罗技官方旗舰店_商品数据_{date.today():%Y%m%d}.xlsx"
-    wb.save(out)
-    print(f">> 导出完成：{out}")
+    # 表格直接放在程序旁边（不是 data 子文件夹），打开程序所在文件夹就能看到
+    out = BASE_DIR / f"罗技官方旗舰店_商品数据_{date.today():%Y%m%d}.xlsx"
+    try:
+        wb.save(out)
+    except PermissionError:
+        # 上一份表格正被 Excel/WPS 打开占用：换个名字保存，不让成果丢失
+        out = BASE_DIR / f"罗技官方旗舰店_商品数据_{date.today():%Y%m%d}_{int(time.time())}.xlsx"
+        wb.save(out)
+    print("=" * 60)
+    print(f">> 导出完成！表格文件在：\n   {out.resolve()}")
     print(f"   单品 {len(singles)} 条；按关键词过滤出的套包 {len(bundles)} 条（第二个工作表可核对）")
+    print("=" * 60)
+    reveal_in_file_manager(out)
     return out
+
+
+def reveal_in_file_manager(path):
+    """跑完自动弹出文件夹并选中成果表格，避免用户找不到文件。"""
+    try:
+        p = str(Path(path).resolve())
+        if sys.platform.startswith("win"):
+            subprocess.Popen(["explorer", "/select,", p])
+        elif sys.platform == "darwin":
+            subprocess.Popen(["open", "-R", p])
+    except Exception:
+        pass  # 弹不出也不影响成果，路径已在上方打印
 
 
 # ---------------------------------------------------------------- 主流程
 
+def warn_if_running_from_zip():
+    """在压缩包里直接双击运行时，Windows 会把程序解压到隐藏的临时目录执行，
+    成果文件会生成在临时目录里害用户找不到。检测到这种情况就拦下并提示。"""
+    try:
+        base = str(BASE_DIR).lower()
+        tmp = tempfile.gettempdir().lower()
+        temp_markers = [tmp, "\\temp\\", "/temp/", "appdata\\local\\temp"]
+        if any(m in base for m in temp_markers if m):
+            print("=" * 60)
+            print("!! 检测到程序是【没解压、直接在压缩包里】运行的！")
+            print("   这样成果表格会生成在系统临时目录里，很难找到。")
+            print("")
+            print("   正确做法：")
+            print("   1. 右键 zip 压缩包 → 「全部解压缩…」→ 解压到 下载 或 桌面")
+            print("   2. 打开解压出来的文件夹，双击 RUN-Windows.bat 运行")
+            print("=" * 60)
+            input("按回车退出，去解压后重新运行……")
+            sys.exit(1)
+    except SystemExit:
+        raise
+    except Exception:
+        pass
+
+
 def main():
+    warn_if_running_from_zip()
     ap = argparse.ArgumentParser(description="天猫店铺商品采集（防封号低速版）")
     ap.add_argument("--shop", default="https://logitech.tmall.com", help="店铺首页地址")
     ap.add_argument("--max-pages", type=int, default=60, help="列表页最大翻页数")
