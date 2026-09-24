@@ -5,7 +5,7 @@
 <title>中秋海报 2026</title>
 <!--
   中秋节宣传海报 · 9:16 · 1080×1920
-  替换公司信息：修改下方 COPY 对象即可。
+  北京天利时代科技有限公司 · 文案见下方 COPY 对象；Logo 为 logo-emblem.png。
   字体：优先读取同目录 fonts/，否则从 Google Fonts 加载。
 -->
 <style>
@@ -51,11 +51,14 @@ canvas{position:absolute;inset:0}
   font-family:'Brush';font-size:27px;line-height:1;color:#f7e6cf;writing-mode:vertical-rl;letter-spacing:0;
   box-shadow:inset 0 0 0 2.5px rgba(247,230,207,.28)}
 
-/* brand block */
-.company{top:1638px;font-weight:900;font-size:46px;letter-spacing:.3em;text-indent:.3em;color:var(--ivory)}
-.biz{top:1714px;font-weight:300;font-size:22px;letter-spacing:.34em;text-indent:.34em;color:rgba(246,236,211,.6)}
-.wish{top:1764px;font-weight:500;font-size:26px;letter-spacing:.36em;text-indent:.36em;color:var(--gold)}
-.contact{top:1846px;font-family:'Mono';font-size:17px;letter-spacing:.22em;text-indent:.22em;color:rgba(217,187,123,.42)}
+/* greeting + brand lockup */
+.wish{top:1614px;font-weight:500;font-size:28px;letter-spacing:.36em;text-indent:.36em;color:var(--gold)}
+.biz{top:1668px;font-weight:300;font-size:21px;letter-spacing:.32em;text-indent:.32em;color:rgba(246,236,211,.55)}
+.lockup{position:absolute;left:0;right:0;top:1770px;display:flex;justify-content:center;align-items:center;gap:26px}
+.lockup img{width:84px;height:auto;display:block}
+.lockup .name{display:flex;flex-direction:column;gap:12px}
+.company{font-weight:900;font-size:36px;letter-spacing:.16em;line-height:1;color:var(--ivory)}
+.en{font-family:'Mono';font-size:13.5px;letter-spacing:.28em;line-height:1;color:rgba(217,187,123,.62)}
 </style>
 </head>
 <body>
@@ -72,10 +75,15 @@ canvas{position:absolute;inset:0}
   <div class="seal">中秋</div>
   <div class="t center poem" id="poem"></div>
 
-  <div class="t center company" id="company"></div>
-  <div class="t center biz" id="biz"></div>
   <div class="t center wish" id="wish"></div>
-  <div class="t center contact" id="contact"></div>
+  <div class="t center biz" id="biz"></div>
+  <div class="lockup">
+    <img src="logo-emblem.png" alt="">
+    <div class="name">
+      <div class="company" id="company"></div>
+      <div class="en" id="en"></div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -83,10 +91,10 @@ canvas{position:absolute;inset:0}
 const COPY = {
   headline: '人月两团圆',
   poem:     '但愿人长久　千里共婵娟',
-  company:  '［公司名称］',
+  company:  '北京天利时代科技有限公司',
+  en:       'BEIJING TIANLI SHIDAI TECHNOLOGY CO., LTD.',
   biz:      '罗技产品代理 · 键鼠 · 耳机 · 摄像头 · 会议设备',
   wish:     '恭祝新老客户　中秋快乐　阖家团圆',
-  contact:  'TEL ［联系电话］　·　ADDR ［门店地址］',
 };
 for (const k in COPY) { const el = document.getElementById(k); if (el) el.textContent = COPY[k]; }
 
@@ -250,7 +258,7 @@ g.beginPath(); g.moveTo(MX - 36, 1576.5); g.lineTo(MX + 36, 1576.5); g.stroke();
 g.fillStyle = 'rgba(217,187,123,.6)';
 g.beginPath(); g.moveTo(MX, 1571); g.lineTo(MX + 5.5, 1576.5); g.lineTo(MX, 1582); g.lineTo(MX - 5.5, 1576.5); g.closePath(); g.fill();
 g.strokeStyle = 'rgba(217,187,123,.18)';
-g.beginPath(); g.moveTo(80, 1832.5); g.lineTo(1000, 1832.5); g.stroke();
+g.beginPath(); g.moveTo(80, 1732.5); g.lineTo(1000, 1732.5); g.stroke();
 
 /* faint paper grain over the whole plate */
 const gd = g.getImageData(0, 0, cv.width, cv.height), px = gd.data;
