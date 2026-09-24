@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>中秋海报 2026</title>
+<!--
+  中秋节宣传海报 · 9:16 · 1080×1920
+  替换公司信息：修改下方 COPY 对象即可。
+  字体：优先读取同目录 fonts/，否则从 Google Fonts 加载。
+-->
+<style>
+@font-face{font-family:'Serif SC';font-weight:300;src:url('fonts/NotoSerifSC-Light.ttf'),url('https://fonts.gstatic.com/s/notoserifsc/v35/H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7TcqyWv.ttf')}
+@font-face{font-family:'Serif SC';font-weight:500;src:url('fonts/NotoSerifSC-Medium.ttf'),url('https://fonts.gstatic.com/s/notoserifsc/v35/H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7SwqyWv.ttf')}
+@font-face{font-family:'Serif SC';font-weight:900;src:url('fonts/NotoSerifSC-Black.ttf'),url('https://fonts.gstatic.com/s/notoserifsc/v35/H4cyBXePl9DZ0Xe7gG9cyOj7uK2-n-D2rd4FY7QrrCWv.ttf')}
+@font-face{font-family:'Brush';src:url('fonts/MaShanZheng.ttf'),url('https://fonts.gstatic.com/s/mashanzheng/v18/NaPecZTRCLxvwo41b4gvzkXaRMQ.ttf')}
+@font-face{font-family:'Mono';src:url('fonts/DMMono-Regular.ttf'),local('DM Mono')}
+@font-face{font-family:'Display';src:url('fonts/Italiana-Regular.ttf'),local('Italiana')}
+
+:root{
+  --ivory:#f6ecd3;
+  --gold:#d9bb7b;
+  --gold-dim:rgba(217,187,123,.55);
+  --line:rgba(217,187,123,.22);
+  --cinnabar:#b8322a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#070818}
+#poster{position:relative;width:1080px;height:1920px;overflow:hidden;color:var(--ivory);
+  font-family:'Serif SC',serif;
+  background:
+    radial-gradient(120% 60% at 50% 32%, #1c1a4a 0%, #11112e 45%, #0a0a1f 75%, #070818 100%);
+}
+canvas{position:absolute;inset:0}
+.t{position:absolute;white-space:nowrap}
+.center{left:0;right:0;text-align:center}
+
+/* header */
+.hd-l{left:80px;top:86px;font-family:'Mono';font-size:19px;letter-spacing:.32em;color:var(--gold-dim)}
+.hd-r{right:80px;top:82px;font-weight:300;font-size:22px;letter-spacing:.4em;color:var(--gold-dim);margin-right:-.4em}
+
+/* phase labels under keycaps */
+.lbl{font-family:'Serif SC';font-weight:300;font-size:17px;letter-spacing:.2em;color:rgba(246,236,211,.42);width:110px;text-align:center;margin-left:.1em}
+
+/* headline block */
+.kicker{top:1272px;font-family:'Display';font-size:24px;letter-spacing:.62em;color:var(--gold);margin-right:-.62em;text-indent:.62em}
+.headline{top:1318px;font-weight:500;font-size:112px;letter-spacing:.2em;text-indent:.2em;line-height:1;color:var(--ivory)}
+.poem{top:1480px;font-weight:300;font-size:32px;letter-spacing:.42em;text-indent:.42em;color:var(--gold)}
+
+.seal{position:absolute;left:896px;top:1322px;width:62px;height:62px;border-radius:5px;background:var(--cinnabar);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Brush';font-size:27px;line-height:1;color:#f7e6cf;writing-mode:vertical-rl;letter-spacing:0;
+  box-shadow:inset 0 0 0 2.5px rgba(247,230,207,.28)}
+
+/* brand block */
+.company{top:1638px;font-weight:900;font-size:46px;letter-spacing:.3em;text-indent:.3em;color:var(--ivory)}
+.biz{top:1714px;font-weight:300;font-size:22px;letter-spacing:.34em;text-indent:.34em;color:rgba(246,236,211,.6)}
+.wish{top:1764px;font-weight:500;font-size:26px;letter-spacing:.36em;text-indent:.36em;color:var(--gold)}
+.contact{top:1846px;font-family:'Mono';font-size:17px;letter-spacing:.22em;text-indent:.22em;color:rgba(217,187,123,.42)}
+</style>
+</head>
+<body>
+<div id="poster">
+  <canvas id="c" width="1080" height="1920"></canvas>
+
+  <div class="t hd-l">FULL MOON · 2026.09.25</div>
+  <div class="t hd-r">丙午年 · 八月十五</div>
+
+  <div id="labels"></div>
+
+  <div class="t center kicker">MID · AUTUMN</div>
+  <div class="t center headline" id="headline"></div>
+  <div class="seal">中秋</div>
+  <div class="t center poem" id="poem"></div>
+
+  <div class="t center company" id="company"></div>
+  <div class="t center biz" id="biz"></div>
+  <div class="t center wish" id="wish"></div>
+  <div class="t center contact" id="contact"></div>
+</div>
+
+<script>
+/* ==== 文案：在这里替换公司信息 ==== */
+const COPY = {
+  headline: '人月两团圆',
+  poem:     '但愿人长久　千里共婵娟',
+  company:  '［公司名称］',
+  biz:      '罗技产品代理 · 键鼠 · 耳机 · 摄像头 · 会议设备',
+  wish:     '恭祝新老客户　中秋快乐　阖家团圆',
+  contact:  'TEL ［联系电话］　·　ADDR ［门店地址］',
+};
+for (const k in COPY) { const el = document.getElementById(k); if (el) el.textContent = COPY[k]; }
+
+/* ==== drawing ==== */
+const W = 1080, H = 1920;
+const cv = document.getElementById('c');
+const DPR = window.devicePixelRatio || 1;
+cv.width = W * DPR; cv.height = H * DPR; cv.style.width = W + 'px'; cv.style.height = H + 'px';
+const g = cv.getContext('2d'); g.scale(DPR, DPR);
+
+// seeded PRNG so every render is identical
+let seed = 815;
+const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+const MX = 540, MY = 640, MR = 272;   // moon
+
+/* hairline under header */
+g.strokeStyle = 'rgba(217,187,123,.22)'; g.lineWidth = 1;
+g.beginPath(); g.moveTo(80, 138.5); g.lineTo(1000, 138.5); g.stroke();
+
+/* stars: dense near the top, thinning downward, never inside the halo */
+for (let i = 0; i < 420; i++) {
+  const x = 60 + rnd() * 960, y = 160 + Math.pow(rnd(), 1.7) * 1040;
+  const d = Math.hypot(x - MX, y - MY);
+  if (d < MR + 150) continue;
+  const fade = 1 - (y - 160) / 1100;
+  const s = rnd();
+  const r = s > .985 ? 1.9 : s > .9 ? 1.25 : .75;
+  g.fillStyle = `rgba(246,236,211,${(.18 + rnd() * .55) * fade})`;
+  g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill();
+}
+
+/* outer glow */
+let gr = g.createRadialGradient(MX, MY, MR * .9, MX, MY, MR * 2.3);
+gr.addColorStop(0, 'rgba(246,226,170,.30)');
+gr.addColorStop(.25, 'rgba(230,200,140,.10)');
+gr.addColorStop(1, 'rgba(230,200,140,0)');
+g.fillStyle = gr; g.fillRect(0, 0, W, 1300);
+
+/* halo rings (月晕) */
+[[MR + 58, .20], [MR + 104, .12], [MR + 156, .07]].forEach(([r, a]) => {
+  g.strokeStyle = `rgba(217,187,123,${a})`; g.lineWidth = 1;
+  g.beginPath(); g.arc(MX, MY, r, 0, Math.PI * 2); g.stroke();
+});
+/* tiny markers on the innermost halo at the four quarters */
+[0, .5, 1, 1.5].forEach(q => {
+  const a = q * Math.PI, r = MR + 58;
+  g.fillStyle = 'rgba(217,187,123,.55)';
+  g.beginPath(); g.arc(MX + Math.cos(a) * r, MY + Math.sin(a) * r, 2.2, 0, Math.PI * 2); g.fill();
+});
+
+/* moon body */
+g.save();
+g.beginPath(); g.arc(MX, MY, MR, 0, Math.PI * 2); g.clip();
+gr = g.createRadialGradient(MX - 60, MY - 70, 20, MX, MY, MR);
+gr.addColorStop(0, '#fffaea');
+gr.addColorStop(.55, '#f7ebca');
+gr.addColorStop(.9, '#ecd6a2');
+gr.addColorStop(1, '#dcc088');
+g.fillStyle = gr; g.fillRect(MX - MR, MY - MR, MR * 2, MR * 2);
+
+// maria: soft darker regions, loosely following the familiar face
+const maria = [
+  [-95, -95, 88, .16], [-20, -120, 60, .12], [-120, 10, 70, .13], [-60, 50, 58, .10],
+  [40, -30, 72, .12], [95, -95, 44, .10], [20, 80, 48, .08], [-150, -40, 40, .09], [110, 40, 38, .07]
+];
+maria.forEach(([dx, dy, r, a]) => {
+  const rg = g.createRadialGradient(MX + dx, MY + dy, 0, MX + dx, MY + dy, r);
+  rg.addColorStop(0, `rgba(170,138,88,${a * 1.45})`);
+  rg.addColorStop(.7, `rgba(170,138,88,${a * .8})`);
+  rg.addColorStop(1, 'rgba(176,146,96,0)');
+  g.fillStyle = rg; g.beginPath(); g.arc(MX + dx, MY + dy, r, 0, Math.PI * 2); g.fill();
+});
+
+// halftone of patience: a fine hex dot lattice, size modulated by the maria density
+const dens = (x, y) => maria.reduce((s, [dx, dy, r, a]) => {
+  const d = Math.hypot(x - (MX + dx), y - (MY + dy)) / r;
+  return s + (d < 1 ? a * (1 - d * d) : 0);
+}, 0);
+const step = 7;
+for (let row = 0, y = MY - MR; y <= MY + MR; y += step * .866, row++) {
+  for (let x = MX - MR + (row % 2 ? step / 2 : 0); x <= MX + MR; x += step) {
+    const d = Math.hypot(x - MX, y - MY) / MR;
+    if (d > .985) continue;
+    const v = dens(x, y) * 4.2 + d * d * .3;
+    const r = .35 + v * 1.25;
+    g.fillStyle = `rgba(150,118,70,${.07 + v * .2})`;
+    g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill();
+  }
+}
+// craters: a few small rings
+for (let i = 0; i < 26; i++) {
+  const a = rnd() * Math.PI * 2, rr = Math.sqrt(rnd()) * MR * .88;
+  const x = MX + Math.cos(a) * rr, y = MY + Math.sin(a) * rr, r = 3 + rnd() * 9;
+  g.strokeStyle = 'rgba(160,128,80,.20)'; g.lineWidth = .9;
+  g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.stroke();
+  g.strokeStyle = 'rgba(255,250,235,.35)';
+  g.beginPath(); g.arc(x - .8, y - .8, r, Math.PI * .75, Math.PI * 1.6); g.stroke();
+}
+// limb darkening
+gr = g.createRadialGradient(MX, MY, MR * .62, MX, MY, MR);
+gr.addColorStop(0, 'rgba(120,90,50,0)');
+gr.addColorStop(1, 'rgba(120,90,50,.20)');
+g.fillStyle = gr; g.fillRect(MX - MR, MY - MR, MR * 2, MR * 2);
+g.restore();
+
+/* ==== keycap procession of phases ==== */
+// waxing moon: lunar day -> illuminated shape (right side lit)
+function phase(cx, cy, r, day) {
+  const th = 2 * Math.PI * (day - 1) / 29.53, k = Math.cos(th);
+  g.fillStyle = 'rgba(246,236,211,.10)';
+  g.beginPath(); g.arc(cx, cy, r, 0, Math.PI * 2); g.fill();
+  g.beginPath();
+  const N = 64;
+  for (let i = 0; i <= N; i++) { const y = -r + 2 * r * i / N; g.lineTo(cx + Math.sqrt(Math.max(0, r * r - y * y)), cy + y); }
+  for (let i = N; i >= 0; i--) { const y = -r + 2 * r * i / N; g.lineTo(cx + k * Math.sqrt(Math.max(0, r * r - y * y)), cy + y); }
+  g.closePath();
+  g.fillStyle = '#efdcae'; g.fill();
+}
+function rrect(x, y, w, h, r) {
+  g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r);
+  g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath();
+}
+const days = [[3, '初三'], [5, '初五'], [8, '初八'], [10, '初十'], [12, '十二'], [14, '十四'], [15, '十五']];
+const KW = 100, KG = 20, KY = 1082;
+const KX0 = (W - (days.length * KW + (days.length - 1) * KG)) / 2;
+const labels = document.getElementById('labels');
+days.forEach(([d, name], i) => {
+  const x = KX0 + i * (KW + KG), full = d === 15;
+  // keycap skirt
+  rrect(x, KY, KW, KW, 14);
+  let kg = g.createLinearGradient(0, KY, 0, KY + KW);
+  kg.addColorStop(0, full ? 'rgba(217,187,123,.22)' : 'rgba(246,236,211,.07)');
+  kg.addColorStop(1, full ? 'rgba(217,187,123,.10)' : 'rgba(246,236,211,.025)');
+  g.fillStyle = kg; g.fill();
+  g.strokeStyle = full ? 'rgba(217,187,123,.75)' : 'rgba(217,187,123,.26)'; g.lineWidth = 1; g.stroke();
+  // keycap top (dish), offset up to suggest height
+  rrect(x + 9, KY + 6, KW - 18, KW - 22, 10);
+  kg = g.createLinearGradient(0, KY + 6, 0, KY + KW - 16);
+  kg.addColorStop(0, full ? 'rgba(246,226,170,.18)' : 'rgba(246,236,211,.06)');
+  kg.addColorStop(1, 'rgba(246,236,211,.015)');
+  g.fillStyle = kg; g.fill();
+  g.strokeStyle = full ? 'rgba(246,226,170,.35)' : 'rgba(246,236,211,.08)'; g.stroke();
+  const cx = x + KW / 2, cy = KY + 6 + (KW - 22) / 2;
+  if (full) {
+    const hg = g.createRadialGradient(cx, cy, 10, cx, cy, 34);
+    hg.addColorStop(0, 'rgba(246,226,170,.45)'); hg.addColorStop(1, 'rgba(246,226,170,0)');
+    g.fillStyle = hg; g.beginPath(); g.arc(cx, cy, 34, 0, Math.PI * 2); g.fill();
+  }
+  phase(cx, cy, 19, d);
+  const el = document.createElement('div');
+  el.className = 't lbl'; el.textContent = name;
+  el.style.left = (cx - 55) + 'px'; el.style.top = (KY + KW + 16) + 'px';
+  if (full) el.style.color = 'rgba(217,187,123,.9)';
+  labels.appendChild(el);
+});
+
+/* dividers */
+g.strokeStyle = 'rgba(217,187,123,.30)'; g.lineWidth = 1;
+g.beginPath(); g.moveTo(MX - 36, 1576.5); g.lineTo(MX + 36, 1576.5); g.stroke();
+g.fillStyle = 'rgba(217,187,123,.6)';
+g.beginPath(); g.moveTo(MX, 1571); g.lineTo(MX + 5.5, 1576.5); g.lineTo(MX, 1582); g.lineTo(MX - 5.5, 1576.5); g.closePath(); g.fill();
+g.strokeStyle = 'rgba(217,187,123,.18)';
+g.beginPath(); g.moveTo(80, 1832.5); g.lineTo(1000, 1832.5); g.stroke();
+
+/* faint paper grain over the whole plate */
+const gd = g.getImageData(0, 0, cv.width, cv.height), px = gd.data;
+for (let i = 0; i < px.length; i += 4) {
+  const n = (rnd() - .5) * 7;
+  px[i] += n; px[i + 1] += n; px[i + 2] += n;
+}
+g.putImageData(gd, 0, 0);
+document.body.dataset.ready = '1';
+</script>
+</body>
+</html>
