@@ -1,33 +1,44 @@
 python3 - <<'PY'
 import urllib.request,json,re,os,time
-def get(u,t=60,binary=False):
+def get(u,t=60):
     req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'})
-    d=urllib.request.urlopen(req,timeout=t).read()
-    return d if binary else d.decode('utf8','ignore')
-prev=json.load(open('wb/cdx.json'))
-kw={'mx-master-2s':['www.logitech.com/zh-cn/products/mice/','mx-master-2s'],'m188':['www.logitech.com.cn/zh-cn/products/mice/','m188'],'mk276':['www.logitech.com/','mk276'],'zone-wired':['www.logitech.com/en-us/products/headsets/','zone-wired\\.'],'h800':['www.logitech.com/zh-cn/products/headsets/','h800'],'jaybird':['www.jaybirdsport.com/','freedom'],
-'g903':['www.logitechg.com/','g903'],'g604':['www.logitechg.com/','g604'],'g402':['www.logitechg.com/','g402'],'g300s':['www.logitechg.com/','g300'],'g813':['www.logitechg.com/','g813'],'g933':['www.logitechg.com/','g933'],'g533':['www.logitechg.com/','g533'],'g433':['www.logitechg.com/','g433'],'g430':['www.logitechg.com/','g430'],'g331':['www.logitechg.com/','g331'],'g233':['www.logitechg.com/','g233']}
+    return urllib.request.urlopen(req,timeout=t).read().decode('utf8','ignore')
+G='https://www.logitechg.com/%s/products/'
+cands={
+'g903':['gaming-mice/g903-lightspeed-wireless-mouse.html','gaming-mice/g903-hero-wireless-gaming-mouse.html'],
+'g604':['gaming-mice/g604-wireless-gaming-mouse.html'],
+'g402':['gaming-mice/g402-hyperion-fury-fps-gaming-mouse.html'],
+'g300s':['gaming-mice/g300s-optical-ambidextrous-gaming-mouse.html'],
+'g813':['gaming-keyboards/g813-rgb-mechanical-gaming-keyboard.html'],
+'g933':['gaming-audio/g933-artemis-spectrum-wireless-7-1-surround-gaming-headset.html','gaming-audio/g933-wireless-7-1-lightsync-gaming-headset.html'],
+'g533':['gaming-audio/g533-wireless-dts-7-1-surround-sound-gaming-headset.html','gaming-audio/g533-wireless-headset-dts-7-1-surround.html'],
+'g433':['gaming-audio/g433-7-1-wired-surround-gaming-headset.html'],
+'g430':['gaming-audio/g430-surround-sound-gaming-headset.html'],
+'g331':['gaming-audio/g331-stereo-gaming-headset.html'],
+'g233':['gaming-audio/g233-prodigy-gaming-headset.html'],
+}
+urls={k:[G%loc+p for p in v for loc in ('zh-cn','en-us')] for k,v in cands.items()}
+urls['mx-master-2s']=['https://www.logitech.com/zh-cn/products/mice/mx-master-2s-flow.910-005141.html','https://www.logitech.com/en-us/products/mice/mx-master-2s-flow.910-005131.html','https://www.logitech.com/zh-cn/products/mice/mx-master-2s-flow.html']
+urls['h800']=['https://www.logitech.com/zh-cn/products/headsets/h800-bluetooth-wireless-mic.html','https://www.logitech.com/en-us/products/headsets/h800-bluetooth-wireless-mic.981-000337.html']
+urls['zone-wired']=['https://www.logitech.com/en-us/products/headsets/zone-wired.981-000871.html','https://www.logitech.com/zh-cn/products/headsets/zone-wired.html','https://www.logitech.com/en-us/products/headsets/zone-wired.html']
+urls['mk276']=['https://www.logitech.com.cn/zh-cn/products/combos/mk276-wireless-keyboard-mouse.html','https://www.logitech.com/zh-cn/products/combos/mk276-wireless-keyboard-mouse.html']
+urls['m188']=['https://www.logitech.com.cn/zh-cn/products/mice/m188-wireless-mouse.html','https://www.logitech.com/zh-cn/products/mice/m188-wireless-mouse.html']
 res={}
-for k,(loc,pat) in kw.items():
-    rows=[]
-    for attempt in range(3):
-        try:
-            u=f'http://web.archive.org/cdx/search/cdx?url={loc}&matchType=prefix&filter=original:.*{pat}.*&filter=statuscode:200&collapse=urlkey&output=json&limit=12&fl=timestamp,original'
-            rows=json.loads(get(u) or '[]')[1:]; break
-        except Exception as e: time.sleep(8)
-    rows=[r for r in rows if 'zh-cn' in r[1] or 'en-us' in r[1] or 'jaybird' in r[1]] or rows
-    imgs=[]
-    for ts,orig in rows[:4]:
-        try:
-            h=get(f'http://web.archive.org/web/{ts}id_/{orig}')
-            imgs+=re.findall(r'https?://[a-z.]*logitech[a-z]*\.com[^"\'\s)]*?/content/dam/[^"\'\s)]+\.(?:png|jpg)',h)
-            imgs+=re.findall(r'https?://[^"\'\s)]+jaybird[^"\'\s)]+\.(?:png|jpg)',h) if k=='jaybird' else []
-        except Exception as e: time.sleep(5)
-        if len(imgs)>3: break
-        time.sleep(2)
+for k,L in urls.items():
+    imgs=[];hit=''
+    for u in L:
+        for ts in ['2023','2021']:
+            try:
+                h=get(f'http://web.archive.org/web/{ts}id_/{u}')
+                f=re.findall(r'https?://[a-z.]*logitech[a-z]*\.com[^"\'\s)]*?/content/dam/[^"\'\s)]+\.(?:png|jpg)',h)
+                f+=['https://www.logitechg.com'+x for x in re.findall(r'"(/content/dam/[^"]+\.(?:png|jpg))"',h)]
+                f+=['https://assets.logitech.com'+x for x in re.findall(r'"(/assets/\d+/[^"]+\.(?:png|jpg))"',h)]
+                if f: imgs+=f; hit=u; break
+            except Exception as e: pass
+            time.sleep(2)
+        if imgs: break
     seen=[];[seen.append(i) for i in imgs if i not in seen]
-    res[k]=rows[:5]; res[k+'__imgs']=seen[:40]
-    time.sleep(3)
-prev.update(res)
-json.dump(prev,open('wb/cdx.json','w'),indent=1)
+    res[k]={'hit':hit,'imgs':seen[:40]}
+    time.sleep(2)
+json.dump(res,open('wb/direct.json','w'),indent=1)
 PY
