@@ -256,3 +256,4 @@
 200 p/zone-vibe-earpads.html
 200 p/zone-vibe-series-wireless.html
 200 p/zone-wireless-2-950-earpads.html
+200 store_app.js
