@@ -3,9 +3,11 @@ on:
   push:
     branches: [logi-assets]
     paths: ['urls.txt']
-  workflow_dispatch:
 permissions:
   contents: write
+concurrency:
+  group: fetch
+  cancel-in-progress: true
 jobs:
   fetch:
     runs-on: ubuntu-latest
@@ -16,18 +18,14 @@ jobs:
         run: |
           mkdir -p out
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-          while read -r name url; do
-            [ -z "$name" ] && continue
-            [ -s "out/$name" ] && continue
-            code=$(curl -sL -A "$UA" -H "Accept-Language: zh-CN,zh;q=0.9" --compressed -m 40 -o "out/$name" -w "%{http_code}" "$url" || echo ERR)
-            echo "$code $name" >> out/_log.txt
-            [ "$code" = "200" ] || rm -f "out/$name"
-            sleep 0.3
-          done < urls.txt
-      - name: commit
+          export UA
+          grep -v '^\s*$' urls.txt | while read -r name url; do [ -s "out/$name" ] || echo "$name $url"; done > todo.txt
+          wc -l todo.txt
+          cat todo.txt | xargs -P 12 -L 1 bash -c 'mkdir -p "out/$(dirname "$0")"; code=$(curl -sL -A "$UA" -H "Accept-Language: zh-CN,zh;q=0.9" --compressed -m 60 -o "out/$0" -w "%{http_code}" "$1" || echo ERR); echo "$code $0" >> out/_log_$GITHUB_RUN_ID.txt; [ "$code" = "200" ] || rm -f "out/$0"'
+      - name: commit to result branch
         run: |
           git config user.name bot; git config user.email bot@users.noreply.github.com
+          git checkout -b res-$GITHUB_RUN_ID
           git add out
-          git commit -m "fetched" || exit 0
-          git pull --rebase -q origin logi-assets || true
-          git push origin HEAD:logi-assets
+          git commit -qm "fetched $GITHUB_RUN_ID" || exit 0
+          git push -q origin res-$GITHUB_RUN_ID
