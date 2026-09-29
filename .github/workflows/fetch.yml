@@ -1,0 +1,33 @@
+name: fetch
+on:
+  push:
+    branches: [logi-assets]
+    paths: ['urls.txt']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: logi-assets }
+      - name: download
+        run: |
+          mkdir -p out
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            [ -s "out/$name" ] && continue
+            code=$(curl -sL -A "$UA" -H "Accept-Language: zh-CN,zh;q=0.9" --compressed -m 40 -o "out/$name" -w "%{http_code}" "$url" || echo ERR)
+            echo "$code $name" >> out/_log.txt
+            [ "$code" = "200" ] || rm -f "out/$name"
+            sleep 0.3
+          done < urls.txt
+      - name: commit
+        run: |
+          git config user.name bot; git config user.email bot@users.noreply.github.com
+          git add out
+          git commit -m "fetched" || exit 0
+          git pull --rebase -q origin logi-assets || true
+          git push origin HEAD:logi-assets
