@@ -1,15 +1,10 @@
-== product/GetProductList
-{"success":false,"result":null,"error":{"code":0,"message":"您的请求无效!","details":"[ValidationNarrativeTitle]\r\n - Sorting is not valid. Valid values: CreationTime DESC, Price DESC, SalesNum DESC, Price asc, CreationTime asc, CreationTime, Price, SalesNum asc, Sort, Sort DESC, SalesNum, Sort,CreationTime DESC\r\n","validationErrors":[{"message":"Sorting is not valid. Valid values: CreationTime DESC, Price DESC, SalesNum DESC, Price asc, CreationTime asc, CreationTime, Price, SalesNum asc, Sort, Sort DESC, SalesNum, Sort,CreationTime DESC","members":null}]},"unAuthorizedRequest":false}
-== Product/GetProductListPC
-{"success":false,"result":null,"error":{"code":0,"message":"您的请求无效!","details":"[ValidationNarrativeTitle]\r\n - Sorting is not valid. Valid values: CreationTime DESC, Price DESC, SalesNum DESC, Price asc, CreationTime asc, CreationTime, Price, SalesNum asc, Sort, Sort DESC, SalesNum, Sort,CreationTime DESC\r\n","validationErrors":[{"message":"Sorting is not valid. Valid values: CreationTime DESC, Price DESC, SalesNum DESC, Price asc, CreationTime asc, CreationTime, Price, SalesNum asc, Sort, Sort DESC, SalesNum, Sort,CreationTime DESC","members":null}]},"unAuthorizedRequest":false}
-== Page/GetProductPageList
-{"success":true,"result":[{"title":"新品","storeId":0,"productList":[{"productSeriesExMopdel":[{"productId":12636,"seriesExType":1,"seriesId":2,"seriesDesc":"黑色","seriesImg":"https://images.wincheers.net/UpLoad/Web/ProductImg/2026-09-29/NEW_XM/GPW5 Ultra黑01.png","isMainPro":false,"productTitle":"GPW5 Ultra","colorName":"#0A0A0A","typeIndex":21,"keyId":0,"colorId":2,"sizeId":829,"shortDesc":"预售至10月25日发货，HITS电磁微动，NxLOGI主控芯片，约59g，重心居中","price":1699.00,"isBook":0,"isDiscount":0,"discountPrice":null,"originPrice":null,"product":{"storeId":1,"num":100,"numstr":null,"title":"罗技G PRO X3 SUPERSTRIKE无线游戏鼠标（黑）","picUrl":"https://images.wincheers.net/UpLoad/Web/ProductImg/2026-09-29/NEW_XL/GPW5 Ultra黑01.png","picThumbUrl":"https://images.wincheers.net/UpLoad/Web/ProductImg/2026-09-29/NEW_XM/GPW5 Ultra黑01.png","store":{"id":1,"title":"罗技","linkMan":"shawn","telephone":"021-60716969-636","storeUrl":"http://store.logitech.com.cn/","pic":"fa-birthday-cake bg-red","isDeleted":false,"deleterUserId":null,"deletionTime":null,"lastModificationTime":"2016-07-20T09:21:01.64+08:00","lastModifierUserId":1,"creationTime":"2016-05-18T09:36:18.423+08:00","creatorUserId":1},"alias":"GPW5 Ultra","sku":"Logitech-G-PROX2-GPW5Ultra-Black","originPrice":1699.00,"price":1699.00,"pricestr":null,"phonePrice":899.00,"isListing":true,"isVirtual":false,"creationTime":"2026-09-29T09:22:15.837+08:00","ckb":null,"isPhonePrice":0,"pay
-== search
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">
-<HTML><HEAD><TITLE>Length Required</TITLE>
-<META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>
-<BODY><h2>Length Required</h2>
-<hr><p>HTTP Error 411. The request must be chunked or have a content length.</p>
-</BODY></HTML>
-
-{"message":"出现错误。","exceptionMessage":"There is an action GetSelectStrAllKey defined for api controller app/product but with a different HTTP Verb. Request verb is GET. It should be Post","exceptionType":"Abp.AbpException","stackTrace":"   在 Abp.WebApi.Controllers.Dynamic.Selectors.AbpApiControllerActionSelector.GetActionDescriptorByActionName(HttpControllerContext controllerContext, DynamicApiControllerInfo controllerInfo, String actionName) 位置 D:\\Halil\\GitHub\\aspnetboilerplate\\src\\Abp.Web.Api\\WebApi\\Controllers\\Dynamic\\Selectors\\AbpApiControllerActionSelector.cs:行号 95\r\n   在 Abp.WebApi.Controllers.Dynamic.Selectors.AbpApiControllerActionSelector.SelectAction(HttpControllerContext controllerContext) 位置 D:\\Halil\\GitHub\\aspnetboilerplate\\src\\Abp.Web.Api\\WebApi\\Controllers\\Dynamic\\Selectors\\AbpApiControllerActionSelector.cs:行号 48\r\n   在 System.Web.Http.ApiController.ExecuteAsync(HttpControllerContext controllerContext, CancellationToken cancellationToken)\r\n   在 Castle.Proxies.DynamicApiController`1Proxy.ExecuteAsync_callback(HttpControllerContext controllerContext, CancellationToken cancellationToken)\r\n   在 Castle.Proxies.Invocations.ApiController_ExecuteAsync.InvokeMethodOnTarget()\r\n   在 Castle.DynamicProxy.AbstractInvocation.Proceed()\r\n   在 Abp.WebApi.Controllers.Dynamic.Interceptors.AbpDynamicApiControllerInterceptor`1.Intercept(IInvocation invocation) 位置 D:\\Halil\\GitHub\\aspnetboilerplate\\src\\Abp.
+total 1000
+drwxr-xr-x 2 runner runner   4096 Sep 29 08:00 .
+drwxr-xr-x 6 runner runner   4096 Sep 29 08:00 ..
+-rw-r--r-- 1 runner runner 808485 Sep 29 08:00 list_1.json
+-rw-r--r-- 1 runner runner     96 Sep 29 08:00 list_2.json
+-rw-r--r-- 1 runner runner     96 Sep 29 08:00 list_3.json
+-rw-r--r-- 1 runner runner     96 Sep 29 08:00 list_4.json
+-rw-r--r-- 1 runner runner     96 Sep 29 08:00 list_5.json
+-rw-r--r-- 1 runner runner     96 Sep 29 08:00 list_6.json
+-rw-r--r-- 1 runner runner 183977 Sep 29 08:01 pagelist.json
