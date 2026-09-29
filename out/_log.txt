@@ -2,3 +2,8 @@
 200 t_mice.html
 200 t_img.png
 200 t_cn.html
+200 robots.txt
+200 sitemap.xml
+200 sitemap_zhcn.xml
+200 store_home.html
+200 t_mice_p2.html
