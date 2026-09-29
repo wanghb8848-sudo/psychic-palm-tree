@@ -366,3 +366,5 @@ en/spotlight-2.html https://www.logitech.com/en-us/shop/p/spotlight-2
 en/zone-950-wireless-headset.html https://www.logitech.com/en-us/shop/p/zone-950-wireless-headset
 sitemap_index.xml https://www.logitech.com/sitemap_index.xml
 t_store.png https://images.wincheers.net/UpLoad/Web/ProductImg/2026-09-29/NEW_XL/GPW5%20Ultra黑01.png
+sm_biz_zh.xml https://www.logitech.com/zh-cn/sitemap-business.xml
+sm_biz_en.xml https://www.logitech.com/en-us/sitemap-business.xml
