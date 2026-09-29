@@ -256,3 +256,4 @@ p/zone-vibe-100-wireless.html https://www.logitech.com/zh-cn/shop/p/zone-vibe-10
 p/zone-vibe-earpads.html https://www.logitech.com/zh-cn/shop/p/zone-vibe-earpads
 p/zone-vibe-series-wireless.html https://www.logitech.com/zh-cn/shop/p/zone-vibe-series-wireless
 p/zone-wireless-2-950-earpads.html https://www.logitech.com/zh-cn/shop/p/zone-wireless-2-950-earpads
+store_app.js https://store.logitech.com.cn/static/js/app.1785892392475.js
