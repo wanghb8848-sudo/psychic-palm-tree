@@ -368,3 +368,16 @@ sitemap_index.xml https://www.logitech.com/sitemap_index.xml
 t_store.png https://images.wincheers.net/UpLoad/Web/ProductImg/2026-09-29/NEW_XL/GPW5%20Ultra黑01.png
 sm_biz_zh.xml https://www.logitech.com/zh-cn/sitemap-business.xml
 sm_biz_en.xml https://www.logitech.com/en-us/sitemap-business.xml
+b/m520.html https://www.logitech.com/zh-cn/products/mice/m520-business.html
+b/k865.html https://www.logitech.com/zh-cn/products/keyboards/k865-signature-wireless-mechanical.html
+b/k620.html https://www.logitech.com/zh-cn/products/keyboards/k620-business.html
+b/mx-keys-combo.html https://www.logitech.com/zh-cn/products/combos/mx-keys-combo-business-gen-2.html
+b/mk950.html https://www.logitech.com/zh-cn/products/combos/signature-slim-mk950.html
+b/mk370.html https://www.logitech.com/zh-cn/products/combos/mk370-keyboard-mouse.html
+b/mk620.html https://www.logitech.com/zh-cn/products/combos/mk620-business.html
+b/mx-brio.html https://www.logitech.com/zh-cn/products/webcams/mx-brio-705-for-business.html
+b/brio305.html https://www.logitech.com/zh-cn/products/webcams/brio-305-webcam.html
+b/brio95.html https://www.logitech.com/zh-cn/products/webcams/brio-95-business-webcam.html
+b/zone-wireless-2.html https://www.logitech.com/zh-cn/products/headsets/zone-wireless-2.html
+b/zone-wireless-2-es.html https://www.logitech.com/zh-cn/products/headsets/zone-wireless-2-es-business.html
+b/zone-305.html https://www.logitech.com/zh-cn/products/headsets/zone-305-business-headset.html
