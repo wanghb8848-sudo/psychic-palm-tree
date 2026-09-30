@@ -1,0 +1,615 @@
+{
+"https://www.logitech.com/en-us/products/headsets/h570e-usb-noise-cancelling.html": {
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": [
+" \"ratingValue\": 4, \"reviewCount\": 1 }, \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-000574\", \"mpn\": \"981-000574\"",
+" \"reviewCount\": 1 }, \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-000574\", \"mpn\": \"981-000574\", \"category\": \"b2b-he",
+" \"availability\": \"https://schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-000570\", \"mpn\": \"981-000570\"",
+"//schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-000570\", \"mpn\": \"981-000570\", \"category\": \"b2b-he",
+" \"availability\": \"https://schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-001425\", \"mpn\": \"981-001425\"",
+"//schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-001425\", \"mpn\": \"981-001425\", \"category\": \"b2b-he",
+" \"availability\": \"https://schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-001424\", \"mpn\": \"981-001424\"",
+"//schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-001424\", \"mpn\": \"981-001424\", \"category\": \"b2b-he",
+" \"availability\": \"https://schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-001429\", \"mpn\": \"981-001429\"",
+"//schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-001429\", \"mpn\": \"981-001429\", \"category\": \"b2b-he",
+" \"availability\": \"https://schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-001428\", \"mpn\": \"981-001428\"",
+"//schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"H570e Headset\", \"sku\": \"981-001428\", \"mpn\": \"981-001428\", \"category\": \"b2b-he",
+"eams-version-(stereo,-usb-c)\",label:\"Teams version (Stereo, USB-C)\"},{value:\"teams-version-(stereo,-usb-a)\",label:\"Teams version (Stereo, USB-A)\"}]},variants:{\"981-000574\":{name:\"H570e Headset\",subtit",
+"iness-ready, lightweight, wired headset with noise-canceling mic. Now available in a Microsoft Teams version which offers full Teams functionality.\",productId:\"981-000574\",auxCode:void 0,productImages",
+"cy:false,solarPowered:false}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"981-000570\":{name:\"H570e Headset\",subtit",
+"iness-ready, lightweight, wired headset with noise-canceling mic. Now available in a Microsoft Teams version which offers full Teams functionality.\",productId:\"981-000570\",auxCode:void 0,productImages",
+"cy:false,solarPowered:false}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"981-001425\":{name:\"H570e Headset\",subtit",
+"iness-ready, lightweight, wired headset with noise-canceling mic. Now available in a Microsoft Teams version which offers full Teams functionality.\",productId:\"981-001425\",auxCode:void 0,productImages",
+"ets-ar-360.glb\",camera_orbit:\"\",image:\"\",usdz:\"/content/dam/logitech/en/ar-models/headsets/h570e/h570e-mono-vc-headsets-usdz-360.usdz\",hdr:\"\",__proto__:null}},\"981-001424\":{name:\"H570e Headset\",subtit",
+"iness-ready, lightweight, wired headset with noise-canceling mic. Now available in a Microsoft Teams version which offers full Teams functionality.\",productId:\"981-001424\",auxCode:void 0,productImages",
+"ets-ar-360.glb\",camera_orbit:\"\",image:\"\",usdz:\"/content/dam/logitech/en/ar-models/headsets/h570e/h570e-mono-vc-headsets-usdz-360.usdz\",hdr:\"\",__proto__:null}},\"981-001429\":{name:\"H570e Headset\",subtit",
+"iness-ready, lightweight, wired headset with noise-canceling mic. Now available in a Microsoft Teams version which offers full Teams functionality.\",productId:\"981-001429\",auxCode:void 0,productImages",
+"s-ar-360.glb\",camera_orbit:\"\",image:\"\",usdz:\"/content/dam/logitech/en/ar-models/headsets/h570e/h570e-stereo-vc-headsets-usdz-360.usdz\",hdr:\"\",__proto__:null}},\"981-001428\":{name:\"H570e Headset\",subtit",
+"iness-ready, lightweight, wired headset with noise-canceling mic. Now available in a Microsoft Teams version which offers full Teams functionality.\",productId:\"981-001428\",auxCode:void 0,productImages"
+]
+},
+"https://www.logitech.com/en-us/shop/p/logi-dock": {
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+"https://www.logitech.com/en-us/shop/p/pro-x3-superstrike-mouse": {
+"serial": [],
+"pn": "",
+"models": [
+[
+"PRO X3 SUPERSTRIKE - Midnight Black",
+"Midnight Black"
+],
+[
+"PRO X3 SUPERSTRIKE - Magenta Eclipse",
+"Magenta Eclipse"
+]
+],
+"ldsku": [
+[
+"Midnight Black",
+"910-007876"
+],
+[
+"Magenta Eclipse",
+"910-007826"
+]
+],
+"facets": [
+[
+"910-007876",
+"PRO X3 SUPERSTRIKE - Midnight Black",
+"Midnight Black"
+],
+[
+"910-007826",
+"PRO X3 SUPERSTRIKE - Magenta Eclipse",
+"Magenta Eclipse"
+]
+],
+"swatch": [],
+"ctx": [
+" \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"PRO X3 SUPERSTRIKE - Midnight Black\", \"color\": \"Midnight Black\", \"sku\": \"910-007876\", \"mpn\": \"910-007876\"",
+"\"@type\": \"ProductModel\", \"name\": \"PRO X3 SUPERSTRIKE - Midnight Black\", \"color\": \"Midnight Black\", \"sku\": \"910-007876\", \"mpn\": \"910-007876\", \"category\": \"gaming",
+"} }, { \"@type\": \"ProductModel\", \"name\": \"PRO X3 SUPERSTRIKE - Magenta Eclipse\", \"color\": \"Magenta Eclipse\", \"sku\": \"910-007826\", \"mpn\": \"910-007826\"",
+"type\": \"ProductModel\", \"name\": \"PRO X3 SUPERSTRIKE - Magenta Eclipse\", \"color\": \"Magenta Eclipse\", \"sku\": \"910-007826\", \"mpn\": \"910-007826\", \"category\": \"gaming",
+"shop/p/pro-x3-superstrike-mouse\\\">Shop Now.\\u003C/a>\\u003C/p>\",id:\"NPI_ProX3SuperStrike_25PoffSP_G_NAM_NCD\",details:void 0,promotionalBadge:void 0}],variants:{\"910-007876\":{name:\"PRO X3 SUPERSTRIKE - ",
+"Haptic Inductive Trigger System (HITS) with optimized internals and a new flagship chipset. The fastest, fully customizable click—made even better.\",productId:\"910-007876\",auxCode:void 0,productImages",
+"cy:false,solarPowered:false}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"910-007826\":{name:\"PRO X3 SUPERSTRIKE - ",
+"Haptic Inductive Trigger System (HITS) with optimized internals and a new flagship chipset. The fastest, fully customizable click—made even better.\",productId:\"910-007826\",auxCode:void 0,productImages"
+]
+},
+"https://www.logitech.com/en-us/shop/p/mx-master-4": {
+"serial": [],
+"pn": "",
+"models": [
+[
+"MX Master 4 - Graphite",
+"Graphite"
+],
+[
+"MX Master 4 - Pale Gray",
+"Pale Gray"
+],
+[
+"MX Master 4 - Black",
+"Black"
+]
+],
+"ldsku": [
+[
+"Graphite",
+"910-007558"
+],
+[
+"Pale Gray",
+"910-007559"
+],
+[
+"Black",
+"910-007560"
+]
+],
+"facets": [
+[
+"910-007558",
+"MX Master 4 - Graphite",
+"Graphite"
+],
+[
+"910-007559",
+"MX Master 4 - Pale Gray",
+"Pale Gray"
+],
+[
+"910-007560",
+"MX Master 4 - Black",
+"Black"
+]
+],
+"swatch": [],
+"ctx": [
+"unt\": 961 }, \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 - Graphite\", \"color\": \"Graphite\", \"sku\": \"910-007558\", \"mpn\": \"910-007558\"",
+" [ { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 - Graphite\", \"color\": \"Graphite\", \"sku\": \"910-007558\", \"mpn\": \"910-007558\", \"category\": \"mice\",",
+"g/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 - Pale Gray\", \"color\": \"Pale Gray\", \"sku\": \"910-007559\", \"mpn\": \"910-007559\"",
+" { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 - Pale Gray\", \"color\": \"Pale Gray\", \"sku\": \"910-007559\", \"mpn\": \"910-007559\", \"category\": \"mice\",",
+"chema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 - Black\", \"color\": \"Black\", \"sku\": \"910-007560\", \"mpn\": \"910-007560\"",
+" }, { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 - Black\", \"color\": \"Black\", \"sku\": \"910-007560\", \"mpn\": \"910-007560\", \"category\": \"mice\",",
+"itle:\"\\u003Cp>\\u003Cstrong>FREE\\u003C/strong>*&nbsp;\\u003Ca data-analytics-title=\\\"mx-travel-case\\\" href=\\\"https://www.logitech.com/en-us/shop/p/mx-travel-case.956-000026\\\">MX Travel Case\\u003C/a>&nbs",
+"NAM_NCD\",details:void 0,promotionalBadge:\"gift-with-purchase\",image:\"/content/dam/logitech/en/products/mice/mx-travel-case/glamour/glamour-sm.png\"}],variants:{\"910-007558\":{name:\"MX Master 4 - Graphit",
+" connectivity, ultra fast scrolling with the MagSpeed scroll wheel, 8k DPI any surface tracking, including glass & Logi Options+ for customization.\",productId:\"910-007558\",auxCode:void 0,productImages",
+"ite-ar-360.glb\",camera_orbit:\"\",image:\"\",usdz:\"/content/dam/logitech/en/ar-models/mice/mx-master-4/mxmaster4-graphite-iphone-360.usdz\",hdr:\"\",__proto__:null}},\"910-007559\":{name:\"MX Master 4 - Pale Gr",
+" connectivity, ultra fast scrolling with the MagSpeed scroll wheel, 8k DPI any surface tracking, including glass & Logi Options+ for customization.\",productId:\"910-007559\",auxCode:void 0,productImages",
+"rey-ar-360.glb\",camera_orbit:\"\",image:\"\",usdz:\"/content/dam/logitech/en/ar-models/mice/mx-master-4/mxmaster4-palegrey-iphone-360.usdz\",hdr:\"\",__proto__:null}},\"910-007560\":{name:\"MX Master 4 - Black\",",
+" connectivity, ultra fast scrolling with the MagSpeed scroll wheel, 8k DPI any surface tracking, including glass & Logi Options+ for customization.\",productId:\"910-007560\",auxCode:void 0,productImages"
+]
+},
+"https://www.logitech.com/en-us/shop/p/mx-brio-4k-webcam": {
+"serial": [],
+"pn": "",
+"models": [
+[
+"MX Brio - Pale Gray",
+"Pale Gray"
+],
+[
+"MX Brio - Graphite",
+"Graphite"
+],
+[
+"MX Brio - Black",
+"Black"
+]
+],
+"ldsku": [
+[
+"Pale Gray",
+"960-001550"
+],
+[
+"Graphite",
+"960-001545"
+],
+[
+"Black",
+"960-001558"
+]
+],
+"facets": [
+[
+"960-001550",
+"MX Brio - Pale Gray",
+"Pale Gray"
+],
+[
+"960-001545",
+"MX Brio - Graphite",
+"Graphite"
+],
+[
+"960-001558",
+"MX Brio - Black",
+"Black"
+]
+],
+"swatch": [],
+"ctx": [
+"Count\": 190 }, \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Pale Gray\", \"color\": \"Pale Gray\", \"sku\": \"960-001550\", \"mpn\": \"960-001550\"",
+"\": [ { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Pale Gray\", \"color\": \"Pale Gray\", \"sku\": \"960-001550\", \"mpn\": \"960-001550\", \"category\": \"webcam",
+"ema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Graphite\", \"color\": \"Graphite\", \"sku\": \"960-001545\", \"mpn\": \"960-001545\"",
+" }, { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Graphite\", \"color\": \"Graphite\", \"sku\": \"960-001545\", \"mpn\": \"960-001545\", \"category\": \"webcam",
+"://schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Black\", \"color\": \"Black\", \"sku\": \"960-001558\", \"mpn\": \"960-001558\"",
+" } }, { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Black\", \"color\": \"Black\", \"sku\": \"960-001558\", \"mpn\": \"960-001558\", \"category\": \"webcam",
+"ls:void 0,promotionalBadge:\"bundle-and-save\",image:\"/content/dam/logitech/en/products/mice/mx-master-4/gallery/mx-brio-litra-glow-mx-master-4.png\"}],variants:{\"960-001550\":{name:\"MX Brio - Pale Gray\",",
+"ltra HD 4k resolution video with AI image enhancement and our largest webcam sensor yet, for 2x finer image detail in difficult lighting conditions\",productId:\"960-001550\",auxCode:void 0,productImages",
+"cy:false,solarPowered:false}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"960-001545\":{name:\"MX Brio - Graphite\",s",
+"ltra HD 4k resolution video with AI image enhancement and our largest webcam sensor yet, for 2x finer image detail in difficult lighting conditions\",productId:\"960-001545\",auxCode:void 0,productImages",
+"s-ar-360.glb\",camera_orbit:\"\",image:\"\",usdz:\"/content/dam/logitech/en/ar-models/webcams/brio-700/mx-brio-graphite-webcams-ar-360.usdz\",hdr:\"\",__proto__:null}},\"960-001558\":{name:\"MX Brio - Black\",subt",
+"ltra HD 4k resolution video with AI image enhancement and our largest webcam sensor yet, for 2x finer image detail in difficult lighting conditions\",productId:\"960-001558\",auxCode:void 0,productImages"
+]
+},
+"https://www.logitech.com/en-us/shop/p/spotlight-2-presenter-remote": {
+"serial": [],
+"pn": "",
+"models": [
+[
+"Spotlight 2 - Graphite",
+"Graphite"
+],
+[
+"Spotlight 2 - Light Lilac",
+"Light Lilac"
+],
+[
+"Spotlight 2 - Sand",
+"Sand"
+],
+[
+"Spotlight 2 - Black",
+"Black"
+]
+],
+"ldsku": [
+[
+"Graphite",
+"910-007668"
+],
+[
+"Light Lilac",
+"910-007669"
+],
+[
+"Sand",
+"910-007670"
+],
+[
+"Black",
+"910-007671"
+]
+],
+"facets": [
+[
+"910-007668",
+"Spotlight 2 - Graphite",
+"Graphite"
+],
+[
+"910-007669",
+"Spotlight 2 - Light Lilac",
+"Light Lilac"
+],
+[
+"910-007670",
+"Spotlight 2 - Sand",
+"Sand"
+],
+[
+"910-007671",
+"Spotlight 2 - Black",
+"Black"
+]
+],
+"swatch": [],
+"ctx": [
+"Count\": 3 }, \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"Spotlight 2 - Graphite\", \"color\": \"Graphite\", \"sku\": \"910-007668\", \"mpn\": \"910-007668\"",
+" [ { \"@type\": \"ProductModel\", \"name\": \"Spotlight 2 - Graphite\", \"color\": \"Graphite\", \"sku\": \"910-007668\", \"mpn\": \"910-007668\", \"category\": \"presen",
+"Stock\" } }, { \"@type\": \"ProductModel\", \"name\": \"Spotlight 2 - Light Lilac\", \"color\": \"Light Lilac\", \"sku\": \"910-007669\", \"mpn\": \"910-007669\"",
+" { \"@type\": \"ProductModel\", \"name\": \"Spotlight 2 - Light Lilac\", \"color\": \"Light Lilac\", \"sku\": \"910-007669\", \"mpn\": \"910-007669\", \"category\": \"presen",
+"/schema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"Spotlight 2 - Sand\", \"color\": \"Sand\", \"sku\": \"910-007670\", \"mpn\": \"910-007670\"",
+"} }, { \"@type\": \"ProductModel\", \"name\": \"Spotlight 2 - Sand\", \"color\": \"Sand\", \"sku\": \"910-007670\", \"mpn\": \"910-007670\", \"category\": \"presen",
+"chema.org/InStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"Spotlight 2 - Black\", \"color\": \"Black\", \"sku\": \"910-007671\", \"mpn\": \"910-007671\"",
+" }, { \"@type\": \"ProductModel\", \"name\": \"Spotlight 2 - Black\", \"color\": \"Black\", \"sku\": \"910-007671\", \"mpn\": \"910-007671\", \"category\": \"presen",
+"ter-4-product-ecosystem\\\">Shop Now.\\u003C/a>\\u003C/p>\",id:\"Callout_MXM4_Presenters_Logi_NAM_NCD\",details:void 0,promotionalBadge:\"bundle-and-save\"}],variants:{\"910-007668\":{name:\"Spotlight 2 - Graphit",
+"d with an advanced presenter. Haptic feedback, advanced digital highlighting effects, and customization give you the power to keep viewers engaged.\",productId:\"910-007668\",auxCode:void 0,productImages",
+"cy:false,solarPowered:false}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"910-007669\":{name:\"Spotlight 2 - Light L",
+"d with an advanced presenter. Haptic feedback, advanced digital highlighting effects, and customization give you the power to keep viewers engaged.\",productId:\"910-007669\",auxCode:void 0,productImages",
+"cy:false,solarPowered:false}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"910-007670\":{name:\"Spotlight 2 - Sand\",s",
+"d with an advanced presenter. Haptic feedback, advanced digital highlighting effects, and customization give you the power to keep viewers engaged.\",productId:\"910-007670\",auxCode:void 0,productImages",
+"cy:false,solarPowered:false}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"910-007671\":{name:\"Spotlight 2 - Black\",",
+"d with an advanced presenter. Haptic feedback, advanced digital highlighting effects, and customization give you the power to keep viewers engaged.\",productId:\"910-007671\",auxCode:void 0,productImages"
+]
+},
+"https://www.logitech.com/en-us/shop/p/keys-to-go2-universal": {
+"serial": [],
+"pn": "",
+"models": [
+[
+"Keys-To-Go 2 - Lilac - English US (QWERTY)",
+"Lilac"
+],
+[
+"Keys-To-Go 2 - Graphite - English US (QWERTY)",
+"Graphite"
+],
+[
+"Keys-To-Go 2 - Off-white - English US (QWERTY)",
+"Off-white"
+]
+],
+"ldsku": [
+[
+"Lilac",
+"920-012920"
+],
+[
+"Graphite",
+"920-012867"
+],
+[
+"Off-white",
+"920-012919"
+]
+],
+"facets": [
+[
+"920-012920",
+"Keys-To-Go 2 - Lilac - English US (QWERTY)",
+"Lilac"
+],
+[
+"920-012867",
+"Keys-To-Go 2 - Graphite - English US (QWERTY)",
+"Graphite"
+],
+[
+"920-012919",
+"Keys-To-Go 2 - Off-white - English US (QWERTY)",
+"Off-white"
+]
+],
+"swatch": [],
+"ctx": [
+" \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"Keys-To-Go 2 - Lilac - English US (QWERTY)\", \"color\": \"Lilac\", \"sku\": \"920-012920\", \"mpn\": \"920-012920\"",
+" \"@type\": \"ProductModel\", \"name\": \"Keys-To-Go 2 - Lilac - English US (QWERTY)\", \"color\": \"Lilac\", \"sku\": \"920-012920\", \"mpn\": \"920-012920\", \"category\": \"keyboa",
+" }, { \"@type\": \"ProductModel\", \"name\": \"Keys-To-Go 2 - Graphite - English US (QWERTY)\", \"color\": \"Graphite\", \"sku\": \"920-012867\", \"mpn\": \"920-012867\"",
+"pe\": \"ProductModel\", \"name\": \"Keys-To-Go 2 - Graphite - English US (QWERTY)\", \"color\": \"Graphite\", \"sku\": \"920-012867\", \"mpn\": \"920-012867\", \"category\": \"keyboa",
+" }, { \"@type\": \"ProductModel\", \"name\": \"Keys-To-Go 2 - Off-white - English US (QWERTY)\", \"color\": \"Off-white\", \"sku\": \"920-012919\", \"mpn\": \"920-012919\"",
+"\": \"ProductModel\", \"name\": \"Keys-To-Go 2 - Off-white - English US (QWERTY)\", \"color\": \"Off-white\", \"sku\": \"920-012919\", \"mpn\": \"920-012919\", \"category\": \"keyboa",
+"products/mice/mx-master-4/gallery/combo-touch-ipad-pro-mx-master-4-cart.png\"},{title:\"\\u003Cp>FREE* \\u003Ca href=\\\"https://www.logitech.com/shop/p/tablet-stand.951-000122?sp=1&amp;searchclick=Logitech",
+"stand.951-000122?sp=1&amp;searchclick=Logitech\\\">Tablet Stand \\u003C/a>($29.99 value) with \\u003Ca href=\\\"https://www.logitech.com/shop/p/keys-to-go2-universal.920-012867?sp=5&amp;searchclick=Logitech",
+"id 0,promotionalBadge:\"gift-with-purchase\",image:\"/content/dam/logitech/en/products/accessories/tablet-stand/gallery/tablet-laptop-glamour-sm.png\"}],variants:{\"920-012920\":{name:\"Keys-To-Go 2 - Lilac ",
+"yboard with cover\",description:\"A slim keyboard for big ideas. Make it happen on tablets, phones, and laptops with our most portable keyboard ever.\",productId:\"920-012920\",auxCode:void 0,productImages",
+"cy:false,solarPowered:false}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"920-012867\":{name:\"Keys-To-Go 2 - Graphi",
+"yboard with cover\",description:\"A slim keyboard for big ideas. Make it happen on tablets, phones, and laptops with our most portable keyboard ever.\",productId:\"920-012867\",auxCode:void 0,productImages",
+"cy:false,solarPowered:false}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"920-012919\":{name:\"Keys-To-Go 2 - Off-wh",
+"yboard with cover\",description:\"A slim keyboard for big ideas. Make it happen on tablets, phones, and laptops with our most portable keyboard ever.\",productId:\"920-012919\",auxCode:void 0,productImages"
+]
+},
+"https://www.logitech.com/en-us/shop/p/mk120-usb-keyboard-mouse": {
+"serial": [],
+"pn": "",
+"models": [
+[
+"MK120 Corded Keyboard and Mouse Combo - Black - English US (QWERTY)",
+"Black"
+]
+],
+"ldsku": [
+[
+"Black",
+"920-002565"
+]
+],
+"facets": [
+[
+"920-002565",
+"MK120 Corded Keyboard and Mouse Combo - Black - English US (QWERTY)",
+"Black"
+]
+],
+"swatch": [],
+"ctx": [
+" \"@type\": \"ProductModel\", \"name\": \"MK120 Corded Keyboard and Mouse Combo - Black - English US (QWERTY)\", \"color\": \"Black\", \"sku\": \"920-002565\", \"mpn\": \"920-002565\"",
+", \"name\": \"MK120 Corded Keyboard and Mouse Combo - Black - English US (QWERTY)\", \"color\": \"Black\", \"sku\": \"920-002565\", \"mpn\": \"920-002565\", \"image\": [ ",
+"nt/dam/logitech/en/products/swatch/black.jpg\"}}],language:[{value:\"english-us-(qwerty)\",label:\"English US (QWERTY)\",mostPopular:true,popular:true}]},variants:{\"920-002565\":{name:\"MK120 Corded Keyboard",
+"full-sized keyboard and mouse deliver a familiar, easy-to-use design that work right out of the box. Just plug in this corded combo via USB and go.\",productId:\"920-002565\",auxCode:void 0,productImages"
+]
+},
+"https://www.logitech.com/en-us/shop/p/a50-x-astro-wireless-headset": {
+"serial": [],
+"pn": "",
+"models": [
+[
+"ASTRO A50 X LIGHTSPEED - Mars Red",
+"Mars Red"
+],
+[
+"ASTRO A50 X LIGHTSPEED - White",
+"White"
+],
+[
+"ASTRO A50 X LIGHTSPEED - Black",
+"Black"
+]
+],
+"ldsku": [
+[
+"Mars Red",
+"939-002280"
+],
+[
+"White",
+"939-002132"
+],
+[
+"Black",
+"939-002126"
+]
+],
+"facets": [
+[
+"939-002280",
+"ASTRO A50 X LIGHTSPEED - Mars Red",
+"Mars Red"
+],
+[
+"939-002132",
+"ASTRO A50 X LIGHTSPEED - White",
+"White"
+],
+[
+"939-002126",
+"ASTRO A50 X LIGHTSPEED - Black",
+"Black"
+]
+],
+"swatch": [],
+"ctx": [
+" }, \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"ASTRO A50 X LIGHTSPEED - Mars Red\", \"color\": \"Mars Red\", \"sku\": \"939-002280\", \"mpn\": \"939-002280\"",
+" \"@type\": \"ProductModel\", \"name\": \"ASTRO A50 X LIGHTSPEED - Mars Red\", \"color\": \"Mars Red\", \"sku\": \"939-002280\", \"mpn\": \"939-002280\", \"category\": \"gaming",
+"nStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"ASTRO A50 X LIGHTSPEED - White\", \"color\": \"White\", \"sku\": \"939-002132\", \"mpn\": \"939-002132\"",
+" { \"@type\": \"ProductModel\", \"name\": \"ASTRO A50 X LIGHTSPEED - White\", \"color\": \"White\", \"sku\": \"939-002132\", \"mpn\": \"939-002132\", \"category\": \"gaming",
+"nStock\" } }, { \"@type\": \"ProductModel\", \"name\": \"ASTRO A50 X LIGHTSPEED - Black\", \"color\": \"Black\", \"sku\": \"939-002126\", \"mpn\": \"939-002126\"",
+" { \"@type\": \"ProductModel\", \"name\": \"ASTRO A50 X LIGHTSPEED - Black\", \"color\": \"Black\", \"sku\": \"939-002126\", \"mpn\": \"939-002126\", \"category\": \"gaming",
+"yle=\"background-image: url('https://resource.logitech.com/w_32,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/products/gaming/gamepads/f310-gamepad/940-000110/g90-optical-gaming-mouse39.jp",
+"rong> with qualifying purchase, claim in cart. \\u003Ca href=\\\"https://www.logitechg.com/discover/partnerships/2000ad-comics\\\">Learn More\\u003C/a>\\u003C/p>\",id:\"994-000501\",info:\"\\u003Cp>\\u003Cstrong>C",
+"swatch:{path:\"/content/dam/gaming/en/products/swatch/white.jpg\"}},{value:\"black\",label:\"Black\",swatch:{path:\"/content/dam/products/gaming/gamepads/f310-gamepad/940-000110/g90-optical-gaming-mouse39.jp",
+"m/en-us/shop/p/snapback-cap\\\">Astro Cap\\u003C/a>\\u003C/strong> ($34.99 value) with \\u003Cstrong>\\u003Ca href=\\\"https://www.logitechg.com/en-us/shop/p/a50-gen-5.939-002229\\\">A50\\u003C/a> or \\u003Ca hre",
+">\\u003Ca href=\\\"https://www.logitechg.com/en-us/shop/p/a50-gen-5.939-002229\\\">A50\\u003C/a> or \\u003Ca href=\\\"https://www.logitechg.com/en-us/shop/p/astro-a20-x.939-002242\\\">A20X\\u003C/a> Headsets.\\u00",
+"\\u003C/a> Headsets.\\u003C/strong>\\u003C/p>\",id:\"GWP_ACC_NA_BuyA50X_FreeAstroCap_G_ALL_NCD_CR\",details:void 0,promotionalBadge:\"gift-with-purchase\"}],variants:{\"939-002280\":{name:\"ASTRO A50 X LIGHTSPEE",
+"dio drivers achieve unprecedented clarity and response. LIGHTSPEED enables the highest levels of wireless audio performance with ultra-low latency.\",productId:\"939-002280\",auxCode:void 0,productImages",
+"cy:false,solarPowered:false}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"939-002132\":{name:\"ASTRO A50 X LIGHTSPEE",
+"dio drivers achieve unprecedented clarity and response. LIGHTSPEED enables the highest levels of wireless audio performance with ultra-low latency.\",productId:\"939-002132\",auxCode:void 0,productImages",
+"ar-360.glb\",camera_orbit:\"\",image:\"\",usdz:\"/content/dam/gaming/en/ar-models/a50-x/a50-x-white-console-gaming-headsets-iphone-360.usdz\",hdr:\"\",__proto__:null}},\"939-002126\":{name:\"ASTRO A50 X LIGHTSPEE",
+"dio drivers achieve unprecedented clarity and response. LIGHTSPEED enables the highest levels of wireless audio performance with ultra-low latency.\",productId:\"939-002126\",auxCode:void 0,productImages",
+"03C/a>\\u003C/p>\",name:\"Complimentary Quarterly Subscription to Rebellion 2000 AD Comic\",recommendationType:{displayValue:\"Optional\",value:7},recommendedItemId:\"994-000501\",shortDescription:\"Compliment"
+]
+},
+"https://www.logitech.com/zh-cn/shop/p/mx-master-4": {
+"serial": [],
+"pn": "",
+"models": [
+[
+"MX Master 4 - 石墨灰",
+"石墨灰"
+],
+[
+"MX Master 4 - 珍珠白",
+"珍珠白"
+]
+],
+"ldsku": [
+[
+"石墨灰",
+"910-007569"
+],
+[
+"珍珠白",
+"910-007570"
+]
+],
+"facets": [
+[
+"910-007569",
+"MX Master 4 - 石墨灰",
+"石墨灰"
+],
+[
+"910-007570",
+"MX Master 4 - 珍珠白",
+"珍珠白"
+]
+],
+"swatch": [],
+"ctx": [
+"zh-cn/shop/p/mx-master-4\", \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 - 石墨灰\", \"color\": \"石墨灰\", \"sku\": \"910-007569\", \"mpn\": \"910-007569\"",
+" \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 - 石墨灰\", \"color\": \"石墨灰\", \"sku\": \"910-007569\", \"mpn\": \"910-007569\", \"category\": \"mice\",",
+"o-thumbnail-6-new.png\" ] }, { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 - 珍珠白\", \"color\": \"珍珠白\", \"sku\": \"910-007570\", \"mpn\": \"910-007570\"",
+" ] }, { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 - 珍珠白\", \"color\": \"珍珠白\", \"sku\": \"910-007570\", \"mpn\": \"910-007570\", \"category\": \"mice\",",
+"ite.jpg\"}},{value:\"pale-gray\",label:\"珍珠白\",swatch:{path:\"/content/dam/logitech/en/products/swatch/off-white.jpg\"}}],type:[{value:\"n/a\",label:\"N/A\"}]},variants:{\"910-007569\":{name:\"MX Master 4 - 石墨灰\",su",
+"以感知的精度。借助 Actions Ring 快捷键和 MX Master 4，您可在光标位置快速调用工具和过滤器，从而节省高达 33% 的时间。更多特性：2 倍的连接性能提升、MagSpeed 滚轮疾速滚动、8k DPI 任意表面追踪（包括玻璃）以及 Logi Options+ 自定义功能。\",productId:\"910-007569\",auxCode:void 0,productImages",
+"ite-ar-360.glb\",camera_orbit:\"\",image:\"\",usdz:\"/content/dam/logitech/en/ar-models/mice/mx-master-4/mxmaster4-graphite-iphone-360.usdz\",hdr:\"\",__proto__:null}},\"910-007570\":{name:\"MX Master 4 - 珍珠白\",su",
+"以感知的精度。借助 Actions Ring 快捷键和 MX Master 4，您可在光标位置快速调用工具和过滤器，从而节省高达 33% 的时间。更多特性：2 倍的连接性能提升、MagSpeed 滚轮疾速滚动、8k DPI 任意表面追踪（包括玻璃）以及 Logi Options+ 自定义功能。\",productId:\"910-007570\",auxCode:void 0,productImages"
+]
+},
+"https://www.logitech.com/zh-cn/shop/p/g304-lightspeed-wireless-gaming-mouse": {
+"serial": [],
+"pn": "",
+"models": [
+[
+"G304 - 白色",
+"白色"
+],
+[
+"G304 - 黑色",
+"黑色"
+],
+[
+"G304 - Lilac",
+"Lilac"
+],
+[
+"G304 - 蓝色",
+"蓝色"
+],
+[
+"G304 - 薄荷色",
+"薄荷色"
+]
+],
+"ldsku": [
+[
+"白色",
+"910-005295"
+],
+[
+"黑色",
+"910-005286"
+],
+[
+"Lilac",
+"910-006026"
+],
+[
+"蓝色",
+"910-006018"
+],
+[
+"薄荷色",
+"910-006382"
+]
+],
+"facets": [
+[
+"910-005295",
+"G304 - 白色",
+"白色"
+],
+[
+"910-005286",
+"G304 - 黑色",
+"黑色"
+],
+[
+"910-006026",
+"G304 - Lilac",
+"Lilac"
+],
+[
+"910-006018",
+"G304 - 蓝色",
+"蓝色"
+],
+[
+"910-006382",
+"G304 - 薄荷色",
+"薄荷色"
+]
+],
+"swatch": [],
+"ctx": [
+"-lightspeed-wireless-gaming-mouse\", \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"G304 - 白色\", \"color\": \"白色\", \"sku\": \"910-005295\", \"mpn\": \"910-005295\"",
+"ouse\", \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"G304 - 白色\", \"color\": \"白色\", \"sku\": \"910-005295\", \"mpn\": \"910-005295\", \"category\": \"gaming",
+"back-angle-white-gallery-7.png\" ] }, { \"@type\": \"ProductModel\", \"name\": \"G304 - 黑色\", \"color\": \"黑色\", \"sku\": \"910-005286\", \"mpn\": \"910-005286\"",
+"g\" ] }, { \"@type\": \"ProductModel\", \"name\": \"G304 - 黑色\", \"color\": \"黑色\", \"sku\": \"910-005286\", \"mpn\": \"910-005286\", \"category\": \"gaming",
+"ngle-black-gallery-7.png\" ] }, { \"@type\": \"ProductModel\", \"name\": \"G304 - Lilac\", \"color\": \"Lilac\", \"sku\": \"910-006026\", \"mpn\": \"910-006026\"",
+" ] }, { \"@type\": \"ProductModel\", \"name\": \"G304 - Lilac\", \"color\": \"Lilac\", \"sku\": \"910-006026\", \"mpn\": \"910-006026\", \"category\": \"gaming",
+"back-angle-lilac-gallery-7.png\" ] }, { \"@type\": \"ProductModel\", \"name\": \"G304 - 蓝色\", \"color\": \"蓝色\", \"sku\": \"910-006018\", \"mpn\": \"910-006018\"",
+"g\" ] }, { \"@type\": \"ProductModel\", \"name\": \"G304 - 蓝色\", \"color\": \"蓝色\", \"sku\": \"910-006018\", \"mpn\": \"910-006018\", \"category\": \"gaming",
+"ack-angle-blue-gallery-7.png\" ] }, { \"@type\": \"ProductModel\", \"name\": \"G304 - 薄荷色\", \"color\": \"薄荷色\", \"sku\": \"910-006382\", \"mpn\": \"910-006382\"",
+" ] }, { \"@type\": \"ProductModel\", \"name\": \"G304 - 薄荷色\", \"color\": \"薄荷色\", \"sku\": \"910-006382\", \"mpn\": \"910-006382\", \"category\": \"gaming",
+"yle=\"background-image: url('https://resource.logitech.com/w_32,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/products/gaming/gamepads/f310-gamepad/940-000110/g90-optical-gaming-mouse39.jp",
+"色\",swatch:{path:\"/content/dam/gaming/en/products/swatch/white.jpg\"}},{value:\"black\",label:\"黑色\",swatch:{path:\"/content/dam/products/gaming/gamepads/f310-gamepad/940-000110/g90-optical-gaming-mouse39.jp",
+"ng/en/products/g733/g733-midnight-blue.png\"}},{value:\"mint\",label:\"薄荷色\",swatch:{path:\"/content/dam/gaming/en/products/g335/g335-mint-swatch.png\"}}]},variants:{\"910-005295\":{name:\"G304 - 白色\",subtitle:\"",
+"ubtitle:\"LIGHTSPEED 无线游戏鼠标\",description:\"闪电般疾速精准的点击，助你主宰战场。Logitech® G 系列 G305 LIGHTSPEED 无线游戏鼠标，专为硬核性能而生，搭载最新技术，电池续航长达 250 小时。此外，价格亲民，配色丰富，让你时尚上阵。\",productId:\"910-005295\",auxCode:\"5311?Source=616&Sel",
+"nd.jpg\",usdz:\"/content/dam/gaming/en/ar-models/g305/g305_white.usdz\",hdr:\"/content/dam/gaming/en/ar-models/g903-final/realistic-lighting.hdr\",__proto__:null}},\"910-005286\":{name:\"G304 - 黑色\",subtitle:\"",
+"ubtitle:\"LIGHTSPEED 无线游戏鼠标\",description:\"闪电般疾速精准的点击，助你主宰战场。Logitech® G 系列 G305 LIGHTSPEED 无线游戏鼠标，专为硬核性能而生，搭载最新技术，电池续航长达 250 小时。此外，价格亲民，配色丰富，让你时尚上阵。\",productId:\"910-005286\",auxCode:\"5335?Source=616&Sel",
+":\"/content/dam/gaming/en/ar-models/g305/g305-black-gaming-mice.usdz\",hdr:\"/content/dam/gaming/en/ar-models/g903-final/realistic-lighting.hdr\",__proto__:null}},\"910-006026\":{name:\"G304 - Lilac\",subtitl",
+"ubtitle:\"LIGHTSPEED 无线游戏鼠标\",description:\"闪电般疾速精准的点击，助你主宰战场。Logitech® G 系列 G305 LIGHTSPEED 无线游戏鼠标，专为硬核性能而生，搭载最新技术，电池续航长达 250 小时。此外，价格亲民，配色丰富，让你时尚上阵。\",productId:\"910-006026\",auxCode:\"7386?Source=616&Sel",
+"g\",usdz:\"/content/dam/gaming/en/ar-models/g305/g305-lilac-hexa.usdz\",hdr:\"/content/dam/gaming/en/ar-models/g903-final/realistic-lighting.hdr\",__proto__:null}},\"910-006018\":{name:\"G304 - 蓝色\",subtitle:\"",
+"ubtitle:\"LIGHTSPEED 无线游戏鼠标\",description:\"闪电般疾速精准的点击，助你主宰战场。Logitech® G 系列 G305 LIGHTSPEED 无线游戏鼠标，专为硬核性能而生，搭载最新技术，电池续航长达 250 小时。此外，价格亲民，配色丰富，让你时尚上阵。\",productId:\"910-006018\",auxCode:\"7300?Source=616&Sel",
+"pg\",usdz:\"/content/dam/gaming/en/ar-models/g305/g305-blue-hexa.usdz\",hdr:\"/content/dam/gaming/en/ar-models/g903-final/realistic-lighting.hdr\",__proto__:null}},\"910-006382\":{name:\"G304 - 薄荷色\",subtitle:",
+"ubtitle:\"LIGHTSPEED 无线游戏鼠标\",description:\"闪电般疾速精准的点击，助你主宰战场。Logitech® G 系列 G305 LIGHTSPEED 无线游戏鼠标，专为硬核性能而生，搭载最新技术，电池续航长达 250 小时。此外，价格亲民，配色丰富，让你时尚上阵。\",productId:\"910-006382\",auxCode:\"7600?Source=616&Sel"
+]
+}
+}

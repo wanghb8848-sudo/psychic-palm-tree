@@ -1,0 +1,2180 @@
+{
+"m221": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/m221-wireless-mouse",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/mice/m221-wireless-mouse.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com.cn/zh-cn/products/mice/m221-wireless-mouse.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"m275": [
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"m280": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/m280-wireless-mouse",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/mice/m280-wireless-mouse.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com.cn/zh-cn/products/mice/m280-wireless-mouse.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"b175": [
+{
+"err": "HTTP Error 429: Too Many Requests"
+}
+],
+"m91p": [
+{
+"err": "HTTP Error 429: Too Many Requests"
+}
+],
+"c920e": [
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/webcams/c920e-business-webcam.960-001361.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/webcams/c920e-business-webcam.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com.cn/zh-cn/products/webcams/c920e-business-webcam.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"zone-wireless": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/zone-wireless-2-950-earpads",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/video-conferencing/accessories/zone-wireless-2-950-earpads.989-001179.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/video-conferencing/accessories/zone-wireless-2-950-earpads.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/zone-wireless-2-es",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/video-conferencing/accessories/zone-wireless-2-charging-stand.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/zone-wireless-2-es.981-001507",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/headsets/zone-wireless-2-es-business.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/zone-wireless-2-es.981-001502",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/headsets/zone-wireless-2.981-001155.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/headsets/zone-wireless-2.981-001313.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"zone-wired": [
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/zone-wired-2?utm_source=chatgpt.com",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/headsets/zone-wired-earbuds.981-001014.html&.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/headsets/zone-wired-earbuds.981-001010.html&.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/zone-wired-2.981-001614",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/zone-wired-2.981-001612",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/headsets/zone-wired-earbuds.981-001010.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com:443/zh-cn/products/headsets/zone-wired-earbuds.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com:443/zh-cn/products/headsets/zone-wired-earbuds.981-001014.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/products/headsets/zone-wired-noise-canceling.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com.cn/zh-cn/products/headsets/zone-wired-earbuds.981-001014.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"zone-earbuds": [
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "HTTP Error 429: Too Many Requests"
+}
+],
+"zone-tws": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"h570e": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"logi-dock": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"mic": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"pro-x3": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"g304x": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"g316": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"g517": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"g435": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/g435-wireless-bluetooth-gaming-headset",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/g435-wireless-bluetooth-gaming-headset.981-001053",
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"a50": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/a50-gen-5-refurbished.996-000538",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/astro-a50-x-mclaren-edition",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/astro-a50-x-mclaren-edition.939-002237?gclsrc=aw.ds&gad_source=1&gad_campaignid=21344440020&gbraid=0AAAAADDQ2Ox9qY6EKsLxQ1KNw_5HDCZlk",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/a50-gen-5.939-002229?utm_source=internal_blog&utm_medium=pr&utm_campaign=streamlabs_crh_gift_ideas_for_streamers_and_creators",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/a50-gen-4.939-001675",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/a50-gen-5-refurbished",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/a50-gen-5-refurbished.996-000537",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/a50-gen-5",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/a50-gen-4",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/a50-base-station-gen-4",
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"m100r": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/m100r-corded-mouse",
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"m110": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/m110-silent-corded-mouse",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com.cn/zh-cn/products/mice/m110-silent-corded-mouse.html?crid=7",
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"mk120": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/mk120-usb-keyboard-mouse.920-002589",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/zh-cn/shop/p/mk120-usb-keyboard-mouse",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/mk120-usb-keyboard-mouse.920-002565?sp=1&searchclick=Logitech",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com/en-us/shop/p/mk120-usb-keyboard-mouse",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com:443/zh-cn/products/combos/mk120-usb-keyboard-mouse.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"url": "https://www.logitech.com.cn/zh-cn/products/combos/mk120-usb-keyboard-mouse.html",
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"spotlight2": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "HTTP Error 429: Too Many Requests"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+}
+],
+"keys-to-go2": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"ts": "20240708231010",
+"url": "https://www.logitech.com/zh-cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.html",
+"serial": [
+[
+"石墨灰 中文 1 年有限硬件质保",
+"920-012999"
+],
+[
+"珍珠白 中文 1 年有限硬件质保",
+"920-013000"
+],
+[
+"雪青 中文 1 年有限硬件质保",
+"920-013001"
+]
+],
+"pn": "920-013000,920-012999,920-013001",
+"models": [
+[
+"Keys-To-Go 2 - Keys-To-Go 2 轻薄键盘，承载非凡创意。使用我们最便携的键盘在任何屏幕上输入 - 浅灰色（英文版）",
+"Pale Gray"
+],
+[
+"Keys-To-Go 2 - Keys-To-Go 2 轻薄键盘，承载非凡创意。使用我们最便携的键盘 - 石墨灰-英语在各种屏幕上轻松输入",
+"Graphite"
+],
+[
+"Keys-To-Go 2 - Keys-To-Go 2 轻薄键盘，承载非凡创意。使用我们最便携的键盘 - LilacEnglish 在任何屏幕上轻松输入",
+"Lilac"
+]
+],
+"ldsku": [
+[
+"Pale Gray",
+"920-013000"
+],
+[
+"Graphite",
+"920-012999"
+],
+[
+"Lilac",
+"920-013001"
+]
+],
+"facets": [],
+"swatch": [],
+"ctx": [
+"ntent=\"https://support.logi.com/hc/zh-cn?mID=Y572\"/> <meta property=\"search_productpage_type\" content=\"Product\"/> <meta name=\"search_partnumber\" content=\"920-013000,920-012999,920-013001\"/> <",
+"s://support.logi.com/hc/zh-cn?mID=Y572\"/> <meta property=\"search_productpage_type\" content=\"Product\"/> <meta name=\"search_partnumber\" content=\"920-013000,920-012999,920-013001\"/> <meta name=\"",
+".logi.com/hc/zh-cn?mID=Y572\"/> <meta property=\"search_productpage_type\" content=\"Product\"/> <meta name=\"search_partnumber\" content=\"920-013000,920-012999,920-013001\"/> <meta name=\"template\" c",
+"ggregateRating\",\"ratingValue\":\"0.0\",\"reviewCount\":\"0\"},\"brand\":\"Logitech\",\"url\":\"https://www.logitech.com/zh-cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.html\",\"model\":[{\"@type\":\"Prod",
+"rent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-pale-grey-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-013000\",\"mpn\":\"920-013000\",\"category",
+"m/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-pale-grey-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-013000\",\"mpn\":\"920-013000\",\"category\":\"平板电脑键盘\"},{\"@type",
+"arent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-graphite-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-012999\",\"mpn\":\"920-012999\",\"category",
+"am/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-graphite-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-012999\",\"mpn\":\"920-012999\",\"category\":\"平板电脑键盘\"},{\"@type",
+"nsparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-013001\",\"mpn\":\"920-013001\",\"category",
+"t/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-013001\",\"mpn\":\"920-013001\",\"category\":\"平板电脑键盘\"}]}</scri",
+"。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\", \"Keys-To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\", \"Keys-To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\" ], \"product_sku\": [ \"920-013000\", \"920-012999\", \"920-",
+"轻松输入。\", \"Keys-To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\", \"Keys-To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\" ], \"product_sku\": [ \"920-013000\", \"920-012999\", \"920-013001\" ], \"pr",
+"To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\", \"Keys-To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\" ], \"product_sku\": [ \"920-013000\", \"920-012999\", \"920-013001\" ], \"product_sku_instock\"",
+"sku\": [ \"920-013000\", \"920-012999\", \"920-013001\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-013000\", \"920-012999\", \"920-",
+"13000\", \"920-012999\", \"920-013001\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-013000\", \"920-012999\", \"920-013001\" ], \"si",
+"12999\", \"920-013001\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-013000\", \"920-012999\", \"920-013001\" ], \"site_country\": \"CN\",",
+"tn js-sec-nav-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013000,920-012999,920-013001\" data-p",
+"av-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013000,920-012999,920-013001\" data-product-path",
+"\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013000,920-012999,920-013001\" data-product-path=\"/content/",
+"4;Keys-To-Go 2 轻薄键盘，承载非凡创意。使用我们最便携的键盘 - 石墨灰-英语在各种屏幕上轻松输入&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999/jcr:content/par/product/920-0",
+"键盘 - 石墨灰-英语在各种屏幕上轻松输入&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999/jcr:content/par/product/920-012999&#34;,&#34;brand&#34;:&#34;Log",
+"4;series&#34;:&#34;&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.920-012999.html&#34;,&#34;tit",
+"4;:&#34;&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.920-012999.html&#34;,&#34;title&#34;:&#3",
+"nt/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.920-012999.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;920-012999&#34;,&#34;colorSwatch&#34;:&#",
+"4;Keys-To-Go 2 轻薄键盘，承载非凡创意。使用我们最便携的键盘在任何屏幕上输入 - 浅灰色（英文版）&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999/jcr:content/par/product/920-0",
+"键盘在任何屏幕上输入 - 浅灰色（英文版）&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999/jcr:content/par/product/920-013000&#34;,&#34;brand&#34;:&#34;Log",
+";series&#34;:&#34;&#34;,&#34;color&#34;:&#34;Pale Gray&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.920-013000.html&#34;,&#34;tit",
+";:&#34;&#34;,&#34;color&#34;:&#34;Pale Gray&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.920-013000.html&#34;,&#34;title&#34;:&#3",
+"t/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.920-013000.html&#34;,&#34;title&#34;:&#34;Pale Gray&#34;,&#34;sku&#34;:&#34;920-013000&#34;,&#34;colorSwatch&#34;:&#",
+"To-Go 2 轻薄键盘，承载非凡创意。使用我们最便携的键盘 - LilacEnglish 在任何屏幕上轻松输入&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999/jcr:content/par/product/920-0",
+"lacEnglish 在任何屏幕上轻松输入&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999/jcr:content/par/product/920-013001&#34;,&#34;brand&#34;:&#34;Log",
+"&#34;series&#34;:&#34;&#34;,&#34;color&#34;:&#34;Lilac&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.920-013001.html&#34;,&#34;tit",
+"&#34;:&#34;&#34;,&#34;color&#34;:&#34;Lilac&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.920-013001.html&#34;,&#34;title&#34;:&#3",
+"ntent/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.920-013001.html&#34;,&#34;title&#34;:&#34;Lilac&#34;,&#34;sku&#34;:&#34;920-013001&#34;,&#34;colorSwatch&#34;:&#",
+"on&#34;:null}],&#34;id&#34;:&#34;keys-to-go2-universal&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.html&#34;,&#34;productPath&#3",
+"keyboards/keys-to-go2-universal.920-012999.html&#34;,&#34;productPath&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.html&#34;,&#34;title&#34;:nul",
+"/keys-to-go-2-graphite-gallery-1.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go2-universal&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-012999&#34;,&#34;920-013000&#34;,&#3",
+"e-gallery-1.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go2-universal&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-012999&#34;,&#34;920-013000&#34;,&#34;920-013001&#34;],&#",
+"&#34;uniqueId&#34;:&#34;keys-to-go2-universal&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-012999&#34;,&#34;920-013000&#34;,&#34;920-013001&#34;],&#34;productTitle&#34;:",
+",&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;920-012999&#34;}\" data-bg-size-desktop=\"",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-p",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-product-path",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-product-path=\"/content/",
+" <strong>石墨灰 中文 1 年有限硬件质保 :</strong> <span class=\"serial-num\">920-012999</span> ",
+" <strong>珍珠白 中文 1 年有限硬件质保 :</strong> <span class=\"serial-num\">920-013000</span> ",
+" <strong>雪青 中文 1 年有限硬件质保 :</strong> <span class=\"serial-num\">920-013001</span> "
+]
+},
+{
+"ts": "20240618192102",
+"url": "https://www.logitech.com/zh-cn/products/tablet-keyboards/keys-to-go2-universal.html",
+"serial": [
+[
+"石墨灰 中文 1 年有限硬件质保",
+"920-012999"
+],
+[
+"珍珠白 中文 1 年有限硬件质保",
+"920-013000"
+],
+[
+"雪青 中文 1 年有限硬件质保",
+"920-013001"
+]
+],
+"pn": "920-013000,920-012999,920-013001",
+"models": [
+[
+"Keys-To-Go 2 - Keys-To-Go 2 轻薄键盘，承载非凡创意。使用我们最便携的键盘在任何屏幕上输入 - 浅灰色（英文版）",
+"Pale Gray"
+],
+[
+"Keys-To-Go 2 - Keys-To-Go 2 轻薄键盘，承载非凡创意。使用我们最便携的键盘 - 石墨灰-英语在各种屏幕上轻松输入",
+"Graphite"
+],
+[
+"Keys-To-Go 2 - Keys-To-Go 2 轻薄键盘，承载非凡创意。使用我们最便携的键盘 - LilacEnglish 在任何屏幕上轻松输入",
+"Lilac"
+]
+],
+"ldsku": [
+[
+"Pale Gray",
+"920-013000"
+],
+[
+"Graphite",
+"920-012999"
+],
+[
+"Lilac",
+"920-013001"
+]
+],
+"facets": [],
+"swatch": [],
+"ctx": [
+"ntent=\"https://support.logi.com/hc/zh-cn?mID=Y572\"/> <meta property=\"search_productpage_type\" content=\"Product\"/> <meta name=\"search_partnumber\" content=\"920-013000,920-012999,920-013001\"/> <",
+"s://support.logi.com/hc/zh-cn?mID=Y572\"/> <meta property=\"search_productpage_type\" content=\"Product\"/> <meta name=\"search_partnumber\" content=\"920-013000,920-012999,920-013001\"/> <meta name=\"",
+".logi.com/hc/zh-cn?mID=Y572\"/> <meta property=\"search_productpage_type\" content=\"Product\"/> <meta name=\"search_partnumber\" content=\"920-013000,920-012999,920-013001\"/> <meta name=\"template\" c",
+"rent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-pale-grey-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-013000\",\"mpn\":\"920-013000\",\"category",
+"m/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-pale-grey-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-013000\",\"mpn\":\"920-013000\",\"category\":\"平板电脑键盘\",\"offers\"",
+"arent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-graphite-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-012999\",\"mpn\":\"920-012999\",\"category",
+"am/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-graphite-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-012999\",\"mpn\":\"920-012999\",\"category\":\"平板电脑键盘\",\"offers\"",
+"nsparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-013001\",\"mpn\":\"920-013001\",\"category",
+"t/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-013001\",\"mpn\":\"920-013001\",\"category\":\"平板电脑键盘\"}]}</scri",
+"。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\", \"Keys-To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\", \"Keys-To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\" ], \"product_sku\": [ \"920-013000\", \"920-012999\", \"920-",
+"轻松输入。\", \"Keys-To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\", \"Keys-To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\" ], \"product_sku\": [ \"920-013000\", \"920-012999\", \"920-013001\" ], \"pr",
+"To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\", \"Keys-To-Go 2 轻薄键盘，成就精彩。使用我们轻巧便携的键盘在任何屏幕上轻松输入。\" ], \"product_sku\": [ \"920-013000\", \"920-012999\", \"920-013001\" ], \"product_sku_instock\"",
+"sku\": [ \"920-013000\", \"920-012999\", \"920-013001\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-013000\", \"920-012999\", \"920-",
+"13000\", \"920-012999\", \"920-013001\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-013000\", \"920-012999\", \"920-013001\" ], \"si",
+"12999\", \"920-013001\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-013000\", \"920-012999\", \"920-013001\" ], \"site_country\": \"CN\",",
+"tn js-sec-nav-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013000,920-012999,920-013001\" data-p",
+"av-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013000,920-012999,920-013001\" data-product-path",
+"\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013000,920-012999,920-013001\" data-product-path=\"/content/",
+"创意。使用我们最便携的键盘 - 石墨灰-英语在各种屏幕上轻松输入&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal/jcr:content/par/product/920-012999&#34;,&#34;brand&#34;:&#34;Log",
+"4;series&#34;:&#34;&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.html&#34;,&#34;title&#34;:&#3",
+"&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-012999.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;920-012999&#34;,&#34;colorSwatch&#34;:&#",
+"创意。使用我们最便携的键盘在任何屏幕上输入 - 浅灰色（英文版）&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal/jcr:content/par/product/920-013000&#34;,&#34;brand&#34;:&#34;Log",
+";series&#34;:&#34;&#34;,&#34;color&#34;:&#34;Pale Gray&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-013000.html&#34;,&#34;title&#34;:&#3",
+"#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-013000.html&#34;,&#34;title&#34;:&#34;Pale Gray&#34;,&#34;sku&#34;:&#34;920-013000&#34;,&#34;colorSwatch&#34;:&#",
+"最便携的键盘 - LilacEnglish 在任何屏幕上轻松输入&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal/jcr:content/par/product/920-013001&#34;,&#34;brand&#34;:&#34;Log",
+"&#34;series&#34;:&#34;&#34;,&#34;color&#34;:&#34;Lilac&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-013001.html&#34;,&#34;title&#34;:&#3",
+"4;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go2-universal.920-013001.html&#34;,&#34;title&#34;:&#34;Lilac&#34;,&#34;sku&#34;:&#34;920-013001&#34;,&#34;colorSwatch&#34;:&#",
+"/keys-to-go-2-graphite-gallery-1.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go2-universal&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-012999&#34;,&#34;920-013000&#34;,&#3",
+"e-gallery-1.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go2-universal&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-012999&#34;,&#34;920-013000&#34;,&#34;920-013001&#34;],&#",
+"&#34;uniqueId&#34;:&#34;keys-to-go2-universal&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-012999&#34;,&#34;920-013000&#34;,&#34;920-013001&#34;],&#34;productTitle&#34;:",
+",&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;920-012999&#34;}\" data-bg-size-desktop=\"",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-p",
+"iv class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-product-path",
+"rice-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-product-path=\"/content/",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-p",
+"iv class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-product-path",
+"rice-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-product-path=\"/content/",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-p",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-product-path",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-012999,920-013000,920-013001\" data-product-path=\"/content/",
+" <strong>石墨灰 中文 1 年有限硬件质保 :</strong> <span class=\"serial-num\">920-012999</span> ",
+" <strong>珍珠白 中文 1 年有限硬件质保 :</strong> <span class=\"serial-num\">920-013000</span> ",
+" <strong>雪青 中文 1 年有限硬件质保 :</strong> <span class=\"serial-num\">920-013001</span> "
+]
+},
+{
+"ts": "20231202024527",
+"url": "https://www.logitech.com/zh-cn/products/tablet-keyboards/keys-to-go.920-010053.html",
+"serial": [
+[
+"粉色键盘搭配白色 iPhone 支架 英语",
+"920-010053"
+],
+[
+"经典蓝色键盘搭配橙色 iPhone 支架 英语",
+"920-010054"
+],
+[
+"黑色键盘搭配白色 iPhone 支架 英语",
+"920-006713"
+]
+],
+"pn": "920-010054,920-006713,920-010053",
+"models": [
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 经典蓝色键盘搭配橙色 iPhone 支架 英语",
+"Classic Blue Keyboard with Orange iPhone Stand"
+],
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 黑色键盘搭配白色 iPhone 支架 英语",
+"Black Keyboard with White iPhone Stand"
+],
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 粉色键盘搭配白色 iPhone 支架 英语",
+"Blush Keyboard with White iPhone Stand"
+]
+],
+"ldsku": [
+[
+"Classic Blue Keyboard with Orange iPhone Stand",
+"920-010054"
+],
+[
+"Black Keyboard with White iPhone Stand",
+"920-006713"
+],
+[
+"Blush Keyboard with White iPhone Stand",
+"920-010053"
+]
+],
+"facets": [],
+"swatch": [],
+"ctx": [
+"content=\"https://support.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <",
+"tps://support.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <meta name=\"",
+"rt.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <meta name=\"template\" c",
+"\"@type\":\"AggregateRating\",\"ratingValue\":\"3.7\",\"reviewCount\":\"32\"},\"brand\":\"Logitech\",\"url\":\"https://www.logitech.com/zh-cn/products/tablet-keyboards/keys-to-go.920-010053.html\",\"model\":[{\"@type\":\"Prod",
+"ransparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-classic-blue-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010054\",\"mpn\":\"920-010054\",\"category",
+"ent/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-classic-blue-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010054\",\"mpn\":\"920-010054\",\"category\":\"平板电脑键盘\"},{\"@type",
+"1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-black-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-006713\",\"mpn\":\"920-006713\",\"category",
+"if/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-black-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-006713\",\"mpn\":\"920-006713\",\"category\":\"平板电脑键盘\"},{\"@type",
+".0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-blush-01-new.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010053\",\"mpn\":\"920-010053\",\"category",
+"f/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-blush-01-new.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010053\",\"mpn\":\"920-010053\",\"category\":\"平板电脑键盘\"}]}</scri",
+"牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-",
+"，适用于 iPhone、iPad 和 Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"pr",
+" Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\"",
+"sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-",
+"10054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"pr",
+"06713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sub_category",
+"tn js-sec-nav-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-p",
+"av-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-product-path",
+"\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-product-path=\"/content/",
+";em>蓝牙&lt;/em>键盘，适用于 iPhone、iPad 和 Apple TV - 粉色键盘搭配白色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-0",
+"Apple TV - 粉色键盘搭配白色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-010053&#34;,&#34;brand&#34;:&#34;Log",
+"&#34;,&#34;color&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.920-010053.html&#34;,&#34;tit",
+"color&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.920-010053.html&#34;,&#34;title&#34;:&#3",
+"/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.920-010053.html&#34;,&#34;title&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;sku&#34;:&#34;920-010053&#34;,&#34;colorSwatch&#34;:&#",
+"m>蓝牙&lt;/em>键盘，适用于 iPhone、iPad 和 Apple TV - 经典蓝色键盘搭配橙色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-0",
+"ple TV - 经典蓝色键盘搭配橙色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-010054&#34;,&#34;brand&#34;:&#34;Log",
+"34;color&#34;:&#34;Classic Blue Keyboard with Orange iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.920-010054.html&#34;,&#34;tit",
+"4;:&#34;Classic Blue Keyboard with Orange iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.920-010054.html&#34;,&#34;title&#34;:&#3",
+"roducts/tablet-keyboards/keys-to-go.920-010053.920-010054.html&#34;,&#34;title&#34;:&#34;Classic Blue Keyboard with Orange iPhone Stand&#34;,&#34;sku&#34;:&#34;920-010054&#34;,&#34;colorSwatch&#34;:&#",
+";em>蓝牙&lt;/em>键盘，适用于 iPhone、iPad 和 Apple TV - 黑色键盘搭配白色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-0",
+"Apple TV - 黑色键盘搭配白色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-006713&#34;,&#34;brand&#34;:&#34;Log",
+"&#34;,&#34;color&#34;:&#34;Black Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.920-006713.html&#34;,&#34;tit",
+"color&#34;:&#34;Black Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.920-006713.html&#34;,&#34;title&#34;:&#3",
+"/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.920-006713.html&#34;,&#34;title&#34;:&#34;Black Keyboard with White iPhone Stand&#34;,&#34;sku&#34;:&#34;920-006713&#34;,&#34;colorSwatch&#34;:&#",
+" Apple 设备配合使用，包括移动设备、电脑和智能电视。&#34;}],&#34;id&#34;:&#34;keys-to-go&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.html&#34;,&#34;productPath&#3",
+"zh_cn/products/tablet-keyboards/keys-to-go.920-010053.html&#34;,&#34;productPath&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.html&#34;,&#34;title&#34;:nul",
+"-go/gallery/keys-to-go-gallery-stone-01-new.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#3",
+"o-gallery-stone-01-new.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#34;920-006713&#34;],&#",
+"w.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#34;920-006713&#34;],&#34;productTitle&#34;:",
+";:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;defaultVariant&#34;:&#34;920-010053&#34;}\" data-bg-size-desktop=\"",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-p",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-product-path",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-product-path=\"/content/",
+" <strong>粉色键盘搭配白色 iPhone 支架 英语 :</strong> <span class=\"serial-num\">920-010053</span> ",
+" <strong>经典蓝色键盘搭配橙色 iPhone 支架 英语 :</strong> <span class=\"serial-num\">920-010054</span> ",
+" <strong>黑色键盘搭配白色 iPhone 支架 英语 :</strong> <span class=\"serial-num\">920-006713</span> "
+]
+},
+{
+"ts": "20230924182234",
+"url": "https://www.logitech.com:443/zh-cn/products/ipad-keyboards/keys-to-go.920-010053.html",
+"serial": [
+[
+"粉色键盘搭配白色 iPhone 支架 英语",
+"920-010053"
+],
+[
+"经典蓝色键盘搭配橙色 iPhone 支架 英语",
+"920-010054"
+],
+[
+"黑色键盘搭配白色 iPhone 支架 英语",
+"920-006713"
+]
+],
+"pn": "920-010054,920-006713,920-010053",
+"models": [
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 经典蓝色键盘搭配橙色 iPhone 支架 英语",
+"Classic Blue Keyboard with Orange iPhone Stand"
+],
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 黑色键盘搭配白色 iPhone 支架 英语",
+"Black Keyboard with White iPhone Stand"
+],
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 粉色键盘搭配白色 iPhone 支架 英语",
+"Blush Keyboard with White iPhone Stand"
+]
+],
+"ldsku": [
+[
+"Classic Blue Keyboard with Orange iPhone Stand",
+"920-010054"
+],
+[
+"Black Keyboard with White iPhone Stand",
+"920-006713"
+],
+[
+"Blush Keyboard with White iPhone Stand",
+"920-010053"
+]
+],
+"facets": [],
+"swatch": [],
+"ctx": [
+"content=\"https://support.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <",
+"tps://support.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <meta name=\"",
+"rt.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <meta name=\"template\" c",
+":{\"@type\":\"AggregateRating\",\"ratingValue\":\"3.6\",\"reviewCount\":\"31\"},\"brand\":\"Logitech\",\"url\":\"https://www.logitech.com/zh-cn/products/ipad-keyboards/keys-to-go.920-010053.html\",\"model\":[{\"@type\":\"Prod",
+"ransparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-classic-blue-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010054\",\"mpn\":\"920-010054\",\"category",
+"ent/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-classic-blue-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010054\",\"mpn\":\"920-010054\",\"category\":\"平板电脑键盘\"},{\"@type",
+"1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-black-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-006713\",\"mpn\":\"920-006713\",\"category",
+"if/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-black-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-006713\",\"mpn\":\"920-006713\",\"category\":\"平板电脑键盘\"},{\"@type",
+".0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-blush-01-new.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010053\",\"mpn\":\"920-010053\",\"category",
+"f/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-blush-01-new.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010053\",\"mpn\":\"920-010053\",\"category\":\"平板电脑键盘\"}]}</scri",
+"牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-",
+"，适用于 iPhone、iPad 和 Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"pr",
+" Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\"",
+"sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-",
+"10054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"pr",
+"06713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sub_category",
+"tn js-sec-nav-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-p",
+"av-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-product-path",
+"\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-product-path=\"/content/",
+"lt;em>蓝牙&lt;/em>键盘，适用于 iPhone、iPad 和 Apple TV - 粉色键盘搭配白色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-0",
+"和 Apple TV - 粉色键盘搭配白色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-010053&#34;,&#34;brand&#34;:&#34;Log",
+"4;&#34;,&#34;color&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.920-010053.html&#34;,&#34;tit",
+"4;color&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.920-010053.html&#34;,&#34;title&#34;:&#3",
+"ve/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.920-010053.html&#34;,&#34;title&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;sku&#34;:&#34;920-010053&#34;,&#34;colorSwatch&#34;:&#",
+";em>蓝牙&lt;/em>键盘，适用于 iPhone、iPad 和 Apple TV - 经典蓝色键盘搭配橙色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-0",
+"Apple TV - 经典蓝色键盘搭配橙色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-010054&#34;,&#34;brand&#34;:&#34;Log",
+"&#34;color&#34;:&#34;Classic Blue Keyboard with Orange iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.920-010054.html&#34;,&#34;tit",
+"#34;:&#34;Classic Blue Keyboard with Orange iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.920-010054.html&#34;,&#34;title&#34;:&#3",
+"/products/ipad-keyboards/keys-to-go.920-010053.920-010054.html&#34;,&#34;title&#34;:&#34;Classic Blue Keyboard with Orange iPhone Stand&#34;,&#34;sku&#34;:&#34;920-010054&#34;,&#34;colorSwatch&#34;:&#",
+"lt;em>蓝牙&lt;/em>键盘，适用于 iPhone、iPad 和 Apple TV - 黑色键盘搭配白色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-0",
+"和 Apple TV - 黑色键盘搭配白色 iPhone 支架 英语&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053/jcr:content/par/product/920-006713&#34;,&#34;brand&#34;:&#34;Log",
+"4;&#34;,&#34;color&#34;:&#34;Black Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.920-006713.html&#34;,&#34;tit",
+"4;color&#34;:&#34;Black Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.920-006713.html&#34;,&#34;title&#34;:&#3",
+"ve/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.920-006713.html&#34;,&#34;title&#34;:&#34;Black Keyboard with White iPhone Stand&#34;,&#34;sku&#34;:&#34;920-006713&#34;,&#34;colorSwatch&#34;:&#",
+"所有 Apple 设备配合使用，包括移动设备、电脑和智能电视。&#34;}],&#34;id&#34;:&#34;keys-to-go&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.html&#34;,&#34;productPath&#3",
+"ive/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.html&#34;,&#34;productPath&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.html&#34;,&#34;title&#34;:nul",
+"-go/gallery/keys-to-go-gallery-stone-01-new.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#3",
+"o-gallery-stone-01-new.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#34;920-006713&#34;],&#",
+"w.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#34;920-006713&#34;],&#34;productTitle&#34;:",
+";:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;defaultVariant&#34;:&#34;920-010053&#34;}\" data-bg-size-desktop=\"",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-p",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-product-path",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-product-path=\"/content/",
+" <strong>粉色键盘搭配白色 iPhone 支架 英语 :</strong> <span class=\"serial-num\">920-010053</span> ",
+" <strong>经典蓝色键盘搭配橙色 iPhone 支架 英语 :</strong> <span class=\"serial-num\">920-010054</span> ",
+" <strong>黑色键盘搭配白色 iPhone 支架 英语 :</strong> <span class=\"serial-num\">920-006713</span> "
+]
+},
+{
+"ts": "20230812151328",
+"url": "https://www.logitech.com/zh-cn/products/tablet-keyboards/keys-to-go.html",
+"serial": [
+[
+"粉色键盘搭配白色 iPhone 支架 中文 - 简体布局",
+"920-010053"
+],
+[
+"经典蓝色键盘搭配橙色 iPhone 支架 中文 - 简体布局",
+"920-010054"
+],
+[
+"黑色键盘搭配白色 iPhone 支架 中文 - 简体布局",
+"920-006713"
+]
+],
+"pn": "920-010054,920-006713,920-010053",
+"models": [
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 经典蓝色键盘搭配橙色 iPhone 支架 中文 - 简体布局",
+"Classic Blue Keyboard with Orange iPhone Stand"
+],
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 黑色键盘搭配白色 iPhone 支架 中文 - 简体布局",
+"Black Keyboard with White iPhone Stand"
+],
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 粉色键盘搭配白色 iPhone 支架 中文 - 简体布局",
+"Blush Keyboard with White iPhone Stand"
+]
+],
+"ldsku": [
+[
+"Classic Blue Keyboard with Orange iPhone Stand",
+"920-010054"
+],
+[
+"Black Keyboard with White iPhone Stand",
+"920-006713"
+],
+[
+"Blush Keyboard with White iPhone Stand",
+"920-010053"
+]
+],
+"facets": [],
+"swatch": [],
+"ctx": [
+"content=\"https://support.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <",
+"tps://support.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <meta name=\"",
+"rt.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <meta name=\"template\" c",
+"ransparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-classic-blue-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010054\",\"mpn\":\"920-010054\",\"category",
+"ent/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-classic-blue-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010054\",\"mpn\":\"920-010054\",\"category\":\"平板电脑键盘\"},{\"@type",
+"1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-black-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-006713\",\"mpn\":\"920-006713\",\"category",
+"if/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-black-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-006713\",\"mpn\":\"920-006713\",\"category\":\"平板电脑键盘\"},{\"@type",
+".0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-blush-01-new.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010053\",\"mpn\":\"920-010053\",\"category",
+"f/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-blush-01-new.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010053\",\"mpn\":\"920-010053\",\"category\":\"平板电脑键盘\"}]}</scri",
+"牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-",
+"，适用于 iPhone、iPad 和 Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"pr",
+" Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\"",
+"sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-",
+"10054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"pr",
+"06713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sub_category",
+"tn js-sec-nav-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-p",
+"av-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-product-path",
+"\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-product-path=\"/content/",
+"d 和 Apple TV - 粉色键盘搭配白色 iPhone 支架 中文 - 简体布局&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go/jcr:content/par/product/920-010053&#34;,&#34;brand&#34;:&#34;Log",
+"&#34;,&#34;color&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.html&#34;,&#34;title&#34;:&#3",
+"ech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010053.html&#34;,&#34;title&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;sku&#34;:&#34;920-010053&#34;,&#34;colorSwatch&#34;:&#",
+"和 Apple TV - 经典蓝色键盘搭配橙色 iPhone 支架 中文 - 简体布局&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go/jcr:content/par/product/920-010054&#34;,&#34;brand&#34;:&#34;Log",
+"34;color&#34;:&#34;Classic Blue Keyboard with Orange iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-010054.html&#34;,&#34;title&#34;:&#3",
+"ive/zh_cn/products/tablet-keyboards/keys-to-go.920-010054.html&#34;,&#34;title&#34;:&#34;Classic Blue Keyboard with Orange iPhone Stand&#34;,&#34;sku&#34;:&#34;920-010054&#34;,&#34;colorSwatch&#34;:&#",
+"d 和 Apple TV - 黑色键盘搭配白色 iPhone 支架 中文 - 简体布局&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go/jcr:content/par/product/920-006713&#34;,&#34;brand&#34;:&#34;Log",
+"&#34;,&#34;color&#34;:&#34;Black Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-006713.html&#34;,&#34;title&#34;:&#3",
+"ech/ap/live/zh_cn/products/tablet-keyboards/keys-to-go.920-006713.html&#34;,&#34;title&#34;:&#34;Black Keyboard with White iPhone Stand&#34;,&#34;sku&#34;:&#34;920-006713&#34;,&#34;colorSwatch&#34;:&#",
+"-go/gallery/keys-to-go-gallery-stone-01-new.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#3",
+"o-gallery-stone-01-new.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#34;920-006713&#34;],&#",
+"w.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#34;920-006713&#34;],&#34;productTitle&#34;:",
+";:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;defaultVariant&#34;:&#34;920-010053&#34;}\" data-bg-size-desktop=\"",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-p",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-product-path",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-product-path=\"/content/",
+" <strong>粉色键盘搭配白色 iPhone 支架 中文 - 简体布局 :</strong> <span class=\"serial-num\">920-010053</span> ",
+" <strong>经典蓝色键盘搭配橙色 iPhone 支架 中文 - 简体布局 :</strong> <span class=\"serial-num\">920-010054</span> ",
+" <strong>黑色键盘搭配白色 iPhone 支架 中文 - 简体布局 :</strong> <span class=\"serial-num\">920-006713</span> "
+]
+},
+{
+"ts": "20230811232837",
+"url": "https://www.logitech.com/zh-cn/products/ipad-keyboards/keys-to-go.html",
+"serial": [
+[
+"粉色键盘搭配白色 iPhone 支架 中文 - 简体布局",
+"920-010053"
+],
+[
+"经典蓝色键盘搭配橙色 iPhone 支架 中文 - 简体布局",
+"920-010054"
+],
+[
+"黑色键盘搭配白色 iPhone 支架 中文 - 简体布局",
+"920-006713"
+]
+],
+"pn": "920-010054,920-006713,920-010053",
+"models": [
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 经典蓝色键盘搭配橙色 iPhone 支架 中文 - 简体布局",
+"Classic Blue Keyboard with Orange iPhone Stand"
+],
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 黑色键盘搭配白色 iPhone 支架 中文 - 简体布局",
+"Black Keyboard with White iPhone Stand"
+],
+[
+"Keys-To-Go - Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV - 粉色键盘搭配白色 iPhone 支架 中文 - 简体布局",
+"Blush Keyboard with White iPhone Stand"
+]
+],
+"ldsku": [
+[
+"Classic Blue Keyboard with Orange iPhone Stand",
+"920-010054"
+],
+[
+"Black Keyboard with White iPhone Stand",
+"920-006713"
+],
+[
+"Blush Keyboard with White iPhone Stand",
+"920-010053"
+]
+],
+"facets": [],
+"swatch": [],
+"ctx": [
+"content=\"https://support.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <",
+"tps://support.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <meta name=\"",
+"rt.logi.com/hc/zh-cn?mID=11717\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"920-010054,920-006713,920-010053\"/> <meta name=\"template\" c",
+"ransparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-classic-blue-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010054\",\"mpn\":\"920-010054\",\"category",
+"ent/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-classic-blue-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010054\",\"mpn\":\"920-010054\",\"category\":\"平板电脑键盘\"},{\"@type",
+"1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-black-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-006713\",\"mpn\":\"920-006713\",\"category",
+"if/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-black-01-01.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-006713\",\"mpn\":\"920-006713\",\"category\":\"平板电脑键盘\"},{\"@type",
+".0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-blush-01-new.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010053\",\"mpn\":\"920-010053\",\"category",
+"f/content/dam/logitech/en/products/mobility/keys-to-go/gallery/keys-to-go-gallery-blush-01-new.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"920-010053\",\"mpn\":\"920-010053\",\"category\":\"平板电脑键盘\"}]}</scri",
+"牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-",
+"，适用于 iPhone、iPad 和 Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"pr",
+" Apple TV\", \"Keys-To-Go 轻巧便携的\\u003cem\\u003e蓝牙\\u003c/em\\u003e键盘，适用于 iPhone、iPad 和 Apple TV\" ], \"product_sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\"",
+"sku\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-",
+"10054\", \"920-006713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"pr",
+"06713\", \"920-010053\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"920-010054\", \"920-006713\", \"920-010053\" ], \"product_sub_category",
+"tn js-sec-nav-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-p",
+"av-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-product-path",
+"\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010054,920-006713,920-010053\" data-product-path=\"/content/",
+"Pad 和 Apple TV - 粉色键盘搭配白色 iPhone 支架 中文 - 简体布局&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go/jcr:content/par/product/920-010053&#34;,&#34;brand&#34;:&#34;Log",
+"4;&#34;,&#34;color&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.html&#34;,&#34;title&#34;:&#3",
+"itech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010053.html&#34;,&#34;title&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;sku&#34;:&#34;920-010053&#34;,&#34;colorSwatch&#34;:&#",
+"d 和 Apple TV - 经典蓝色键盘搭配橙色 iPhone 支架 中文 - 简体布局&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go/jcr:content/par/product/920-010054&#34;,&#34;brand&#34;:&#34;Log",
+"&#34;color&#34;:&#34;Classic Blue Keyboard with Orange iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010054.html&#34;,&#34;title&#34;:&#3",
+"/live/zh_cn/products/ipad-keyboards/keys-to-go.920-010054.html&#34;,&#34;title&#34;:&#34;Classic Blue Keyboard with Orange iPhone Stand&#34;,&#34;sku&#34;:&#34;920-010054&#34;,&#34;colorSwatch&#34;:&#",
+"Pad 和 Apple TV - 黑色键盘搭配白色 iPhone 支架 中文 - 简体布局&#34;,&#34;id&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go/jcr:content/par/product/920-006713&#34;,&#34;brand&#34;:&#34;Log",
+"4;&#34;,&#34;color&#34;:&#34;Black Keyboard with White iPhone Stand&#34;,&#34;link&#34;:&#34;/content/logitech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-006713.html&#34;,&#34;title&#34;:&#3",
+"itech/ap/live/zh_cn/products/ipad-keyboards/keys-to-go.920-006713.html&#34;,&#34;title&#34;:&#34;Black Keyboard with White iPhone Stand&#34;,&#34;sku&#34;:&#34;920-006713&#34;,&#34;colorSwatch&#34;:&#",
+"-go/gallery/keys-to-go-gallery-stone-01-new.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#3",
+"o-gallery-stone-01-new.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#34;920-006713&#34;],&#",
+"w.png&#34;,&#34;uniqueId&#34;:&#34;keys-to-go&#34;,&#34;category&#34;:&#34;tablet-keyboards&#34;,&#34;skus&#34;:[&#34;920-010053&#34;,&#34;920-010054&#34;,&#34;920-006713&#34;],&#34;productTitle&#34;:",
+";:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Blush Keyboard with White iPhone Stand&#34;,&#34;defaultVariant&#34;:&#34;920-010053&#34;}\" data-bg-size-desktop=\"",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-p",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-product-path",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010053,920-010054,920-006713\" data-product-path=\"/content/",
+" <strong>粉色键盘搭配白色 iPhone 支架 中文 - 简体布局 :</strong> <span class=\"serial-num\">920-010053</span> ",
+" <strong>经典蓝色键盘搭配橙色 iPhone 支架 中文 - 简体布局 :</strong> <span class=\"serial-num\">920-010054</span> ",
+" <strong>黑色键盘搭配白色 iPhone 支架 中文 - 简体布局 :</strong> <span class=\"serial-num\">920-006713</span> "
+]
+}
+],
+"mx-brio": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"ts": "20260901115812",
+"url": "https://www.logitech.com/en-us/shop/p/mx-brio-4k-webcam.960-001545?utm_content=YT3-fcyYTBExcBYiC7txxYgeNy-gkZOdBbmOTtZ4wMBNOuvViJDFlgRzPhxuVRvI12fkkg4cQiwGeVHuIRt2qnsdYrBRhT206GgPxj88w4A&utm_medium=product_shelf&utm_source=youtube",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20251228003943",
+"url": "https://www.logitech.com/en-us/products/webcams/mx-brio-705-for-business.960-001529.html&.html",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20251103015734",
+"url": "https://www.logitech.com/en-us/products/webcams/mx-brio.html?utm_content=Mike&utm_campaign=CP-MX_FY24Q4_MXBrio_radius&utm_source=Instagram&utm_medium=affiliate",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20251005125600",
+"url": "https://www.logitech.com/en-us/shop/p/mx-brio-4k-webcam.960-001474",
+"serial": [],
+"pn": "",
+"models": [
+[
+"MX Brio - Graphite",
+"Graphite"
+],
+[
+"MX Brio - Pale Gray",
+"Pale Gray"
+],
+[
+"MX Brio - Black",
+"Black"
+]
+],
+"ldsku": [
+[
+"Graphite",
+"960-001545"
+],
+[
+"Pale Gray",
+"960-001550"
+],
+[
+"Black",
+"960-001558"
+]
+],
+"facets": [
+[
+"960-001545",
+"MX Brio - Graphite",
+"Graphite"
+],
+[
+"960-001550",
+"MX Brio - Pale Gray",
+"Pale Gray"
+],
+[
+"960-001558",
+"MX Brio - Black",
+"Black"
+]
+],
+"swatch": [],
+"ctx": [
+"bcam\" onload=\"this.__e=event\" onerror=\"this.__e=event\"><link rel=\"alternate\" hreflang=\"x-default\" href=\"https://www.logitech.com/en-us/shop/p/mx-brio-4k-webcam.960-001474\" onload=\"this.__e=event\" oner",
+"iewCount\": 92 }, \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Graphite\", \"color\": \"Graphite\", \"sku\": \"960-001545\", \"mpn\": \"960-001545\"",
+"el\": [ { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Graphite\", \"color\": \"Graphite\", \"sku\": \"960-001545\", \"mpn\": \"960-001545\", \"category\": \"webcam",
+"-graphite.png\" ] }, { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Pale Gray\", \"color\": \"Pale Gray\", \"sku\": \"960-001550\", \"mpn\": \"960-001550\"",
+" }, { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Pale Gray\", \"color\": \"Pale Gray\", \"sku\": \"960-001550\", \"mpn\": \"960-001550\", \"category\": \"webcam",
+"monitor-pale-gray.png\" ] }, { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Black\", \"color\": \"Black\", \"sku\": \"960-001558\", \"mpn\": \"960-001558\"",
+" ] }, { \"@type\": \"ProductModel\", \"name\": \"MX Brio - Black\", \"color\": \"Black\", \"sku\": \"960-001558\", \"mpn\": \"960-001558\", \"category\": \"webcam",
+"\">Part Number</p> <div class=\"py-3\"><!--[--><div class=\"text-16 text-gray-360 py-1\"><span><!--[--><!----> Graphite<!--]--></span> <span class=\"inline-block\">: 960-001545</span></div><div class=\"text-",
+"ss=\"inline-block\">: 960-001545</span></div><div class=\"text-16 text-gray-360 py-1\"><span><!--[--><!----> Pale Gray<!--]--></span> <span class=\"inline-block\">: 960-001550</span></div><div class=\"text-",
+" class=\"inline-block\">: 960-001550</span></div><div class=\"text-16 text-gray-360 py-1\"><span><!--[--><!----> Black<!--]--></span> <span class=\"inline-block\">: 960-001558</span></div><!--]--></div></d",
+"campaigns/mx-master-4-product-ecosystem\\\">Shop Now.\\u003C/a>\\u003C/p>\",id:\"Callout_MXM4_WC-LI_Logi_NAM_NCD\",details:void 0,promotionalBadge:void 0}],variants:{\"960-001545\":{name:\"MX Brio - Graphite\",s",
+"ltra HD 4k resolution video with AI image enhancement and our largest webcam sensor yet, for 2x finer image detail in difficult lighting conditions\",productId:\"960-001545\",auxCode:void 0,productImages",
+"aluminum\",\"carbon_clarity\"]}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"960-001550\":{name:\"MX Brio - Pale Gray\",",
+"ltra HD 4k resolution video with AI image enhancement and our largest webcam sensor yet, for 2x finer image detail in difficult lighting conditions\",productId:\"960-001550\",auxCode:void 0,productImages",
+"aluminum\",\"carbon_clarity\"]}},chargerData:{chargingWattage:void 0,includesCharger:void 0,supportFastCharging:void 0,chargingWattageClassname:\"iconundefined\"}},\"960-001558\":{name:\"MX Brio - Black\",subt",
+"ltra HD 4k resolution video with AI image enhancement and our largest webcam sensor yet, for 2x finer image detail in difficult lighting conditions\",productId:\"960-001558\",auxCode:void 0,productImages",
+"image:\"\"}),Object.assign(Object.create(null),{item:\"User documentation\",device:\"\",image:\"\"})]}),compatibleDevices:{},inRiverTechSpecs:{}},representedProductId:\"960-001474\"},recommendations:[{calloutMs"
+]
+},
+{
+"ts": "20250515180930",
+"url": "https://www.logitech.com/en-us/products/webcams/mx-brio-705-for-business.960-001529.html?utm_source=google",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20250323020154",
+"url": "https://www.logitech.com/en-us/products/webcams/mx-brio-4k-webcam.960-001545.html?bvstate=pg%3A2%2Fct%3Ar",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20250220145643",
+"url": "https://www.logitech.com/en-us/shop/p/mx-brio-4k-webcam",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20250213104920",
+"url": "https://www.logitech.com/en-us/products/webcams/mx-brio-4k-webcam.960-001550.html?utm_source=google",
+"serial": [
+[
+"Graphite",
+"960-001545"
+],
+[
+"Black",
+"960-001558"
+],
+[
+"Pale Gray",
+"960-001550"
+]
+],
+"pn": "960-001550,960-001545,960-001558",
+"models": [
+[
+"MX Brio - MX Brio - Pale Gray",
+"Pale Gray"
+],
+[
+"MX Brio - MX Brio - Graphite",
+"Graphite"
+],
+[
+"MX Brio - MX Brio - Black",
+"Black"
+]
+],
+"ldsku": [
+[
+"Pale Gray",
+"960-001550"
+],
+[
+"Graphite",
+"960-001545"
+],
+[
+"Black",
+"960-001558"
+]
+],
+"facets": [],
+"swatch": [
+[
+"graphite",
+"960-001545"
+],
+[
+"black",
+"960-001558"
+],
+[
+"pale gray",
+"960-001550"
+],
+[
+"graphite",
+"910-006557"
+],
+[
+"pale gray",
+"910-006558"
+],
+[
+"black",
+"910-006556"
+]
+],
+"ctx": [
+" content=\"https://support.logi.com/hc/en-us?mID=1763\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"960-001550,960-001545,960-001558\"/> <",
+"ttps://support.logi.com/hc/en-us?mID=1763\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"960-001550,960-001545,960-001558\"/> <meta name=\"",
+"ort.logi.com/hc/en-us?mID=1763\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"960-001550,960-001545,960-001558\"/> <meta name=\"template\" c",
+"uy/gallery/mx-brio-3qtr-front-right-graphite-gallery.png?v\\u003d1\"],\"brand\":\"Logitech\",\"url\":\"https://www.logitech.com/en-us/products/webcams/mx-brio-4k-webcam.960-001550.html\",\"offers\":{\"@type\":\"Aggr",
+"arent.gif/content/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-pale-gray-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001550\",\"mpn\":\"960-001550\",\"category",
+"am/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-pale-gray-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001550\",\"mpn\":\"960-001550\",\"category\":\"Webcams\",\"offers",
+"parent.gif/content/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-graphite-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001545\",\"mpn\":\"960-001545\",\"category",
+"dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-graphite-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001545\",\"mpn\":\"960-001545\",\"category\":\"Webcams\",\"offers",
+"ansparent.gif/content/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-black-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001558\",\"mpn\":\"960-001558\",\"category",
+"nt/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-black-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001558\",\"mpn\":\"960-001558\",\"category\":\"Webcams\",\"offers",
+"\"price\":\"199.99\",\"priceCurrency\":\"USD\",\"availability\":\"https://schema.org/InStock\"}]}],\"@id\":\"https://www.logitech.com/en-us/products/webcams/mx-brio-4k-webcam.960-001550.html\"}</script> ",
+"ebcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\" ], \"product_sku\": [ \"960-001550\", \"960-001545\", \"960-",
+"io 4K Ultra HD Collaboration and Streaming Webcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\" ], \"product_sku\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"pr",
+"laboration and Streaming Webcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\" ], \"product_sku\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"product_sku_instock\"",
+"ct_sku\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"product_sku_instock\": [ true, true, true ], \"product_sku_short\": [ \"960-001550\", \"960-001545\", \"960-",
+"0-001550\", \"960-001545\", \"960-001558\" ], \"product_sku_instock\": [ true, true, true ], \"product_sku_short\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"si",
+"0-001545\", \"960-001558\" ], \"product_sku_instock\": [ true, true, true ], \"product_sku_short\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"site_country\": \"US\",",
+"tn js-sec-nav-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001550,960-001545,960-001558\" data-p",
+"av-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001550,960-001545,960-001558\" data-product-path",
+"\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001550,960-001545,960-001558\" data-product-path=\"/content/",
+"tle&#34;:&#34;Graphite&#34;}},&#34;name&#34;:&#34;MX Brio - Graphite&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550/jcr:content/par/product/960-0",
+"name&#34;:&#34;MX Brio - Graphite&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550/jcr:content/par/product/960-001545&#34;,&#34;brand&#34;:&#34;Log",
+"rong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.960-001545.html&#34;,&#34;tit",
+"pan>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.960-001545.html&#34;,&#34;title&#34;:&#3",
+":&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.960-001545.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;960-001545&#34;,&#34;colorSwatch&#34;:&#",
+"#34;title&#34;:&#34;Black&#34;}},&#34;name&#34;:&#34;MX Brio - Black&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550/jcr:content/par/product/960-0",
+"34;name&#34;:&#34;MX Brio - Black&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550/jcr:content/par/product/960-001558&#34;,&#34;brand&#34;:&#34;Log",
+"/strong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Black&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.960-001558.html&#34;,&#34;tit",
+"t;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Black&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.960-001558.html&#34;,&#34;title&#34;:&#3",
+"34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.960-001558.html&#34;,&#34;title&#34;:&#34;Black&#34;,&#34;sku&#34;:&#34;960-001558&#34;,&#34;colorSwatch&#34;:&#",
+"e&#34;:&#34;Pale Gray&#34;}},&#34;name&#34;:&#34;MX Brio - Pale Gray&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550/jcr:content/par/product/960-0",
+"ame&#34;:&#34;MX Brio - Pale Gray&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550/jcr:content/par/product/960-001550&#34;,&#34;brand&#34;:&#34;Log",
+"ong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Pale Gray&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.960-001550.html&#34;,&#34;tit",
+"an>series&lt;/span>&#34;,&#34;color&#34;:&#34;Pale Gray&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.960-001550.html&#34;,&#34;title&#34;:&#3",
+"&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.960-001550.html&#34;,&#34;title&#34;:&#34;Pale Gray&#34;,&#34;sku&#34;:&#34;960-001550&#34;,&#34;colorSwatch&#34;:&#",
+"gingWattage&#34;:&#34;&#34;}}],&#34;id&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.html&#34;,&#34;productPath&#3",
+"ve/en_us/products/webcams/mx-brio-4k-webcam.960-001550.html&#34;,&#34;productPath&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.html&#34;,&#34;title&#34;:nul",
+"ery/mx-brio-3qtr-front-right-graphite-gallery.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;category&#34;:&#34;webcams&#34;,&#34;skus&#34;:[&#34;960-001545&#34;,&#34;960-001558&#34;,&#3",
+"t-right-graphite-gallery.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;category&#34;:&#34;webcams&#34;,&#34;skus&#34;:[&#34;960-001545&#34;,&#34;960-001558&#34;,&#34;960-001550&#34;],&#",
+"ery.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;category&#34;:&#34;webcams&#34;,&#34;skus&#34;:[&#34;960-001545&#34;,&#34;960-001558&#34;,&#34;960-001550&#34;],&#34;productTitle&#34;:",
+",&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;960-001545&#34;}\" data-bg-size-desktop=\"",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-p",
+"iv class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path",
+"rice-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path=\"/content/",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-p",
+"iv class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path",
+"rice-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path=\"/content/",
+"swatch js-pangea-color-swatch \" data-color-id=\"graphite\" data-analytics-title=\"graphite\" title=\"Graphite\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"960-001545\"> <span class=\"color-swatc",
+"s=\"color-swatch js-pangea-color-swatch \" data-color-id=\"black\" data-analytics-title=\"black\" title=\"Black\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"960-001558\"> <span class=\"color-swatc",
+"s-pangea-color-swatch active \" data-color-id=\"pale gray\" data-analytics-title=\"pale gray\" title=\"Pale Gray\" role=\"radio\" aria-checked=\"true\" data-variant-skus=\"960-001550\"> <span class=\"color-swatc",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-p",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path=\"/content/",
+"nty&#34;}},&#34;name&#34;:&#34;MX Master 3S - Graphite&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s/jcr:content/par/product/910-006557&#34;,&#34;brand&#34;:&#34;Log",
+"ies&lt;/strong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006557.html&#34;,&#34;title&#34;:&#3",
+"e&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006557.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;910-006557&#34;,&#34;colorSwatch&#34;:&#",
+"ty&#34;}},&#34;name&#34;:&#34;MX Master 3S - Pale Gray&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s/jcr:content/par/product/910-006558&#34;,&#34;brand&#34;:&#34;Log",
+"es&lt;/strong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Pale Gray&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006558.html&#34;,&#34;title&#34;:&#3",
+"&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006558.html&#34;,&#34;title&#34;:&#34;Pale Gray&#34;,&#34;sku&#34;:&#34;910-006558&#34;,&#34;colorSwatch&#34;:&#",
+"rranty&#34;}},&#34;name&#34;:&#34;MX Master 3S - Black&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s/jcr:content/par/product/910-006556&#34;,&#34;brand&#34;:&#34;Log"
+]
+},
+{
+"ts": "20250116045906",
+"url": "https://www.logitech.com/en-us/products/webcams/mx-brio-4k-webcam.html?srsltid=AfmBOoq2X2skXsytbTxurSNZR90GhYZ2vAD9C2SFkz4h4eEC0CWoObbb",
+"serial": [
+[
+"Graphite",
+"960-001545"
+],
+[
+"Black",
+"960-001558"
+],
+[
+"Pale Gray",
+"960-001550"
+]
+],
+"pn": "960-001550,960-001545,960-001558",
+"models": [
+[
+"MX Brio - MX Brio - Pale Gray",
+"Pale Gray"
+],
+[
+"MX Brio - MX Brio - Graphite",
+"Graphite"
+],
+[
+"MX Brio - MX Brio - Black",
+"Black"
+]
+],
+"ldsku": [
+[
+"Pale Gray",
+"960-001550"
+],
+[
+"Graphite",
+"960-001545"
+],
+[
+"Black",
+"960-001558"
+]
+],
+"facets": [],
+"swatch": [
+[
+"graphite",
+"960-001545"
+],
+[
+"black",
+"960-001558"
+],
+[
+"pale gray",
+"960-001550"
+]
+],
+"ctx": [
+" content=\"https://support.logi.com/hc/en-us?mID=1763\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"960-001550,960-001545,960-001558\"/> <",
+"ttps://support.logi.com/hc/en-us?mID=1763\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"960-001550,960-001545,960-001558\"/> <meta name=\"",
+"ort.logi.com/hc/en-us?mID=1763\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"960-001550,960-001545,960-001558\"/> <meta name=\"template\" c",
+"arent.gif/content/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-pale-gray-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001550\",\"mpn\":\"960-001550\",\"category",
+"am/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-pale-gray-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001550\",\"mpn\":\"960-001550\",\"category\":\"Webcams\",\"offers",
+"parent.gif/content/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-graphite-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001545\",\"mpn\":\"960-001545\",\"category",
+"dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-graphite-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001545\",\"mpn\":\"960-001545\",\"category\":\"Webcams\",\"offers",
+"ansparent.gif/content/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-black-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001558\",\"mpn\":\"960-001558\",\"category",
+"nt/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-black-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001558\",\"mpn\":\"960-001558\",\"category\":\"Webcams\",\"offers",
+"ebcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\" ], \"product_sku\": [ \"960-001550\", \"960-001545\", \"960-",
+"io 4K Ultra HD Collaboration and Streaming Webcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\" ], \"product_sku\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"pr",
+"laboration and Streaming Webcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\" ], \"product_sku\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"product_sku_instock\"",
+"sku\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"960-001550\", \"960-001545\", \"960-",
+"01550\", \"960-001545\", \"960-001558\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"si",
+"01545\", \"960-001558\" ], \"product_sku_instock\": [ false, false, false ], \"product_sku_short\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"site_country\": \"US\",",
+"tn js-sec-nav-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001550,960-001545,960-001558\" data-p",
+"av-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001550,960-001545,960-001558\" data-product-path",
+"\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001550,960-001545,960-001558\" data-product-path=\"/content/",
+"34;}},&#34;name&#34;:&#34;MX Brio - Graphite&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam/jcr:content/par/product/960-001545&#34;,&#34;brand&#34;:&#34;Log",
+"rong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001545.html&#34;,&#34;title&#34;:&#3",
+"4;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001545.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;960-001545&#34;,&#34;colorSwatch&#34;:&#",
+"k&#34;}},&#34;name&#34;:&#34;MX Brio - Black&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam/jcr:content/par/product/960-001558&#34;,&#34;brand&#34;:&#34;Log",
+"/strong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Black&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001558.html&#34;,&#34;title&#34;:&#3",
+"&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001558.html&#34;,&#34;title&#34;:&#34;Black&#34;,&#34;sku&#34;:&#34;960-001558&#34;,&#34;colorSwatch&#34;:&#",
+"4;}},&#34;name&#34;:&#34;MX Brio - Pale Gray&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam/jcr:content/par/product/960-001550&#34;,&#34;brand&#34;:&#34;Log",
+"ong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Pale Gray&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.html&#34;,&#34;title&#34;:&#3",
+";link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001550.html&#34;,&#34;title&#34;:&#34;Pale Gray&#34;,&#34;sku&#34;:&#34;960-001550&#34;,&#34;colorSwatch&#34;:&#",
+"ery/mx-brio-3qtr-front-right-graphite-gallery.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;category&#34;:&#34;webcams&#34;,&#34;skus&#34;:[&#34;960-001545&#34;,&#34;960-001558&#34;,&#3",
+"t-right-graphite-gallery.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;category&#34;:&#34;webcams&#34;,&#34;skus&#34;:[&#34;960-001545&#34;,&#34;960-001558&#34;,&#34;960-001550&#34;],&#",
+"ery.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;category&#34;:&#34;webcams&#34;,&#34;skus&#34;:[&#34;960-001545&#34;,&#34;960-001558&#34;,&#34;960-001550&#34;],&#34;productTitle&#34;:",
+",&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;960-001545&#34;}\" data-bg-size-desktop=\"",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-p",
+"iv class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path",
+"rice-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path=\"/content/",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-p",
+"iv class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path",
+"rice-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path=\"/content/",
+"olor-swatch active strikethrough\" data-color-id=\"graphite\" data-analytics-title=\"graphite\" title=\"Graphite\" role=\"radio\" aria-checked=\"true\" data-variant-skus=\"960-001545\"> <span class=\"color-swatc",
+"ch js-pangea-color-swatch strikethrough\" data-color-id=\"black\" data-analytics-title=\"black\" title=\"Black\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"960-001558\"> <span class=\"color-swatc",
+"-color-swatch strikethrough\" data-color-id=\"pale gray\" data-analytics-title=\"pale gray\" title=\"Pale Gray\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"960-001550\"> <span class=\"color-swatc",
+" <ul class=\"specs-description-list\"> <li> <strong>Graphite :</strong> <span class=\"serial-num\">960-001545</span> </li",
+" </li> <li> <strong>Black :</strong> <span class=\"serial-num\">960-001558</span> </li",
+"i> <li> <strong>Pale Gray :</strong> <span class=\"serial-num\">960-001550</span> </li",
+"abled&#34;:false,&#34;isNew&#34;:false,&#34;isAREnabled&#34;:false,&#34;variantInfo&#34;:[{&#34;name&#34;:&#34;POP Keys - Mist - English&#34;,&#34;id&#34;:&#34;920-011232&#34;,&#34;brand&#34;:&#34;Log",
+"ish&#34;,&#34;title&#34;:&#34;POP Keys - Mist - English&#34;},&#34;url&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/pop-keys-wireless-mechanical.920-011232.html&#34;,&#34;ar&#34;:&#34;\\",
+";:false,&#34;buyStatus&#34;:1.0,&#34;showATC&#34;:false,&#34;enableNotifyMe&#34;:true}},{&#34;name&#34;:&#34;POP Keys - Cosmos - English&#34;,&#34;id&#34;:&#34;920-011233&#34;,&#34;brand&#34;:&#34;Log",
+"h&#34;,&#34;title&#34;:&#34;POP Keys - Cosmos - English&#34;},&#34;url&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/pop-keys-wireless-mechanical.920-011233.html&#34;,&#34;ar&#34;:&#34;\\",
+"false,&#34;buyStatus&#34;:1.0,&#34;showATC&#34;:false,&#34;enableNotifyMe&#34;:true}},{&#34;name&#34;:&#34;POP Keys - Daydream - English&#34;,&#34;id&#34;:&#34;920-010708&#34;,&#34;brand&#34;:&#34;Log",
+"#34;,&#34;title&#34;:&#34;POP Keys - Daydream - English&#34;},&#34;url&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/pop-keys-wireless-mechanical.920-010708.html&#34;,&#34;ar&#34;:&#34;\\",
+"e,&#34;buyStatus&#34;:1.0,&#34;showATC&#34;:false,&#34;enableNotifyMe&#34;:true}},{&#34;name&#34;:&#34;POP Keys - Heartbreaker - English&#34;,&#34;id&#34;:&#34;920-010709&#34;,&#34;brand&#34;:&#34;Log",
+",&#34;title&#34;:&#34;POP Keys - Heartbreaker - English&#34;},&#34;url&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/pop-keys-wireless-mechanical.920-010709.html&#34;,&#34;ar&#34;:&#34;\\",
+"4;:false,&#34;buyStatus&#34;:1.0,&#34;showATC&#34;:false,&#34;enableNotifyMe&#34;:true}},{&#34;name&#34;:&#34;POP Keys - Blast - English&#34;,&#34;id&#34;:&#34;920-010707&#34;,&#34;brand&#34;:&#34;Log",
+"sh&#34;,&#34;title&#34;:&#34;POP Keys - Blast - English&#34;},&#34;url&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/pop-keys-wireless-mechanical.920-010707.html&#34;,&#34;ar&#34;:&#34;\\",
+"03e&#34;,&#34;pdpFacetPropKeys&#34;:[&#34;dr.color&#34;],&#34;pdpFeaturesList&#34;:&#34;ToDo&#34;,&#34;facets&#34;:[&#34;ToDo&#34;],&#34;pdpSkusList&#34;:[&#34;920-011233&#34;,&#34;920-011232&#34;,&#3",
+"tPropKeys&#34;:[&#34;dr.color&#34;],&#34;pdpFeaturesList&#34;:&#34;ToDo&#34;,&#34;facets&#34;:[&#34;ToDo&#34;],&#34;pdpSkusList&#34;:[&#34;920-011233&#34;,&#34;920-011232&#34;,&#34;920-010708&#34;,&#3",
+"dr.color&#34;],&#34;pdpFeaturesList&#34;:&#34;ToDo&#34;,&#34;facets&#34;:[&#34;ToDo&#34;],&#34;pdpSkusList&#34;:[&#34;920-011233&#34;,&#34;920-011232&#34;,&#34;920-010708&#34;,&#34;920-010709&#34;,&#3",
+"dpFeaturesList&#34;:&#34;ToDo&#34;,&#34;facets&#34;:[&#34;ToDo&#34;],&#34;pdpSkusList&#34;:[&#34;920-011233&#34;,&#34;920-011232&#34;,&#34;920-010708&#34;,&#34;920-010709&#34;,&#34;920-010707&#34;],&#",
+"#34;ToDo&#34;,&#34;facets&#34;:[&#34;ToDo&#34;],&#34;pdpSkusList&#34;:[&#34;920-011233&#34;,&#34;920-011232&#34;,&#34;920-010708&#34;,&#34;920-010709&#34;,&#34;920-010707&#34;],&#34;pdpBestSellerRank&",
+"alse,&#34;mandatoryProd&#34;:false,&#34;price&#34;:99.99,&#34;variants&#34;:[{&#34;link&#34;:&#34;https://commerce-prd.logitech.com/s/US/dw/shop/v24_5/products/920-011232?all_images\\u003dtrue\\u0026loc",
+"/dw/shop/v24_5/products/920-011232?all_images\\u003dtrue\\u0026locale\\u003den-US\\u0026client_id\\u003da65e74be-900e-458d-ac3b-675eae9bbc5a&#34;,&#34;sku&#34;:&#34;920-011232&#34;,&#34;buyStatus&#34;:{&#3"
+]
+},
+{
+"ts": "20241205035336",
+"url": "https://www.logitech.com/en-us/products/webcams/mx-brio-4k-webcam.960-001474.html",
+"serial": [
+[
+"Graphite",
+"960-001545"
+],
+[
+"Black",
+"960-001558"
+],
+[
+"Pale Gray",
+"960-001550"
+]
+],
+"pn": "960-001550,960-001545,960-001558",
+"models": [
+[
+"MX Brio - MX Brio - Pale Gray",
+"Pale Gray"
+],
+[
+"MX Brio - MX Brio - Graphite",
+"Graphite"
+],
+[
+"MX Brio - MX Brio - Black",
+"Black"
+]
+],
+"ldsku": [
+[
+"Pale Gray",
+"960-001550"
+],
+[
+"Graphite",
+"960-001545"
+],
+[
+"Black",
+"960-001558"
+]
+],
+"facets": [],
+"swatch": [
+[
+"graphite",
+"960-001545"
+],
+[
+"black",
+"960-001558"
+],
+[
+"pale gray",
+"960-001550"
+],
+[
+"pale gray",
+"910-006558"
+],
+[
+"black",
+"910-006556"
+],
+[
+"graphite",
+"910-006557"
+]
+],
+"ctx": [
+" content=\"https://support.logi.com/hc/en-us?mID=1763\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"960-001550,960-001545,960-001558\"/> <",
+"ttps://support.logi.com/hc/en-us?mID=1763\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"960-001550,960-001545,960-001558\"/> <meta name=\"",
+"ort.logi.com/hc/en-us?mID=1763\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"960-001550,960-001545,960-001558\"/> <meta name=\"template\" c",
+":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.9\",\"reviewCount\":\"72\"},\"brand\":\"Logitech\",\"url\":\"https://www.logitech.com/en-us/products/webcams/mx-brio-4k-webcam.960-001474.html\",\"offers\":{\"@type\":\"Aggr",
+"arent.gif/content/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-pale-gray-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001550\",\"mpn\":\"960-001550\",\"category",
+"am/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-pale-gray-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001550\",\"mpn\":\"960-001550\",\"category\":\"Webcams\",\"offers",
+"parent.gif/content/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-graphite-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001545\",\"mpn\":\"960-001545\",\"category",
+"dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-graphite-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001545\",\"mpn\":\"960-001545\",\"category\":\"Webcams\",\"offers",
+"ansparent.gif/content/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-black-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001558\",\"mpn\":\"960-001558\",\"category",
+"nt/dam/logitech/en/products/webcams/mx-brio/buy/gallery/mx-brio-3qtr-front-right-black-gallery.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"960-001558\",\"mpn\":\"960-001558\",\"category\":\"Webcams\",\"offers",
+"ebcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\" ], \"product_sku\": [ \"960-001550\", \"960-001545\", \"960-",
+"io 4K Ultra HD Collaboration and Streaming Webcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\" ], \"product_sku\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"pr",
+"laboration and Streaming Webcam\", \"MX Brio 4K Ultra HD Collaboration and Streaming Webcam\" ], \"product_sku\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"product_sku_instock\"",
+"ct_sku\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"product_sku_instock\": [ true, true, true ], \"product_sku_short\": [ \"960-001550\", \"960-001545\", \"960-",
+"0-001550\", \"960-001545\", \"960-001558\" ], \"product_sku_instock\": [ true, true, true ], \"product_sku_short\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"si",
+"0-001545\", \"960-001558\" ], \"product_sku_instock\": [ true, true, true ], \"product_sku_short\": [ \"960-001550\", \"960-001545\", \"960-001558\" ], \"site_country\": \"US\",",
+"tn js-sec-nav-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001550,960-001545,960-001558\" data-p",
+"av-ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001550,960-001545,960-001558\" data-product-path",
+"\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001550,960-001545,960-001558\" data-product-path=\"/content/",
+"tle&#34;:&#34;Graphite&#34;}},&#34;name&#34;:&#34;MX Brio - Graphite&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474/jcr:content/par/product/960-0",
+"name&#34;:&#34;MX Brio - Graphite&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474/jcr:content/par/product/960-001545&#34;,&#34;brand&#34;:&#34;Log",
+"rong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.960-001545.html&#34;,&#34;tit",
+"pan>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.960-001545.html&#34;,&#34;title&#34;:&#3",
+":&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.960-001545.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;960-001545&#34;,&#34;colorSwatch&#34;:&#",
+"#34;title&#34;:&#34;Black&#34;}},&#34;name&#34;:&#34;MX Brio - Black&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474/jcr:content/par/product/960-0",
+"34;name&#34;:&#34;MX Brio - Black&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474/jcr:content/par/product/960-001558&#34;,&#34;brand&#34;:&#34;Log",
+"/strong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Black&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.960-001558.html&#34;,&#34;tit",
+"t;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Black&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.960-001558.html&#34;,&#34;title&#34;:&#3",
+"34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.960-001558.html&#34;,&#34;title&#34;:&#34;Black&#34;,&#34;sku&#34;:&#34;960-001558&#34;,&#34;colorSwatch&#34;:&#",
+"e&#34;:&#34;Pale Gray&#34;}},&#34;name&#34;:&#34;MX Brio - Pale Gray&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474/jcr:content/par/product/960-0",
+"ame&#34;:&#34;MX Brio - Pale Gray&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474/jcr:content/par/product/960-001550&#34;,&#34;brand&#34;:&#34;Log",
+"ong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Pale Gray&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.960-001550.html&#34;,&#34;tit",
+"an>series&lt;/span>&#34;,&#34;color&#34;:&#34;Pale Gray&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.960-001550.html&#34;,&#34;title&#34;:&#3",
+"&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.960-001550.html&#34;,&#34;title&#34;:&#34;Pale Gray&#34;,&#34;sku&#34;:&#34;960-001550&#34;,&#34;colorSwatch&#34;:&#",
+"gingWattage&#34;:&#34;&#34;}}],&#34;id&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.html&#34;,&#34;productPath&#3",
+"ve/en_us/products/webcams/mx-brio-4k-webcam.960-001474.html&#34;,&#34;productPath&#34;:&#34;/content/logitech/amr/live/en_us/products/webcams/mx-brio-4k-webcam.960-001474.html&#34;,&#34;title&#34;:nul",
+"ery/mx-brio-3qtr-front-right-graphite-gallery.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;category&#34;:&#34;webcams&#34;,&#34;skus&#34;:[&#34;960-001545&#34;,&#34;960-001558&#34;,&#3",
+"t-right-graphite-gallery.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;category&#34;:&#34;webcams&#34;,&#34;skus&#34;:[&#34;960-001545&#34;,&#34;960-001558&#34;,&#34;960-001550&#34;],&#",
+"ery.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-4k-webcam&#34;,&#34;category&#34;:&#34;webcams&#34;,&#34;skus&#34;:[&#34;960-001545&#34;,&#34;960-001558&#34;,&#34;960-001550&#34;],&#34;productTitle&#34;:",
+",&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;960-001545&#34;}\" data-bg-size-desktop=\"",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-p",
+"iv class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path",
+"rice-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path=\"/content/",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-p",
+"iv class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path",
+"rice-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path=\"/content/",
+"h js-pangea-color-swatch active \" data-color-id=\"graphite\" data-analytics-title=\"graphite\" title=\"Graphite\" role=\"radio\" aria-checked=\"true\" data-variant-skus=\"960-001545\"> <span class=\"color-swatc",
+"s=\"color-swatch js-pangea-color-swatch \" data-color-id=\"black\" data-analytics-title=\"black\" title=\"Black\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"960-001558\"> <span class=\"color-swatc",
+"tch js-pangea-color-swatch \" data-color-id=\"pale gray\" data-analytics-title=\"pale gray\" title=\"Pale Gray\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"960-001550\"> <span class=\"color-swatc",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-p",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path",
+" <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"960-001545,960-001558,960-001550\" data-product-path=\"/content/",
+"tion__content\"><p><strong>Save 20% on MX products</strong> when you purchase <a href=\"https://www.logitech.com/en-us/products/keyboards/buy-mx-creative-console.920-012660.html\">MX Creative Console</a>",
+"ty&#34;}},&#34;name&#34;:&#34;MX Master 3S - Pale Gray&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s/jcr:content/par/product/910-006558&#34;,&#34;brand&#34;:&#34;Log",
+"es&lt;/strong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Pale Gray&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006558.html&#34;,&#34;title&#34;:&#3",
+"&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006558.html&#34;,&#34;title&#34;:&#34;Pale Gray&#34;,&#34;sku&#34;:&#34;910-006558&#34;,&#34;colorSwatch&#34;:&#",
+"nty&#34;}},&#34;name&#34;:&#34;MX Master 3S - Graphite&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s/jcr:content/par/product/910-006557&#34;,&#34;brand&#34;:&#34;Log",
+"ies&lt;/strong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006557.html&#34;,&#34;title&#34;:&#3",
+"e&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006557.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;910-006557&#34;,&#34;colorSwatch&#34;:&#",
+"rranty&#34;}},&#34;name&#34;:&#34;MX Master 3S - Black&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/mice/mx-master-3s/jcr:content/par/product/910-006556&#34;,&#34;brand&#34;:&#34;Log"
+]
+}
+],
+"mx-master-4": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"ts": "20260901120450",
+"url": "https://www.logitech.com/en-us/shop/p/mx-master-4.910-007558?utm_source=youtube&utm_content=YT3-BSgYQuxHBWTewOIMiG2IOaW0Xm0amZN6EeoMM2BjQdXJ07LrzE-PR3umE6pmWKMgHof2cc_TrKjLbiTIfUvK9RvXDyRG25Y&utm_medium=product_shelf",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20260622140812",
+"url": "https://www.logitech.com/en-us/shop/p/mx-master-4-mac.910-007575?utm_source=google",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20260428085331",
+"url": "https://www.logitech.com/en-us/shop/p/mx-master-4.910-007559?utm_medium=product_shelf&utm_source=youtube&utm_content=YT3-OmrgRJrPrKSjuwuDzw605OU5ZJ4b5owirZukLKlbj-F28muDv3j93Bnc4Tjujtix2jSlnHJ5YMB5zkOvFH31-nFAnTxwsV_xiTc5Hw",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20260409220322",
+"url": "https://www.logitech.com/en-us/shop/p/mx-master-4-mac.910-007574?gclsrc=aw.ds&gad_source=1&gad_campaignid=21273776314&gbraid=0AAAAADDQ2OxcK9jYJi8oukvg1jcHMfbpQ",
+"serial": [],
+"pn": "",
+"models": [
+[
+"MX Master 4 for Mac - Space Black",
+"Space Black"
+],
+[
+"MX Master 4 for Mac - White Silver",
+"White Silver"
+]
+],
+"ldsku": [
+[
+"Space Black",
+"910-007575"
+],
+[
+"White Silver",
+"910-007574"
+]
+],
+"facets": [
+[
+"910-007575",
+"MX Master 4 for Mac - Space Black",
+"Space Black"
+],
+[
+"910-007574",
+"MX Master 4 for Mac - White Silver",
+"White Silver"
+]
+],
+"swatch": [],
+"ctx": [
+"}, \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 for Mac - Space Black\", \"color\": \"Space Black\", \"sku\": \"910-007575\", \"mpn\": \"910-007575\"",
+" \"@type\": \"ProductModel\", \"name\": \"MX Master 4 for Mac - Space Black\", \"color\": \"Space Black\", \"sku\": \"910-007575\", \"mpn\": \"910-007575\", \"category\": \"mice\",",
+" } }, { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 for Mac - White Silver\", \"color\": \"White Silver\", \"sku\": \"910-007574\", \"mpn\": \"910-007574\"",
+" \"@type\": \"ProductModel\", \"name\": \"MX Master 4 for Mac - White Silver\", \"color\": \"White Silver\", \"sku\": \"910-007574\", \"mpn\": \"910-007574\", \"category\": \"mice\",",
+"itle:\"\\u003Cp>\\u003Cstrong>FREE\\u003C/strong>*&nbsp;\\u003Ca data-analytics-title=\\\"mx-travel-case\\\" href=\\\"https://www.logitech.com/en-us/shop/p/mx-travel-case.956-000026\\\">MX Travel Case\\u003C/a>&nbs",
+"strong>MX Master 4.\\u003C/strong>\\u003C/p>\",id:\"GWP_MXM4_Free-TorAccCase-DeskMT_Logi_NAM_NCD\",details:void 0,promotionalBadge:\"gift-with-purchase\"}],variants:{\"910-007575\":{name:\"MX Master 4 for Mac -",
+" connectivity, ultra fast scrolling with the MagSpeed scroll wheel, 8k DPI any surface tracking, including glass & Logi Options+ for customization.\",productId:\"910-007575\",auxCode:void 0,productImages",
+"0.glb\",camera_orbit:\"\",image:\"\",usdz:\"/content/dam/logitech/en/ar-models/mice/mx-master-4-mac/mxmaster4mac-spaceblack-iphone-360.usdz\",hdr:\"\",__proto__:null}},\"910-007574\":{name:\"MX Master 4 for Mac -",
+" connectivity, ultra fast scrolling with the MagSpeed scroll wheel, 8k DPI any surface tracking, including glass & Logi Options+ for customization.\",productId:\"910-007574\",auxCode:void 0,productImages",
+"ues:[{value:\"Compatible with both USB-C and USB-A receivers (Not included in the box)\",variants:[],universal:true}]}],sustainability:[]}},representedProductId:\"910-007574\"},recommendations:[{calloutMs"
+]
+},
+{
+"ts": "20260124025151",
+"url": "https://www.logitech.com/en-us/shop/p/mx-master-4%0A",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20251124192112",
+"url": "https://www.logitech.com/en-us/products/mice/mx-master-4-business.910-007616.html",
+"serial": [],
+"pn": "910-007616",
+"models": [
+[
+"MX Master 4 for Business - MX Master 4 for Business - Graphite",
+"Graphite"
+]
+],
+"ldsku": [
+[
+"Graphite",
+"910-007616"
+]
+],
+"facets": [],
+"swatch": [],
+"ctx": [
+"ontent=\"https://hub.sync.logitech.com/mx-master-4\"/> <meta property=\"search_productpage_type\" content=\"product\"/> <meta name=\"search_partnumber\" content=\"910-007616\"/> <meta name=\"template\" c",
+"b2b-mx-master-4-for-business-mouse-top-angle-image-1.png?v\\u003d1\"],\"brand\":\"Logitech\",\"url\":\"https://www.logitech.com/en-us/products/mice/mx-master-4-business.910-007616.html\",\"offers\":{\"@type\":\"Aggr",
+"ogitech/en/products/mice/mx-master-4-business/gallery-images/b2b-mx-master-4-for-business-mouse-top-angle-image-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"910-007616\",\"mpn\":\"910-007616\",\"category",
+"/mice/mx-master-4-business/gallery-images/b2b-mx-master-4-for-business-mouse-top-angle-image-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"910-007616\",\"mpn\":\"910-007616\",\"category\":\"Mice For Busines",
+"\"price\":\"119.99\",\"priceCurrency\":\"USD\",\"availability\":\"https://schema.org/InStock\"}]}],\"@id\":\"https://www.logitech.com/en-us/products/mice/mx-master-4-business.910-007616.html\"}</script> ",
+" \"D259\" ], \"product_name\": [ \"MX Master 4 for Business Our flagship mouse, reengineered for precision and performance.\" ], \"product_sku\": [ \"910-007616\" ], \"product_sku_instock\"",
+"engineered for precision and performance.\" ], \"product_sku\": [ \"910-007616\" ], \"product_sku_instock\": [ true ], \"product_sku_short\": [ \"910-007616\" ], \"site_country\": \"US\",",
+"phite&#34;}},&#34;name&#34;:&#34;MX Master 4 for Business - Graphite&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/mice/mx-master-4-business.910-007616/jcr:content/par/product/910-0",
+" Master 4 for Business - Graphite&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/mice/mx-master-4-business.910-007616/jcr:content/par/product/910-007616&#34;,&#34;brand&#34;:&#34;Log",
+"rong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/mice/mx-master-4-business.910-007616.910-007616.html&#34;,&#34;tit",
+"pan>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/mice/mx-master-4-business.910-007616.910-007616.html&#34;,&#34;title&#34;:&#3",
+":&#34;/content/logitech/amr/live/en_us/products/mice/mx-master-4-business.910-007616.910-007616.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;910-007616&#34;,&#34;colorSwatch&#34;:&#",
+"gWattage&#34;:&#34;&#34;}}],&#34;id&#34;:&#34;mx-master-4-business&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/mice/mx-master-4-business.910-007616.html&#34;,&#34;productPath&#3",
+"ve/en_us/products/mice/mx-master-4-business.910-007616.html&#34;,&#34;productPath&#34;:&#34;/content/logitech/amr/live/en_us/products/mice/mx-master-4-business.910-007616.html&#34;,&#34;title&#34;:nul",
+"er-4-for-business-mouse-top-angle-image-1.png&#34;,&#34;uniqueId&#34;:&#34;mx-master-4-business&#34;,&#34;category&#34;:&#34;mice-b2b&#34;,&#34;skus&#34;:[&#34;910-007616&#34;],&#34;productTitle&#34;:",
+";,&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;true&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;910-007616&#34;}\" data-bg-size-desktop=\"",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-007616\" data-product-path=\"/content/",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-007616\" data-product-path=\"/content/",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-007616\" data-product-path=\"/content/",
+"Business - Graphite - English US (QWERTY)&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-for-business/jcr:content/par/product/920-010116&#34;,&#34;brand&#34;:&#34;Log",
+"g> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-for-business.920-010116.html&#34;,&#34;title&#34;:&#3",
+"ink&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-for-business.920-010116.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;920-010116&#34;,&#34;colorSwatch&#34;:&#",
+"ess-keyboard-s-gallery-us-graphite-1.png&#34;,&#34;uniqueId&#34;:&#34;mx-keys-for-business&#34;,&#34;category&#34;:&#34;keyboards-b2b&#34;,&#34;skus&#34;:[&#34;920-010116&#34;],&#34;productTitle&#34;:",
+",&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;920-010116&#34;}\"> <div class=\"addon",
+"roduct-facets js-pangea-product-facets\"> </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010116\" data-product-path=\"https://w",
+"siness - Graphite - English US (QWERTY)&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/ergo-k860-for-business/jcr:content/par/product/920-010175&#34;,&#34;brand&#34;:&#34;Log",
+" &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/ergo-k860-for-business.920-010175.html&#34;,&#34;title&#34;:&#3",
+"k&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/ergo-k860-for-business.920-010175.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;920-010175&#34;,&#34;colorSwatch&#34;:&#",
+"k860-for-business-gallery-1-us-new.png&#34;,&#34;uniqueId&#34;:&#34;ergo-k860-for-business&#34;,&#34;category&#34;:&#34;keyboards-b2b&#34;,&#34;skus&#34;:[&#34;920-010175&#34;],&#34;productTitle&#34;:",
+",&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;920-010175&#34;}\"> <div class=\"addon",
+"roduct-facets js-pangea-product-facets\"> </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010175\" data-product-path=\"https://w",
+"#34;MX Brio 705 for Business - Graphite&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/webcams/mx-brio-705-for-business/jcr:content/par/product/960-001529&#34;,&#34;brand&#34;:&#34;Log",
+"34;,&#34;series&#34;:&#34;&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/webcams/mx-brio-705-for-business.960-001529.html&#34;,&#34;title&#34;:&#3",
+"k&#34;:&#34;https://www.logitech.com/en-us/products/webcams/mx-brio-705-for-business.960-001529.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;960-001529&#34;,&#34;colorSwatch&#34;:&#",
+"ry/mx-brio-705-for-business-1.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-705-for-business&#34;,&#34;category&#34;:&#34;business-webcams&#34;,&#34;skus&#34;:[&#34;960-001529&#34;],&#34;productTitle&#34;:",
+";,&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;true&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;960-001529&#34;}\"> <div class=\"addon",
+"\"specs-header\"> <h4 class=\"specs-heading\">Part Number</h4> </header> <div class=\"specs-block\"> <ul class=\"specs-description-list\"> <li>910-007616</li> </ul> </div> </",
+"s=\"product-price\" data-enable-newtag> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-007616\" data-product-path=\"/content/",
+" <a href=\"/en-us/products/mice/mx-master-3s-business-wireless-mouse.910-006581.html\" aria-label=\"MX MASTER 3",
+" <div class=\"product-title\"> <a href=\"/en-us/products/mice/mx-master-3s-business-wireless-mouse.910-006581.html\" data-analytics-title=\"m",
+" <div class=\"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006581\" data-product-path=\"/content/",
+" <a href=\"/en-us/products/mice/mx-anywhere-3s-business.910-006956.html\" aria-label=\"MX ANYWHERE",
+" <div class=\"product-title\"> <a href=\"/en-us/products/mice/mx-anywhere-3s-business.910-006956.html\" data-analytics-title=\"m",
+" <div class=\"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006956\" data-product-path=\"/content/",
+" <a href=\"/en-us/products/mice/m650-signature-for-business.910-006272.html\" aria-label=\"Signature M",
+" <div class=\"product-title\"> <a href=\"/en-us/products/mice/m650-signature-for-business.910-006272.html\" data-analytics-title=\"m",
+" <div class=\"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006272,910-006273,910-006346,910-006",
+"div class=\"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006272,910-006273,910-006346,910-006347\" data-p",
+"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006272,910-006273,910-006346,910-006347\" data-product-path",
+"ce\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006272,910-006273,910-006346,910-006347\" data-product-path=\"/content/"
+]
+},
+{
+"ts": "20251114213858",
+"url": "https://www.logitech.com/en-us/shop/p/mx-master-4.910-007558/__data.json?x-sveltekit-invalidated=1",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20251113180510",
+"url": "https://www.logitech.com/en-us/shop/p/mx-master-4-mac?utm_campaign=Catalog&utm_source=Meta&utm_medium=social",
+"serial": [],
+"pn": "",
+"models": [
+[
+"MX Master 4 for Mac - Space Black",
+"Space Black"
+],
+[
+"MX Master 4 for Mac - White Silver",
+"White Silver"
+]
+],
+"ldsku": [
+[
+"Space Black",
+"910-007575"
+],
+[
+"White Silver",
+"910-007574"
+]
+],
+"facets": [
+[
+"910-007575",
+"MX Master 4 for Mac - Space Black",
+"Space Black"
+],
+[
+"910-007574",
+"MX Master 4 for Mac - White Silver",
+"White Silver"
+]
+],
+"swatch": [],
+"ctx": [
+"}, \"model\": [ { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 for Mac - Space Black\", \"color\": \"Space Black\", \"sku\": \"910-007575\", \"mpn\": \"910-007575\"",
+" \"@type\": \"ProductModel\", \"name\": \"MX Master 4 for Mac - Space Black\", \"color\": \"Space Black\", \"sku\": \"910-007575\", \"mpn\": \"910-007575\", \"category\": \"mice\",",
+" ] }, { \"@type\": \"ProductModel\", \"name\": \"MX Master 4 for Mac - White Silver\", \"color\": \"White Silver\", \"sku\": \"910-007574\", \"mpn\": \"910-007574\"",
+" \"@type\": \"ProductModel\", \"name\": \"MX Master 4 for Mac - White Silver\", \"color\": \"White Silver\", \"sku\": \"910-007574\", \"mpn\": \"910-007574\", \"category\": \"mice\",",
+"!----><p>FREE* <a href=\"https://www.logitech.com/en-us/shop/p/mx-travel-case\">MX Travel Case</a>, <a href=\"https://www.logitech.com/en-us/shop/p/accessory-case.956-000107\">Logi Accessory Case</a>, or ",
+"ps://www.logitech.com/en-us/shop/p/accessory-case.956-000107\">Logi Accessory Case</a>, or <a href=\"https://www.logitech.com/en-us/shop/p/desk-mat-studio-series.956-000047?sp=1&amp;searchclick=Logitech",
+"03Ca href=\\\"https://www.logitech.com/en-us/shop/p/mx-travel-case\\\">MX Travel Case\\u003C/a>, \\u003Ca href=\\\"https://www.logitech.com/en-us/shop/p/accessory-case.956-000107\\\">Logi Accessory Case\\u003C/a",
+"itech.com/en-us/shop/p/accessory-case.956-000107\\\">Logi Accessory Case\\u003C/a>, or \\u003Ca href=\\\"https://www.logitech.com/en-us/shop/p/desk-mat-studio-series.956-000047?sp=1&amp;searchclick=Logitech",
+"strong>MX Master 4.\\u003C/strong>\\u003C/p>\",id:\"GWP_MXM4_Free-TorAccCase-DeskMT_Logi_NAM_NCD\",details:void 0,promotionalBadge:\"gift-with-purchase\"}],variants:{\"910-007575\":{name:\"MX Master 4 for Mac -",
+" connectivity, ultra fast scrolling with the MagSpeed scroll wheel, 8k DPI any surface tracking, including glass & Logi Options+ for customization.\",productId:\"910-007575\",auxCode:void 0,productImages",
+"aceblack-ar-360.glb\",camera_orbit:\"\",image:\"\",usdz:\"/content/dam/logitech/en/ar-models/mice/mx-master-4-mac/mxmaster4mac-spaceblack-iphone-360.usdz\",hdr:\"\"})},\"910-007574\":{name:\"MX Master 4 for Mac -",
+" connectivity, ultra fast scrolling with the MagSpeed scroll wheel, 8k DPI any surface tracking, including glass & Logi Options+ for customization.\",productId:\"910-007574\",auxCode:void 0,productImages"
+]
+},
+{
+"ts": "20251002061258",
+"url": "https://www.logitech.com/en-us/shop/p/mx-master-4-mac.910-007575/__data.json?x-sveltekit-invalidated=1",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20250930125606",
+"url": "https://www.logitech.com/en-us/products/mice/mx-master-4-business.html",
+"serial": [],
+"pn": "910-007616",
+"models": [
+[
+"MX Master 4 for Business - MX Master 4 for Business - Graphite",
+"Graphite"
+]
+],
+"ldsku": [
+[
+"Graphite",
+"910-007616"
+]
+],
+"facets": [],
+"swatch": [],
+"ctx": [
+"ontent=\"https://hub.sync.logitech.com/mx-master-4\"/> <meta property=\"search_productpage_type\" content=\"product\"/> <meta name=\"search_partnumber\" content=\"910-007616\"/> <meta name=\"template\" c",
+"ogitech/en/products/mice/mx-master-4-business/gallery-images/b2b-mx-master-4-for-business-mouse-top-angle-image-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"910-007616\",\"mpn\":\"910-007616\",\"category",
+"/mice/mx-master-4-business/gallery-images/b2b-mx-master-4-for-business-mouse-top-angle-image-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"910-007616\",\"mpn\":\"910-007616\",\"category\":\"Mice\",\"offers\":[",
+" \"D259\" ], \"product_name\": [ \"MX Master 4 for Business Our flagship mouse, reengineered for precision and performance.\" ], \"product_sku\": [ \"910-007616\" ], \"product_sku_instock\"",
+"engineered for precision and performance.\" ], \"product_sku\": [ \"910-007616\" ], \"product_sku_instock\": [ true ], \"product_sku_short\": [ \"910-007616\" ], \"site_country\": \"US\",",
+"34;:&#34;MX Master 4 for Business - Graphite&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/mice/mx-master-4-business/jcr:content/par/product/910-007616&#34;,&#34;brand&#34;:&#34;Log",
+"rong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/mice/mx-master-4-business.910-007616.html&#34;,&#34;title&#34;:&#3",
+"4;link&#34;:&#34;/content/logitech/amr/live/en_us/products/mice/mx-master-4-business.910-007616.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;910-007616&#34;,&#34;colorSwatch&#34;:&#",
+"master-4-for-business-mouse-top-angle-image-1.png&#34;,&#34;uniqueId&#34;:&#34;mx-master-4-business&#34;,&#34;category&#34;:&#34;mice&#34;,&#34;skus&#34;:[&#34;910-007616&#34;],&#34;productTitle&#34;:",
+";,&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;true&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;910-007616&#34;}\" data-bg-size-desktop=\"",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-007616\" data-product-path=\"/content/",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-007616\" data-product-path=\"/content/",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-007616\" data-product-path=\"/content/",
+"0%</strong> on any <a href=\"https://www.logitech.com/en-us/shop/c/mice\">Mouse</a> and <a href=\"https://www.logitech.com/en-us/shop/p/ipad-digital-pencil-crayon.914-000070?sp=7&amp;searchclick=Logitech",
+"MX Keys for Business - Graphite - English&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-for-business/jcr:content/par/product/920-010116&#34;,&#34;brand&#34;:&#34;Log",
+"g> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-for-business.920-010116.html&#34;,&#34;title&#34;:&#3",
+"ink&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-for-business.920-010116.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;920-010116&#34;,&#34;colorSwatch&#34;:&#",
+"usiness-keyboard-s-gallery-us-graphite-1.png&#34;,&#34;uniqueId&#34;:&#34;mx-keys-for-business&#34;,&#34;category&#34;:&#34;keyboards&#34;,&#34;skus&#34;:[&#34;920-010116&#34;],&#34;productTitle&#34;:",
+",&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;920-010116&#34;}\"> <div class=\"addon",
+"roduct-facets js-pangea-product-facets\"> </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010116\" data-product-path=\"https://w",
+"board for Business - Graphite - English&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/ergo-k860-for-business/jcr:content/par/product/920-010175&#34;,&#34;brand&#34;:&#34;Log",
+" &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/ergo-k860-for-business.920-010175.html&#34;,&#34;title&#34;:&#3",
+"k&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/ergo-k860-for-business.920-010175.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;920-010175&#34;,&#34;colorSwatch&#34;:&#",
+"rgo-k860-for-business-gallery-1-us-new.png&#34;,&#34;uniqueId&#34;:&#34;ergo-k860-for-business&#34;,&#34;category&#34;:&#34;keyboards&#34;,&#34;skus&#34;:[&#34;920-010175&#34;],&#34;productTitle&#34;:",
+",&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;920-010175&#34;}\"> <div class=\"addon",
+"roduct-facets js-pangea-product-facets\"> </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-010175\" data-product-path=\"https://w",
+"#34;MX Brio 705 for Business - Graphite&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/webcams/mx-brio-705-for-business/jcr:content/par/product/960-001529&#34;,&#34;brand&#34;:&#34;Log",
+"34;,&#34;series&#34;:&#34;&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/webcams/mx-brio-705-for-business.960-001529.html&#34;,&#34;title&#34;:&#3",
+"k&#34;:&#34;https://www.logitech.com/en-us/products/webcams/mx-brio-705-for-business.960-001529.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;960-001529&#34;,&#34;colorSwatch&#34;:&#",
+"ry/mx-brio-705-for-business-1.png&#34;,&#34;uniqueId&#34;:&#34;mx-brio-705-for-business&#34;,&#34;category&#34;:&#34;business-webcams&#34;,&#34;skus&#34;:[&#34;960-001529&#34;],&#34;productTitle&#34;:",
+";,&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;true&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;960-001529&#34;}\"> <div class=\"addon",
+"\"specs-header\"> <h4 class=\"specs-heading\">Part Number</h4> </header> <div class=\"specs-block\"> <ul class=\"specs-description-list\"> <li>910-007616</li> </ul> </div> </",
+"s=\"product-price\" data-enable-newtag> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-007616\" data-product-path=\"/content/",
+" <a href=\"/en-us/products/mice/mx-master-3s-business-wireless-mouse.910-006581.html\" aria-label=\"MX MASTER 3",
+" <div class=\"product-title\"> <a href=\"/en-us/products/mice/mx-master-3s-business-wireless-mouse.910-006581.html\" data-analytics-title=\"m",
+" <div class=\"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006581\" data-product-path=\"/content/",
+" <a href=\"/en-us/products/mice/mx-anywhere-3s-business.910-006956.html\" aria-label=\"MX ANYWHERE",
+" <div class=\"product-title\"> <a href=\"/en-us/products/mice/mx-anywhere-3s-business.910-006956.html\" data-analytics-title=\"m",
+" <div class=\"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006956\" data-product-path=\"/content/",
+" <a href=\"/en-us/products/mice/m650-signature-for-business.910-006272.html\" aria-label=\"Signature M",
+" <div class=\"product-title\"> <a href=\"/en-us/products/mice/m650-signature-for-business.910-006272.html\" data-analytics-title=\"m",
+" <div class=\"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006272,910-006273,910-006346,910-006",
+"div class=\"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006272,910-006273,910-006346,910-006347\" data-p",
+"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006272,910-006273,910-006346,910-006347\" data-product-path",
+"ce\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"910-006272,910-006273,910-006346,910-006347\" data-product-path=\"/content/"
+]
+}
+],
+"expansion": [
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"err": "<urlopen error [Errno 111] Connection refused>"
+},
+{
+"ts": "20251007150239",
+"url": "https://www.logitech.com/en-us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405.html&.html",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20250813003022",
+"url": "https://www.logitech.com/en-us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405.html?sp=1&searchclick=logi",
+"serial": [],
+"pn": "989-000405",
+"models": [
+[
+"EXPANSION MIC FOR MEETUP - EXPANSION MIC FOR MEETUP - Grey/Black",
+"Grey/Black"
+]
+],
+"ldsku": [
+[
+"Grey/Black",
+"989-000405"
+]
+],
+"facets": [],
+"swatch": [
+[
+"graphite",
+"920-013369,920-013367"
+],
+[
+"midnight black",
+"920-013373,920-013370"
+],
+[
+"lilac",
+"920-013839,920-013826"
+],
+[
+"pale grey",
+"920-013831,920-013844"
+],
+[
+"black",
+"920-011406"
+],
+[
+"graphite",
+"920-011558"
+],
+[
+"pale gray",
+"920-011559"
+],
+[
+"graphite - bluetooth edition",
+"910-007499"
+],
+[
+"black",
+"910-006556"
+],
+[
+"pale gray",
+"910-006558"
+]
+],
+"ctx": [
+"pfull\" content=\"https://hub.sync.logitech.com/meetup\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"989-000405\"/> <meta name=\"template\" c",
+"-expansion-mics-gallery-1.png?v\\u003d1\"],\"brand\":\"Logitech\",\"url\":\"https://www.logitech.com/en-us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405.html\",\"offers\":{\"@type\":\"Aggr",
+"content/dam/logitech/en/products/video-conferencing/meetup-expansion-mics/gallery/meetup-expansion-mics-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"989-000405\",\"mpn\":\"989-000405\",\"category",
+"h/en/products/video-conferencing/meetup-expansion-mics/gallery/meetup-expansion-mics-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"989-000405\",\"mpn\":\"989-000405\",\"category\":\"VC Accessories\",",
+"ency\":\"USD\",\"availability\":\"https://schema.org/InStock\"}]}],\"@id\":\"https://www.logitech.com/en-us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405.html\"}</script> ",
+" [ \"V344\" ], \"product_name\": [ \"EXPANSION MIC FOR MEETUP Add-on microphone with mute control for extended audio range\" ], \"product_sku\": [ \"989-000405\" ], \"product_sku_instock\"",
+"ith mute control for extended audio range\" ], \"product_sku\": [ \"989-000405\" ], \"product_sku_instock\": [ true ], \"product_sku_short\": [ \"989-000405\" ], \"site_country\": \"US\",",
+" <div class=\"pangea-cmp price-atc js-pangea-price-atc accent-color-lila \" data-aem-id=\"price_copy_copy-idf80ddbfb2e3d65d05d8fe772a137006\" data-skus=\"989-000405\" data-product-path=\"/content/",
+"#34;EXPANSION MIC FOR MEETUP - Grey/Black&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405/jcr:content/par/product/989-0",
+"/Black&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405/jcr:content/par/product/989-000405&#34;,&#34;brand&#34;:&#34;Log",
+"4;&#34;,&#34;color&#34;:&#34;Grey/Black&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405.989-000405.html&#34;,&#34;tit",
+"4;color&#34;:&#34;Grey/Black&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405.989-000405.html&#34;,&#34;title&#34;:&#3",
+"ive/en_us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405.989-000405.html&#34;,&#34;title&#34;:&#34;Grey/Black&#34;,&#34;sku&#34;:&#34;989-000405&#34;,&#34;colorSwatch&#34;:&#",
+"&#34;id&#34;:&#34;meetup-expansion-mics&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405.html&#34;,&#34;productPath&#3",
+"p-expansion-mics.989-000405.html&#34;,&#34;productPath&#34;:&#34;/content/logitech/amr/live/en_us/products/video-conferencing/accessories/meetup-expansion-mics.989-000405.html&#34;,&#34;title&#34;:nul",
+"/meetup-expansion-mics-gallery-1.png&#34;,&#34;uniqueId&#34;:&#34;meetup-expansion-mics&#34;,&#34;category&#34;:&#34;logi-accessories&#34;,&#34;skus&#34;:[&#34;989-000405&#34;],&#34;productTitle&#34;:",
+"#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Grey/Black&#34;,&#34;defaultVariant&#34;:&#34;989-000405&#34;}\" data-bg-size-desktop=\"",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"989-000405\" data-product-path=\"/content/",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"989-000405\" data-product-path=\"/content/",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"989-000405\" data-product-path=\"/content/",
+";Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/ipad-keyboards/flip-folio&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;920-013367&#34;,&#34;colorSwatch&#34;:&#",
+"ack&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/ipad-keyboards/flip-folio&#34;,&#34;title&#34;:&#34;Midnight Black&#34;,&#34;sku&#34;:&#34;920-013373&#34;,&#34;colorSwatch&#34;:&#",
+";Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/ipad-keyboards/flip-folio&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;920-013369&#34;,&#34;colorSwatch&#34;:&#",
+"ack&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/ipad-keyboards/flip-folio&#34;,&#34;title&#34;:&#34;Midnight Black&#34;,&#34;sku&#34;:&#34;920-013370&#34;,&#34;colorSwatch&#34;:&#",
+";:&#34;Lilac&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/ipad-keyboards/flip-folio&#34;,&#34;title&#34;:&#34;Lilac&#34;,&#34;sku&#34;:&#34;920-013826&#34;,&#34;colorSwatch&#34;:&#",
+"ale Grey&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/ipad-keyboards/flip-folio&#34;,&#34;title&#34;:&#34;Pale Grey&#34;,&#34;sku&#34;:&#34;920-013831&#34;,&#34;colorSwatch&#34;:&#",
+";:&#34;Lilac&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/ipad-keyboards/flip-folio&#34;,&#34;title&#34;:&#34;Lilac&#34;,&#34;sku&#34;:&#34;920-013839&#34;,&#34;colorSwatch&#34;:&#",
+"ale Grey&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/ipad-keyboards/flip-folio&#34;,&#34;title&#34;:&#34;Pale Grey&#34;,&#34;sku&#34;:&#34;920-013844&#34;,&#34;colorSwatch&#34;:&#",
+"lip-folio-13-inch-graphite-3qtr-right-angle-1.png&#34;,&#34;uniqueId&#34;:&#34;flip-folio&#34;,&#34;category&#34;:&#34;ipad-keyboards&#34;,&#34;skus&#34;:[&#34;920-013367&#34;,&#34;920-013373&#34;,&#3",
+"phite-3qtr-right-angle-1.png&#34;,&#34;uniqueId&#34;:&#34;flip-folio&#34;,&#34;category&#34;:&#34;ipad-keyboards&#34;,&#34;skus&#34;:[&#34;920-013367&#34;,&#34;920-013373&#34;,&#34;920-013369&#34;,&#3",
+"e-1.png&#34;,&#34;uniqueId&#34;:&#34;flip-folio&#34;,&#34;category&#34;:&#34;ipad-keyboards&#34;,&#34;skus&#34;:[&#34;920-013367&#34;,&#34;920-013373&#34;,&#34;920-013369&#34;,&#34;920-013370&#34;,&#3",
+"queId&#34;:&#34;flip-folio&#34;,&#34;category&#34;:&#34;ipad-keyboards&#34;,&#34;skus&#34;:[&#34;920-013367&#34;,&#34;920-013373&#34;,&#34;920-013369&#34;,&#34;920-013370&#34;,&#34;920-013826&#34;,&#3",
+"folio&#34;,&#34;category&#34;:&#34;ipad-keyboards&#34;,&#34;skus&#34;:[&#34;920-013367&#34;,&#34;920-013373&#34;,&#34;920-013369&#34;,&#34;920-013370&#34;,&#34;920-013826&#34;,&#34;920-013831&#34;,&#3",
+"ory&#34;:&#34;ipad-keyboards&#34;,&#34;skus&#34;:[&#34;920-013367&#34;,&#34;920-013373&#34;,&#34;920-013369&#34;,&#34;920-013370&#34;,&#34;920-013826&#34;,&#34;920-013831&#34;,&#34;920-013839&#34;,&#3",
+"yboards&#34;,&#34;skus&#34;:[&#34;920-013367&#34;,&#34;920-013373&#34;,&#34;920-013369&#34;,&#34;920-013370&#34;,&#34;920-013826&#34;,&#34;920-013831&#34;,&#34;920-013839&#34;,&#34;920-013844&#34;],&#",
+"s&#34;:[&#34;920-013367&#34;,&#34;920-013373&#34;,&#34;920-013369&#34;,&#34;920-013370&#34;,&#34;920-013826&#34;,&#34;920-013831&#34;,&#34;920-013839&#34;,&#34;920-013844&#34;],&#34;productTitle&#34;:",
+",&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Graphite&#34;,&#34;defaultVariant&#34;:&#34;920-013367&#34;}\"> <div class=\"addon",
+"swatch js-pangea-color-swatch \" data-color-id=\"graphite\" data-analytics-title=\"graphite\" title=\"Graphite\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"920-013369,920-013367\"> <span class=\"",
+"angea-color-swatch \" data-color-id=\"graphite\" data-analytics-title=\"graphite\" title=\"Graphite\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"920-013369,920-013367\"> <span class=\"color-swatc",
+"olor-swatch \" data-color-id=\"midnight black\" data-analytics-title=\"midnight black\" title=\"Midnight Black\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"920-013373,920-013370\"> <span class=\"",
+" \" data-color-id=\"midnight black\" data-analytics-title=\"midnight black\" title=\"Midnight Black\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"920-013373,920-013370\"> <span class=\"color-swatc",
+"s=\"color-swatch js-pangea-color-swatch \" data-color-id=\"lilac\" data-analytics-title=\"lilac\" title=\"Lilac\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"920-013839,920-013826\"> <span class=\"",
+"atch js-pangea-color-swatch \" data-color-id=\"lilac\" data-analytics-title=\"lilac\" title=\"Lilac\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"920-013839,920-013826\"> <span class=\"color-swatc",
+"tch js-pangea-color-swatch \" data-color-id=\"pale grey\" data-analytics-title=\"pale grey\" title=\"Pale Grey\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"920-013831,920-013844\"> <span class=\"",
+"ea-color-swatch \" data-color-id=\"pale grey\" data-analytics-title=\"pale grey\" title=\"Pale Grey\" role=\"radio\" aria-checked=\"false\" data-variant-skus=\"920-013831,920-013844\"> <span class=\"color-swatc",
+"or) </option> </select> </div> </div> </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013367,920-013373,920-013369,920-013",
+" </option> </select> </div> </div> </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013367,920-013373,920-013369,920-013370,920-013",
+"on> </select> </div> </div> </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013367,920-013373,920-013369,920-013370,920-013826,920-013",
+"select> </div> </div> </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013367,920-013373,920-013369,920-013370,920-013826,920-013831,920-013",
+"</div> </div> </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013367,920-013373,920-013369,920-013370,920-013826,920-013831,920-013839,920-013",
+"div> </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013367,920-013373,920-013369,920-013370,920-013826,920-013831,920-013839,920-013844\" data-p",
+" </div> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013367,920-013373,920-013369,920-013370,920-013826,920-013831,920-013839,920-013844\" data-product-path",
+" <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"920-013367,920-013373,920-013369,920-013370,920-013826,920-013831,920-013839,920-013844\" data-product-path=\"https://w",
+"4;}},&#34;name&#34;:&#34;MX Keys S - Black - English&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-s/jcr:content/par/product/920-011406&#34;,&#34;brand&#34;:&#34;Log",
+"ries&lt;/strong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Black&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-s.920-011406.html&#34;,&#34;title&#34;:&#3",
+"ck&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-s.920-011406.html&#34;,&#34;title&#34;:&#34;Black&#34;,&#34;sku&#34;:&#34;920-011406&#34;,&#34;colorSwatch&#34;:&#",
+"},&#34;name&#34;:&#34;MX Keys S - Graphite - English&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-s/jcr:content/par/product/920-011558&#34;,&#34;brand&#34;:&#34;Log",
+"s&lt;/strong> &lt;span>series&lt;/span>&#34;,&#34;color&#34;:&#34;Graphite&#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-s.920-011558.html&#34;,&#34;title&#34;:&#3",
+"#34;,&#34;link&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-s.920-011558.html&#34;,&#34;title&#34;:&#34;Graphite&#34;,&#34;sku&#34;:&#34;920-011558&#34;,&#34;colorSwatch&#34;:&#",
+",&#34;name&#34;:&#34;MX Keys S - Pale Gray - English&#34;,&#34;id&#34;:&#34;https://www.logitech.com/en-us/products/keyboards/mx-keys-s/jcr:content/par/product/920-011559&#34;,&#34;brand&#34;:&#34;Log"
+]
+},
+{
+"ts": "20250714195533",
+"url": "https://www.logitech.com/en-us/products/video-conferencing/accessories/group-expansion-mics.989-000171.html?utm_source=",
+"serial": [],
+"pn": "",
+"models": [],
+"ldsku": [],
+"facets": [],
+"swatch": [],
+"ctx": []
+},
+{
+"ts": "20240620224107",
+"url": "https://www.logitech.com/en-us/products/video-conferencing/accessories/group-expansion-mics.html?crid=17102/4",
+"serial": [],
+"pn": "989-000171",
+"models": [
+[
+"GROUP Expansion Microphones - GROUP Expansion Microphones Add-on mics for larger groups - Black",
+"Black"
+]
+],
+"ldsku": [
+[
+"Black",
+"989-000171"
+]
+],
+"facets": [],
+"swatch": [],
+"ctx": [
+"tent=\"https://prosupport.logi.com/hc/en-us?mID=12303\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"989-000171\"/> <meta name=\"template\" c",
+"gif/content/dam/logitech/en/products/video-conferencing/group-expansion-mics/gallery/vc-group-expansion-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"989-000171\",\"mpn\":\"989-000171\",\"category",
+"itech/en/products/video-conferencing/group-expansion-mics/gallery/vc-group-expansion-gallery-1.png?v\\u003d1\"],\"additionalProperty\":[],\"sku\":\"989-000171\",\"mpn\":\"989-000171\",\"category\":\"VC Accessories\",",
+"gallery/vc-group-expansion-gallery-1.png\" ], \"product_name\": [ \"GROUP Expansion Microphones Add-on mics for larger groups\" ], \"product_sku\": [ \"989-000171\" ], \"product_sku_instock\"",
+"Microphones Add-on mics for larger groups\" ], \"product_sku\": [ \"989-000171\" ], \"product_sku_instock\": [ true ], \"product_sku_short\": [ \"989-000171\" ], \"site_country\": \"US\",",
+"ger groups - Black&#34;,&#34;id&#34;:&#34;/content/logitech/amr/live/en_us/products/video-conferencing/accessories/group-expansion-mics/jcr:content/par/product/989-000171&#34;,&#34;brand&#34;:&#34;Log",
+"4;:&#34;&#34;,&#34;color&#34;:&#34;Black&#34;,&#34;link&#34;:&#34;/content/logitech/amr/live/en_us/products/video-conferencing/accessories/group-expansion-mics.989-000171.html&#34;,&#34;title&#34;:&#3",
+"nt/logitech/amr/live/en_us/products/video-conferencing/accessories/group-expansion-mics.989-000171.html&#34;,&#34;title&#34;:&#34;Black&#34;,&#34;sku&#34;:&#34;989-000171&#34;,&#34;colorSwatch&#34;:&#",
+"lery/vc-group-expansion-gallery-1.png&#34;,&#34;uniqueId&#34;:&#34;group-expansion-mics&#34;,&#34;category&#34;:&#34;logi-accessories&#34;,&#34;skus&#34;:[&#34;989-000171&#34;],&#34;productTitle&#34;:",
+"34;,&#34;desktop3DBadgeActive&#34;:&#34;false&#34;,&#34;hideReviews&#34;:&#34;false&#34;,&#34;variantColorId&#34;:&#34;Black&#34;,&#34;defaultVariant&#34;:&#34;989-000171&#34;}\" data-bg-size-desktop=\"",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"989-000171\" data-product-path=\"/content/",
+"div> <div class=\"price-reviews-ctn\"> <div class=\"price-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"989-000171\" data-product-path=\"/content/",
+" </div> <div class=\"ctas-ctn\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" data-skus=\"989-000171\" data-product-path=\"/content/",
+"er</h3> </header> <div class=\"specs-block\"> <ul class=\"specs-description-list\"> <li>989-000171</li> </ul> ",
+"-extended-cable,group-15m-extended-cable\" data-server-side-response=\"{&#34;recommendedItems&#34;:{&#34;group-15m-extended-cable-en_us&#34;:{&#34;skus&#34;:&#34;939-001490&#34;},&#34;group-10m-extended",
+"mmendedItems&#34;:{&#34;group-15m-extended-cable-en_us&#34;:{&#34;skus&#34;:&#34;939-001490&#34;},&#34;group-10m-extended-cable-en_us&#34;:{&#34;skus&#34;:&#34;939-001487&#34;},&#34;meetup-expansion-m",
+"&#34;939-001490&#34;},&#34;group-10m-extended-cable-en_us&#34;:{&#34;skus&#34;:&#34;939-001487&#34;},&#34;meetup-expansion-mics-en_us&#34;:{&#34;skus&#34;:&#34;989-000405&#34;},&#34;crayon-replacement",
+";:&#34;939-001487&#34;},&#34;meetup-expansion-mics-en_us&#34;:{&#34;skus&#34;:&#34;989-000405&#34;},&#34;crayon-replacement-tip-en_us&#34;:{&#34;skus&#34;:&#34;939-001821&#34;},&#34;mk200-media-keyboa",
+"4;989-000405&#34;},&#34;crayon-replacement-tip-en_us&#34;:{&#34;skus&#34;:&#34;939-001821&#34;},&#34;mk200-media-keyboard-mouse-en_us&#34;:{&#34;skus&#34;:&#34;920-002714&#34;},&#34;wired-keyboard-ipa",
+"&#34;939-001821&#34;},&#34;mk200-media-keyboard-mouse-en_us&#34;:{&#34;skus&#34;:&#34;920-002714&#34;},&#34;wired-keyboard-ipad-en_us&#34;:{&#34;skus&#34;:&#34;920-006341&#34;}}}\" data-analytics-secti"
+]
+},
+{
+"ts": "20210422140836",
+"url": "https://www.logitech.com/en-us/products/video-conferencing/accessories/meetup-expansion-mics.html?crid=1710",
+"serial": [],
+"pn": "989-000405",
+"models": [
+[
+"EXPANSION MIC FOR MEETUP",
+"Grey Black"
+]
+],
+"ldsku": [
+[
+"Grey Black",
+"989-000405"
+]
+],
+"facets": [],
+"swatch": [],
+"ctx": [
+"l\" content=\"https://prosupport.logi.com/hc?mID=12861\"/> <meta property=\"search_productpage_type\" content=\"logi\"/> <meta name=\"search_partnumber\" content=\"989-000405\"/> <meta name=\"keywords\" c",
+",\"color\":\"Grey Black\",\"image\":[\"/content/dam/logitech/en/products/video-conferencing/meetup-expansion-mics/gallery/meetup-expansion-mics-gallery-1.png\"],\"sku\":\"989-000405\",\"mpn\":\"989-000405\",\"category",
+"k\",\"image\":[\"/content/dam/logitech/en/products/video-conferencing/meetup-expansion-mics/gallery/meetup-expansion-mics-gallery-1.png\"],\"sku\":\"989-000405\",\"mpn\":\"989-000405\",\"category\":\"VC Accessories\",",
+"allery-1.png\" ], \"product_name\": [ \"EXPANSION-MIC-FOR-MEETUP Add-on microphone with mute control for extended audio range\" ], \"product_sku\": [ \"989-000405\" ], \"product_sku_short\": ",
+"ANSION-MIC-FOR-MEETUP Add-on microphone with mute control for extended audio range\" ], \"product_sku\": [ \"989-000405\" ], \"product_sku_short\": [ \"989-000405\" ], \"site_country\": \"US\",",
+"er js-pangea-banner dbgsize-cover tbgsize-cover mbgsize-cover dbgc-marin tbgc-marin mbgc-marin dbgpos-center tbgpos-center mbgpos-bottom \" id=\"banner_copy_14603122-341781\" aria-label=\"EXPANSION MIC FO",
+"-tablet=\"overlaid\" data-display-mode-mobile=\"overlaid\"> <style> @media(max-width: 719px){ #banner_copy_14603122-341781 .banner-copy-ctn-inner h2{ ",
+" font-size: 36px; } } @media(min-width: 720px) and (max-width: 1024px){ #banner_copy_14603122-341781 .banner-copy-ctn-inner h2{ ",
+" <div class=\"container js-banner-main-ctn\"> <div class=\"grid js-banner-main-grid aem-padding-options dpbl tpbauto mpbauto\" id=\"banner_copy_14603122-341781-padding-options\"> ",
+"ns dpbl tpbauto mpbauto\" id=\"banner_copy_14603122-341781-padding-options\"> <style> @media(min-width: 1025px){#banner_copy_14603122-341781-padding-options{padding-top:1",
+"tyle> @media(min-width: 1025px){#banner_copy_14603122-341781-padding-options{padding-top:170px;}} @media(min-width: 1025px){#banner_copy_14603122-341781{}} @media(min-wid",
+"-top:170px;}} @media(min-width: 1025px){#banner_copy_14603122-341781{}} @media(min-width: 720px) and (max-width: 1024px){#banner_copy_14603122-341781-padding-options{padding-top:1",
+"width: 1024px){#banner_copy_14603122-341781-padding-options{padding-top:160px;}} @media(min-width: 720px) and (max-width: 1024px){#banner_copy_14603122-341781{}} @media(max-wid",
+"op:160px;}} @media(min-width: 720px) and (max-width: 1024px){#banner_copy_14603122-341781{}} @media(max-width: 719px){#banner_copy_14603122-341781-padding-options{padding-top:1",
+"} @media(max-width: 719px){#banner_copy_14603122-341781-padding-options{padding-top:150px;}} @media(max-width: 719px){#banner_copy_14603122-341781{}} </style> ",
+"ctn aem-margin-options \" data-layout-desktop=\"inline\" data-layout-tablet=\"inline\" data-match-widths=\"false\" data-display-inline=\"true\" id=\"cta_editable_1552587864-401561\" data-align-mobile=\"left\" dat",
+"ign-tablet=\"left\" data-align-desktop=\"left\"> <div class=\"aem-content-ctn no-container\"> <div class=\"aem-padding-options \" id=\"cta_editable_1552587864-401561-padding-options\"> ",
+"as-ctn aem-margin-options \" data-layout-desktop=\"inline\" data-layout-tablet=\"inline\" data-match-widths=\"false\" data-display-inline=\"true\" id=\"cta_editable_1552587-263141\" data-align-mobile=\"center\" d",
+"lign-tablet=\"center\" data-align-desktop=\"left\"> <div class=\"aem-content-ctn no-container\"> <div class=\"aem-padding-options \" id=\"cta_editable_1552587-263141-padding-options\"> ",
+"s-pangea-section-container aem-margin-options dbgsize-cover tbgsize-cover mbgsize-cover dbgpos-center tbgpos-center mbgpos-center\" id=\"section_copy_1888202-407191\" data-size-desktop=\"size-auto",
+" <div class=\"content-ctn aem-content-ctn container\"> <div class=\"aem-padding-options dptl dpbl tptl tpbl mptl mpbl\" id=\"section_copy_1888202-407191-padding-options\"> <!",
+"ch-com/amr/live/en_us/products/video-conferencing/accessories/meetup-expansion-mics.html&#34;,&#34;facetPropKeys&#34;:[&#34;dr.color&#34;],&#34;skus&#34;:[&#34;989-000405&#34;],&#34;name&#34;:&#34;mee",
+"-expansion-mics-gallery-1.png&#34;,&#34;addToCartUrlExternal&#34;:[&#34;https://buy.logitech.com/store/logib2c/AddItemRefID/pageType.shoppingCart/externalRefID.989-000405/Locale.en-us/quantity.1&amp;c",
+"ternal&#34;:[&#34;https://buy.logitech.com/store/logib2c/AddItemRefID/pageType.shoppingCart/externalRefID.989-000405/Locale.en-us/quantity.1&amp;ccp=144-0-1061-989-000405&amp;cl=US,EN&#34;],&#34;varia",
+"te control for extended audio range&#34;,&#34;buyStatus&#34;:&#34;1&#34;,&#34;store&#34;:[&#34;dr&#34;],&#34;title&#34;:&#34;Grey/Black&#34;,&#34;sku&#34;:&#34;989-000405&#34;,&#34;carouselImages&#34;",
+"n aem-margin-options \" data-layout-desktop=\"stacked\" data-layout-tablet=\"stacked\" data-match-widths=\"false\" data-display-inline=\"false\" id=\"cta_editable_297791938-914401\" data-align-mobile=\"center\" d",
+"gn-tablet=\"center\" data-align-desktop=\"left\"> <div class=\"aem-content-ctn no-container\"> <div class=\"aem-padding-options \" id=\"cta_editable_297791938-914401-padding-options\"> ",
+"le_297791938-914401-padding-options\"> <div class=\"content-ctn\"> <style> @media(min-width: 1025px){#cta_editable_297791938-914401-padding-options{}} @",
+" <style> @media(min-width: 1025px){#cta_editable_297791938-914401-padding-options{}} @media(min-width: 1025px){#cta_editable_297791938-914401{margin-top:-15px;}} ",
+" @media(min-width: 1025px){#cta_editable_297791938-914401{margin-top:-15px;}} @media(min-width: 720px) and (max-width: 1024px){#cta_editable_297791938-914401-padding-options{}} ",
+"0px) and (max-width: 1024px){#cta_editable_297791938-914401-padding-options{}} @media(min-width: 720px) and (max-width: 1024px){#cta_editable_297791938-914401{margin-top:-15px;}} ",
+" @media(min-width: 720px) and (max-width: 1024px){#cta_editable_297791938-914401{margin-top:-15px;}} @media(max-width: 719px){#cta_editable_297791938-914401-padding-options{}} ",
+"in-top:-15px;}} @media(max-width: 719px){#cta_editable_297791938-914401-padding-options{}} @media(max-width: 719px){#cta_editable_297791938-914401{margin-top:-15px;}} </style",
+"> </header> <div class=\"specs-block\"> <ul class=\"specs-description-list\"> <li>989-000405</li> </ul> ",
+"-desktop=\"12\" data-context-tablet=\"8\" data-context-mobile=\"4\" data-gutter-desktop=\"true\" data-gutter-tablet=\"true\" data-gutter-mobile=\"true\" id=\"item_1591763008452-706201\"> <div class=\"a",
+" </div> </div> </div> <div class=\"pangea-cmp body-copy aem-margin-options font-size-small font-brown-light \" id=\"support_text_block_1097751396-253491\" data-align-desktop=\"left\"> ",
+"53491\" data-align-desktop=\"left\"> <div class=\"aem-content-ctn \"> <div class=\"aem-padding-options \" id=\"support_text_block_1097751396-253491-padding-options\"> <div cla",
+"iv class=\"pangea-cmp ctas-ctn js-pangea-ctas-ctn aem-margin-options \" data-layout-desktop=\"stacked\" data-layout-tablet=\"stacked\" id=\"support_text_block_1097751396-253491\"> <div class=\"aem-cont",
+"tacked\" id=\"support_text_block_1097751396-253491\"> <div class=\"aem-content-ctn \"> <div class=\"aem-padding-options \" id=\"support_text_block_1097751396-253491-padding-options\"> ",
+" </div> </div> </div> <div class=\"pangea-cmp body-copy aem-margin-options font-size-small font-brown-light \" id=\"support_text_block_1334725857-227481\" data-align-desktop=\"left\"> ",
+"27481\" data-align-desktop=\"left\"> <div class=\"aem-content-ctn \"> <div class=\"aem-padding-options \" id=\"support_text_block_1334725857-227481-padding-options\"> <div cla",
+"iv class=\"pangea-cmp ctas-ctn js-pangea-ctas-ctn aem-margin-options \" data-layout-desktop=\"stacked\" data-layout-tablet=\"stacked\" id=\"support_text_block_1334725857-227481\"> <div class=\"aem-cont",
+"tacked\" id=\"support_text_block_1334725857-227481\"> <div class=\"aem-content-ctn \"> <div class=\"aem-padding-options \" id=\"support_text_block_1334725857-227481-padding-options\"> ",
+" </div> </div> </div> <div class=\"pangea-cmp body-copy aem-margin-options font-size-small font-brown-light \" id=\"support_text_block_1835336683-701221\" data-align-desktop=\"left\"> ",
+"01221\" data-align-desktop=\"left\"> <div class=\"aem-content-ctn \"> <div class=\"aem-padding-options \" id=\"support_text_block_1835336683-701221-padding-options\"> <div cla",
+"iv class=\"pangea-cmp ctas-ctn js-pangea-ctas-ctn aem-margin-options \" data-layout-desktop=\"stacked\" data-layout-tablet=\"stacked\" id=\"support_text_block_1835336683-701221\"> <div class=\"aem-cont",
+"tacked\" id=\"support_text_block_1835336683-701221\"> <div class=\"aem-content-ctn \"> <div class=\"aem-padding-options \" id=\"support_text_block_1835336683-701221-padding-options\"> ",
+" </div> </div> </div> <div class=\"pangea-cmp body-copy aem-margin-options font-size-small font-brown-light \" id=\"support_text_block_1631427113-123711\" data-align-desktop=\"left\"> ",
+"23711\" data-align-desktop=\"left\"> <div class=\"aem-content-ctn \"> <div class=\"aem-padding-options \" id=\"support_text_block_1631427113-123711-padding-options\"> <div cla",
+"iv class=\"pangea-cmp ctas-ctn js-pangea-ctas-ctn aem-margin-options \" data-layout-desktop=\"stacked\" data-layout-tablet=\"stacked\" id=\"support_text_block_1631427113-123711\"> <div class=\"aem-cont",
+"tacked\" id=\"support_text_block_1631427113-123711\"> <div class=\"aem-content-ctn \"> <div class=\"aem-padding-options \" id=\"support_text_block_1631427113-123711-padding-options\"> ",
+"am</p> </div> <div class=\"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" id=\"291581-prices\" data-skus=\"939-001498,939-001656\" data-product-path",
+"</div> <div class=\"product-price\"> <div class=\"pangea-cmp price-atc js-pangea-price-atc \" id=\"291581-prices\" data-skus=\"939-001498,939-001656\" data-product-path=\"/content/",
+" <source srcset=\"https://resource.logitech.com/w_320,h_184,c_limit,f_auto,q_auto,dpr_1.0/content/dam/products/logitech/conference-cameras/meetup-conferencecam/960-001101/meetup-conference-cam65147.pn",
+"65147.png?v=1 1x, https://resource.logitech.com/w_320,h_184,c_limit,f_auto,q_auto,dpr_2.0/content/dam/products/logitech/conference-cameras/meetup-conferencecam/960-001101/meetup-conference-cam65147.pn",
+" <source srcset=\"https://resource.logitech.com/w_332,h_167,c_limit,f_auto,q_auto,dpr_1.0/content/dam/products/logitech/conference-cameras/meetup-conferencecam/960-001101/meetup-conference-cam65147.pn",
+"65147.png?v=1 1x, https://resource.logitech.com/w_332,h_167,c_limit,f_auto,q_auto,dpr_2.0/content/dam/products/logitech/conference-cameras/meetup-conferencecam/960-001101/meetup-conference-cam65147.pn",
+" <source srcset=\"https://resource.logitech.com/w_537,h_196,c_limit,f_auto,q_auto,dpr_1.0/content/dam/products/logitech/conference-cameras/meetup-conferencecam/960-001101/meetup-conference-cam65147.pn",
+"65147.png?v=1 1x, https://resource.logitech.com/w_537,h_196,c_limit,f_auto,q_auto,dpr_2.0/content/dam/products/logitech/conference-cameras/meetup-conferencecam/960-001101/meetup-conference-cam65147.pn",
+"/> <img src=\"https://resource.logitech.com/w_320,h_184,c_limit,f_auto,q_auto,dpr_1.0/content/dam/products/logitech/conference-cameras/meetup-conferencecam/960-001101/meetup-conference-cam65147.pn"
+]
+}
+]
+}
