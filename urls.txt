@@ -1771,3 +1771,4 @@ ds/zone-tws_0_zh.pdf https://www.logitech.com/content/dam/logitech/zh/business/p
 ds/zone-tws_0_en.pdf https://www.logitech.com/content/dam/logitech/en/business/pdf/zone-true-wireless-datasheet.pdf
 ds/m240_0_zh.pdf https://www.logitech.com/content/dam/logitech/zh/business/pdf/m240-business-datasheet.pdf
 ds/m240_0_en.pdf https://www.logitech.com/content/dam/logitech/en/business/pdf/m240-business-datasheet.pdf
+img/k868s_c1.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/signature-mechanical-k868s-wireless/gallery-images/rose/signature-mechanical-k868s-wireless-rose-top-angle-gallery-1.png
