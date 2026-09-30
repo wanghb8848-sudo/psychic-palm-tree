@@ -1,15 +1,12 @@
 python3 - <<'PY'
 import urllib.request, urllib.parse, json, re, time, concurrent.futures as cf
-KW = {'m221':'m221','m275':'m275','m280':'m280','b175':'b175','m91p':'m91p','c920e':'c920e','zone-wireless':'zone-wireless','zone-wired':'zone-wired',
- 'zone-earbuds':'earbuds','zone-tws':'zone-true-wireless','h570e':'h570e','logi-dock':'logi-dock','mic':'mic-pod','pro-x3':'superstrike','g304x':'g304x',
- 'g316':'g316','g517':'g517','g435':'g435','a50':'a50','m100r':'m100r','m110':'m110','mk120':'mk120','spotlight2':'spotlight-2','keys-to-go2':'keys-to-go',
- 'mx-brio':'mx-brio','spotlight':'spotlight','zone-900':'zone-900','h570e2':'h570e','c925e':'c925e'}
-HOSTS = ['www.logitech.com/zh-cn/products/', 'www.logitech.com.cn/zh-cn/products/', 'www.logitech.com/zh-cn/shop/p/']
+KW = {'m275':'m275','b175':'b175','m91p':'m91p','zone-wired':'zone-wired[.-][n0-9h]','h570e':'h570e','mic':'expansion-mic','g316':'g316','g517':'g517','g304x-sl':'g304-x-superlight|g304x-superlight','zone-wireless':'zone-wireless[.-][^2]','cc5000e':'mic-pod','pro-x3':'superstrike'}
+HOSTS = ['www.logitech.com/zh-cn/product/', 'www.logitech.com.cn/zh-cn/product/', 'www.logitechg.com/zh-cn/products/', 'www.logitechg.com.cn/zh-cn/products/', 'www.logitech.com/zh-cn/products/', 'www.logitech.com.cn/zh-cn/products/', 'www.logitech.com/zh-cn/shop/p/']
 def get(u, t=90):
     req = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'})
     return urllib.request.urlopen(req, timeout=t).read().decode('utf8', 'ignore')
 def cdx(host, kw):
-    q = urllib.parse.urlencode({'url': host, 'matchType': 'prefix', 'output': 'json', 'filter': ['statuscode:200', f'original:.*{kw}.*'], 'collapse': 'urlkey', 'limit': '40', 'fl': 'timestamp,original'}, doseq=True)
+    q = urllib.parse.urlencode({'url': host, 'matchType': 'prefix', 'output': 'json', 'filter': ['statuscode:200', f'original:.*({kw}).*'], 'collapse': 'urlkey', 'limit': '40', 'fl': 'timestamp,original'}, doseq=True)
     for i in range(5):
         try:
             time.sleep(4)
@@ -51,5 +48,5 @@ def job(kw):
 with cf.ThreadPoolExecutor(2) as ex:
     for kw, got in ex.map(job, KW):
         res[kw] = got
-json.dump(res, open('wb/skus2.json', 'w'), ensure_ascii=False, indent=0)
+json.dump(res, open('wb/skus3.json', 'w'), ensure_ascii=False, indent=0)
 PY
