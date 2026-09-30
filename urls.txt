@@ -1722,3 +1722,10 @@ img/g512x98_g1.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr
 img/g512x98_g2.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-black-video-thumbnail-6.jpg
 img/g512x98_g3.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-98-black-3qtr-left-angle-gallery-7.png
 img/g512x98_g4.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-98-black-3qtr-front-angle-gallery-8.png
+img/g435_c0.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g435/swatches/g435-gaming-headset-gallery-1-blue.png
+img/g435_v1.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g435/swatches/g435-gaming-headset-gallery-2-1-blue.png
+img/g333_c0.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g333/g333-gallery-1-black.png
+img/g333_v1.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g333/swatches/g333-gallery-1-black.png
+img/g333_v2.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g333/gallery/g333-black-gallery-1.png
+img/g333_v3.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g333/g333-black-gallery-1.png
+img/g333_v4.png https://resource.logitech.com/w_1400,c_limit,q_auto,f_png,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g333/swatches/g333-in-ear-gaming-headphones-gallery-1-black.png
