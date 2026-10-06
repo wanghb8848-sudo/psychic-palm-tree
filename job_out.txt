@@ -1,0 +1,37 @@
+200 https://www.logitech.com/zh-cn/sitemap.xml zh_sitemap.xml
+200 https://www.logitech.com/zh-cn/sitemap-business.xml zh_sitemap_biz.xml
+200 https://www.logitech.com/en-us/sitemap.xml en_sitemap.xml
+200 https://www.logitech.com/en-us/sitemap-business.xml en_sitemap_biz.xml
+200 https://www.logitechg.com/zh-cn/sitemap.xml g_zh_sitemap.xml
+200 https://www.logitechg.com/en-us/sitemap.xml g_en_sitemap.xml
+200 https://www.logitechg.com/robots.txt g_robots.txt
+200 https://www.logitech.com/zh-cn zh_home.html
+200 https://www.logitechg.com/zh-cn g_zh_home.html
+404 https://www.logitech.com/zh-cn/logitech-g.html zh_g_home.html
+200 https://www.logitech.com/zh-cn/business.html zh_biz_home.html
+404 https://www.logitech.com/zh-cn/shop/c/new-arrivals zh_new.html
+404 https://www.logitech.com/en-us/shop/c/new-arrivals en_new.html
+404 https://www.logitechg.com/zh-cn/events/g-play g_play_zh.html
+404 https://www.logitechg.com/en-us/events/g-play g_play_en.html
+404 https://www.logitech.com/zh-cn/logitech-g/g-play.html g_play2_zh.html
+404 https://www.logitech.com/en-us/logitech-g/g-play.html g_play2_en.html
+total 2068
+drwxr-xr-x 2 runner runner   4096 Oct  6 02:11 .
+drwxr-xr-x 3 runner runner   4096 Oct  6 02:11 ..
+-rw-r--r-- 1 runner runner 146964 Oct  6 02:11 en_new.html
+-rw-r--r-- 1 runner runner 102919 Oct  6 02:11 en_sitemap.xml
+-rw-r--r-- 1 runner runner 105731 Oct  6 02:11 en_sitemap_biz.xml
+-rw-r--r-- 1 runner runner  40579 Oct  6 02:11 g_en_sitemap.xml
+-rw-r--r-- 1 runner runner  97476 Oct  6 02:11 g_play2_en.html
+-rw-r--r-- 1 runner runner  85302 Oct  6 02:11 g_play2_zh.html
+-rw-r--r-- 1 runner runner 172318 Oct  6 02:11 g_play_en.html
+-rw-r--r-- 1 runner runner 121067 Oct  6 02:11 g_play_zh.html
+-rw-r--r-- 1 runner runner    384 Oct  6 02:11 g_robots.txt
+-rw-r--r-- 1 runner runner 280697 Oct  6 02:11 g_zh_home.html
+-rw-r--r-- 1 runner runner  21362 Oct  6 02:11 g_zh_sitemap.xml
+-rw-r--r-- 1 runner runner 382466 Oct  6 02:11 zh_biz_home.html
+-rw-r--r-- 1 runner runner  85302 Oct  6 02:11 zh_g_home.html
+-rw-r--r-- 1 runner runner 227710 Oct  6 02:11 zh_home.html
+-rw-r--r-- 1 runner runner 102148 Oct  6 02:11 zh_new.html
+-rw-r--r-- 1 runner runner  44087 Oct  6 02:11 zh_sitemap.xml
+-rw-r--r-- 1 runner runner  62953 Oct  6 02:11 zh_sitemap_biz.xml

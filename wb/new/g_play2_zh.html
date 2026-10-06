@@ -1,0 +1,2175 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" data-i18n-dictionary-src="/libs/cq/i18n/dict.zh-CN.json">
+
+    <head>
+        
+
+
+
+   
+
+    
+
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>404</title>
+    
+    <link href="https://www.logitech.com/zh-cn.manifest.json" crossorigin="use-credentials" rel="manifest"/>
+    
+	
+	
+		 
+			
+			<script type="module">
+				import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-window.prod.mjs';
+				(function() {
+					'use strict';
+
+					const log = (msg) => {
+						if (localStorage['PANGEA_DEBUG'] === 'true'){
+							console.log(msg);
+						}
+					}
+					class ServiceWorker {
+						constructor(options) {
+							this.options = this.getOptions(options);
+						}
+
+						async init() {
+							const {path, scope} = this.options;
+							this.serviceWorker = new Workbox(path, {
+								scope,
+								updateViaCache: 'none'
+							});
+
+							this.serviceWorker.addEventListener('activated', async (event) => {
+								if (!event.isUpdate) {
+									this.serviceWorker.messageSW({ type: 'CLIENTS_CLAIM' });
+								}
+							});
+
+							this.serviceWorker.addEventListener('waiting', () => {
+								this.serviceWorker.addEventListener('controlling', () => {
+									window.location.reload();
+								});
+								this.serviceWorker.messageSW({ type: 'SKIP_WAITING' });
+							});
+
+							try {
+								await this.serviceWorker.register();
+								log('SW -- REGISTER SERVICE WORKER');
+							} catch (e) {
+								console.error('SW -- error registering service worker', e);
+							}
+						}
+
+						getOptions(options) {
+							let path;
+							let scope;
+							const {dispatcherPath, dispatcherScope, localPath, localScope} = options;
+
+							path = localPath;
+							scope = localScope;
+
+							if (this.isDispatcher()) {
+								path = dispatcherPath;
+								scope = dispatcherScope;
+							}
+
+							return {
+								path,
+								scope
+							};
+						}
+
+						isDispatcher() {
+							return !location.origin.match(/4502|4503|author|publish/);
+						}
+					}
+
+					if ('serviceWorker' in navigator) {
+						window.addEventListener('load', async () => {
+							const serviceWorker = new ServiceWorker(
+								{
+									localPath: "/content/serviceWorkerLogitech.js",
+									localScope: "/content/logitech",
+									dispatcherPath: "/sw-logitech.js",
+									dispatcherScope: '/'
+								}
+							);
+							log('SW -- INIT SERVICE WORKER');
+							await serviceWorker.init();
+						});
+					}
+				})();
+			</script>
+		
+	
+
+	
+  
+      
+  
+
+	
+
+	
+        <meta name="title" content="404"/>
+        
+    
+        <meta name="h1Header" content="404"/>
+        
+    
+        <meta name="robots" content="noindex, nofollow"/>
+        
+    
+        <meta name="country" content="CN"/>
+        
+    
+        <meta name="language" content="ZH"/>
+        
+    
+        <meta name="Search_title" content="404"/>
+        
+    
+        <meta name="Search_pagetype" content="content"/>
+        
+    
+        <meta name="twitter:card" content="summary_large_image"/>
+        
+    
+        <meta name="twitter:title" content="404"/>
+        
+    
+        <meta name="twitter:image" content="https://resource.logitech.com/w_1200,h_630,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/common/og-generic/og-image-electrico.png?v=1"/>
+        
+    
+        <meta property="og:title" content="404"/>
+        
+    
+        <meta property="og:type" content="website"/>
+        
+    
+        <meta property="og:url" content="https://www.logitech.com/zh-cn/error/404.html"/>
+        
+    
+        <meta property="og:locale" content="zh_CN"/>
+        
+    
+        <meta name="google-site-verification" content="boHgVyPTEPgnobIwucpHN9EAQVH0uLNWQQCsRKAxhyQ"/>
+        
+    
+        <meta name="verify-v1" content="rmiwlt+qKaRvqWZX6I21JeJbUZLzIM62+DRF6IsTpDc="/>
+        
+    
+        <meta name="msvalidate.01" content="9661B514941ED0F98B50A3201DB2FDD7"/>
+        
+    
+        <meta name="yandex-verification" content="5fcf2ec1f2b1dcc4"/>
+        
+    
+        
+        <link rel="canonical" href="https://www.logitech.com/zh-cn/error/404.html"/>
+    
+        
+        <link hreflang="zh-cn" rel="alternate" href="https://www.logitech.com/zh-cn/error/404.html"/>
+    
+        
+        <link hreflang="es-ar" rel="alternate" href="https://www.logitech.com/es-ar/error/404.html"/>
+    
+        
+        <link hreflang="pt-br" rel="alternate" href="https://www.logitech.com/pt-br/error/404.html"/>
+    
+        
+        <link hreflang="fr-ca" rel="alternate" href="https://www.logitech.com/fr-ca/error/404.html"/>
+    
+        
+        <link hreflang="en-ca" rel="alternate" href="https://www.logitech.com/en-ca/error/404.html"/>
+    
+        
+        <link hreflang="es-mx" rel="alternate" href="https://www.logitech.com/es-mx/error/404.html"/>
+    
+        
+        <link hreflang="en-us" rel="alternate" href="https://www.logitech.com/en-us/error/404.html"/>
+    
+        
+        <link hreflang="fr-fr" rel="alternate" href="https://www.logitech.com/fr-fr/error/404.html"/>
+    
+        
+        <link hreflang="da-dk" rel="alternate" href="https://www.logitech.com/da-dk/error/404.html"/>
+    
+        
+        <link hreflang="es-es" rel="alternate" href="https://www.logitech.com/es-es/error/404.html"/>
+    
+        
+        <link hreflang="cs-cz" rel="alternate" href="https://www.logitech.com/cs-cz/error/404.html"/>
+    
+        
+        <link hreflang="fr-ch" rel="alternate" href="https://www.logitech.com/fr-ch/error/404.html"/>
+    
+        
+        <link hreflang="it-ch" rel="alternate" href="https://www.logitech.com/it-ch/error/404.html"/>
+    
+        
+        <link hreflang="it-it" rel="alternate" href="https://www.logitech.com/it-it/error/404.html"/>
+    
+        
+        <link hreflang="fr-be" rel="alternate" href="https://www.logitech.com/fr-be/error/404.html"/>
+    
+        
+        <link hreflang="de-at" rel="alternate" href="https://www.logitech.com/de-at/error/404.html"/>
+    
+        
+        <link hreflang="fi-fi" rel="alternate" href="https://www.logitech.com/fi-fi/error/404.html"/>
+    
+        
+        <link hreflang="sv-se" rel="alternate" href="https://www.logitech.com/sv-se/error/404.html"/>
+    
+        
+        <link hreflang="de-ch" rel="alternate" href="https://www.logitech.com/de-ch/error/404.html"/>
+    
+        
+        <link hreflang="nl-be" rel="alternate" href="https://www.logitech.com/nl-be/error/404.html"/>
+    
+        
+        <link hreflang="no-no" rel="alternate" href="https://www.logitech.com/no-no/error/404.html"/>
+    
+        
+        <link hreflang="en-ae" rel="alternate" href="https://www.logitech.com/en-ae/error/404.html"/>
+    
+        
+        <link hreflang="nl-nl" rel="alternate" href="https://www.logitech.com/nl-nl/error/404.html"/>
+    
+        
+        <link hreflang="pl-pl" rel="alternate" href="https://www.logitech.com/pl-pl/error/404.html"/>
+    
+        
+        <link hreflang="tr-tr" rel="alternate" href="https://www.logitech.com/tr-tr/error/404.html"/>
+    
+        
+        <link hreflang="en-za" rel="alternate" href="https://www.logitech.com/en-za/error/404.html"/>
+    
+        
+        <link hreflang="en-gb" rel="alternate" href="https://www.logitech.com/en-gb/error/404.html"/>
+    
+        
+        <link hreflang="en-pt" rel="alternate" href="https://www.logitech.com/en-eu/error/404.html"/>
+    
+        
+        <link hreflang="en-bg" rel="alternate" href="https://www.logitech.com/en-eu/error/404.html"/>
+    
+        
+        <link hreflang="en-lv" rel="alternate" href="https://www.logitech.com/en-eu/error/404.html"/>
+    
+        
+        <link hreflang="en-lt" rel="alternate" href="https://www.logitech.com/en-eu/error/404.html"/>
+    
+        
+        <link hreflang="en-ro" rel="alternate" href="https://www.logitech.com/en-eu/error/404.html"/>
+    
+        
+        <link hreflang="en-sk" rel="alternate" href="https://www.logitech.com/en-eu/error/404.html"/>
+    
+        
+        <link hreflang="en-hr" rel="alternate" href="https://www.logitech.com/en-eu/error/404.html"/>
+    
+        
+        <link hreflang="en-ua" rel="alternate" href="https://www.logitech.com/en-eu/error/404.html"/>
+    
+        
+        <link hreflang="en-si" rel="alternate" href="https://www.logitech.com/en-eu/error/404.html"/>
+    
+        
+        <link hreflang="en-ie" rel="alternate" href="https://www.logitech.com/en-eu/error/404.html"/>
+    
+        
+        <link hreflang="el-gr" rel="alternate" href="https://www.logitech.com/el-gr/error/404.html"/>
+    
+        
+        <link hreflang="en-ch" rel="alternate" href="https://www.logitech.com/en-ch/error/404.html"/>
+    
+        
+        <link hreflang="hu-hu" rel="alternate" href="https://www.logitech.com/hu-hu/error/404.html"/>
+    
+        
+        <link hreflang="de-de" rel="alternate" href="https://www.logitech.com/de-de/error/404.html"/>
+    
+        
+        <link hreflang="en-ph" rel="alternate" href="https://www.logitech.com/en-ph/error/404.html"/>
+    
+        
+        <link hreflang="en-my" rel="alternate" href="https://www.logitech.com/en-my/error/404.html"/>
+    
+        
+        <link hreflang="en-nz" rel="alternate" href="https://www.logitech.com/en-nz/error/404.html"/>
+    
+        
+        <link hreflang="ja-jp" rel="alternate" href="https://www.logicool.co.jp/ja-jp/error/404.html"/>
+    
+        
+        <link hreflang="in-id" rel="alternate" href="https://www.logitech.com/id-id/error/404.html"/>
+    
+        
+        <link hreflang="zh-tw" rel="alternate" href="https://www.logitech.com/zh-tw/error/404.html"/>
+    
+        
+        <link hreflang="th-th" rel="alternate" href="https://www.logitech.com/th-th/error/404.html"/>
+    
+        
+        <link hreflang="en-au" rel="alternate" href="https://www.logitech.com/en-au/error/404.html"/>
+    
+        
+        <link hreflang="en-in" rel="alternate" href="https://www.logitech.com/en-in/error/404.html"/>
+    
+        
+        <link hreflang="ko-kr" rel="alternate" href="https://www.logitech.com/ko-kr/error/404.html"/>
+    
+        
+        <link hreflang="en-sg" rel="alternate" href="https://www.logitech.com/en-sg/error/404.html"/>
+    
+        
+        <link hreflang="vi-vn" rel="alternate" href="https://www.logitech.com/vi-vn/error/404.html"/>
+    
+        
+        <link hreflang="zh-hk" rel="alternate" href="https://www.logitech.com/zh-hk/error/404.html"/>
+    
+        
+        <link hreflang="en-hk" rel="alternate" href="https://www.logitech.com/en-hk/error/404.html"/>
+    
+
+	<meta property="og:image" content="https://resource.logitech.com/w_1200,h_630,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/common/og-generic/og-image-electrico.png?v=1"/>
+	
+
+    <link rel="icon" href="/etc.clientlibs/logitech/clientlibs/common/resources/images/favicon.ico" type="image/x-icon"/>
+    <link rel="short icon" href="/etc.clientlibs/logitech/clientlibs/common/resources/images/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="/etc.clientlibs/logitech/clientlibs/common/resources/images/apple-touch-icon.png"/>
+
+	
+
+    <script type="text/javascript">
+		_linkedin_data_partner_id = "28714";
+	</script>
+
+
+        
+
+
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/logitech/clientlibs/main-static-sfcc.min.fc6f6c6c2a5c2661521014e53daf66ad.css" type="text/css">
+
+
+
+
+    
+
+
+
+
+
+
+    
+<script src="/etc.clientlibs/logitech-common/clientlibs/clientlib-jquery.min.2441cce9306d7ffd1e481ed6826030cb.js"></script>
+<script src="/etc.clientlibs/logitech-common/clientlibs/clientlib-utils.min.3b86602c4e1e0b41d9673f674a75cd4b.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- OneTrust Cookies Consent Notice start for Logi -->
+
+
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="56b7585b-3d96-4778-b9b7-7769a4f2539d"></script>
+
+
+
+
+    
+<script src="/etc.clientlibs/logitech-common/clientlibs/onetrust.min.41ac4cd8610e597df080b70136957dff.js"></script>
+
+
+
+
+    </head>
+
+    
+    
+    <body class="page publish " data-analytics-section="body">
+        
+    <script type="text/javascript">
+        var utag_data = {
+  "customer_type": "Not Logged In",
+  "error_page_type": "404",
+  "error_page_url": "/content/logitech/ap/live/zh_cn/error/404",
+  "page_category_name": "error",
+  "page_error": "404",
+  "page_name": "404",
+  "page_subcategory_name": "404",
+  "page_type": "error",
+  "site_country": "CN",
+  "site_environment": "production",
+  "site_id": "logi",
+  "site_language": "zh",
+  "site_locale": "zh-cn"
+};
+    </script>
+    <script src="https://webtags.logitech.com/main/prod/utag.sync.js"></script>
+    <script src="//cdn.evgnet.com/beacon/logitecheurope/logitech_prod/scripts/evergage.min.js"></script>
+    <script type="text/javascript">
+        window.logitech = window.logitech || {};
+
+        window.logitech.initUtagAsync = function() {
+            let script = document.createElement('script');
+            script.src = 'https://webtags.logitech.com/main/prod/utag.js';
+            script.type = 'text/javascript';
+            script.defer = true;
+            document.querySelector('body').appendChild(script);
+        };
+    </script>
+ 
+
+        
+<div class="site-wrapper" role="region" aria-label="Site Content">
+	
+	<header class="main-header js-main-header" data-theme-desktop="theme-light" data-theme-tablet="theme-light" data-theme-mobile="theme-light">
+        <div id="skiptocontent"><a href="#maincontent">跳至主要内容</a></div>
+		<!-- This is to include and override brand nav using page properties XF path - Starts -->
+		
+		<div class="xfpage page basicpage">
+
+    
+
+
+
+         
+
+
+
+
+
+
+    
+    
+    
+    
+</div>
+
+	    
+		<!-- This is to include and override brand nav using page properties XF path - Ends -->
+
+        <!-- This is to include and override private store eligible banner using page properties XF path - Starts -->
+        
+        <!-- This is to include and override  private store eligible banner using page properties XF path - Ends -->
+
+		<!-- This is to include and override prime nav using page properties XF path - Starts -->
+		
+		<div class="xfpage page basicpage">
+
+    
+
+
+
+         
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+	
+    <div id="iaf05e76c3bf765cfc2630f8ebbefa713" data-aem-id="iaf05e76c3bf765cfc2630f8ebbefa713" class="aem-margin-options ">
+        
+		
+	
+
+	
+
+
+		
+		
+		
+	
+		<style>
+			.LMz3s7PE {
+    			display: none;
+			}
+		</style>
+        
+        
+
+
+        <style>
+            /* CSS */
+.brand-logos {
+    background-color: #F2F2F2;
+}
+.brand-logos ul {
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    gap: 8px;
+}
+.brand-logos ul li {
+    border-right: 1px solid #8F8F8F;
+}
+.brand-logos ul li a {
+    padding-right: 16px;
+    padding-left: 12px;
+    line-height: 10px;
+    font-size: 16px;
+    color: #8F8F8F;
+    display: block;
+}
+.brand-logos ul li:first-child a {
+    padding-left: 0;
+}
+.brand-logos ul li:last-child {
+    border: none;
+}
+.brand-logos ul li a img:nth-child(2) {
+    display: none;
+}
+.brand-logos ul li a:hover img:first-child {
+    display: none;
+}
+.brand-logos ul li a:hover img:last-child {
+    display: block;
+}
+.brand-logos .container .content {
+    justify-content: space-between;
+}
+.brand-logos .support-locale-container {
+    padding-top: 8px;
+    padding-bottom: 10px;
+    gap: 12px;
+}
+.brand-logos .support-locale-container .support-link {
+    border-right: 2px solid #D7D7D7;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.5;
+    padding-right: 12px;
+    color: #8F8F8F;
+}
+.locale-selector-container {
+    gap: 8px;
+}
+.locale-selector-container img {
+    width: 13px;
+    filter: brightness(0.5);
+}
+.kepler.main-nav .locale-selector-container .locale-selector {
+    font-size: 13px;
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #6E6E6E;
+    margin-left: 0;
+    width: 100%;
+    margin-right: 0;
+}
+.kepler .utility-nav a, .kepler .utility-nav button {
+    height: auto;
+}
+.kepler.main-nav .main-nav-item-trigger, .kepler.main-nav .utility-nav button:after, .kepler.main-nav .utility-nav a:after, .kepler.main-nav .main-nav-items h5 {
+    color: #1B1B1B;
+}
+.kepler.main-nav .utility-nav a.cart-icon .quantity {
+    background-color: #00FDCF;
+    height: 14px;
+    width: 14px;
+    color: #1B1B1B;
+    right: -10px;
+    top: -10px;
+}
+.cart-reminder, .pangea-docked-cart {
+    display: none;
+}
+.kepler.main-nav .desktop-nav {
+    padding-bottom: 40px;
+}
+.kepler.main-nav .main-nav-items h5 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 18.4px;
+}
+.kepler.main-nav .nav-items-images a {
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+}
+.kepler.main-nav .shop-sub-category .nav-items-images a {
+    text-align: left;
+}
+.main-header.subnav-too-tall .kepler.main-nav .nav-tabs {
+    max-height: calc(100vh - var(--main-nav-height) - 16px);
+    overflow-y: hidden;
+}
+.kepler.main-nav .nav-tabs a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.kepler.main-nav .nav-items-images a div {
+    aspect-ratio: 1;
+    background-color: #fff;
+    border-radius: 16px;
+    display: flex;
+}
+.kepler.main-nav .nav-items-images a div img {
+    border-radius: 16px;
+    width: 100%;
+}
+.kepler.main-nav .nav-items-images span {
+    display: block;
+    padding-top: 24px;
+    font-size: 14px;
+}
+.kepler.main-nav .nav-items-images .nav-item-links span {
+    color: #1B1B1B;
+    font-size: 14px;
+    text-align: left;
+    padding-bottom: 24px;
+    font-weight: 700;
+}
+.kepler.main-nav .nav-items-images .nav-item-links ul {
+    margin: 0;
+}
+.kepler.main-nav .nav-item-links.nav-links {
+    margin-bottom: 0;
+}
+.kepler.main-nav .nav-links {
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+.kepler.main-nav .nav-item-links ul li:last-child {
+    padding-bottom: 0;
+}
+.kepler.main-nav .nav-item-links ul li {
+    padding-bottom: 24px;
+}
+.kepler.main-nav .nav-item-links ul li a {
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+}
+/*.kepler.main-nav .nav-item-links ul li:last-child a {*/
+/*    text-decoration: underline;*/
+/*    font-weight: 700;*/
+/*}*/
+.kepler.main-nav .divider {
+    border-right: 1px solid #BEBEBE;
+    margin: 0 auto;
+}
+.kepler.main-nav .shop-sub-category ul {
+    margin: 0;
+}
+.kepler.main-nav .utility-nav {
+    margin-right: 0;
+    gap: 32px;
+    padding-top: 12px;
+    padding-bottom: 11px;
+}
+.kepler.main-nav .utility-nav a:last-child {
+    margin-right: 0;
+}
+.kepler.main-nav .main-nav-item-trigger {
+    line-height: 23.4px;
+    padding: 14px 0 18px 0;
+    border-radius: 0;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+.kepler.main-nav .grid {    
+    display: grid;
+    margin-right: 0;
+    width: 100%;
+}
+.kepler.main-nav {
+    background-color: #fff;
+    font-family: Brown,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+    color: #5C5C5C;
+    height: auto;
+}
+.kepler.main-nav .navigation {
+    border-bottom: 2px solid #F2F2F2;
+}
+.main-nav ul {
+    list-style: none;
+}
+.kepler.main-nav .search-trigger {
+    background-color: rgba(0, 0, 0, 8.7%);
+    border-radius: 60px;
+    padding-left: 158px;
+    padding-right: 22px;
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.kepler.main-nav .nav-main-logo-anim {
+    background-image: url(https://resource.logitech.com/f_auto,q_auto/content/dam/logitech/en/nav/logi-logo-anim-dark.png);
+    top: 8px;
+    position: relative;
+    display: block;
+    background-repeat: no-repeat;
+    width: 75px;
+    height: 36px;
+    margin-right: 40px;
+    background-size: 75px 1298px;
+    transform: translate(0, 0) rotate(0) skew(0) skewY(0) scaleX(1.1) scaleY(0.70);
+    left: 4px;
+}
+.main-nav .nav-tabs .desktop-close-btn {
+    right: 0px;
+}
+.main-nav .nav-tabs .desktop-close-btn svg {
+    color: #5C5C5C;
+    width: 18px;
+    height: 18px;
+}
+.main-nav .nav-tabs .desktop-close-btn::after{
+    display: none;
+}
+.kepler.main-nav .nav-main-logo-anim.stopped {
+    background-position: -1px -1261px;
+    animation: none;
+}
+.kepler.main-nav .nav-main-logo-anim.play {
+    background-position: -1px -1px;
+    animation: play-logo-animation 1.2s steps(34) 0s forwards;
+}
+.main-nav .nav-tabs {
+    background-color: #EEEEEE;
+    top: 94px;
+    padding: 48px 0;
+}
+.main-nav .nav-items[data-align=center] {
+    gap: 20px;
+    padding: 0;
+}
+.main-nav .no-icon::after {
+    content: '' !important;
+}
+.main-nav .mobile-nav-toggle {
+    right: 0;
+    left: auto !important;
+}
+.kepler.main-nav .mobile-nav-toggle span {
+    background: #2f3132 !important;
+}
+.kepler.main-nav.mobile-open .mobile-nav-toggle.open {
+    height: 66px;
+    background-color: #1b1b1b80;
+}
+.kepler.main-nav.mobile-open .mobile-nav-toggle.open span {
+    background: #fff !important;
+}
+.kepler.main-nav .main-nav-items-ctn .mobile-back-btn {
+    min-height: 66px;
+}
+.main-nav a {
+    text-decoration: none;
+}
+body.noscroll .site-wrapper.dim:after {
+    opacity: 0.4;
+}
+.block {
+    display: block;
+}
+.overflow-y-auto {
+    overflow-y: auto;
+}
+.justify-left {
+    justify-content: left !important;
+}
+.flex {
+    display: flex;
+}
+.flex-col {
+    flex-direction: column;
+}
+.grid-cols-12 {
+    grid-template-columns: repeat(12,minmax(0,1fr));
+}
+.grid-cols-3 {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+}
+.grid-cols-2 {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+}
+.col-span-5 {
+    grid-column: span 5 / span 5;
+}
+.col-span-3 {
+    grid-column: span 3 / span 3;
+}
+.gap {
+    gap: 24px;
+}
+.gap-2 {
+    gap: 8px;
+}
+.gap-x-16 {
+    column-gap: 64px;
+}
+.gap-y-6 {
+    row-gap: 24px;
+}
+@media(max-width: 1024px) {
+    .kepler.main-nav .main-nav-item.locale-selector {
+        padding: 24px;
+    }
+    .kepler.main-nav .locale-selector-container {
+        align-items: center;
+        justify-content: center;
+    }
+    .kepler.main-nav .locale-selector-container .locale-selector {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .kepler.main-nav .nav-main-logo-anim {
+        margin-right: 0;
+    }
+    .support-link {
+        padding: 0 20px;
+    }
+    .support-link .support {
+        padding: 12px 0px;
+        display: block;
+        border-top: 1px solid #D7D7D7;
+        border-bottom: 1px solid #D7D7D7;
+        font-size: 13px;
+        font-weight: 700 !important;
+        color: #8F8F8F;
+        line-height: 1.5;
+    }
+    .kepler.main-nav {
+        height: 54px;
+    }
+    .kepler .utility-nav {
+        right: 46px !important;
+        align-items: center;
+    }
+    .kepler.main-nav .search-trigger {
+        background-color: transparent;
+        padding-right: 0;
+        margin-right: 0;
+    }
+    .kepler.main-nav .main-nav-item-trigger {
+        background-color: #fff;
+        text-transform: capitalize !important;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+    }
+    .kepler.main-nav .lg\:hidden .main-nav-item-trigger {
+        background-color: #f4f4f4;
+    }
+    .my-account-trigger {
+        display: none !important;
+    }
+    .kepler.main-nav .main-nav-logo-container {
+        width: 32% !important;
+        left: 0;
+        transform: translateY(10px);
+        top: 0;
+    }
+    .kepler .utility-nav {
+        right: 46px !important;
+        align-items: center;
+    }
+    .main-nav-items-ctn.js-mobile-nav-ctn {
+        right: 0;
+        left: auto !important;
+    }
+    .brand-logos ul {
+        padding: 8px 20px 10px 20px !important;
+    }
+    .brand-logos ul li {
+        padding: 8px 12px 8px 0px;
+        border: none;
+    }
+    .brand-logos ul li a {
+        display: inline-block;
+    }
+    .kepler.main-nav .my-account-mobile {
+        border-top: 1px solid #D7D7D7;
+        padding: 20px;
+    }
+    .kepler.main-nav .my-account-mobile a {
+        justify-content: space-between;
+    }
+    .main-nav-item.locale-selector.lg\:hidden {
+        display: flex;
+    }
+    .mobile-sub-category .sub-category ul li {
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+    }
+    .mobile-sub-category .sub-category ul li .nav-items-img {
+        display: block;
+    }
+    .mobile-sub-category .sub-category ul li a {
+        margin-left: 10px;
+    }
+    .mobile-sub-category .sub-category ul li.nav-image-items a {
+        color: #1B1B1B;
+    }
+    .mobile-sub-interest .interest .category-interest {
+        padding: 16px 24px;
+    }
+    .mobile-sub-interest .interest .category-interest p {
+        font-weight: 400;
+        color: #1B1B1B;
+        line-height: 20.8px;
+    }
+    .mobile-sub-interest .interest .category-interest .sub-category-interest li {
+        padding: 16px;
+        display: flex;
+        align-items: center;
+    }
+    .kepler.main-nav  ul.mobile-nav-page li:last-child.main-nav-item.locale-selector {
+        display: none;
+    }
+}
+@media(min-width: 1025px) {
+    .lg\:hidden {
+        display: none !important;
+    }
+    .lg\:block {
+        display: block !important;
+    }
+    .kepler .main-nav-items {
+        gap: 40px;
+        display: flex;
+    }
+    .kepler.main-nav .container {
+        max-width: 1568px;
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+.kepler.global-header {
+    height: auto;
+}
+.main-nav-item-trigger:hover, .main-nav-item-trigger.active {
+    border-bottom: 6px solid #00FDCF;
+    padding-bottom: 12px !important;
+    background-color: transparent !important;
+    color: #1B1B1B !important;
+}
+
+.grid-template-areas {
+    grid-template-areas: "A A A A A B B C D D D";
+}
+
+@keyframes play-logo-animation {
+   0% {
+      background-position: -1px -1px;
+   }
+
+   100% {
+      background-position: -1px -1261px;
+   }
+}
+        </style>
+
+		<div class="aem-content-ctn no-container">
+        	<div class="aem-padding-options " id="iaf05e76c3bf765cfc2630f8ebbefa713-padding-options" data-aem-id="iaf05e76c3bf765cfc2630f8ebbefa713-padding-options">
+            <!-- HTML -->
+<div class="js-search-icon-trigger"></div>
+<nav class="kepler main-nav cmp-accordion js-main-nav inited" data-cmp-is="accordion" id="main_nav-" aria-label="Primary" data-analytics-section="global-nav">
+   <div class="stickySentinelTop" style="position: relative; top: 0px; border: 1px solid rgb(242, 242, 242);"></div>
+   <div class="brand-logos hidden lg:block">
+      <div class="container">
+          <div class="content flex">
+         <ul class="flex">
+            <li>
+               <a href="/zh-cn" aria-label="logitech" data-analytics-title="logitech">
+                  <img src="/content/dam/logitech/en/nav/brand-logos/logitech-black-1.svg" />
+               </a>
+            </li>
+            <li>
+               <a href="https://www.logitechg.com/zh-cn/" target="_blank" aria-label="logitechG" data-analytics-title="logitechG">
+                  <img src="/content/dam/logitech/en/brand-logos/logig.svg" />
+                  <img src="/content/dam/logitech/en/brand-logos/logig-dark.svg" />
+               </a>
+            </li>
+         </ul>
+         <div class="flex support-locale-container">
+            <a href="https://support.logi.com/hc/zh-cn" target="_blank" aria-label="支持" class="support-link" data-analytics-title="support">支持</a>
+            <div class="flex locale-selector-container">
+                <img src="/content/dam/logitech/en/brand-logos/world.svg" />
+                <a href="/content/logitech/en/change-location" aria-label="Locale Selector" class="locale-selector" data-analytics-title="locale-selector - CN,zh" data-sveltekit-reload="">CN,zh</a>
+            </div>
+        </div>
+        </div>
+      </div>
+   </div>
+   <div class="navigation">
+      <div class="container">
+         <div class="flex">
+            <button class="mobile-nav-toggle js-mobile-nav-toggle" title="Toggle Primary Navigation" aria-label="Toggle Primary Navigation" tabindex="-1" aria-hidden="true" aria-expanded="false" aria-controls="main_nav-">
+               <span></span>
+               <span></span>
+               <span></span>
+            </button>
+            <a class="nav-main-logo-anim stopped" href="/zh-cn"></a>
+            <div class="main-nav-items-ctn js-mobile-nav-ctn">
+               <div class="main-nav-items-ctn-inner js-mobile-nav-horz-scroller">
+                  <ul class="main-nav-items mobile-nav-page mobile-vert-scroll js-main-nav-items js-mobile-page justify-left" data-mobile-nav-depth="0" role="tablist">
+                     <li class="main-nav-item js-main-nav-item" role="none">
+                        <a class="main-nav-item-trigger js-main-nav-item-trigger js-mobile-folder-trigger no-icon hidden lg:block" id="main-nav-item-1" role="button" data-analytics-title="产品" data-analytics-id="main-nav-item-1" aria-haspopup="true" aria-controls="main-nav-item-menu-1" aria-expanded="false" aria-selected="false" aria-label="产品" tabindex="0">
+                           产品
+                        </a>
+                        <p class="main-nav-item-trigger no-icon lg:hidden" id="main-nav-item-1" role="button" data-analytics-title="产品" data-analytics-id="main-nav-item-1" aria-haspopup="true" aria-controls="main-nav-item-menu-1" aria-expanded="false" aria-selected="false" aria-label="产品" tabindex="0">
+                           产品
+                        </p>
+                        <div class="nav-tabs mobile-nav-page js-main-subnav js-mobile-page cmp-accordion__item panel" role="menu" id="main-nav-item-menu-1" data-mobile-nav-depth="1" data-cmp-hook-accordion="item" data-title="产品" aria-labelledby="main-nav-item-1" data-panel-name="custom-panel-name-0">
+                           <div class="container" data-cmp-hook-accordion="panel">
+                              <div class="grid">
+                                 <button class="mobile-back-btn js-mobile-back-btn" disabled="" aria-label="Go Back">产品</button>
+                                 <button class="desktop-close-btn js-desktop-close-btn">
+                                     <svg width="18px" height="18px" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="m1.613.21.094.083L8 6.585 14.293.293a1 1 0 011.497 1.32l-.083.094L9.415 8l6.292 6.293a1 1 0 01-1.32 1.497l-.094-.083L8 9.415l-6.293 6.292a1 1 0 01-1.497-1.32l.083-.094L6.585 8 .293 1.707A1 1 0 011.613.21Z" clip-rule="evenodd"></path></svg>
+                                 </button>
+                                 <div class="max-width-padding gap grid-template-areas top-18 grid grid-cols-12 overflow-y-auto desktop-nav" style="max-height: calc(-42px + 80vh);">
+                                    <div style="grid-area: A">
+                                       <h5>按类别选购</h5>
+                                       <div class="grid gap-x-16 col-span-5 gap-y-6 grid-cols-3 nav-items-images">
+                                          <div>
+                                             <a href="/zh-cn/shop/c/mice.html">
+                                                <div>
+                                                   <img src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-mice-mx-master-4.png" alt="鼠标" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-mice-mx-master-4.png, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-mice-mx-master-4.png 2x" loading="lazy" width="135" />
+                                                </div>
+                                                <span>鼠标</span>
+                                             </a>
+                                          </div>
+                                          <div>
+                                             <a href="/zh-cn/shop/c/keyboards.html">
+                                                <div>
+                                                   <img src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/keyboards-2.png" alt="键盘" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/keyboards-2.png, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/keyboards-2.png 2x" loading="lazy" width="135" />
+                                                </div>
+                                                <span>键盘</span>
+                                             </a>
+                                          </div>
+                                          <div>
+                                             <a href="/zh-cn/shop/c/combos.html">
+                                                <div>
+                                                   <img src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/combos-2.png" alt="键鼠套装" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/combos-2.png, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/combos-2.png 2x" loading="lazy" width="135" />
+                                                </div>
+                                                <span>键鼠套装</span>
+                                             </a>
+                                          </div>
+                                          <div>
+                                             <a href="/zh-cn/shop/c/headsets.html">
+                                                <div>
+                                                   <img src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/headsets-earbuds-2.png" alt="耳机（含麦克风）和耳机" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/headsets-earbuds-2.png, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/headsets-earbuds-2.png 2x" loading="lazy" width="135" />
+                                                </div>
+                                                <span>耳机（含麦克风）和耳机</span>
+                                             </a>
+                                          </div>
+                                          <div>
+                                             <a href="/zh-cn/shop/c/webcams.html">
+                                                <div>
+                                                   <img src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/webcams-2.png" alt="网络摄像头" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/webcams-2.png, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/webcams-2.png 2x" loading="lazy" width="135" />
+                                                </div>
+                                                <span>网络摄像头</span>
+                                             </a>
+                                          </div>
+                                          <div>
+                                             <a href="/zh-cn/shop/c/ipad-keyboards.html">
+                                                <div>
+                                                   <img src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-ipad-pro-keyboard-cases-230-0.png" alt="iPad 键盘保护套" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-ipad-pro-keyboard-cases-230-0.png, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-ipad-pro-keyboard-cases-230-0.png 2x" loading="lazy" width="135" />
+                                                </div>
+                                                <span>iPad 键盘保护套</span>
+                                             </a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="nav-item-links nav-links" style="grid-area: B">
+                                       <ul>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/microphones.html">麦克风</a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/speakers.html">音箱</a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/streaming.html">直播</a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/driving.html">Racing</a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/simulation.html">模拟装备</a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/presenters-and-digital-pens.html">无线演示器</a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/gaming-mouse-pads.html">鼠标垫</a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/accessories.html">配件</a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/best-sellers.html">畅销产品</a>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                    <div class="divider" style="grid-area: C"></div>
+                                    <div class="shop-sub-category" style="grid-area: D">
+                                       <div class="grid gap-x-16 col-span-3 gap-y-6 grid-cols-2 nav-items-images">
+                                          <div class="nav-item-links">
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="main-nav-item js-main-nav-item mobile-sub-category lg:hidden" role="none">
+                        <a class="main-nav-item-trigger js-main-nav-item-trigger js-mobile-folder-trigger" id="main-nav-item-2" role="button" data-analytics-title="discover" data-analytics-id="main-nav-item-2" aria-haspopup="true" aria-controls="main-nav-item-menu-2" aria-expanded="false" aria-selected="false" aria-label="Categories" tabindex="0">
+                        Categories
+                        </a>
+                        <div class="nav-tabs mobile-nav-page js-main-subnav js-mobile-page cmp-accordion__item panel" id="main-nav-item-menu-2" data-mobile-nav-depth="1" data-cmp-hook-accordion="item" data-title="Categories" aria-labelledby="main-nav-item-2" data-panel-name="custom-panel-name-1" style="display: none;">
+                           <div class="container" data-cmp-hook-accordion="panel">
+                              <div class="grid">
+                                 <button class="mobile-back-btn js-mobile-back-btn" aria-label="Go Back">Categories</button>
+                                 <button class="desktop-close-btn js-desktop-close-btn" disabled=""><span>Close</span></button>
+                                 <ul id="nav-tabs-197dca1b10" data-num-tabs="1" data-cmp-is="tabs" class="cmp-tabs nav-tabs-list mobile-vert-scroll js-nav-tabs-list sub-category">
+                                    <li class="nav-tab js-nav-tab cmp-tabs__tab active" data-cmp-hook-tabs="tab" role="none">
+                                       <ul>
+                                          <li class="nav-image-items">
+                                             <img class="nav-items-img" src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-mice-mx-master-4.png" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-mice-mx-master-4.png 2x, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-mice-mx-master-4.png 1x" alt="鼠标" width="40" />
+                                             <a href="/zh-cn/shop/c/mice.html" aria-label="鼠标" target="_self" data-analytics-title="鼠标" role="none">
+                                                鼠标
+                                             </a>
+                                          </li>
+                                          <li class="nav-image-items">
+                                             <img class="nav-items-img" src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/keyboards-2.png" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/keyboards-2.png 2x, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/keyboards-2.png 1x" alt="键盘" width="40" />
+                                             <a href="/zh-cn/shop/c/keyboards.html" aria-label="键盘" target="_self" data-analytics-title="键盘" role="none">
+                                                键盘
+                                             </a>
+                                          </li>
+                                          <li class="nav-image-items">
+                                             <img class="nav-items-img" src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/combos-2.png" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/combos-2.png 2x, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/combos-2.png 1x" alt="键鼠套装" width="40" />
+                                             <a href="/zh-cn/shop/c/combos.html" aria-label="键鼠套装" target="_self" data-analytics-title="键鼠套装" role="none">
+                                                键鼠套装
+                                             </a>
+                                          </li>
+                                          <li class="nav-image-items">
+                                             <img class="nav-items-img" src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/headsets-earbuds-2.png" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/headsets-earbuds-2.png 2x, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/headsets-earbuds-2.png 1x" alt="耳机（含麦克风）和耳机" width="40" />
+                                             <a href="/zh-cn/shop/c/headsets.html" aria-label="耳机（含麦克风）和耳机" target="_self" data-analytics-title="耳机（含麦克风）和耳机" role="none">
+                                                耳机（含麦克风）和耳机
+                                             </a>
+                                          </li>
+                                          <li class="nav-image-items">
+                                             <img class="nav-items-img" src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/webcams-2.png" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/webcams-2.png 2x, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/webcams-2.png 1x" alt="网络摄像头" width="40" />
+                                             <a href="/zh-cn/shop/c/webcams.html" aria-label="网络摄像头" target="_self" data-analytics-title="网络摄像头" role="none">
+                                                网络摄像头
+                                             </a>
+                                          </li>
+                                          <li class="nav-image-items">
+                                             <img class="nav-items-img" src="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-ipad-pro-keyboard-cases-230-0.png" srcset="https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-ipad-pro-keyboard-cases-230-0.png 2x, https://resource.logitech.com/d_transparent.gif/content/dam/logitech/en/navigation/logi/logi-nav/logitech-navigation-ipad-pro-keyboard-cases-230-0.png 1x" alt="iPad 键盘保护套" width="40" />
+                                             <a href="/zh-cn/shop/c/ipad-keyboards.html" aria-label="iPad 键盘保护套" target="_self" data-analytics-title="iPad 键盘保护套" role="none">
+                                                iPad 键盘保护套
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/microphones.html" aria-label="麦克风" target="_self" data-analytics-title="麦克风" role="none">
+                                                麦克风
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/speakers.html" aria-label="音箱" target="_self" data-analytics-title="音箱" role="none">
+                                                音箱
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/streaming.html" aria-label="直播" target="_self" data-analytics-title="直播" role="none">
+                                                直播
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/driving.html" aria-label="Racing" target="_self" data-analytics-title="Racing" role="none">
+                                                Racing
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/simulation.html" aria-label="模拟装备" target="_self" data-analytics-title="模拟装备" role="none">
+                                                模拟装备
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/presenters-and-digital-pens.html" aria-label="无线演示器" target="_self" data-analytics-title="无线演示器" role="none">
+                                                无线演示器
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/gaming-mouse-pads.html" aria-label="鼠标垫" target="_self" data-analytics-title="鼠标垫" role="none">
+                                                鼠标垫
+                                             </a>
+                                          </li>
+                                          <li>
+                                             <a href="/zh-cn/shop/c/accessories.html" aria-label="配件" target="_self" data-analytics-title="配件" role="none">
+                                                配件
+                                             </a>
+                                          </li>
+                                           <li>
+                                             <a href="/zh-cn/shop/c/best-sellers.html" aria-label="畅销产品" target="_self" data-analytics-title="畅销产品" role="none">
+                                                畅销产品
+                                             </a>
+                                          </li>
+                                       </ul>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="main-nav-item js-main-nav-item mobile-sub-interest lg:hidden" role="none">
+                        <a class="main-nav-item-trigger js-main-nav-item-trigger js-mobile-folder-trigger" id="main-nav-item-4" role="button" data-analytics-title="support" data-analytics-id="main-nav-item-4" aria-haspopup="true" aria-controls="main-nav-item-menu-4" aria-expanded="false" aria-selected="false" aria-label="Support" tabindex="0">
+                        Interest
+                        </a>
+                        <div class="nav-tabs mobile-nav-page js-main-subnav js-mobile-page cmp-accordion__item panel" id="main-nav-item-menu-2" data-mobile-nav-depth="1" data-cmp-hook-accordion="item" data-title="Categories" aria-labelledby="main-nav-item-2" data-panel-name="custom-panel-name-1" style="display: none;">
+                           <div class="container" data-cmp-hook-accordion="panel">
+                              <div class="grid">
+                                 <button class="mobile-back-btn js-mobile-back-btn" aria-label="Go Back">Interest</button>
+                                 <button class="desktop-close-btn js-desktop-close-btn" disabled=""><span>Close</span></button>
+                                 <ul id="nav-tabs-197dca1b10" data-num-tabs="1" data-cmp-is="tabs" class="cmp-tabs nav-tabs-list mobile-vert-scroll js-nav-tabs-list interest">
+                                    <li class="nav-tab js-nav-tab cmp-tabs__tab active" data-cmp-hook-tabs="tab" role="none">
+    
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                     <li class="main-nav-item" role="none">
+                        <a class="main-nav-item-trigger js-main-nav-item-trigger js-mobile-folder-trigger no-icon" id="main-nav-item-1" role="button" data-analytics-title="星球" data-analytics-id="main-nav-item-1" aria-haspopup="true" aria-controls="main-nav-item-menu-1" aria-expanded="false" aria-selected="false" aria-label="星球" href="https://www.logitech.com/zh-cn/planet-and-people/everything-matters" tabindex="0">
+                           星球
+                        </a>
+                     </li>
+                     <li class="main-nav-item" role="none">
+                        <a class="main-nav-item-trigger js-main-nav-item-trigger js-mobile-folder-trigger no-icon" id="main-nav-item-1" role="button" data-analytics-title="软件" data-analytics-id="main-nav-item-1" aria-haspopup="true" aria-controls="main-nav-item-menu-1" aria-expanded="false" aria-selected="false" aria-label="软件" href="https://www.logitech.com/zh-cn/software" tabindex="0">
+                           软件
+                        </a>
+                     </li>
+
+                     <li class="brand-logos lg:hidden">
+                        <ul class="flex gap-2 flex-col">
+                           <li>
+                              <a href="/zh-cn" aria-label="logitech" data-analytics-title="logitech">
+                                 <img src="/content/dam/logitech/en/nav/brand-logos/logitech-black-1.svg" />
+                              </a>
+                           </li>
+                           <li>
+                              <a href="https://www.logitechg.com/zh-cn/" target="_blank" aria-label="logitechG" data-analytics-title="logitechG">
+                                 <img src="/content/dam/logitech/en/brand-logos/logig.svg" />
+                              </a>
+                           </li>
+                        </ul>
+                     </li>
+                     <li class="support-link lg:hidden">
+                        <a class="support" href="https://support.logi.com/hc/zh-cn" data-analytics-title="support" target="_blank" aria-label="https://support.logi.com/hc/zh-cn">
+                           支持
+                        </a>
+                     </li>
+                     <li class="main-nav-item locale-selector lg:hidden">
+                        <div class="flex locale-selector-container">
+                            <img src="/content/dam/logitech/en/brand-logos/world.svg" />
+                            <a href="https://logitech.com/zh-cn/change-location.html" target="_blank" aria-label="Locale Selector - CN,zh" class="locale-selector" data-analytics-title="locale-selector" data-sveltekit-reload="">CA,en</a>
+                        </div>
+                     </li>
+                     <li class="my-account-mobile lg:hidden">
+                        <a href="/zh-cn/my-account.html" class="flex">
+                           <span>My Account</span> 
+                           <svg width="0.95em" height="1em" viewBox="0 0 17 18">
+                              <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2">
+                                 <path d="M11.266 4.625a3.125 3.125 0 10-6.25 0 3.125 3.125 0 006.25 0Z" clip-rule="evenodd"></path>
+                                 <path d="M15.016 17.75c0-3.452-3.079-6.25-6.875-6.25-3.797 0-6.875 2.798-6.875 6.25"></path>
+                              </g>
+                           </svg>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="utility-nav js-main-nav-util-bar">
+               <button class="search-trigger js-search-trigger" data-analytics-title="Search" aria-expanded="false" aria-label="Search">Search</button>
+               <a href="/zh-cn/my-account.html" class="my-account-trigger js-my-account-trigger" data-analytics-title="My Account" aria-label="My Account">My Account</a>
+               <a aria-label="Shopping Cart" class="pangea-cmp nav-cart cart-icon js-cart-icon" data-analytics-title="shopping-cart" href="https://www.logitech.com/zh-cn/cart" target="_self">
+                  <span class="icon"></span>
+                  <span class="quantity"></span>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <form action="/zh-cn/search.html" method="get" class="search-form js-search-form" aria-hidden="true" role="search" data-autocomplete-api="https://www.logitech.com/utilities/search/search.cfm?s=l&amp;f=x&amp;m=10&amp;st=1&amp;type=sayt2&amp;q=" __bizdiag="113" __biza="WJ__">
+      <div class="container">
+         <input type="text" class="search-input" id="searchInput" name="q" placeholder="Search" tabindex="-1" aria-label="Search input" autocomplete="off" autocapitalize="none" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="autocomplete-item-list" aria-activedescendant="autocomplete-item-list">
+         <div class="typeahead-ctn js-typeahead-ctn"></div>
+         <button type="submit" class="search-submit js-search-submit" tabindex="-1">SUBMIT</button>
+         <button class="close-search js-close-search-btn" aria-label="Cancel Search" tabindex="-1"></button>
+      </div>
+   </form>
+   <div class="main-nav-stickiness-trigger js-main-nav-stickiness-trigger"></div>
+</nav>
+            
+
+
+    
+    
+    
+    
+
+            </div>
+        </div>
+
+        <script>
+            // JavaScript
+$(document).ready(function() {
+    $('.main-nav-items .js-main-nav-item:first-child').hover(function() {
+        $('body').removeClass('noscroll');
+    })
+    $(window).scroll(function(e) {
+        $('.main-nav-items .js-main-nav-item:first-child').removeClass('open');
+        $('.main-nav-items .js-main-nav-item:first-child .js-main-nav-item-trigger').removeClass('open');
+    })
+    $('.kepler.main-nav .nav-cart').click(function(e) {
+        window.location.href = $(this).attr('href');
+    })
+    $('.js-mobile-nav-toggle').click(function() {
+        $('.site-wrapper').css('left', '0px');
+        setTimeout(function() {
+            $('.site-wrapper.dim').css('left', '-'+$('.js-mobile-nav-ctn').css('width'));
+        }, 10)
+    })
+    
+    $('.nav-main-logo-anim').hover(function() {
+        $(this).removeClass('stopped');
+        $(this).addClass('play');
+    }, function() {
+        $(this).removeClass('play');
+        $(this).addClass('stopped');
+    })
+})
+        </script>
+    </div>
+
+    
+    
+
+
+
+    
+</div>
+
+		
+		<!-- This is to include and override prime nav using page properties XF path - Ends -->
+
+		<!-- This is to include and override secondary Navigation using page properties XF path - Starts -->
+     	
+       	
+
+
+
+
+    
+        
+        
+        <div class="newpar new section">
+
+</div>
+
+    
+        
+        
+        <div class="par iparys_inherited">
+
+    
+    
+    
+    
+
+</div>
+
+    
+
+
+        <!-- This is to include and override secondary Navigation using page properties XF path - Ends -->
+		
+	</header>
+
+    
+
+
+
+
+    
+        
+        
+        <div class="newpar new section">
+
+</div>
+
+    
+        
+        
+        <div class="par iparys_inherited">
+
+    
+    
+    
+    
+
+</div>
+
+    
+
+
+    
+
+    
+
+
+
+
+    
+        
+        
+        <div class="newpar new section">
+
+</div>
+
+    
+        
+        
+        <div class="par iparys_inherited">
+
+    
+    
+    
+    
+
+</div>
+
+    
+
+
+    
+
+    
+
+
+
+
+    
+        
+        
+        <div class="newpar new section">
+
+</div>
+
+    
+        
+        
+        <div class="par iparys_inherited">
+
+    
+    
+    
+    
+
+</div>
+
+    
+
+
+    
+
+     
+	<div class="commerce-config" data-page-url-suffix="/zh-cn" data-cart-overrideurl-new-tab="true" data-page-path="/content/logitech/ap/live/zh_cn/error/404" data-hcaptcha-site-key="205e3f6b-2d35-44d7-9097-93cbf63229c0" data-typesense-nodes="https://jh0mxir289nweul5p-1.a1.typesense.net,https://jh0mxir289nweul5p-2.a1.typesense.net,https://jh0mxir289nweul5p-3.a1.typesense.net" data-sfcc-disabled="true" data-enable-candyrack="false" data-show-bringg-tracking="false" data-enable-amazonpay="false" data-typesense-api-key="5JDnogTjkZhd7jDhjZLRrINi3CgJG9IL" data-ocapi-version="v24_5" sfccapi-ocapi-proxyuri-prefix="/api/commerce" data-price-disclaimer-pos="below" data-payment-env="production" data-enable-time-to-ship="false" data-klarna-enabled="false" data-docked-cart-enabled="false" data-session-set="/content/logitech/ap/live/zh_cn/error/404.logitechtoken.json" data-currency-code="CNY" data-basket-exp-time-aut="2592000" data-cloudinary-path-plp-search-product-shot="https://www.logitech.com/w_386,ar_1.0,c_limit,f_auto,q_auto,dpr_2.0/d_transparent.gif/content/dam?v=1" data-place-order-stage="placeOrder#placeOrder" data-country-code="CN" data-enable-paypal="false" data-enable-esw="false" data-commerce-provider="sfcc" data-toaster-api-url="/zh-cn/api/promotions/toaster" data-cloudinary-path-mini-cart-thumbnail="https://www.logitech.com/w_150,h_150,c_fit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam//content/dam/logitech?v=1" data-enable-googlepay="false" data-default-shipping-time="5" data-ccapi-version="v1" data-dr-public-key="pk_cfc2db9d66954709bcb9ea85b3ad7b21" data-enable-checkout-app="false" data-access-token-expiry="1800" data-typesense-nearest-node="https://jh0mxir289nweul5p.a1.typesense.net" data-organization-id-ocapi="f_ecom_bjdd_prd" sfcc-ccapi-proxy-shopper-basket="/api/commerce/checkout/shopper-baskets" data-site-notifications-endpoint="/zh-cn/site-notifications/master/master.notifications.zh-cn.json" data-productinfo-path="/bin/logitech/productinfo.json" data-ccapi-clientId="a65e74be-900e-458d-ac3b-675eae9bbc5a" data-basket-exp-time-ano="604800" data-ccapi-environment=".api.commercecloud.salesforce.com" data-cart-overrideurl="http://store.logitech.com.cn/cart.php" data-commerce-cartpage="/cart" data-show-filters="false" sfccapi-ccapi-proxyuri-prefix="/api/commerce/shopper-products" data-locale="zh-CN" data-ocapi-clientId="a65e74be-900e-458d-ac3b-675eae9bbc5a" data-enable-applepay="false" data-commerce-checkoutpage="/checkout" data-ocapi-environment="commerce-prd.logitech.com" data-shortCode-ccapi="4xvng64b" data-session-get="https://buy.logitech.com/store/logib2c/SessionToken?format=json" data-customer-id-expiry="5256000" data-cloudinary-domain="https://resource.logitech.com/" data-refresh-token-expiry="5256000" data-organization-id-ccapi="f_ecom_bjdd_prd" data-sfcc-promotion-id-prefixes="employee,special,member,partner,student,business" data-currency-symbol="¥"></div>
+
+    
+    <div class="lids-config" data-domain="logitechcn" data-api-endpoint="https://accounts.logi.com" data-client-id="6dc58bae-28c8-f4e3-ade8-73d0deb8e76d" data-redirect-uri="https://www.logitech.com/bin/accesstoken" data-websso-url="https://id.logi.com" data-brand-theme-id="29753D92-34CC-4706-9973-1832CFA11E78" data-websso-locale="zh-cn" data-drsession-logout="https://buy.logitech.com/store/logib2c/LogoutSSO" data-page-path="/content/logitech/ap/live/zh_cn/error/404" data-logout-path="/zh-cn/my-account.html" data-locale="zh_cn" data-fb-sdk="https://connect.facebook.net/en_US/sdk.js" data-amazon-sdk="https://api-cdn.amazon.com/sdk/login1.js" data-google-sdk="https://apis.google.com/js/platform.js?onload=initializeGoogleApi" data-google-captcha-sdk="https://www.google.com/recaptcha/api.js?onload=captchaLibsReady&amp;render=explicit" data-myorders-url="/zh-cn/my-account/my-orders"></div>
+	
+
+
+    <main id="maincontent" class="site-content" tabindex="0">
+
+        
+        <h1 class="seo-pagetitle">404</h1>
+        
+        <div>
+
+
+
+
+    
+    
+    <div class="hero-banner">
+
+
+
+
+
+    
+    
+    <div class="component-background  azzuro-bg    ">
+
+        
+        <div class="container">
+
+            
+
+                
+                
+
+	<section id="i86ffda9bb98bc73988d9c8bbb868fe65" class="component-hero-banner image-full-bleed white-text  " style="background-repeat: no-repeat; background-size: cover;" data-title="未找到页面" data-component-name="HeroBanner">
+
+		<style>
+			#i86ffda9bb98bc73988d9c8bbb868fe65.component-hero-banner .text-overlay .container.flex-container  {
+				top: 50%;
+			}
+			@media only screen and (max-width: 767px) {
+				#i86ffda9bb98bc73988d9c8bbb868fe65 {
+					background-image: url("");
+				}
+			}
+			@media (min-width: 768px) {
+				#i86ffda9bb98bc73988d9c8bbb868fe65 {
+					background-image: url("");
+				}
+			}
+			@media (min-width: 992px) {
+				#i86ffda9bb98bc73988d9c8bbb868fe65 {
+					background-image: url("");
+				}
+			}
+		</style>
+
+		<div class="text-overlay">
+			<div class="container flex-container flex-center text-left">
+				<div class="flex-align-center content-width-80" id="login-auth">
+
+					
+
+					
+    
+
+
+					<div class="component-text text-block">
+					 
+						<h1>
+							未找到页面
+						</h1>
+					
+					</div>
+
+                    <div class="component-text text-block">
+                    	
+                    </div>
+
+					
+    
+    <div class="component-text text-block ">
+        <p>很遗憾！不确定您所查找的是什么，但这里没有。<br />
+</p>
+
+    </div>
+
+
+					<!-- /* Normal Cta's*/ -->
+					
+
+	
+
+    
+
+
+
+					<!-- /* Login View  false more like including the view in the component rather than actual show */ -->
+					
+
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+
+                
+
+            
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+        
+    </main>
+
+    
+	<!-- This is to include and override footer using page properties XF path - Starts -->
+	
+	<div class="xfpage page basicpage">
+
+    
+
+
+
+         
+
+
+
+
+
+
+    
+    
+    
+
+
+
+	<!--googleoff: all-->
+	<!-- stopindex -->
+	<footer class="kepler logi-footer" data-analytics-section="footer">
+		<div class="container">
+			<div class="footer-links-ctn">
+				
+
+
+    
+    
+    
+
+
+
+	<div class="nav-items">
+		<h2 class="nav-items-title js-nav-items-title js-mobile-folder-trigger ">
+			
+				关于
+			
+		</h2>
+
+		
+
+		<div class="nav-items-links-ctn mobile-nav-page js-mobile-page" data-mobile-nav-depth="2">
+			<button class="mobile-back-btn js-mobile-back-btn " disabled aria-label="Go Back">关于</button>
+			<ul class="nav-items-links mobile-vert-scroll">
+				
+					<li class="nav-item-link-item">
+						<a href="https://www.logitech.com/zh-cn/about.html" class="nav-item-link js-nav-item-link " data-style="standard" target="_self" data-analytics-title="logitech-story">
+							<span class="default">罗技故事</span>
+							
+						</a>
+					</li>
+				
+					<li class="nav-item-link-item">
+						<a href="https://www.logitech.com/zh-cn/careers" class="nav-item-link js-nav-item-link " data-style="standard" target="_self" data-analytics-title="careers">
+							<span class="default">招贤纳士</span>
+							
+						</a>
+					</li>
+				
+					<li class="nav-item-link-item">
+						<a href="https://ir.logitech.com/" class="nav-item-link js-nav-item-link " data-style="standard" target="_blank" rel="noopener noreferrer" data-analytics-title="investors">
+							<span class="default">投资者</span>
+							
+						</a>
+					</li>
+				
+					<li class="nav-item-link-item">
+						<a href="https://blog.logitech.com/" class="nav-item-link js-nav-item-link " data-style="standard" target="_blank" rel="noopener noreferrer" data-analytics-title="blog">
+							<span class="default">博客</span>
+							
+						</a>
+					</li>
+				
+					<li class="nav-item-link-item">
+						<a href="https://news.logitech.com/" class="nav-item-link js-nav-item-link " data-style="standard" target="_blank" rel="noopener noreferrer" data-analytics-title="press">
+							<span class="default">新闻</span>
+							
+						</a>
+					</li>
+				
+					<li class="nav-item-link-item">
+						<a href="https://www.logitech.com/zh-cn/about/contact.html" class="nav-item-link js-nav-item-link " data-style="standard" target="_self" data-analytics-title="contact-us">
+							<span class="default">联系我们</span>
+							
+						</a>
+					</li>
+				
+				
+			</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="nav-items">
+		<h2 class="nav-items-title js-nav-items-title js-mobile-folder-trigger ">
+			
+				价值观
+			
+		</h2>
+
+		
+
+		<div class="nav-items-links-ctn mobile-nav-page js-mobile-page" data-mobile-nav-depth="2">
+			<button class="mobile-back-btn js-mobile-back-btn " disabled aria-label="Go Back">价值观</button>
+			<ul class="nav-items-links mobile-vert-scroll">
+				
+					<li class="nav-item-link-item">
+						<a href="https://www.logitech.com/zh-cn/sustainability" class="nav-item-link js-nav-item-link " data-style="standard" target="_self" data-analytics-title="sustainability">
+							<span class="default">可持续性</span>
+							
+						</a>
+					</li>
+				
+					<li class="nav-item-link-item">
+						<a href="https://www.logitech.com/zh-cn/sustainability/recycling.html" class="nav-item-link js-nav-item-link " data-style="standard" target="_self" data-analytics-title="recycling">
+							<span class="default">回收</span>
+							
+						</a>
+					</li>
+				
+					<li class="nav-item-link-item">
+						<a href="https://www.logitech.com/zh-cn/accessibility" aria-label="无障碍" class="nav-item-link js-nav-item-link " data-style="standard" target="_self" data-analytics-title="accessibility">
+							<span class="default">无障碍</span>
+							
+						</a>
+					</li>
+				
+				
+			</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="nav-items">
+		<h2 class="nav-items-title js-nav-items-title js-mobile-folder-trigger ">
+			
+				合作伙伴
+			
+		</h2>
+
+		
+
+		<div class="nav-items-links-ctn mobile-nav-page js-mobile-page" data-mobile-nav-depth="2">
+			<button class="mobile-back-btn js-mobile-back-btn " disabled aria-label="Go Back">合作伙伴</button>
+			<ul class="nav-items-links mobile-vert-scroll">
+				
+					<li class="nav-item-link-item">
+						<a href="https://www.logitech.com/zh-cn/resellers/find-a-reseller.html" aria-label="查找分销商" class="nav-item-link js-nav-item-link " data-style="standard" target="_self" data-analytics-title="find-a-reseller">
+							<span class="default">查找分销商</span>
+							
+						</a>
+					</li>
+				
+					<li class="nav-item-link-item">
+						<a href="https://www.logitech.com/zh-cn/business/partner-program.html" aria-label="成为合作伙伴" class="nav-item-link js-nav-item-link " data-style="standard" target="_self" data-analytics-title="become-a-partner">
+							<span class="default">成为合作伙伴</span>
+							
+						</a>
+					</li>
+				
+					<li class="nav-item-link-item">
+						<a href="https://www.logitech.com/zh-cn/business/partners.html" aria-label="成为联盟合作伙伴" class="nav-item-link js-nav-item-link " data-style="standard" target="_self" data-analytics-title="become-an-alliance-partner">
+							<span class="default">成为联盟合作伙伴</span>
+							
+						</a>
+					</li>
+				
+					<li class="nav-item-link-item">
+						<a href="https://partners.logitech.com/chinese_simplified/" aria-label="合作伙伴门户网站" class="nav-item-link js-nav-item-link " data-style="standard" target="_blank" rel="noopener noreferrer" data-analytics-title="partner-portal">
+							<span class="default">合作伙伴门户网站</span>
+							
+						</a>
+					</li>
+				
+				
+			</ul>
+		</div>
+	</div>
+
+
+
+
+
+	<div class="nav-items">
+		<h2 class="nav-items-title js-nav-items-title js-mobile-folder-trigger ">
+			
+				客户
+			
+		</h2>
+
+		
+
+		<div class="nav-items-links-ctn mobile-nav-page js-mobile-page" data-mobile-nav-depth="2">
+			<button class="mobile-back-btn js-mobile-back-btn " disabled aria-label="Go Back">客户</button>
+			<ul class="nav-items-links mobile-vert-scroll">
+				
+					<li class="nav-item-link-item">
+						<a href="https://www.logitech.com/zh-cn/my-account/email-preferences.html" class="nav-item-link js-nav-item-link " data-style="standard" target="_self" data-analytics-title="email-preferences">
+							<span class="default">电子邮件首选项</span>
+							
+						</a>
+					</li>
+				
+				
+			</ul>
+		</div>
+	</div>
+
+
+    
+
+			</div>
+
+			
+
+			<div class="social-email-row">
+				<div class="social-and-support-row">
+					<div class="social-ctn">
+						<div class="xfpage page basicpage">
+
+    
+
+
+
+         
+
+
+
+
+
+
+    
+    
+    
+
+
+
+    <div class="pangea-cmp pangea-social-icons ">
+        <a href="http://e.weibo.com/logitechchina" class="p-social-icon-link " aria-label="Weibo" target="_blank" rel="noopener noreferrer">
+            <img src="https://resource.logitech.com/h_24,c_fit,f_auto,q_auto,dpr_auto/d_transparent.gif/content/dam/logitech/common/zh-cn/sina-icon.png?v=1" class="p-social-icon-img" alt="" loading="lazy"/>
+            
+        </a>
+    </div>
+
+
+    
+</div>
+
+					</div>
+					<div class="support-id-row" id="support-id-row" style="display: none;">
+						<span class="support-id-label">支持编号：</span>
+						<span class="support-id-value" id="supportid"></span>
+						<div class="support-tooltip">
+							<div class="support-tooltip-row">
+								<button aria-label="支持 ID 信息" id="tooltipIcon" data-analytics-title="info-support-id" class="support-icon">
+									<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M7 10.5064C7.18889 10.5064 7.34723 10.4425 7.475 10.3148C7.60278 10.187 7.66667 10.0286 7.66667 9.83976V7.17309C7.66667 6.9842 7.60278 6.82587 7.475 6.69809C7.34723 6.57031 7.18889 6.50642 7 6.50642C6.81111 6.50642 6.65278 6.57031 6.525 6.69809C6.39722 6.82587 6.33334 6.9842 6.33334 7.17309V9.83976C6.33334 10.0286 6.39722 10.187 6.525 10.3148C6.65278 10.4425 6.81111 10.5064 7 10.5064ZM7 5.17309C7.18889 5.17309 7.34723 5.1092 7.475 4.98142C7.60278 4.85365 7.66667 4.69531 7.66667 4.50642C7.66667 4.31754 7.60278 4.1592 7.475 4.03142C7.34723 3.90365 7.18889 3.83976 7 3.83976C6.81111 3.83976 6.65278 3.90365 6.525 4.03142C6.39722 4.1592 6.33334 4.31754 6.33334 4.50642C6.33334 4.69531 6.39722 4.85365 6.525 4.98142C6.65278 5.1092 6.81111 5.17309 7 5.17309ZM7 13.8398C6.07778 13.8398 5.21111 13.6648 4.4 13.3148C3.58889 12.9648 2.88334 12.4898 2.28334 11.8898C1.68334 11.2898 1.20834 10.5842 0.858336 9.77309C0.508336 8.96198 0.333336 8.09531 0.333336 7.17309C0.333336 6.25087 0.508336 5.3842 0.858336 4.57309C1.20834 3.76198 1.68334 3.05642 2.28334 2.45642C2.88334 1.85642 3.58889 1.38142 4.4 1.03142C5.21111 0.681424 6.07778 0.506424 7 0.506424C7.92222 0.506424 8.78889 0.681424 9.6 1.03142C10.4111 1.38142 11.1167 1.85642 11.7167 2.45642C12.3167 3.05642 12.7917 3.76198 13.1417 4.57309C13.4917 5.3842 13.6667 6.25087 13.6667 7.17309C13.6667 8.09531 13.4917 8.96198 13.1417 9.77309C12.7917 10.5842 12.3167 11.2898 11.7167 11.8898C11.1167 12.4898 10.4111 12.9648 9.6 13.3148C8.78889 13.6648 7.92222 13.8398 7 13.8398ZM7 12.5064C8.48889 12.5064 9.75 11.9898 10.7833 10.9564C11.8167 9.92309 12.3333 8.66198 12.3333 7.17309C12.3333 5.6842 11.8167 4.42309 10.7833 3.38976C9.75 2.35642 8.48889 1.83976 7 1.83976C5.51111 1.83976 4.25 2.35642 3.21667 3.38976C2.18334 4.42309 1.66667 5.6842 1.66667 7.17309C1.66667 8.66198 2.18334 9.92309 3.21667 10.9564C4.25 11.9898 5.51111 12.5064 7 12.5064Z" fill="white"/>
+									</svg>
+								</button>
+								<div class="support-tooltip" id="tooltipText">
+									我们使用您的支持 ID 来更快地解决您使用我们网站时遇到的问题。通过电话、电子邮件或聊天联系支持人员时，请提供此 ID。请参阅我们的<a href="/legal/cookie-policy.html#manage-cookies" data-analytics-title="cookie-policy">cookie 政策。</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="email-ctn">
+					
+
+
+
+
+
+
+
+
+
+    <div class="email-subscription js-email-subscription">
+        <div class="email-subscription-content">
+            <form class="email-subscription-form js-email-subscription-form" name="email-subscription" action="/content/logitech/ap/live/zh_cn/error/404.usersubscribeservice.json" method="post" novalidate data-error-unauthorised="该请求未经授权" data-error-servlet-not-found="抱歉，服务暂时无法使用。请稍后再试">
+                <!-- Form Body -->
+                <div class="form-body js-form-body">
+					
+                    <input type="hidden" name="locale" value="zh-cn" data-rule="required"/>
+                    <input type="hidden" name="domain" value="logitech" data-rule="required"/>
+					<input type="hidden" name="originInfo" value="footer:404" data-rule="required"/>
+                    <input type="hidden" name="subscriptionId" value="promo,news,updates-suggestions" data-rule="required"/>
+                    <input type="hidden" name="communicationType" value="promo,news,updates-suggestions"/>
+                    <div class="form-field">
+                        <div class="input-field-wrapper">
+                            
+                            <div class="input-grp">
+                                <input type="email" name="emailId" aria-label="输入电子邮箱地址" placeholder="输入电子邮箱地址" data-rule="required" data-error-default="请输入有效的电子邮件地址"/>
+                                <button type="submit" name="email-subscription-submit" class="btn btn-large" aria-label="订阅" data-analytics-title="footer-email-subscribe-submit">
+                                    <div class="submit-label">
+                                        <span class="submit-label-icon"></span>
+                                    </div>
+                                    <div class="submit-loader">
+                                        <div class="loading-dots"><div></div><div></div><div></div><div></div></div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="email-subscription-message form-message js-form-message error"></div>
+                    <div class="form-field">
+                        <div class="input-field-wrapper">
+                            <div class="email-subscription-disclaimer js-email-subscription-disclaimer">
+                                <label>
+                                    <input type="checkbox" name="subscription-disclaimer" data-rule="required submitOnce" data-error-default="请接受条款和条件"/>
+                                    <span class="checkmark"></span>
+                                    <span class="checkmark-label">我希望获得 Logitech 提供的个性化市场营销。您可以随时取消订阅。请参阅我们的 <a rel="noopener noreferrer" href="https://www.logitech.com/legal/web-privacy-policy.html" target="_blank">隐私政策</a>。</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Form Body -->
+                <div class="email-subscription-success form-success js-form-success" style="display:none;">
+                    
+                        谢谢！订阅成功
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+				</div>
+			</div>
+			<div class="copyright-locale-row">
+				<div class="copyright-links-container">
+					<div class="copyright-ctn">
+						&copy;2026 罗技。保留所有权利。
+					</div>
+					<ul class="copyright-links-list">
+						<li class="copyright-links-item">
+							<a class="copyright-link" href="https://www.logitech.com/zh-cn/tos/terms.html" target="_self" data-analytics-title="terms-of-use">
+								使用条款
+							</a>
+						</li>
+					
+						<li class="copyright-links-item">
+							<a class="copyright-link" href="https://www.logitech.com/zh-cn/legal/privacy-policy.html" target="_self" data-analytics-title="privacy-policy">
+								隐私政策
+							</a>
+						</li>
+					
+						<li class="copyright-links-item">
+							<a class="copyright-link" href="https://www.logitech.com/legal/cookie-policy.html#manage-cookies" target="_self" data-analytics-title="cookie-settings">
+								Cookie 设置
+							</a>
+						</li>
+					
+						<li class="copyright-links-item">
+							<a class="copyright-link" href="https://www.logitech.com/zh-cn/sitemap.html" target="_self" data-analytics-title="sitemap">
+								网站地图
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="locale-selector-ctn">
+					
+
+
+<div class="locale-selector">
+	<a class="flag-link" href="/zh-cn/change-location.html" data-analytics-title="locale-selector">
+		
+		<span class="logi-icon-2-world-ap"></span>
+		<span class="lang-code">中国大陆</span>
+	</a>
+</div>
+
+
+				</div>
+			</div>
+			
+		</div>
+	</footer>
+
+    
+</div>
+
+	<!-- This is to include and override footer using page properties XF path - Ends -->
+
+
+</div>
+
+        
+            
+        
+
+    
+<script src="/etc.clientlibs/logitech/clientlibs/dependencies.min.cfa1c7e0057b97fcfa12873b8cfd7209.js"></script>
+<script src="/etc.clientlibs/clientlibs/granite/jquery/granite/csrf.min.56934e461ff6c436f962a5990541a527.js"></script>
+<script src="/etc.clientlibs/logitech/clientlibs/main-static-sfcc.min.7aaeb99f70c26f66ccf752c5f7be0b38.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- This is add the modal pop up for email subscription (yieldify replacement) -->
+
+ 
+
+    
+
+
+
+         
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+    <div class="email-subscription-modal js-email-subscription-modal" data-modal-load-delay="2" data-page-visit-count="2">
+        <main class="email-subscription-modal-wrapper" aria-label="Modal Popup for Email subscription" role="dialog" tabindex="0">
+            <div class="email-subscription-modal-content">
+                <div class="modal-default-view js-modal-default-view">
+                    <h3 class="modal-title">订阅新闻资讯</h3>
+                    <div class="modal-img">
+                        <img src="https://resource.logitech.com/w_500,c_limit,f_auto,q_auto,dpr_2.0,dpr_1.0/d_transparent.gif/content/dam/logitech/en/email-subscription/logi-email-subscription-3.jpg?v=1" alt="邮件订阅"/>
+                    </div>
+                    <div class="email-subscription">
+                        <div class="email-subscription-ctn">
+                            <form class="email-subscription-form js-email-subscription-form" name="email-subscription" action="/content/logitech/ap/live/zh_cn/error/404.usersubscribeservice.json" method="post" novalidate data-error-unauthorised="请求未经授权的错误消息。" data-error-servlet-not-found="编写了无效的订阅 ID" data-error-form-default="订阅 ID 编写不正确。">
+                                <!-- Form Body -->
+                                <div class="form-body js-form-body">
+									
+                                    <input type="hidden" name="locale" value="zh-cn" data-rule="required"/>
+									<input type="hidden" name="domain" value="logitech" data-rule="required"/>
+									<input type="hidden" name="originInfo" value="popupModal:404" data-rule="required"/>
+									<input type="hidden" name="subscriptionId" value="promo,news,updates-suggestions" data-rule="required"/>
+									<input type="hidden" name="communicationType" value="promo,news,updates-suggestions"/>
+                                    <div class="form-field">
+										<div class="input-field-wrapper">
+                                            <div class="input-grp">
+												<input type="email" name="emailId" aria-label="输入电子邮箱地址" placeholder="输入电子邮箱地址" data-rule="required" data-error-default="请输入有效的电子邮件地址"/>
+												<button type="submit" name="email-subscription-submit" class="btn btn-large" aria-label="订阅" data-analytics-title="modal-email-subscribe-submit">
+													<div class="submit-label"><span class="submit-label-icon"></span></div>
+													<div class="submit-loader">
+														<div class="loading-dots"><div></div><div></div><div></div><div></div></div>
+													</div>
+												</button>
+											</div>
+										</div>
+									</div>
+									<div class="email-subscription-message form-message js-form-message error"></div>
+									<div class="form-field">
+										<div class="input-field-wrapper">
+											<div class="email-subscription-disclaimer js-email-subscription-disclaimer">
+												<label>
+													<input type="checkbox" name="subscription-disclaimer" data-rule="required submitOnce" data-error-default="请同意接收电子邮件"/>
+													<span class="checkmark"></span>
+													<span class="checkmark-label">我希望获得罗技的个性化营销服务。您可以随时取消订阅。请参阅我们的<a rel="noopener noreferrer" href="https://www.logitech.com/legal/web-privacy-policy.html" target="_blank">隐私政策</a>。</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-success-view js-modal-success-view" style="display: none; background-image: url(https://resource.logitech.com/w_600,c_limit,f_auto,q_auto,dpr_2.0,dpr_1.0/d_transparent.gif/content/dam/logitech/en/email-subscription/logi-email-subscription-success.png?v=1)">
+                   <h3>欢迎您</h3>
+<p>您已订阅罗技新闻资讯</p>
+                   
+                </div>
+            </div>
+            <button tabindex="0" class="close-modal js-close-modal" aria-label="Close modal">
+                <i class="aem-logi-icon-modal-close" aria-hidden="true"></i>
+            </button>
+        </main>
+    </div>
+
+
+
+
+
+
+
+    
+
+ 
+
+ <!-- This is add the modal pop up for Notify Me feature - Starts -->
+
+<!-- This is add the modal pop up for Notify Me feature - Ends -->
+
+
+    </body>
+
+</html>
