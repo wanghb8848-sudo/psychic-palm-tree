@@ -1,37 +1,113 @@
-200 https://www.logitech.com/zh-cn/sitemap.xml zh_sitemap.xml
-200 https://www.logitech.com/zh-cn/sitemap-business.xml zh_sitemap_biz.xml
-200 https://www.logitech.com/en-us/sitemap.xml en_sitemap.xml
-200 https://www.logitech.com/en-us/sitemap-business.xml en_sitemap_biz.xml
-200 https://www.logitechg.com/zh-cn/sitemap.xml g_zh_sitemap.xml
-200 https://www.logitechg.com/en-us/sitemap.xml g_en_sitemap.xml
-200 https://www.logitechg.com/robots.txt g_robots.txt
-200 https://www.logitech.com/zh-cn zh_home.html
-200 https://www.logitechg.com/zh-cn g_zh_home.html
-404 https://www.logitech.com/zh-cn/logitech-g.html zh_g_home.html
-200 https://www.logitech.com/zh-cn/business.html zh_biz_home.html
-404 https://www.logitech.com/zh-cn/shop/c/new-arrivals zh_new.html
-404 https://www.logitech.com/en-us/shop/c/new-arrivals en_new.html
-404 https://www.logitechg.com/zh-cn/events/g-play g_play_zh.html
-404 https://www.logitechg.com/en-us/events/g-play g_play_en.html
-404 https://www.logitech.com/zh-cn/logitech-g/g-play.html g_play2_zh.html
-404 https://www.logitech.com/en-us/logitech-g/g-play.html g_play2_en.html
-total 2068
-drwxr-xr-x 2 runner runner   4096 Oct  6 02:11 .
-drwxr-xr-x 3 runner runner   4096 Oct  6 02:11 ..
--rw-r--r-- 1 runner runner 146964 Oct  6 02:11 en_new.html
--rw-r--r-- 1 runner runner 102919 Oct  6 02:11 en_sitemap.xml
--rw-r--r-- 1 runner runner 105731 Oct  6 02:11 en_sitemap_biz.xml
--rw-r--r-- 1 runner runner  40579 Oct  6 02:11 g_en_sitemap.xml
--rw-r--r-- 1 runner runner  97476 Oct  6 02:11 g_play2_en.html
--rw-r--r-- 1 runner runner  85302 Oct  6 02:11 g_play2_zh.html
--rw-r--r-- 1 runner runner 172318 Oct  6 02:11 g_play_en.html
--rw-r--r-- 1 runner runner 121067 Oct  6 02:11 g_play_zh.html
--rw-r--r-- 1 runner runner    384 Oct  6 02:11 g_robots.txt
--rw-r--r-- 1 runner runner 280697 Oct  6 02:11 g_zh_home.html
--rw-r--r-- 1 runner runner  21362 Oct  6 02:11 g_zh_sitemap.xml
--rw-r--r-- 1 runner runner 382466 Oct  6 02:11 zh_biz_home.html
--rw-r--r-- 1 runner runner  85302 Oct  6 02:11 zh_g_home.html
--rw-r--r-- 1 runner runner 227710 Oct  6 02:11 zh_home.html
--rw-r--r-- 1 runner runner 102148 Oct  6 02:11 zh_new.html
--rw-r--r-- 1 runner runner  44087 Oct  6 02:11 zh_sitemap.xml
--rw-r--r-- 1 runner runner  62953 Oct  6 02:11 zh_sitemap_biz.xml
+200 https://www.logitechg.com/zh-cn/shop/p/pro-x2-rapid zh_pro-x2-rapid.html
+200 https://www.logitechg.com/zh-cn/shop/p/pro-x3-lightspeed zh_pro-x3-lightspeed.html
+200 https://www.logitechg.com/zh-cn/shop/p/yeti-2 zh_yeti-2.html
+200 https://www.logitechg.com/zh-cn/shop/p/pro-x-control-gaming-mousepad zh_pro-x-control.html
+200 https://www.logitechg.com/zh-cn/shop/p/rs50-mclaren-racing-bundle zh_rs50-mclaren.html
+200 https://www.logitechg.com/zh-cn/shop/p/rs50-system zh_rs50-system.html
+200 https://www.logitech.com/zh-cn/shop/p/pro-x3-superstrike-mouse zh_pro-x3-superstrike.html
+200 https://www.logitech.com/zh-cn/shop/p/g502-x-plus-wireless-lightforce zh_g502-x-plus.html
+200 https://www.logitechg.com/zh-cn/shop/p/g316-x-8k-customizable-mechanical-gaming-keyboard zh_g316-x-8k.html
+200 https://www.logitechg.com/zh-cn/shop/p/g316-mechanical-keyboard zh_g316.html
+404 https://www.logitechg.com/zh-cn/shop/p/g305-x-superlight zh_g305-x.html
+404 https://www.logitechg.com/zh-cn/shop/p/g316-x-75-gaming-keyboard zh_g316-x-75.html
+404 https://www.logitechg.com/zh-cn/shop/p/g316-x-98-gaming-keyboard zh_g316-x-98.html
+404 https://www.logitechg.com/zh-cn/shop/p/g-keycaps-pbt-keycaps zh_keycaps.html
+404 https://www.logitechg.com/zh-cn/shop/p/rs-pedals-se zh_rs-pedals-se.html
+404 https://www.logitechg.com/zh-cn/shop/p/a50-x-astro-wireless-headset zh_a50x.html
+200 https://www.logitech.com/zh-cn/products/headsets/zone-vibe-pro-business.html zh_zone-vibe-pro-business.html
+404 https://www.logitech.com/zh-cn/shop/p/zone-vibe-pro-headphones zh_zone-vibe-pro.html
+200 https://www.logitech.com/zh-cn/products/mice/mx-master-4-business.html zh_mx-master-4-business.html
+200 https://www.logitech.com/zh-cn/products/video-conferencing/accessories/rally-mic-pod-2.html zh_rally-mic-pod-2.html
+200 https://www.logitech.com/zh-cn/products/video-conferencing/conference-cameras/meetup2.html zh_meetup2.html
+200 https://www.logitech.com/zh-cn/products/video-conferencing/conference-cameras/meetup2-conferencecam.html zh_meetup2-shop.html
+200 https://www.logitech.com/zh-cn/products/education/cameras/reach-camera.html zh_reach-camera.html
+200 https://www.logitech.com/zh-cn/products/mice/mx-anywhere-3s-business-wireless-mouse.html zh_mx-anywhere-3s-business.html
+200 https://www.logitech.com/zh-cn/products/combos/signature-slim-mk950-business.html zh_mk950-business.html
+200 https://www.logitech.com/zh-cn/products/headsets/zone-wireless-2-business-headset.html zh_zone-wireless-2-business.html
+200 https://www.logitechg.com/en-us/shop/p/pro-x2-rapid en_pro-x2-rapid.html
+200 https://www.logitechg.com/en-us/shop/p/pro-x3-lightspeed en_pro-x3-lightspeed.html
+200 https://www.logitechg.com/en-us/shop/p/yeti-2 en_yeti-2.html
+200 https://www.logitechg.com/en-us/shop/p/pro-x-control-gaming-mousepad en_pro-x-control.html
+200 https://www.logitechg.com/en-us/shop/p/rs50-mclaren-racing-bundle en_rs50-mclaren.html
+200 https://www.logitechg.com/en-us/shop/p/pro-x3-superstrike-mouse en_pro-x3-superstrike.html
+200 https://www.logitechg.com/en-us/shop/p/g305-x-superlight en_g305-x.html
+200 https://www.logitechg.com/en-us/shop/p/g316-x-75-gaming-keyboard en_g316-x-75.html
+200 https://www.logitechg.com/en-us/shop/p/g316-x-98-gaming-keyboard en_g316-x-98.html
+200 https://www.logitechg.com/en-us/shop/p/g-keycaps-pbt-keycaps en_keycaps.html
+200 https://www.logitechg.com/en-us/shop/p/rs-pedals-se en_rs-pedals-se.html
+200 https://www.logitechg.com/en-us/shop/p/a50-x-astro-wireless-headset en_a50x.html
+200 https://www.logitechg.com/en-us/shop/p/g502-x-plus-wireless-lightforce en_g502-x-plus.html
+200 https://www.logitech.com/en-us/shop/p/zone-vibe-pro-business en_zone-vibe-pro-business.html
+200 https://www.logitech.com/en-us/shop/p/zone-vibe-pro-headphones en_zone-vibe-pro.html
+200 https://www.logitech.com/en-us/business/shop/p/mx-master-4-business en_mx-master-4-business.html
+200 https://www.logitech.com/en-us/business/shop/p/rally-mic-pod-2 en_rally-mic-pod-2.html
+200 https://www.logitech.com/en-us/products/video-conferencing/conference-cameras/meetup2-conferencecam.html en_meetup2.html
+200 https://www.logitech.com/en-us/products/education/cameras/reach-camera.html en_reach-camera.html
+out/p2:
+total 13116
+drwxr-xr-x  2 runner runner   4096 Oct  6 02:14 .
+drwxr-xr-x 10 runner runner   4096 Oct  6 02:13 ..
+-rw-r--r--  1 runner runner 315801 Oct  6 02:14 en_a50x.html
+-rw-r--r--  1 runner runner 375533 Oct  6 02:14 en_g305-x.html
+-rw-r--r--  1 runner runner 310799 Oct  6 02:14 en_g316-x-75.html
+-rw-r--r--  1 runner runner 313701 Oct  6 02:14 en_g316-x-98.html
+-rw-r--r--  1 runner runner 319034 Oct  6 02:14 en_g502-x-plus.html
+-rw-r--r--  1 runner runner 292419 Oct  6 02:14 en_keycaps.html
+-rw-r--r--  1 runner runner 441246 Oct  6 02:14 en_meetup2.html
+-rw-r--r--  1 runner runner 410329 Oct  6 02:14 en_mx-master-4-business.html
+-rw-r--r--  1 runner runner 357398 Oct  6 02:14 en_pro-x-control.html
+-rw-r--r--  1 runner runner 370404 Oct  6 02:14 en_pro-x2-rapid.html
+-rw-r--r--  1 runner runner 369449 Oct  6 02:14 en_pro-x3-lightspeed.html
+-rw-r--r--  1 runner runner 369829 Oct  6 02:14 en_pro-x3-superstrike.html
+-rw-r--r--  1 runner runner 333914 Oct  6 02:14 en_rally-mic-pod-2.html
+-rw-r--r--  1 runner runner 247481 Oct  6 02:14 en_reach-camera.html
+-rw-r--r--  1 runner runner 276714 Oct  6 02:14 en_rs-pedals-se.html
+-rw-r--r--  1 runner runner 300688 Oct  6 02:14 en_rs50-mclaren.html
+-rw-r--r--  1 runner runner 356787 Oct  6 02:14 en_yeti-2.html
+-rw-r--r--  1 runner runner 310898 Oct  6 02:14 en_zone-vibe-pro-business.html
+-rw-r--r--  1 runner runner 339130 Oct  6 02:14 en_zone-vibe-pro.html
+-rw-r--r--  1 runner runner 121296 Oct  6 02:13 zh_a50x.html
+-rw-r--r--  1 runner runner 121228 Oct  6 02:13 zh_g305-x.html
+-rw-r--r--  1 runner runner 121277 Oct  6 02:13 zh_g316-x-75.html
+-rw-r--r--  1 runner runner 229426 Oct  6 02:13 zh_g316-x-8k.html
+-rw-r--r--  1 runner runner 121279 Oct  6 02:13 zh_g316-x-98.html
+-rw-r--r--  1 runner runner 228517 Oct  6 02:13 zh_g316.html
+-rw-r--r--  1 runner runner 230390 Oct  6 02:13 zh_g502-x-plus.html
+-rw-r--r--  1 runner runner 121252 Oct  6 02:13 zh_keycaps.html
+-rw-r--r--  1 runner runner 381293 Oct  6 02:14 zh_meetup2-shop.html
+-rw-r--r--  1 runner runner 425350 Oct  6 02:14 zh_meetup2.html
+-rw-r--r--  1 runner runner 504175 Oct  6 02:14 zh_mk950-business.html
+-rw-r--r--  1 runner runner 385977 Oct  6 02:14 zh_mx-anywhere-3s-business.html
+-rw-r--r--  1 runner runner 513103 Oct  6 02:14 zh_mx-master-4-business.html
+-rw-r--r--  1 runner runner 258660 Oct  6 02:13 zh_pro-x-control.html
+-rw-r--r--  1 runner runner 223312 Oct  6 02:13 zh_pro-x2-rapid.html
+-rw-r--r--  1 runner runner 266436 Oct  6 02:13 zh_pro-x3-lightspeed.html
+-rw-r--r--  1 runner runner 214267 Oct  6 02:13 zh_pro-x3-superstrike.html
+-rw-r--r--  1 runner runner 406856 Oct  6 02:14 zh_rally-mic-pod-2.html
+-rw-r--r--  1 runner runner 235064 Oct  6 02:14 zh_reach-camera.html
+-rw-r--r--  1 runner runner 121197 Oct  6 02:13 zh_rs-pedals-se.html
+-rw-r--r--  1 runner runner 226397 Oct  6 02:13 zh_rs50-mclaren.html
+-rw-r--r--  1 runner runner 227309 Oct  6 02:13 zh_rs50-system.html
+-rw-r--r--  1 runner runner 262269 Oct  6 02:13 zh_yeti-2.html
+-rw-r--r--  1 runner runner 442965 Oct  6 02:13 zh_zone-vibe-pro-business.html
+-rw-r--r--  1 runner runner 106989 Oct  6 02:13 zh_zone-vibe-pro.html
+-rw-r--r--  1 runner runner 408476 Oct  6 02:14 zh_zone-wireless-2-business.html
+
+store:
+total 5264
+drwxr-xr-x 3 runner runner    4096 Oct  6 02:14 .
+drwxr-xr-x 7 runner runner    4096 Oct  6 02:13 ..
+-rw-r--r-- 1 runner runner 2155438 Oct  6 02:13 all_a.json
+-rw-r--r-- 1 runner runner      96 Oct  6 02:13 all_b.json
+-rw-r--r-- 1 runner runner      96 Oct  6 02:13 all_c.json
+drwxr-xr-x 2 runner runner   20480 Oct  6 02:13 detail
+-rw-r--r-- 1 runner runner  808485 Oct  6 02:13 list_1.json
+-rw-r--r-- 1 runner runner      96 Oct  6 02:13 list_2.json
+-rw-r--r-- 1 runner runner      96 Oct  6 02:13 list_3.json
+-rw-r--r-- 1 runner runner      96 Oct  6 02:13 list_4.json
+-rw-r--r-- 1 runner runner      96 Oct  6 02:13 list_5.json
+-rw-r--r-- 1 runner runner      96 Oct  6 02:13 list_6.json
+-rw-r--r-- 1 runner runner 2167449 Oct  6 02:14 new_a.json
+-rw-r--r-- 1 runner runner      96 Oct  6 02:14 new_b.json
+-rw-r--r-- 1 runner runner      96 Oct  6 02:14 new_c.json
+-rw-r--r-- 1 runner runner  183977 Oct  6 02:13 pagelist.json
